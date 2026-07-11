@@ -14,6 +14,6 @@ Team Member:
     2.  Rubama Mehnaj [2110304]
     3.  Samia Islam [2431072]
 
-CRA Report: 
+CRA Report: https://docs.google.com/document/d/1a2m3MuPfpahbgU9TCg65pEQ77LYW4dnEsKEYtmLKeiU/edit?usp=sharing
 
 UML Class Diagram: https://drive.google.com/file/d/1ngsKuV6mrccY3dNb5UjpsDplHWizFkfp/view?usp=sharing
