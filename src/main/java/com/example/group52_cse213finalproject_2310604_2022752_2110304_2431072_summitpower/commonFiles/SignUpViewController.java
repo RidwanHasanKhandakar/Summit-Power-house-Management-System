@@ -1,7 +1,9 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.commonFiles;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 
 import java.time.LocalDate;
@@ -62,12 +64,14 @@ public class SignUpViewController
         else {
             User user = new User(fName,lName,address,phone,gendar,id,email,pw);
             showSuc("Accountant Created Successfully");
-            return;
+
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"log-in-view.fxml","Log In");
         }
     }
 
     @javafx.fxml.FXML
     public void handleAlreadyHaveAnAccount(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"log-in-view.fxml","Log In");
     }
     public void showError(String txt){
         Alert alert = new Alert(Alert.AlertType.ERROR);
