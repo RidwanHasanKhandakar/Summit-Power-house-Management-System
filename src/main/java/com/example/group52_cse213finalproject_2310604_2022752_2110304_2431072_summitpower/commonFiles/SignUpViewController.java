@@ -31,6 +31,7 @@ public class SignUpViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+        genderComboBox.getItems().addAll("Male","Female","Others");
     }
 
     @javafx.fxml.FXML
