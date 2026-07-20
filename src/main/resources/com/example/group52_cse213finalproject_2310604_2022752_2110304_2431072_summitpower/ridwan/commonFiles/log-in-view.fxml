@@ -34,6 +34,6 @@
       </Text>
       <Button layoutX="220.0" layoutY="286.0" mnemonicParsing="false" onAction="#handleCreateAnAccountButton" style="-fx-background-color: #49b0ff;" text="Create an Account" />
       <PasswordField fx:id="passwordPasswordField" layoutX="252.0" layoutY="124.0" />
-      <Label alignment="CENTER" layoutY="404.0" prefHeight="18.0" prefWidth="610.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label alignment="CENTER" layoutY="404.0" prefHeight="18.0" prefWidth="610.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
    </children>
 </AnchorPane>

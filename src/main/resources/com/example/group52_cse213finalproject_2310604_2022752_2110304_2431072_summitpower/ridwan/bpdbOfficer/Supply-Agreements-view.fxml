@@ -18,7 +18,7 @@
          </font>
       </Label>
       <Button layoutX="287.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleSearchButton" style="-fx-background-color: #49b0ff;" text="Search" />
-      <Label alignment="CENTER" layoutX="-21.0" layoutY="424.0" prefHeight="18.0" prefWidth="646.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label alignment="CENTER" layoutX="-21.0" layoutY="424.0" prefHeight="18.0" prefWidth="646.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
       <Label layoutX="37.0" layoutY="59.0" text="Agreements  ID : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
