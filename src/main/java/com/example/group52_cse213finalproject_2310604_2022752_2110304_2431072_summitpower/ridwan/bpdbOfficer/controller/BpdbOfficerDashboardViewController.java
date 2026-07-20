@@ -40,7 +40,14 @@ public class BpdbOfficerDashboardViewController
 
     @javafx.fxml.FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
-
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout!");
+        alert.setHeaderText("Confirm Logout!");
+        alert.setContentText("Are you sure you want to logout >?");
+        Optional<ButtonType> res = alert.showAndWait();
+        if (res.get()==ButtonType.OK){
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml", "Log in!");
+        }
     }
 
     @javafx.fxml.FXML
