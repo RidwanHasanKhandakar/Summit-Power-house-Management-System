@@ -48,6 +48,16 @@ public class PowerDemandRequestViewController
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
 
+        priorityLavelComboBox.setValue(null);
+        purposeOfDemandComboBox.setValue(null);
+
+        reqIdTextField.clear();
+        reqCapacityTextField.clear();
+        remarksTextArea.clear();
+
+        startDateDatePicker.setValue(null);
+        EndDateDatePicker.setValue(null);
+
     }
 
     @javafx.fxml.FXML
