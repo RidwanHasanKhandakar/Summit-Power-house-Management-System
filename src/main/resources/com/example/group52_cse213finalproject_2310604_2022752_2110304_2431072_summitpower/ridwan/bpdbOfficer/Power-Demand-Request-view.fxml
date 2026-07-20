@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="380.0" prefWidth="614.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller.PowerDemandRequestViewController">
+   <children>
+      <Label layoutX="30.0" layoutY="58.0" text="Request ID : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="253.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleSubmitRequestButton" style="-fx-background-color: #49b0ff;" text="Submit Request" />
+      <Label alignment="CENTER" layoutY="404.0" prefHeight="18.0" prefWidth="606.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label layoutX="316.0" layoutY="58.0" text="Required Capacity  : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="98.0" text="Supply Start Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="140.0" text="Supply End Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="98.0" text="Priority Lavel : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="315.0" layoutY="181.0" text="Purpose of Demand : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="140.0" text="Remarks : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="reqIdTextField" layoutX="156.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <TextField fx:id="reqCapacityTextField" layoutX="474.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="EndDateDatePicker" layoutX="474.0" layoutY="137.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="startDateDatePicker" layoutX="474.0" layoutY="95.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="priorityLavelComboBox" layoutX="156.0" layoutY="95.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="purposeOfDemandComboBox" layoutX="474.0" layoutY="178.0" prefHeight="25.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <TextArea fx:id="remarksTextArea" layoutX="156.0" layoutY="142.0" prefHeight="64.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" />
+      <Line endX="332.0" layoutX="279.0" layoutY="242.0" startX="-282.0" stroke="#4499bb" strokeWidth="5.0" />
+      <Button layoutX="26.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleClearButton" style="-fx-background-color: #49b0ff;" text="Clear" />
+      <Button layoutX="533.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
+   </children>
+</AnchorPane>
