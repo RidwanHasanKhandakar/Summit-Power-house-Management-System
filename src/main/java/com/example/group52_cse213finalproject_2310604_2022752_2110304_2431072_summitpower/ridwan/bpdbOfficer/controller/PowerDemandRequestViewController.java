@@ -102,6 +102,8 @@ public class PowerDemandRequestViewController
             return;
         }
 
+        showSuc("Power Demand request submitted successfully.");
+
     }
 
     @javafx.fxml.FXML
@@ -127,6 +129,14 @@ public class PowerDemandRequestViewController
     public void showError(String txt){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error!");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
+    public void showSuc (String txt){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Saved!");
         alert.setHeaderText(null);
         alert.setContentText(txt);
         alert.showAndWait();
