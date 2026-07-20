@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller.BpdbOfficerDashboardViewController"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller.BpdbOfficerDashboardViewController">
+   <children>
+      <Label layoutX="169.0" layoutY="14.0" text="BPDB Officer Dashboard" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="50.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleSubmitPowerDemandButton" style="-fx-background-color: #49b0ff;" text="Submit Power Demand Request" />
+      <Button layoutX="49.0" layoutY="112.0" mnemonicParsing="false" onAction="#handleSupplyAgreementButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="View Supply Agreements" />
+      <Button layoutX="49.0" layoutY="151.0" mnemonicParsing="false" onAction="#handleMonitorPowerSupplyButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="Monitor Power Supply" />
+      <Button layoutX="50.0" layoutY="194.0" mnemonicParsing="false" onAction="#handleInvoiceButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="View Invoices" />
+      <Button layoutX="50.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleSubmitComplaintButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="Submit Complaint" />
+      <Button layoutX="49.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleAdditionalPowerButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="Request Additional Power" />
+      <Button layoutX="50.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleGenerateSupplyReportButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="Generate Supply Report" />
+      <Button layoutX="49.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleReviewContractPerformanceButton" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #49b0ff;" text="Review Contract Performance" />
+      <Button layoutX="503.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleProfileButton" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #49b0ff;" text="Profile" />
+      <Button layoutX="503.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleLogoutButton" prefHeight="25.0" prefWidth="68.0" style="-fx-background-color: #49b0ff;" text="Logout" />
+      <Label layoutX="321.0" layoutY="128.0" text="Officer Name: " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="14.0" />
+         </font>
+      </Label>
+      <Text fx:id="officerNameText" layoutX="411.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.13671875" />
+   </children>
 </AnchorPane>
