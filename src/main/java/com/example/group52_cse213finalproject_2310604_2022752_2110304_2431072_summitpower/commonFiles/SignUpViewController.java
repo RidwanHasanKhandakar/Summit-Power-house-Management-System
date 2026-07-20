@@ -65,13 +65,13 @@ public class SignUpViewController
             User user = new User(fName,lName,address,phone,gendar,id,email,pw);
             showSuc("Accountant Created Successfully");
 
-            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"log-in-view.fxml","Log In");
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml", "Log in!");
         }
     }
 
     @javafx.fxml.FXML
     public void handleAlreadyHaveAnAccount(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"log-in-view.fxml","Log In");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml","Log In!");
     }
     public void showError(String txt){
         Alert alert = new Alert(Alert.AlertType.ERROR);

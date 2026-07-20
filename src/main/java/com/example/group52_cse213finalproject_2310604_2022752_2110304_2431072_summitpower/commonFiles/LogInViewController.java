@@ -4,14 +4,15 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LogInViewController
 {
     @javafx.fxml.FXML
-    private TextField passwordTextField;
-    @javafx.fxml.FXML
     private TextField userIdTextField;
+    @javafx.fxml.FXML
+    private PasswordField passwordPasswordField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -19,16 +20,20 @@ public class LogInViewController
 
     @javafx.fxml.FXML
     public void handleCreateAnAccountButton(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "sign-up-view.fxml","Sign-Up");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "commonFiles","sign-up-view.fxml", "Sign Up!");
     }
 
     @javafx.fxml.FXML
     public void handleLogInButton(ActionEvent actionEvent) {
-        String userId = userIdTextField.getText();
-        String password = passwordTextField.getText();
+        String userId = userIdTextField.getText().trim();
+        String password = passwordPasswordField.getText().trim();
         if (userId.isEmpty()||password.isEmpty()){
             showError("Please fill out all fields");
             return;
+        } else if (userId.equals("bpdb")&&password.equals("123")) {
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","bpdbOfficer-dashboard-view.fxml", "BPDB Officer Dashboard!");
+        } else if (userId.equals("acc")&&password.equals("321")) {
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"accountant", "accountant-dashboard-view.fxml", "Accountant Dashboard!");
         }
     }
     public void showError(String txt){

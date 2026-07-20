@@ -9,9 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class PrimarySceneSwitcher {
-    public static void primarySwitchScene(Node sourseNode, String fxmlFileNamem, String title){
+    public static void primarySwitchScene(Node sourseNode, String pathRef, String fxmlFileNamem, String title){
         try{
-            FXMLLoader loader = new FXMLLoader(PrimarySceneSwitcher.class.getResource("/com/example/group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower/ridwan/commonFiles/"+fxmlFileNamem));
+            FXMLLoader loader = new FXMLLoader(PrimarySceneSwitcher.class.getResource("/com/example/group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower/ridwan/"+pathRef+"/"+fxmlFileNamem));
 
             Parent root = loader.load();
 
