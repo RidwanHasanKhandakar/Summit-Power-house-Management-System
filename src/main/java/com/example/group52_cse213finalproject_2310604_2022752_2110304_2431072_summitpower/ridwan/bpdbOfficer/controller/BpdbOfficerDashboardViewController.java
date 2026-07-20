@@ -3,7 +3,11 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
+
+import java.util.Optional;
 
 public class BpdbOfficerDashboardViewController
 {
@@ -36,7 +40,7 @@ public class BpdbOfficerDashboardViewController
 
     @javafx.fxml.FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml", "Log in!");
+
     }
 
     @javafx.fxml.FXML
