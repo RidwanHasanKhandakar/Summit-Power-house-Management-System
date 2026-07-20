@@ -20,22 +20,27 @@ public class BpdbOfficerDashboardViewController
 
     @javafx.fxml.FXML
     public void handleSupplyAgreementButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Supply-Agreements-view.fxml", "Supply Agreements!");
     }
 
     @javafx.fxml.FXML
     public void handleAdditionalPowerButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Additional-Power-Request-view.fxml", "Additional Power Request!");
     }
 
     @javafx.fxml.FXML
     public void handleMonitorPowerSupplyButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Power-Supply-Monitoring-view.fxml", "Power Supply Monitoring!");
     }
 
     @javafx.fxml.FXML
     public void handleSubmitPowerDemandButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Power-Demand-Request-view.fxml", "Power Demand Request!");
     }
 
     @javafx.fxml.FXML
     public void handleInvoiceButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Invoices-view.fxml", "Invoices!");
     }
 
     @javafx.fxml.FXML
@@ -56,13 +61,16 @@ public class BpdbOfficerDashboardViewController
 
     @javafx.fxml.FXML
     public void handleReviewContractPerformanceButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Contract-Performance-view.fxml", "Contract Performance!");
     }
 
     @javafx.fxml.FXML
     public void handleGenerateSupplyReportButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Supply-Report-view.fxml", "Supply Report!");
     }
 
     @javafx.fxml.FXML
     public void handleSubmitComplaintButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"bpdbOfficer","Complaint-Submission-view.fxml", "Complaint Submission!");
     }
 }
