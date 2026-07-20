@@ -48,11 +48,14 @@ public class SupplyAgreementsViewController
                 "Expired",
                 "Cancelled");
         filterByAgreementTypeComboBox.getItems().addAll(
-                "Residential",
+                "All"
+                ,"Residential",
                 "Commercial",
                 "Industrial",
-                "Government",
-                "All");
+                "Government");
+
+        filterByStatusComboBox.setValue("All");
+        filterByAgreementTypeComboBox.setValue("All");
 
     }
 
@@ -63,7 +66,11 @@ public class SupplyAgreementsViewController
 
     @javafx.fxml.FXML
     public void handleSearchButton(ActionEvent actionEvent) {
+        String agreementId = agreementIdTextField.getText().trim().toLowerCase();
+        String consumerName = consumerNameTextField.getText().trim().toLowerCase();
 
+        String status = filterByStatusComboBox.getValue();
+        String type = filterByAgreementTypeComboBox.getValue();
     }
 
     @javafx.fxml.FXML
@@ -71,8 +78,8 @@ public class SupplyAgreementsViewController
 
         agreementIdTextField.clear();
         consumerNameTextField.clear();
-        filterByAgreementTypeComboBox.setValue(null);
-        filterByStatusComboBox.setValue(null);
+        filterByAgreementTypeComboBox.setValue("All");
+        filterByStatusComboBox.setValue("All");
 
     }
 }
