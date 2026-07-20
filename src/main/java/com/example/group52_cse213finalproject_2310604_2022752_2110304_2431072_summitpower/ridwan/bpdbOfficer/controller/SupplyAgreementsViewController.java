@@ -58,6 +58,7 @@ public class SupplyAgreementsViewController
 
     @javafx.fxml.FXML
     public void handleSearchButton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
