@@ -30,5 +30,6 @@
          </font>
       </Label>
       <Text fx:id="officerNameText" layoutX="411.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.13671875" />
+      <Label alignment="CENTER" layoutY="399.0" prefHeight="18.0" prefWidth="601.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
    </children>
 </AnchorPane>
