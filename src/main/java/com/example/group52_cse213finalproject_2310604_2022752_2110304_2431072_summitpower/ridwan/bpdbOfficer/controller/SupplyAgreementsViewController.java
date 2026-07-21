@@ -2,6 +2,9 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.SupplyAgreement;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.SupplyAgreementFileHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -66,6 +69,8 @@ public class SupplyAgreementsViewController
         agreeTypeCol.setCellValueFactory(new PropertyValueFactory<>("agreementType"));
         EndDateCol.setCellValueFactory(new PropertyValueFactory<>("endDate"));
 
+        loadTable();
+
     }
 
     @javafx.fxml.FXML
@@ -80,6 +85,32 @@ public class SupplyAgreementsViewController
 
         String status = filterByStatusComboBox.getValue();
         String type = filterByAgreementTypeComboBox.getValue();
+
+        ObservableList<SupplyAgreement> filtered = FXCollections.observableArrayList();
+
+        for(SupplyAgreement agreement : SupplyAgreementFileHandler.readAll()){
+            boolean match = true;
+            if (!agreementId.isEmpty()&&!agreement.getAgreementId().toLowerCase().contains(agreementId)){
+                match=false;
+            }
+            if (!consumerName.isEmpty()&&!agreement.getConsumerName().toLowerCase().contains(consumerName)){
+                match=false;
+            }
+            if(!status.equals("All") &&
+                    !agreement.getStatus().equals(status))
+                match=false;
+
+            if(!type.equals("All") &&
+                    !agreement.getAgreementType().equals(type))
+                match=false;
+            if (match){
+                filtered.add(agreement);
+            }
+
+            supplyAgreementTableView.setItems(filtered);
+
+        }
+
     }
 
     @javafx.fxml.FXML
@@ -90,7 +121,14 @@ public class SupplyAgreementsViewController
         filterByAgreementTypeComboBox.setValue("All");
         filterByStatusComboBox.setValue("All");
 
-        supplyAgreementTableView.refresh();
+        loadTable();
 
     }
+
+    private void loadTable(){
+        ObservableList<SupplyAgreement> list = FXCollections.observableArrayList();
+        list.addAll(SupplyAgreementFileHandler.readAll());
+        supplyAgreementTableView.setItems(list);
+    }
+
 }
