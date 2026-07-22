@@ -24,6 +24,11 @@ public class SupplyAgreement implements Serializable {
         this.status = status;
     }
 
+    //default constructor
+//    public PowerDemandRequest(){
+//
+//    }
+
     public String getAgreementId() {
         return agreementId;
     }

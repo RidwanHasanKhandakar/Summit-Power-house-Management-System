@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.PowerDemandRequest;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.PowerDemandRequestFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -102,23 +104,18 @@ public class PowerDemandRequestViewController
             return;
         }
 
+        PowerDemandRequest request = new PowerDemandRequest(reqIdTextField.getText(),capacity,startDate,endDate,priorityLavelComboBox.getValue(),purposeOfDemandComboBox.getValue(),remarks);
+        PowerDemandRequestFileHandler.save(request);
         showSuc("Power Demand request submitted successfully.");
+
+        clearForm();
 
     }
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
 
-        priorityLavelComboBox.setValue(null);
-        purposeOfDemandComboBox.setValue(null);
-
-        reqIdTextField.clear();
-        reqCapacityTextField.clear();
-        remarksTextArea.clear();
-
-        startDateDatePicker.setValue(null);
-        EndDateDatePicker.setValue(null);
-
+        clearForm();
     }
 
     @javafx.fxml.FXML
@@ -140,6 +137,16 @@ public class PowerDemandRequestViewController
         alert.setHeaderText(null);
         alert.setContentText(txt);
         alert.showAndWait();
+    }
+
+    private void clearForm(){
+        reqIdTextField.setText("REQ-"+reqCounter++);
+        reqCapacityTextField.clear();
+        priorityLavelComboBox.setValue(null);
+        purposeOfDemandComboBox.setValue(null);
+        startDateDatePicker.setValue(null);
+        EndDateDatePicker.setValue(null);
+        remarksTextArea.clear();
     }
 
 }
