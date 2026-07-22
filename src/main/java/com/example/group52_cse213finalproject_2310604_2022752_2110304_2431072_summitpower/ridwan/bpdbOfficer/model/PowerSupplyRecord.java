@@ -4,18 +4,27 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class PowerSupplyRecord implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String recordId;
-    private String location;
-    private double suppliedPower;
+    private String consumerName;
+    private String region;
+    private double capacity;
     private LocalDate supplyDate;
+    private String status;
     private String remarks;
 
-    public PowerSupplyRecord(String recordId, String location, double suppliedPower, LocalDate supplyDate, String remarks) {
+    public PowerSupplyRecord(){
+
+    }
+
+    public PowerSupplyRecord(String recordId, String consumerName, String region, double capacity, LocalDate supplyDate, String status, String remarks) {
         this.recordId = recordId;
-        this.location = location;
-        this.suppliedPower = suppliedPower;
+        this.consumerName = consumerName;
+        this.region = region;
+        this.capacity = capacity;
         this.supplyDate = supplyDate;
+        this.status = status;
         this.remarks = remarks;
     }
 
@@ -27,20 +36,28 @@ public class PowerSupplyRecord implements Serializable {
         this.recordId = recordId;
     }
 
-    public String getLocation() {
-        return location;
+    public String getConsumerName() {
+        return consumerName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setConsumerName(String consumerName) {
+        this.consumerName = consumerName;
     }
 
-    public double getSuppliedPower() {
-        return suppliedPower;
+    public String getRegion() {
+        return region;
     }
 
-    public void setSuppliedPower(double suppliedPower) {
-        this.suppliedPower = suppliedPower;
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
     }
 
     public LocalDate getSupplyDate() {
@@ -49,6 +66,14 @@ public class PowerSupplyRecord implements Serializable {
 
     public void setSupplyDate(LocalDate supplyDate) {
         this.supplyDate = supplyDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getRemarks() {
@@ -63,9 +88,11 @@ public class PowerSupplyRecord implements Serializable {
     public String toString() {
         return "PowerSupplyRecord{" +
                 "recordId='" + recordId + '\'' +
-                ", location='" + location + '\'' +
-                ", suppliedPower=" + suppliedPower +
+                ", consumerName='" + consumerName + '\'' +
+                ", region='" + region + '\'' +
+                ", capacity=" + capacity +
                 ", supplyDate=" + supplyDate +
+                ", status='" + status + '\'' +
                 ", remarks='" + remarks + '\'' +
                 '}';
     }
