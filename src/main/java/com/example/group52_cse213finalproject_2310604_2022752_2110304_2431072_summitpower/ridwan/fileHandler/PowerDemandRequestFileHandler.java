@@ -28,4 +28,25 @@ public class PowerDemandRequestFileHandler {
             return new ArrayList<>();
         }
     }
+
+    public static String generateNextRequestId(){
+        ArrayList<PowerDemandRequest> requests = readAll();
+        if (requests.isEmpty()){
+            return "REQ- 1001";
+        }
+        int maxId = 1000;
+        for (PowerDemandRequest request : requests){
+            try{
+                String id = request.getRequestId().replace("REQ-","");
+                int number = Integer.parseInt(id);
+                if(number>maxId){
+                    maxId=number;
+                }
+            }catch (NumberFormatException e){
+
+            }
+        }
+        return "REQ-"+(maxId+1);
+    }
+
 }

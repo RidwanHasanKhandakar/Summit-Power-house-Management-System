@@ -26,12 +26,12 @@ public class PowerDemandRequestViewController
     @javafx.fxml.FXML
     private TextField reqIdTextField;
 
-    private static int reqCounter = 1001;
+    //private static int reqCounter = 1001;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-        reqIdTextField.setText("REQ-"+reqCounter++);
+        reqIdTextField.setText(PowerDemandRequestFileHandler.generateNextRequestId());
         reqIdTextField.setEditable(false);
 
         priorityLavelComboBox.getItems().addAll(
@@ -140,7 +140,7 @@ public class PowerDemandRequestViewController
     }
 
     private void clearForm(){
-        reqIdTextField.setText("REQ-"+reqCounter++);
+        reqIdTextField.setText(PowerDemandRequestFileHandler.generateNextRequestId());
         reqCapacityTextField.clear();
         priorityLavelComboBox.setValue(null);
         purposeOfDemandComboBox.setValue(null);
