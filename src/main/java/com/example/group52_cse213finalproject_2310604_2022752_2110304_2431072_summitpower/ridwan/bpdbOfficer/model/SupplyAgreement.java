@@ -5,13 +5,14 @@ import java.time.LocalDate;
 
 public class SupplyAgreement implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private String agreementId;
     private String consumerName;
     private String agreementType;
     private double capacity;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String Status;
+    private String status;
 
     public SupplyAgreement(String agreementId, String consumerName, String agreementType, double capacity, LocalDate startDate, LocalDate endDate, String status) {
         this.agreementId = agreementId;
@@ -20,7 +21,7 @@ public class SupplyAgreement implements Serializable {
         this.capacity = capacity;
         this.startDate = startDate;
         this.endDate = endDate;
-        Status = status;
+        this.status = status;
     }
 
     public String getAgreementId() {
@@ -72,11 +73,11 @@ public class SupplyAgreement implements Serializable {
     }
 
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
     }
 
     @Override
@@ -88,7 +89,7 @@ public class SupplyAgreement implements Serializable {
                 ", capacity=" + capacity +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", Status='" + Status + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
