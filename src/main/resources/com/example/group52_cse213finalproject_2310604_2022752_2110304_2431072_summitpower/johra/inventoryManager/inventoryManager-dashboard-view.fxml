@@ -7,16 +7,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.InventoryManagerDashboardViewController">
    <children>
-      <Button layoutX="82.0" layoutY="52.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Add Equipment" />
-      <Button layoutX="75.0" layoutY="93.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" text="Remove Damaged Equipment" />
-      <Button layoutX="82.0" layoutY="252.0" mnemonicParsing="false" text="Offer Tender" />
-      <Button layoutX="86.0" layoutY="212.0" mnemonicParsing="false" text="Vendor Management" />
-      <Button layoutX="86.0" layoutY="174.0" mnemonicParsing="false" text="Parts Issuance" />
-      <Button layoutX="78.0" layoutY="334.0" mnemonicParsing="false" text="Inventory Report" />
-      <Button layoutX="81.0" layoutY="291.0" mnemonicParsing="false" text="Track Fuel Stock" />
-      <Button layoutX="87.0" layoutY="132.0" mnemonicParsing="false" text="Search Equipment" />
-      <Button layoutX="460.0" layoutY="65.0" mnemonicParsing="false" text="Profile" />
-      <Button layoutX="468.0" layoutY="322.0" mnemonicParsing="false" text="LogOut" />
+      <Button layoutX="68.0" layoutY="52.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Add Equipment" />
+      <Button layoutX="68.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" text="Remove Damaged Equipment" />
+      <Button layoutX="67.0" layoutY="252.0" mnemonicParsing="false" text="Offer Tender" />
+      <Button layoutX="67.0" layoutY="210.0" mnemonicParsing="false" text="Vendor Management" />
+      <Button layoutX="68.0" layoutY="170.0" mnemonicParsing="false" text="Parts Issuance" />
+      <Button layoutX="69.0" layoutY="334.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Inventory Report" />
+      <Button layoutX="69.0" layoutY="296.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Track Fuel Stock" />
+      <Button layoutX="68.0" layoutY="130.0" mnemonicParsing="false" text="Search Equipment" />
+      <Button layoutX="460.0" layoutY="52.0" mnemonicParsing="false" text="Profile" />
+      <Button layoutX="457.0" layoutY="335.0" mnemonicParsing="false" text="LogOut" />
       <Label layoutX="311.0" layoutY="165.0" text="Officer Name:" />
    </children>
 </AnchorPane>

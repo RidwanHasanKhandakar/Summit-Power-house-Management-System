@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.HrManagerDashboardViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.HrManagerDashboardViewController">
+   <children>
+      <Button layoutX="78.0" layoutY="62.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Add Employee" />
+      <Button layoutX="78.0" layoutY="101.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" text="Remove Current Employee" />
+      <Button layoutX="77.0" layoutY="262.0" mnemonicParsing="false" text="Create Notice" />
+      <Button layoutX="77.0" layoutY="220.0" mnemonicParsing="false" text="Grade Employee" />
+      <Button layoutX="78.0" layoutY="180.0" mnemonicParsing="false" text="Search Eployee Information" />
+      <Button layoutX="79.0" layoutY="344.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Candidate Selection" />
+      <Button layoutX="79.0" layoutY="306.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="106.0" text="Generate Salary" />
+      <Button layoutX="78.0" layoutY="140.0" mnemonicParsing="false" text="Update Employee information" />
+      <Button layoutX="470.0" layoutY="62.0" mnemonicParsing="false" text="Profile" />
+      <Button layoutX="467.0" layoutY="345.0" mnemonicParsing="false" text="LogOut" />
+      <Label layoutX="321.0" layoutY="175.0" text="Officer Name:" />
+   </children>
 </AnchorPane>
