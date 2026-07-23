@@ -1,14 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.MonitorGeneratorStatusViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane focusTraversable="true" prefHeight="400.0" prefWidth="616.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.MonitorGeneratorStatusViewController">
+   <children>
+      <Label layoutX="162.0" layoutY="8.0" prefHeight="34.0" prefWidth="269.0" text="Monitor Generator Status" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="59.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="59.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plant Unit:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="generatorIdTextField" layoutX="167.0" layoutY="62.0" />
+      <ComboBox fx:id="plantUnitComBox" layoutX="166.0" layoutY="94.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <Button layoutX="388.0" layoutY="73.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #49b0ff;" text="Search" />
+      <Text fill="WHITE" layoutX="61.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running Status:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="317.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Output:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="59.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltage:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="317.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="59.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fuel Level:" wrappingWidth="77.18896484375">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="318.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Engine Temperature:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="56.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Running Hours:" wrappingWidth="105.8433837890625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="56.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Maintenance Date:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="engineTemperatureTextField" layoutX="455.0" layoutY="222.0" prefHeight="26.0" prefWidth="130.0" />
+      <TextField fx:id="fuelLevelTextField" layoutX="176.0" layoutY="221.0" prefHeight="20.0" prefWidth="130.0" />
+      <TextField fx:id="frequencyTextField" layoutX="455.0" layoutY="185.0" prefHeight="21.0" prefWidth="130.0" />
+      <TextField fx:id="voltageTextField" layoutX="176.0" layoutY="186.0" prefHeight="26.0" prefWidth="130.0" />
+      <TextField fx:id="powerOutputTextField" layoutX="455.0" layoutY="147.0" prefHeight="26.0" prefWidth="130.0" />
+      <TextField fx:id="runningStatusTextField" layoutX="176.0" layoutY="150.0" prefHeight="21.0" prefWidth="130.0" />
+      <TextField fx:id="runningHoursTextField" layoutX="176.0" layoutY="255.0" prefHeight="20.0" prefWidth="130.0" />
+      <DatePicker fx:id="maintenanceDateDatePicker" layoutX="228.0" layoutY="297.0" prefHeight="26.0" prefWidth="137.0" />
+      <Button layoutX="362.0" layoutY="342.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="155.0" layoutY="342.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #49b0ff;" text="Back" />
+   </children>
 </AnchorPane>
