@@ -5,10 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="824.0" prefWidth="1238.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.CeoDashboardViewController">
    <children>
-      <Label layoutX="454.0" layoutY="38.0" prefHeight="64.0" prefWidth="308.0" text="CEO Dashboard" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS">
+      <Label layoutX="454.0" layoutY="38.0" prefHeight="64.0" prefWidth="308.0" text="CEO Dashboard" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
          <font>
             <Font name="Times New Roman" size="43.0" />
          </font>
@@ -19,7 +18,10 @@
          </font>
       </Label>
       <Label alignment="CENTER" layoutY="800.0" prefHeight="31.0" prefWidth="1238.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
-      <Button layoutX="1087.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="54.0" prefWidth="128.0" style="-fx-background-color: #49b0ff;" text="Log Out" />
+      <Button layoutX="1087.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="54.0" prefWidth="128.0" style="-fx-background-color: #49b0ff;" text="Log Out">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="470.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleCheckFinancialSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Check financial summary" />
       <Button layoutX="470.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleSetOrChangeTariffRates" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text=" Set or change tariff rates" />
       <Button layoutX="470.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleViewPlantPerformanceSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View plant performance summary" />
