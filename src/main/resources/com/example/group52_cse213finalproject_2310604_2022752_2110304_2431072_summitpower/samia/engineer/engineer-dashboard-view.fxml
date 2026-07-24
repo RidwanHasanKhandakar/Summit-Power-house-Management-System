@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.EngineerDashboardViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.EngineerDashboardViewController">
+   <children>
+      <Label layoutX="324.0" layoutY="101.0" text="Officer Name: " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="46.0" layoutY="67.0" mnemonicParsing="false" onAction="#monitorGeneratorStatusButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Monitor Generator Status" />
+      <Label layoutX="198.0" layoutY="14.0" prefHeight="30.0" prefWidth="225.0" text="Engineer Dashboard" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="46.0" layoutY="217.0" mnemonicParsing="false" onAction="#engineeringPerformanceButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Engineering Performance" />
+      <Button layoutX="46.0" layoutY="255.0" mnemonicParsing="false" onAction="#equipmentEfficiencyButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Equipment Efficiency" />
+      <Button layoutX="46.0" layoutY="293.0" mnemonicParsing="false" onAction="#monitorFuelConsumptionButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Monitor Fuel Consumption" />
+      <Button layoutX="46.0" layoutY="103.0" mnemonicParsing="false" onAction="#preventiveMaintenanceButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Preventive Maintenance" />
+      <Button layoutX="45.0" layoutY="141.0" mnemonicParsing="false" onAction="#reportEquipmentFaultsButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Report Equipment Faults" />
+      <Button layoutX="46.0" layoutY="179.0" mnemonicParsing="false" onAction="#updateMaintenanceStatusButton" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" text="Update Maintenance Status" />
+      <Button layoutX="441.0" layoutY="314.0" mnemonicParsing="false" onAction="#logoutButton" style="-fx-background-color: #49b0ff;" text="Logout" />
+      <Button layoutX="46.0" layoutY="332.0" mnemonicParsing="false" onAction="#manageSparePartsReqButton" style="-fx-background-color: #49b0ff;" text="Manage Spare Parts Requests" />
+      <Label layoutX="-3.0" layoutY="385.0" prefHeight="20.0" prefWidth="616.0" style="-fx-background-color: #49b0ff;" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="259.0" layoutY="386.0" prefHeight="18.0" prefWidth="103.0" text="Mission 9232 LDT." />
+      <Text fx:id="officerNameText" layoutX="424.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="132.5367431640625" />
+      <Button layoutX="490.0" layoutY="54.0" mnemonicParsing="false" onAction="#profileButton" style="-fx-background-color: #49b0ff;" text="Profile" />
+   </children>
 </AnchorPane>

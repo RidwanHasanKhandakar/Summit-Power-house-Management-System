@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.PreventiveMaintenanceViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="408.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.PreventiveMaintenanceViewController">
+   <children>
+      <Label layoutX="46.0" layoutY="58.0" text="Maintenance ID:" textFill="WHITE" />
+      <Label layoutX="47.0" layoutY="92.0" prefHeight="18.0" prefWidth="76.0" text="Generator ID:" textFill="WHITE" />
+      <Label layoutX="47.0" layoutY="129.0" prefHeight="18.0" prefWidth="62.0" text="Plant Unit:" textFill="WHITE" />
+      <Label layoutX="45.0" layoutY="162.0" text="Maintenance Type:" textFill="WHITE" />
+      <Label layoutX="46.0" layoutY="195.0" prefHeight="18.0" prefWidth="86.0" text="Scheduled Date:" textFill="WHITE" />
+      <Label layoutX="47.0" layoutY="229.0" text="Engineer Name:" textFill="WHITE" />
+      <Label layoutX="48.0" layoutY="264.0" text="Priority:" textFill="WHITE" />
+      <Label layoutX="48.0" layoutY="297.0" text="Maintenance Status:" textFill="WHITE" />
+      <Label layoutX="48.0" layoutY="335.0" prefHeight="18.0" prefWidth="62.0" text="Remarks:" textFill="WHITE" />
+      <Button layoutX="391.0" layoutY="345.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="454.0" layoutY="345.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="532.0" layoutY="345.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Label layoutX="180.0" layoutY="14.0" text="Schedule Preventive Maintenance" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="maintenanceIdTextField" layoutX="168.0" layoutY="54.0" prefHeight="22.0" prefWidth="150.0" />
+      <TextField fx:id="generatorIdTextField" layoutX="168.0" layoutY="88.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="engineerNameTextField" layoutX="168.0" layoutY="225.0" prefHeight="10.0" prefWidth="150.0" />
+      <ComboBox fx:id="plantUnitComboBox" layoutX="168.0" layoutY="125.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="maintenanceTypeComboBox" layoutX="168.0" layoutY="157.0" prefHeight="18.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="maintenanceStatusComboBox" layoutX="168.0" layoutY="293.0" prefHeight="18.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="priorityComboBox" layoutX="168.0" layoutY="260.0" prefHeight="18.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="scheduledDatePicker" layoutX="168.0" layoutY="191.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextArea fx:id="remarksTextArea" layoutX="168.0" layoutY="330.0" prefHeight="54.0" prefWidth="150.0" />
+   </children>
 </AnchorPane>
