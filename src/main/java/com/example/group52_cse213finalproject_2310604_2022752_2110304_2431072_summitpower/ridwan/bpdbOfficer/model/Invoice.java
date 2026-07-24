@@ -10,15 +10,19 @@ public class Invoice implements Serializable {
     private double amount;
     private LocalDate invoiceDate;
     private LocalDate dueDate;
+    private LocalDate paymentDate;
     private String paymentStatus;
+    private String remarks;
 
-    public Invoice(String invoiceId, String consumerName, double amount, LocalDate invoiceDate, LocalDate dueDate, String paymentStatus) {
+    public Invoice(String invoiceId, String consumerName, double amount, LocalDate invoiceDate, LocalDate dueDate, LocalDate paymentDate, String paymentStatus, String remarks) {
         this.invoiceId = invoiceId;
         this.consumerName = consumerName;
         this.amount = amount;
         this.invoiceDate = invoiceDate;
         this.dueDate = dueDate;
+        this.paymentDate = paymentDate;
         this.paymentStatus = paymentStatus;
+        this.remarks = remarks;
     }
 
     public String getInvoiceId() {
@@ -61,12 +65,28 @@ public class Invoice implements Serializable {
         this.dueDate = dueDate;
     }
 
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
+    }
+
     public String getPaymentStatus() {
         return paymentStatus;
     }
 
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 
     @Override
@@ -77,7 +97,9 @@ public class Invoice implements Serializable {
                 ", amount=" + amount +
                 ", invoiceDate=" + invoiceDate +
                 ", dueDate=" + dueDate +
+                ", paymentDate=" + paymentDate +
                 ", paymentStatus='" + paymentStatus + '\'' +
+                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }
