@@ -5,6 +5,8 @@ import java.time.LocalDate;
 
 public class Invoice implements Serializable {
 
+    private static final long serialVersionUID = 1l;
+
     private String invoiceId;
     private String consumerName;
     private double amount;
