@@ -5,8 +5,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class MonitorGeneratorStatusViewController
-{
+public class MonitorGeneratorStatusViewController {
     @javafx.fxml.FXML
     private TextField powerOutputTextField;
     @javafx.fxml.FXML
@@ -30,10 +29,12 @@ public class MonitorGeneratorStatusViewController
 
     @javafx.fxml.FXML
     public void initialize() {
-        plantUnitComBox.getItems().addAll("Unit 1",
+        plantUnitComBox.getItems().addAll(
+                "Unit 1",
                 "Unit 2",
                 "Unit 3",
-                "Unit 4");
+                "Unit 4"
+        );
     }
 
     @javafx.fxml.FXML
@@ -43,8 +44,20 @@ public class MonitorGeneratorStatusViewController
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
-        }
+        generatorIdTextField.clear();
+        runningStatusTextField.clear();
+        powerOutputTextField.clear();
+        voltageTextField.clear();
+        frequencyTextField.clear();
+        fuelLevelTextField.clear();
+        engineTemperatureTextField.clear();
+        runningHoursTextField.clear();
+
+        plantUnitComBox.getSelectionModel().clearSelection();
+
+        maintenanceDateDatePicker.setValue(null);
     }
+
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
