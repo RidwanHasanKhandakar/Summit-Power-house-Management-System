@@ -31,7 +31,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="plantPerformanceTableView" layoutX="35.0" layoutY="470.0" prefHeight="285.0" prefWidth="1192.0">
+      <TableView fx:id="plantPerformanceTableView" layoutX="35.0" layoutY="470.0" prefHeight="195.0" prefWidth="1192.0">
         <columns>
           <TableColumn fx:id="startingDateCol" prefWidth="259.0" text="Starting Date" />
           <TableColumn fx:id="endingDateCol" prefWidth="227.0" text="Ending Date" />
@@ -40,5 +40,11 @@
             <TableColumn fx:id="performanceStatusCol" prefWidth="284.0" text="Performance Status" />
         </columns>
       </TableView>
+      <Label fx:id="effieciencyLabel" layoutX="459.0" layoutY="749.0" prefHeight="64.0" prefWidth="333.0" text="Effiency:" textFill="WHITE" />
+      <Button layoutX="465.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleShowPlantEfficiency" prefHeight="31.0" prefWidth="322.0" style="-fx-background-color: #49b0ff;" text="Show Plant Efficiency">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

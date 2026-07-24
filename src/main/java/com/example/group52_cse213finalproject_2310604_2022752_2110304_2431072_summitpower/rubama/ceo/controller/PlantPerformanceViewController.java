@@ -2,6 +2,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -23,6 +24,8 @@ public class PlantPerformanceViewController
     private TableView plantPerformanceTableView;
     @javafx.fxml.FXML
     private TableColumn performanceStatusCol;
+    @javafx.fxml.FXML
+    private Label effieciencyLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,5 +33,9 @@ public class PlantPerformanceViewController
 
     @javafx.fxml.FXML
     public void handleShowPerformance(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleShowPlantEfficiency(ActionEvent actionEvent) {
     }
 }
