@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class PowerDemandRequest implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String requestId;
     private double reqCapacity;
     private LocalDate startDate;

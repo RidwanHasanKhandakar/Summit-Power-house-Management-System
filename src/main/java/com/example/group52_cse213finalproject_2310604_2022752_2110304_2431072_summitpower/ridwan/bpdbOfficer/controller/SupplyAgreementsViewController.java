@@ -64,7 +64,7 @@ public class SupplyAgreementsViewController
         idCol.setCellValueFactory(new PropertyValueFactory<>("agreementId"));
         conNameCol.setCellValueFactory(new PropertyValueFactory<>("consumerName"));
         startDateCol.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-        statusCol.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         capacityCol.setCellValueFactory(new PropertyValueFactory<>("capacity"));
         agreeTypeCol.setCellValueFactory(new PropertyValueFactory<>("agreementType"));
         EndDateCol.setCellValueFactory(new PropertyValueFactory<>("endDate"));
@@ -83,13 +83,14 @@ public class SupplyAgreementsViewController
         String agreementId = agreementIdTextField.getText().trim().toLowerCase();
         String consumerName = consumerNameTextField.getText().trim().toLowerCase();
 
-        String status = filterByStatusComboBox.getValue();
-        String type = filterByAgreementTypeComboBox.getValue();
+        String status = filterByStatusComboBox.getValue() == null ? "All" : filterByStatusComboBox.getValue();
+        String type = filterByAgreementTypeComboBox.getValue() == null ? "All" : filterByAgreementTypeComboBox.getValue();
 
         ObservableList<SupplyAgreement> filtered = FXCollections.observableArrayList();
 
         for(SupplyAgreement agreement : SupplyAgreementFileHandler.readAll()){
             boolean match = true;
+
             if (!agreementId.isEmpty()&&!agreement.getAgreementId().toLowerCase().contains(agreementId)){
                 match=false;
             }
@@ -97,19 +98,20 @@ public class SupplyAgreementsViewController
                 match=false;
             }
             if(!status.equals("All") &&
-                    !agreement.getStatus().equals(status))
-                match=false;
+                    !agreement.getStatus().equals(status)) {
+                match = false;
+            }
 
             if(!type.equals("All") &&
-                    !agreement.getAgreementType().equals(type))
-                match=false;
+                    !agreement.getAgreementType().equals(type)) {
+                match = false;
+            }
             if (match){
                 filtered.add(agreement);
             }
 
-            supplyAgreementTableView.setItems(filtered);
-
         }
+        supplyAgreementTableView.setItems(filtered);
 
     }
 
@@ -126,8 +128,7 @@ public class SupplyAgreementsViewController
     }
 
     private void loadTable(){
-        ObservableList<SupplyAgreement> list = FXCollections.observableArrayList();
-        list.addAll(SupplyAgreementFileHandler.readAll());
+        ObservableList<SupplyAgreement> list = FXCollections.observableArrayList(SupplyAgreementFileHandler.readAll());
         supplyAgreementTableView.setItems(list);
     }
 
