@@ -15,55 +15,55 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="88.0" style="-fx-text-fill: white;" text="Equipment ID:">
+      <Label layoutX="14.0" layoutY="88.0" style="-fx-text-fill: white;" text="Equipment ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="129.0" style="-fx-text-fill: white;" text="Equipment Name:">
+      <Label layoutX="14.0" layoutY="129.0" style="-fx-text-fill: white;" text="Equipment Name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="371.0" layoutY="79.0" style="-fx-text-fill: white;" text="Category:">
+      <Label layoutX="319.0" layoutY="86.0" style="-fx-text-fill: white;" text="Category:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="382.0" layoutY="120.0" style="-fx-text-fill: white;" text="Vendor:">
+      <Label layoutX="317.0" layoutY="129.0" style="-fx-text-fill: white;" text="Vendor:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="168.0" style="-fx-text-fill: white;" text="Quantity:">
+      <Label layoutX="14.0" layoutY="168.0" style="-fx-text-fill: white;" text="Quantity:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="369.0" layoutY="159.0" style="-fx-text-fill: white;" text="Unit Price:">
+      <Label layoutX="317.0" layoutY="170.0" style="-fx-text-fill: white;" text="Unit Price:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="148.0" layoutY="82.0" />
-      <TextField layoutX="148.0" layoutY="123.0" />
-      <TextField layoutX="149.0" layoutY="164.0" />
-      <TextField layoutX="436.0" layoutY="157.0" />
-      <Label layoutX="27.0" layoutY="211.0" style="-fx-text-fill: white;" text="Purchase Date:">
+      <TextField layoutX="123.0" layoutY="82.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField layoutX="123.0" layoutY="123.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField layoutX="124.0" layoutY="164.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField layoutX="426.0" layoutY="166.0" prefHeight="26.0" prefWidth="175.0" />
+      <Label layoutX="12.0" layoutY="211.0" style="-fx-text-fill: white;" text="Purchase Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <DatePicker layoutX="124.0" layoutY="207.0" />
-      <Label layoutX="313.0" layoutY="213.0" style="-fx-text-fill: white;" text="Warranty Expiry:">
+      <Label layoutX="317.0" layoutY="211.0" style="-fx-text-fill: white;" text="Warranty Expiry:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="410.0" layoutY="209.0" />
-      <ComboBox layoutX="435.0" layoutY="75.0" prefWidth="150.0" />
-      <Button layoutX="210.0" layoutY="265.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Add Equipment" />
+      <DatePicker layoutX="427.0" layoutY="207.0" />
+      <ComboBox layoutX="425.0" layoutY="82.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="210.0" layoutY="281.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Add Equipment" />
       <Label alignment="CENTER" layoutY="419.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <ComboBox layoutX="435.0" layoutY="116.0" prefWidth="150.0" />
+      <ComboBox layoutX="425.0" layoutY="125.0" prefHeight="26.0" prefWidth="175.0" />
    </children>
 </AnchorPane>
