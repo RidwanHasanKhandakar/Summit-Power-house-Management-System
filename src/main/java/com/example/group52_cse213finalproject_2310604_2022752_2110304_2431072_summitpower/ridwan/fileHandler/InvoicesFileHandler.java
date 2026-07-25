@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.Invoice;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 //import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.SupplyAgreement;
 
 import java.io.*;
@@ -12,11 +14,11 @@ public class InvoicesFileHandler {
 
         public static void save(Invoice invoice){
 
-            ArrayList<Invoice> list = readAll();
+            ObservableList<Invoice> list = readAll();
             list.add(invoice);
             try{
                 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream((FILE_PATH)));
-                oos.writeObject(list);;
+                oos.writeObject(new ArrayList<>(list));
                 oos.close();
             }catch (IOException e){
                 e.printStackTrace();
@@ -25,21 +27,24 @@ public class InvoicesFileHandler {
         }
 
         @SuppressWarnings("unchecked")
-        public static ArrayList<Invoice> readAll(){
+        public static ObservableList<Invoice> readAll(){
 
             File file = new File(FILE_PATH);
-
             if (!file.exists()||file.length()==0){
-                return new ArrayList<>();
+                return FXCollections.observableArrayList();
             }
 
             try{
+
                 ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH));
                 ArrayList<Invoice> list = (ArrayList<Invoice>) ois.readObject();
                 ois.close();
-                return list;
+
+                return FXCollections.observableArrayList(list);
+
             }catch (Exception e){
-                return new ArrayList<>();
+                e.printStackTrace();
+                return FXCollections.observableArrayList();
             }
 
         }
