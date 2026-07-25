@@ -17,7 +17,7 @@ public class PowerDemandRequestFileHandler {
             e.printStackTrace();
         }
     }
-    public  static ArrayList<PowerDemandRequest> readAll(){
+    public static ArrayList<PowerDemandRequest> readAll(){
         File file = new File(FILE_NAME);
         if(!file.exists()|| file.length()==0){
             return new ArrayList<>();
