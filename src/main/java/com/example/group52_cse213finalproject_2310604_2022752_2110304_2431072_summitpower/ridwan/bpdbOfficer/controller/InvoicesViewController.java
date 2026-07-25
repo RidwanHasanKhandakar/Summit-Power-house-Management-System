@@ -33,7 +33,7 @@ public class InvoicesViewController
     @javafx.fxml.FXML
     private TableColumn <Invoice,String> nameCol;
     @javafx.fxml.FXML
-    private TableColumn <Invoice,Double> paymentCol;
+    private TableColumn <Invoice,LocalDate> paymentDateCol;
     @javafx.fxml.FXML
     private TextArea viewDetailsTextArea;
 
@@ -51,7 +51,7 @@ public class InvoicesViewController
         nameCol.setCellValueFactory(new PropertyValueFactory<>("consumerName"));
         amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
         dueDateCol.setCellValueFactory(new PropertyValueFactory<>("dueDate"));
-        paymentCol.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
+        paymentDateCol.setCellValueFactory(new PropertyValueFactory<>("paymentDate"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("paymentStatus"));
 
         loadTable();
@@ -67,7 +67,11 @@ public class InvoicesViewController
     public void handleReloadTableButton(ActionEvent actionEvent) {
 
         invoicesIdTextField.clear();
+        consumerNameTextField.clear();
         viewDetailsTextArea.clear();
+
+        paymentStatusComboBox.setValue("All");
+
         loadTable();
 
     }
@@ -95,13 +99,22 @@ public class InvoicesViewController
     @javafx.fxml.FXML
     public void handleFilterInvoicesButton(ActionEvent actionEvent) {
 
-        String keyWord = invoicesIdTextField.getText().trim().toLowerCase();
-        ObservableList<Invoice> all = InvoicesFileHandler.readAll();
+        String invoiceID = invoicesIdTextField.getText().trim().toLowerCase();
+        String consumerName = consumerNameTextField.getText().trim().toLowerCase();
+        String status = paymentStatusComboBox.getValue();
+
         ObservableList<Invoice> filtered = FXCollections.observableArrayList();
-        for (Invoice invoice : all){
-            if(keyWord.isEmpty()||invoice.getInvoiceId().toLowerCase().contains(keyWord)||invoice.getConsumerName().toLowerCase().contains(keyWord)){
+
+        for (Invoice invoice : InvoicesFileHandler.readAll()){
+
+            boolean idM = invoiceID.isEmpty()||invoice.getInvoiceId().toLowerCase().contains(invoiceID);
+            boolean conM = consumerName.isEmpty()||invoice.getConsumerName().toLowerCase().contains(consumerName);
+            boolean statusM = status.equals("All")||invoice.getPaymentStatus().equalsIgnoreCase(status);
+
+            if (idM&&conM&&statusM){
                 filtered.add(invoice);
             }
+
         }
 
         invoicesTableView.setItems(filtered);
