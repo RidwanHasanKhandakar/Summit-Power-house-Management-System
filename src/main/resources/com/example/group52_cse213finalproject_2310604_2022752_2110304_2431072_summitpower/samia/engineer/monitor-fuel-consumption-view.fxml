@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="601.0" prefWidth="784.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.MonitorFuelConsumptionViewController">
+   <children>
+      <Text fill="WHITE" layoutX="109.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="109.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fuel Type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="109.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fuel Consumed (L):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="109.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating Hours:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="106.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitoring Date:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="106.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remarks:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="generatorIdTextField" layoutX="268.0" layoutY="91.0" prefHeight="26.0" prefWidth="181.0" />
+      <TextArea fx:id="remarksTextArea" layoutX="255.0" layoutY="436.0" prefHeight="84.0" prefWidth="202.0" />
+      <TextField fx:id="operatingHoursTextField" layoutX="268.0" layoutY="310.0" prefHeight="26.0" prefWidth="181.0" />
+      <TextField fx:id="fuelConsumedTextField" layoutX="268.0" layoutY="235.0" prefHeight="26.0" prefWidth="181.0" />
+      <ComboBox fx:id="fuelTypeComboBox" layoutX="267.0" layoutY="163.0" prefHeight="26.0" prefWidth="182.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="monitoringDatePicker" layoutX="267.0" layoutY="380.0" prefHeight="26.0" prefWidth="182.0" />
+      <Text fill="WHITE" layoutX="268.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor Fuel Consumption">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="495.0" layoutY="537.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="588.0" layoutY="537.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="698.0" layoutY="537.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+   </children>
+</AnchorPane>

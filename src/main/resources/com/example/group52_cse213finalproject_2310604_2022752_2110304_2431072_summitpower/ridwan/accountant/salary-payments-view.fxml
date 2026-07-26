@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="447.0" prefWidth="611.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.SalaryPaymentsViewController">
+   <children>
+      <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="644.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Button layoutX="578.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Label layoutX="35.0" layoutY="91.0" text="Select Month : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="14.0" text="Salary Management" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="155.0" text="Payment Method : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="219.0" text="Payment Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectMonthComboBox" layoutX="218.0" layoutY="88.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="paymentComboBox" layoutX="218.0" layoutY="152.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="paymentdateDatePicker" layoutX="218.0" layoutY="216.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <TableView fx:id="salaryTableView" layoutX="35.0" layoutY="268.0" prefHeight="152.0" prefWidth="415.0" style="-fx-background-color: #49b0ff;">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="departmentCol" prefWidth="75.0" text="Department" />
+            <TableColumn fx:id="salaryCol" prefWidth="75.0" text="Salary" />
+            <TableColumn fx:id="paymentCol" prefWidth="114.0" text="Payment Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="518.0" layoutY="152.0" mnemonicParsing="false" onAction="#handleLoadSalariesButton" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #49b0ff;" text="Load Salaries" />
+      <Button layoutX="517.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleProcessPaymentButton" style="-fx-background-color: #49b0ff;" text="Process Payment" />
+      <Button layoutX="471.0" layoutY="395.0" mnemonicParsing="false" onAction="#handleRefreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="429.0" layoutY="216.0" mnemonicParsing="false" onAction="#handleClearButton" style="-fx-background-color: #49b0ff;" text="Clear" />
+   </children>
+</AnchorPane>
