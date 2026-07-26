@@ -1,4 +1,4 @@
-package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.commonFiles;
+package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.commonFiles;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
@@ -65,13 +65,13 @@ public class SignUpViewController
             User user = new User(fName,lName,address,phone,gendar,id,email,pw);
             showSuc("Accountant Created Successfully");
 
-            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml", "Log in!");
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
         }
     }
 
     @javafx.fxml.FXML
     public void handleAlreadyHaveAnAccount(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"commonFiles","log-in-view.fxml","Log In!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles","log-in-view.fxml","Log In!");
     }
     public void showError(String txt){
         Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -56,7 +56,8 @@
       <ComboBox layoutX="432.0" layoutY="152.0" prefWidth="150.0" />
       <ComboBox layoutX="127.0" layoutY="145.0" prefWidth="150.0" />
       <ComboBox layoutX="127.0" layoutY="184.0" prefWidth="150.0" />
-      <Button layoutX="211.0" layoutY="302.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
+      <Button layoutX="211.0" layoutY="380.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Button layoutX="522.0" layoutY="380.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
