@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -47,5 +49,14 @@
       <Button layoutX="210.0" layoutY="376.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Generate Slip" />
       <Label alignment="CENTER" layoutY="419.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="553.0" layoutY="376.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView layoutX="-1.0" layoutY="219.0" prefHeight="122.0" prefWidth="622.0">
+        <columns>
+          <TableColumn prefWidth="117.60003662109375" text="Work Order ID" />
+            <TableColumn prefWidth="139.199951171875" text="Equipment ID" />
+            <TableColumn prefWidth="160.0" text="Requester Employee ID" />
+            <TableColumn prefWidth="111.2000732421875" text="Quantity Required" />
+            <TableColumn prefWidth="95.99993896484375" text="Issue Date" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
