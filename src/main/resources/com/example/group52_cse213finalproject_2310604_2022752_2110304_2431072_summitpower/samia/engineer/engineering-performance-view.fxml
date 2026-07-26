@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -10,7 +12,7 @@
 
 <AnchorPane prefHeight="565.0" prefWidth="740.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.EngineeringPerformanceViewController">
    <children>
-      <Text fill="WHITE" layoutX="328.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
+      <Text fill="WHITE" layoutX="390.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
          <font>
             <Font size="14.0" />
          </font>
@@ -20,12 +22,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="328.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Output (MW):">
+      <Text fill="WHITE" layoutX="390.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Output (MW):">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="78.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Efficiency (%):">
+      <Text fill="WHITE" layoutX="49.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Efficiency (%):">
          <font>
             <Font size="14.0" />
          </font>
@@ -35,7 +37,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="47.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report ID:">
+      <Text fill="WHITE" layoutX="49.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report ID:">
          <font>
             <Font size="14.0" />
          </font>
@@ -45,20 +47,34 @@
             <Font name="Times New Roman Bold" size="25.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="78.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance Status:">
+      <Text fill="WHITE" layoutX="47.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="reportIdTextField" layoutX="135.0" layoutY="99.0" prefHeight="26.0" prefWidth="149.0" />
-      <TextField fx:id="generatorIdTextField" layoutX="482.0" layoutY="96.0" prefHeight="26.0" prefWidth="150.0" />
-      <TextField fx:id="powerOutputTextField" layoutX="483.0" layoutY="152.0" prefHeight="26.0" prefWidth="150.0" />
-      <TextField fx:id="efficiencyTextField" layoutX="231.0" layoutY="446.0" prefHeight="26.0" prefWidth="162.0" />
-      <ComboBox fx:id="performanceStatusComboBox" layoutX="230.0" layoutY="376.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #49b0ff;" />
-      <DatePicker fx:id="reportDatePicker" layoutX="135.0" layoutY="156.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button layoutX="164.0" layoutY="500.0" mnemonicParsing="false" onAction="#generateReportButton" style="-fx-background-color: #49b0ff;" text="Generate Report" />
-      <Button layoutX="554.0" layoutY="500.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="650.0" layoutY="500.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
-      <Button layoutX="473.0" layoutY="500.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <TextField fx:id="reportIdTextField" layoutX="193.0" layoutY="89.0" prefHeight="26.0" prefWidth="149.0" />
+      <TextField fx:id="generatorIdTextField" layoutX="529.0" layoutY="93.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="powerOutputTextField" layoutX="529.0" layoutY="155.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="efficiencyTextField" layoutX="193.0" layoutY="279.0" prefHeight="26.0" prefWidth="150.0" />
+      <ComboBox fx:id="performanceStatusComboBox" layoutX="193.0" layoutY="215.0" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="reportDatePicker" layoutX="193.0" layoutY="156.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button layoutX="479.0" layoutY="252.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" text="Generate Report" />
+      <Button layoutX="554.0" layoutY="508.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="651.0" layoutY="508.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="472.0" layoutY="508.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Text fill="WHITE" layoutX="295.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Generated Reports">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableView" layoutX="48.0" layoutY="372.0" prefHeight="121.0" prefWidth="643.0">
+        <columns>
+          <TableColumn fx:id="reportIdTabCol" prefWidth="133.5999984741211" style="background color: #49b0ff;" text="Report ID" />
+          <TableColumn fx:id="generatorIdTabCol" prefWidth="131.20001220703125" style="background color: #49b0ff;" text="Generator ID" />
+            <TableColumn fx:id="powerOutputTabCol" prefWidth="124.0" style="background color: #49b0ff;" text="Power Output" />
+            <TableColumn fx:id="efficiencyTabCol" prefWidth="114.40005493164062" style="background color: #49b0ff;" text="Efficiency" />
+            <TableColumn fx:id="performanceStatusTabCol" prefWidth="149.5999755859375" style="background color: #49b0ff;" text="Performance Status" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
