@@ -38,4 +38,8 @@ public class PlantPerformanceViewController
     @javafx.fxml.FXML
     public void handleShowPlantEfficiency(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }

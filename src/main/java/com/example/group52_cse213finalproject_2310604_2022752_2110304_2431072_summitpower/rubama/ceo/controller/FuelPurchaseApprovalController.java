@@ -28,4 +28,8 @@ public class FuelPurchaseApprovalController
     @javafx.fxml.FXML
     public void handlePendingFuelRequests(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }

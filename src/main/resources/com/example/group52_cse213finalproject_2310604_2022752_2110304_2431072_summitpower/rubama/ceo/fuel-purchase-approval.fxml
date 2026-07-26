@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="822.0" prefWidth="1204.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.FuelPurchaseApprovalController">
    <children>
       <Label alignment="CENTER" layoutY="822.0" prefHeight="31.0" prefWidth="1253.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
@@ -29,5 +28,10 @@
       </TableView>
       <Button layoutX="934.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApproveNot" prefHeight="53.0" prefWidth="153.0" text="Approve Not" />
       <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleAprove" prefHeight="53.0" prefWidth="153.0" text="Approve" />
+      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

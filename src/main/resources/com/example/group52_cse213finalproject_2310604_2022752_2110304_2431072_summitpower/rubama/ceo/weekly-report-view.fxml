@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="795.0" prefWidth="1221.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.WeeklyReportViewController">
    <children>
       <Label alignment="CENTER" layoutX="-6.0" layoutY="824.0" prefHeight="39.0" prefWidth="1269.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
@@ -46,5 +45,10 @@
          </font>
       </Button>
       <Label fx:id="weeklyReportLabel" layoutX="475.0" layoutY="750.0" prefHeight="64.0" prefWidth="333.0" text="Weekly Report:" textFill="WHITE" />
+      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

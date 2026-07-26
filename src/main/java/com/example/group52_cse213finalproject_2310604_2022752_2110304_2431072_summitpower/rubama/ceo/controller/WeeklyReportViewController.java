@@ -38,4 +38,8 @@ public class WeeklyReportViewController
     @javafx.fxml.FXML
     public void handleGenerateWeeklyReport(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }

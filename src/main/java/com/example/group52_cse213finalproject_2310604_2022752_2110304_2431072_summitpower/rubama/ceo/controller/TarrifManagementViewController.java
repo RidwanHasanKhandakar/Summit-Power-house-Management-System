@@ -27,4 +27,8 @@ public class TarrifManagementViewController
     @javafx.fxml.FXML
     public void handleSetTarrif(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }
