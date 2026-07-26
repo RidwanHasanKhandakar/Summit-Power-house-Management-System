@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="824.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.CeoDashboardViewController">
+<AnchorPane prefHeight="824.0" prefWidth="1238.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.CeoDashboardViewController">
    <children>
-      <Label layoutX="469.0" layoutY="22.0" prefHeight="64.0" prefWidth="308.0" text="CEO Dashboard" textOverrun="WORD_ELLIPSIS" underline="true">
+      <Label alignment="CENTER" layoutY="794.0" prefHeight="31.0" prefWidth="1238.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
+      <Button layoutX="1063.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="54.0" prefWidth="128.0" style="-fx-background-color: #49b0ff;" text="Log Out">
          <font>
-            <Font size="43.0" />
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="467.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleCheckFinancialSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Check financial summary" />
+      <Button layoutX="467.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleSetOrChangeTariffRates" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text=" Set or change tariff rates" />
+      <Button layoutX="467.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleViewPlantPerformanceSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View plant performance summary">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="467.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleApproveFuelPurchaseRequest" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Approve fuel purchase request" />
+      <Button layoutX="467.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleAddOrRemoveAnEmployee" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Add or remove an employee" />
+      <Button layoutX="467.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleViewTotalRegisteredCustomers" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View total registered customers" />
+      <Button layoutX="467.0" layoutY="578.0" mnemonicParsing="false" onAction="#handleViewCustomerComplaintSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View customer complaint summary" />
+      <Button layoutX="467.0" layoutY="637.0" mnemonicParsing="false" onAction="#handleGenerateWeeklyReport" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Generate weekly report" />
+      <Label layoutX="452.0" layoutY="48.0" prefHeight="64.0" prefWidth="289.0" text="CEO Dashboard" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Times New Roman" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="510.0" layoutY="86.0" prefHeight="72.0" prefWidth="226.0" text="Welcome, CEO!">
+      <Label layoutX="498.0" layoutY="112.0" prefHeight="54.0" prefWidth="197.0" text="Welcome, CEO!" textFill="#fffefe">
          <font>
-            <Font size="32.0" />
+            <Font size="28.0" />
          </font>
       </Label>
-      <TableView layoutX="60.0" layoutY="508.0" prefHeight="263.0" prefWidth="1118.0">
-        <columns>
-          <TableColumn prefWidth="248.0" text="Date " />
-          <TableColumn prefWidth="270.0" text="Activity" />
-            <TableColumn prefWidth="329.0" text="Performed By" />
-            <TableColumn prefWidth="322.0" text="Status" />
-        </columns>
-      </TableView>
-      <Label layoutX="50.0" layoutY="262.0" text="Today's Date:" />
-      <Label layoutX="50.0" layoutY="320.0" text="Label" />
-      <Label layoutX="50.0" layoutY="375.0" text="Label" />
-      <Label layoutX="50.0" layoutY="439.0" text="Label" />
-      <DatePicker layoutX="158.0" layoutY="257.0" />
-      <Label layoutX="276.0" layoutY="179.0" text="Search Dashboard:" />
-      <TextField layoutX="417.0" layoutY="164.0" prefHeight="56.0" prefWidth="402.0" />
    </children>
 </AnchorPane>

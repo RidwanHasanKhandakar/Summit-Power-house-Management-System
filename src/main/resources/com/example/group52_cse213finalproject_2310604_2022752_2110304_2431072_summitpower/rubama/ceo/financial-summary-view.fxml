@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.FinancialSummaryViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="834.0" prefWidth="1249.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.FinancialSummaryViewController">
+   <children>
+      <Label alignment="CENTER" layoutY="832.0" prefHeight="31.0" prefWidth="1263.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
+      <Label layoutX="443.0" layoutY="56.0" prefHeight="64.0" prefWidth="344.0" text="Financial Summary" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Times New Roman" size="43.0" />
+         </font>
+      </Label>
+      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLoadFinancialSummary" prefHeight="53.0" prefWidth="902.0" style="-fx-background-color: #49b0ff;" text="Load Financial Summary">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="fromDatePicker" layoutX="428.0" layoutY="161.0" prefHeight="39.0" prefWidth="393.0" />
+      <DatePicker fx:id="toDatePicker" layoutX="430.0" layoutY="225.0" prefHeight="39.0" prefWidth="393.0" />
+      <Label layoutX="338.0" layoutY="166.0" text="From:" textFill="WHITE" />
+      <Label layoutX="338.0" layoutY="230.0" prefHeight="21.0" prefWidth="38.0" text="To:" textFill="WHITE" />
+      <TableView fx:id="financialSummaryTableView" layoutX="68.0" layoutY="432.0" prefHeight="365.0" prefWidth="1117.0">
+        <columns>
+          <TableColumn fx:id="dateCol" prefWidth="192.0" text="Date" />
+          <TableColumn fx:id="revenueCol" prefWidth="266.0" text="Revenue" />
+            <TableColumn fx:id="fuelCostCol" prefWidth="327.0" text="Fuel Cost" />
+            <TableColumn fx:id="operationalCostCol" prefWidth="331.0" text="Operational Cost" />
+        </columns>
+      </TableView>
+      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

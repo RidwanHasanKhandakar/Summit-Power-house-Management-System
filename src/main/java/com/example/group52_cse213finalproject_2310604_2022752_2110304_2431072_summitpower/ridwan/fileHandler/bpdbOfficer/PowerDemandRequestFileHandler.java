@@ -1,4 +1,4 @@
-package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler;
+package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.bpdbOfficer;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.PowerDemandRequest;
 
@@ -17,7 +17,7 @@ public class PowerDemandRequestFileHandler {
             e.printStackTrace();
         }
     }
-    public  static ArrayList<PowerDemandRequest> readAll(){
+    public static ArrayList<PowerDemandRequest> readAll(){
         File file = new File(FILE_NAME);
         if(!file.exists()|| file.length()==0){
             return new ArrayList<>();

@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.TarrifManagementViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="808.0" prefWidth="1214.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.TarrifManagementViewController">
+   <children>
+      <Label alignment="CENTER" layoutY="813.0" prefHeight="38.0" prefWidth="1258.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
+      <Label layoutX="442.0" layoutY="71.0" prefHeight="64.0" prefWidth="345.0" text="Tarrif Management" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Times New Roman" size="43.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="customerTypeComboBox" layoutX="603.0" layoutY="189.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="setTarrifRateTextField" layoutX="603.0" layoutY="250.0" />
+      <Button layoutX="442.0" layoutY="379.0" mnemonicParsing="false" onAction="#handleSetTarrif" prefHeight="31.0" prefWidth="375.0" style="-fx-background-color: #49b0ff;" text="Set Tarrif">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="466.0" layoutY="194.0" text="Customer Type:" textFill="WHITE" />
+      <Label layoutX="466.0" layoutY="255.0" prefHeight="21.0" prefWidth="104.0" text="Set Tarrif Rate:" textFill="WHITE" />
+      <TableView fx:id="tarrifTableView" layoutX="192.0" layoutY="472.0" prefHeight="260.0" prefWidth="890.0">
+        <columns>
+          <TableColumn fx:id="customerTypeCol" prefWidth="318.0" text="Customer Type" />
+          <TableColumn fx:id="tarrifRateCol" prefWidth="322.0" text="Tarrif Rate" />
+            <TableColumn fx:id="dateCol" prefWidth="249.0" text="Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="466.0" layoutY="319.0" prefHeight="21.0" prefWidth="95.0" text="Set Tarrif Till:" textFill="WHITE" />
+      <DatePicker fx:id="setTarrifDatePicker" layoutX="603.0" layoutY="314.0" prefHeight="31.0" prefWidth="187.0" />
+      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

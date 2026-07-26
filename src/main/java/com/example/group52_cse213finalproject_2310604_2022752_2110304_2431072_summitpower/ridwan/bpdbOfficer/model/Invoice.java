@@ -5,20 +5,24 @@ import java.time.LocalDate;
 
 public class Invoice implements Serializable {
 
+    private static final long serialVersionUID = 1l;
+
     private String invoiceId;
     private String consumerName;
     private double amount;
-    private LocalDate invoiceDate;
     private LocalDate dueDate;
+    private LocalDate paymentDate;
     private String paymentStatus;
+    private String remarks;
 
-    public Invoice(String invoiceId, String consumerName, double amount, LocalDate invoiceDate, LocalDate dueDate, String paymentStatus) {
+    public Invoice(String invoiceId, String consumerName, double amount, LocalDate dueDate, LocalDate paymentDate, String paymentStatus, String remarks) {
         this.invoiceId = invoiceId;
         this.consumerName = consumerName;
         this.amount = amount;
-        this.invoiceDate = invoiceDate;
         this.dueDate = dueDate;
+        this.paymentDate = paymentDate;
         this.paymentStatus = paymentStatus;
+        this.remarks = remarks;
     }
 
     public String getInvoiceId() {
@@ -45,20 +49,20 @@ public class Invoice implements Serializable {
         this.amount = amount;
     }
 
-    public LocalDate getInvoiceDate() {
-        return invoiceDate;
-    }
-
-    public void setInvoiceDate(LocalDate invoiceDate) {
-        this.invoiceDate = invoiceDate;
-    }
-
     public LocalDate getDueDate() {
         return dueDate;
     }
 
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+
+    public LocalDate getPaymentDate() {
+        return paymentDate;
+    }
+
+    public void setPaymentDate(LocalDate paymentDate) {
+        this.paymentDate = paymentDate;
     }
 
     public String getPaymentStatus() {
@@ -69,15 +73,24 @@ public class Invoice implements Serializable {
         this.paymentStatus = paymentStatus;
     }
 
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
+    }
+
     @Override
     public String toString() {
         return "Invoice{" +
                 "invoiceId='" + invoiceId + '\'' +
                 ", consumerName='" + consumerName + '\'' +
                 ", amount=" + amount +
-                ", invoiceDate=" + invoiceDate +
                 ", dueDate=" + dueDate +
+                ", paymentDate=" + paymentDate +
                 ", paymentStatus='" + paymentStatus + '\'' +
+                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }
