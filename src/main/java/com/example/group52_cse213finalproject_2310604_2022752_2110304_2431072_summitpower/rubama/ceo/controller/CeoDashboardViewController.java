@@ -5,46 +5,52 @@ import javafx.scene.control.*;
 
 public class CeoDashboardViewController
 {
-    @javafx.fxml.FXML
-    private TableColumn activityCol;
-    @javafx.fxml.FXML
-    private DatePicker dateDatePicker;
-    @javafx.fxml.FXML
-    private TextField searchDashboardTextField;
-    @javafx.fxml.FXML
-    private TextField revenueTextField;
-    @javafx.fxml.FXML
-    private Label filteredTableView;
-    @javafx.fxml.FXML
-    private ComboBox pendingRequestComboBox;
-    @javafx.fxml.FXML
-    private TableColumn performedByCol;
-    @javafx.fxml.FXML
-    private ComboBox userComboBox;
-    @javafx.fxml.FXML
-    private TableColumn dateCol;
-    @javafx.fxml.FXML
-    private TableColumn statusCol;
-    @javafx.fxml.FXML
-    private TableView ceoTableView;
-    @javafx.fxml.FXML
-    private ComboBox pendingComplaintsComboBox;
-    @javafx.fxml.FXML
-    private TextField totalGenerationTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleSearch(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void handleRefresh(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void handleLogOut(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleSetOrChangeTariffRates(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleAddOrRemoveAnEmployee(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleViewCustomerComplaintSummary(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleViewPlantPerformanceSummary(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleViewTotalRegisteredCustomers(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleApproveFuelPurchaseRequest(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleGenerateWeeklyReport(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void handleCheckFinancialSummary(ActionEvent actionEvent) {
     }
 }
