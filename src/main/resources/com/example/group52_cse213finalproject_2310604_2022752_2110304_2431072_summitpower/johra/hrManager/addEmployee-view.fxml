@@ -96,5 +96,6 @@
       <ComboBox layoutX="437.0" layoutY="236.0" prefHeight="26.0" prefWidth="175.0" />
       <ComboBox layoutX="110.0" layoutY="274.0" prefHeight="26.0" prefWidth="179.0" />
       <ComboBox layoutX="110.0" layoutY="313.0" prefHeight="26.0" prefWidth="179.0" />
+      <Button layoutX="565.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
