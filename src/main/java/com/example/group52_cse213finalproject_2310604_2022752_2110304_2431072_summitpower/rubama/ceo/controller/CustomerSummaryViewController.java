@@ -29,4 +29,8 @@ public class CustomerSummaryViewController
     @javafx.fxml.FXML
     public void handleShowCustomerSummary(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }

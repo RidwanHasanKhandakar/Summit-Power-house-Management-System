@@ -37,4 +37,8 @@ public class ComplaintSummaryViewController
     @javafx.fxml.FXML
     public void handleViewComplaints(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }
