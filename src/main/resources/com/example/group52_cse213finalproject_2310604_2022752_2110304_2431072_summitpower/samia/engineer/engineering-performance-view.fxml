@@ -8,20 +8,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="565.0" prefWidth="740.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.EngineeringPerformanceViewController">
    <children>
-      <Text fill="WHITE" layoutX="79.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
+      <Text fill="WHITE" layoutX="328.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="79.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:">
+      <Text fill="WHITE" layoutX="47.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="79.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Output (MW):">
+      <Text fill="WHITE" layoutX="328.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Power Output (MW):">
          <font>
             <Font size="14.0" />
          </font>
@@ -36,7 +35,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="79.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report ID:">
+      <Text fill="WHITE" layoutX="47.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report ID:">
          <font>
             <Font size="14.0" />
          </font>
@@ -51,12 +50,12 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="reportIdTextField" layoutX="231.0" layoutY="100.0" prefHeight="26.0" prefWidth="162.0" />
-      <TextField fx:id="generatorIdTextField" layoutX="231.0" layoutY="163.0" prefHeight="26.0" prefWidth="162.0" />
-      <TextField fx:id="powerOutputTextField" layoutX="231.0" layoutY="305.0" prefHeight="26.0" prefWidth="162.0" />
+      <TextField fx:id="reportIdTextField" layoutX="135.0" layoutY="99.0" prefHeight="26.0" prefWidth="149.0" />
+      <TextField fx:id="generatorIdTextField" layoutX="482.0" layoutY="96.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="powerOutputTextField" layoutX="483.0" layoutY="152.0" prefHeight="26.0" prefWidth="150.0" />
       <TextField fx:id="efficiencyTextField" layoutX="231.0" layoutY="446.0" prefHeight="26.0" prefWidth="162.0" />
       <ComboBox fx:id="performanceStatusComboBox" layoutX="230.0" layoutY="376.0" prefHeight="26.0" prefWidth="162.0" style="-fx-background-color: #49b0ff;" />
-      <DatePicker fx:id="reportDatePicker" layoutX="231.0" layoutY="236.0" prefHeight="26.0" prefWidth="162.0" />
+      <DatePicker fx:id="reportDatePicker" layoutX="135.0" layoutY="156.0" prefHeight="26.0" prefWidth="150.0" />
       <Button layoutX="164.0" layoutY="500.0" mnemonicParsing="false" onAction="#generateReportButton" style="-fx-background-color: #49b0ff;" text="Generate Report" />
       <Button layoutX="554.0" layoutY="500.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
       <Button layoutX="650.0" layoutY="500.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
