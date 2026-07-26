@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.VendorManagementViewController">
+   <children>
+      <Label layoutX="180.0" layoutY="14.0" style="-fx-text-fill: white;" text="Vendor Management">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="107.0" style="-fx-text-fill: white;" text="Vendor ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="146.0" style="-fx-text-fill: white;" text="Vendor Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="98.0" style="-fx-text-fill: white;" text="Email:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="368.0" layoutY="139.0" style="-fx-text-fill: white;" text="Address:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="85.0" layoutY="187.0" style="-fx-text-fill: white;" text="Phone:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="187.0" style="-fx-text-fill: white;" text="Equipment Supplied:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="142.0" layoutY="101.0" />
+      <TextField layoutX="142.0" layoutY="142.0" />
+      <TextField layoutX="143.0" layoutY="183.0" />
+      <TextField layoutX="429.0" layoutY="183.0" />
+      <ComboBox layoutX="429.0" layoutY="135.0" prefWidth="150.0" />
+      <TextField layoutX="429.0" layoutY="94.0" />
+      <Button layoutX="202.0" layoutY="267.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+   </children>
+</AnchorPane>
