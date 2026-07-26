@@ -8,4 +8,6 @@ module com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
     opens com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.commonFiles to javafx.fxml;
     opens com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller to javafx.fxml;
     opens com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller to javafx.fxml;
+    opens com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller to javafx.fxml;
+    opens com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.controller to javafx.fxml;
 }
