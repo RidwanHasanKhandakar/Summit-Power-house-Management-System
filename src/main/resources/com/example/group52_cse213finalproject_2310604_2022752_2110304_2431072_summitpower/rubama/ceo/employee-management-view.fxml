@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="752.0" prefWidth="1200.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.EmployeeManagementViewController">
    <children>
       <Label alignment="CENTER" layoutY="822.0" prefHeight="31.0" prefWidth="1253.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
@@ -37,5 +36,10 @@
       <Label layoutX="426.0" layoutY="154.0" prefHeight="21.0" prefWidth="118.0" text="Employee Name:" textFill="WHITE" />
       <Label layoutX="426.0" layoutY="213.0" prefHeight="21.0" prefWidth="102.0" text="Employee ID:" textFill="WHITE" />
       <Label layoutX="426.0" layoutY="275.0" prefHeight="21.0" prefWidth="118.0" text="Role:" textFill="WHITE" />
+      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

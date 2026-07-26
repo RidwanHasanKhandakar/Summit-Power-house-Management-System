@@ -34,4 +34,8 @@ public class EmployeeManagementViewController
     @javafx.fxml.FXML
     public void handleAddEmployee(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }

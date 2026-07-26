@@ -29,4 +29,8 @@ public class FinancialSummaryViewController
     @javafx.fxml.FXML
     public void handleLoadFinancialSummary(ActionEvent actionEvent) {
     }
+
+    @javafx.fxml.FXML
+    public void handleReturn(ActionEvent actionEvent) {
+    }
 }
