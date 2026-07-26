@@ -35,7 +35,7 @@ public class LogInViewController
         } else if (userId.equals("acc")&&password.equals("321")) {
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan", "accountant", "accountant-dashboard-view.fxml","Accountant Dashboard!1");
         } else if(userId.equals("ceo")&&password.equals("123")){
-            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","ceo-dashboard-view.fxml","Ceo Dashboard!1");
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","ceo-dashboard-view.fxml","Ceo Dashboard!");
         }
     }
     public void showError(String txt){
