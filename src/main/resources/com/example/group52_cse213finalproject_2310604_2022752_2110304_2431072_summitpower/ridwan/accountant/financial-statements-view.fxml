@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController">
+<AnchorPane prefHeight="467.0" prefWidth="627.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController">
    <children>
       <Label layoutX="218.0" layoutY="14.0" text="Financial Statement" textFill="WHITE">
          <font>
@@ -19,7 +19,7 @@
          </font>
       </Label>
       <Button layoutX="555.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Label alignment="CENTER" layoutX="9.0" layoutY="449.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label alignment="CENTER" layoutY="449.0" prefHeight="18.0" prefWidth="641.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Label layoutX="20.0" layoutY="63.0" text="Statement Type : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
