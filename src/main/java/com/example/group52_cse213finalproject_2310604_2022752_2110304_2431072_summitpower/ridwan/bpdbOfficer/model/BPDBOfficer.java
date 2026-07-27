@@ -8,6 +8,7 @@ public class BPDBOfficer extends User implements Serializable {
     private String department;
     private String designation;
 
+
     public BPDBOfficer(String firstName, String lastName, String address, int phoneNumber, String gender, String userId, String email, String password, String department, String designation) {
         super(firstName, lastName, address, phoneNumber, gender, userId, email, password);
         this.department = department;
