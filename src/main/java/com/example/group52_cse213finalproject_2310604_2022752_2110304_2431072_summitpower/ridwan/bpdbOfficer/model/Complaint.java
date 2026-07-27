@@ -5,17 +5,21 @@ import java.time.LocalDate;
 
 public class Complaint implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String complaintId;
-    private String category;
-    private String description;
-    private LocalDate complaintDate;
+    private String complaintCategory;
+    private String complaintDescription;
+    private LocalDate affectedSupplyDate;
+    private LocalDate submissionDate;
     private String status;
 
-    public Complaint(String complaintId, String category, String description, LocalDate complaintDate, String status) {
+    public Complaint(String complaintId, String complaintCategory, String complaintDescription, LocalDate affectedSupplyDate, LocalDate submissionDate, String status) {
         this.complaintId = complaintId;
-        this.category = category;
-        this.description = description;
-        this.complaintDate = complaintDate;
+        this.complaintCategory = complaintCategory;
+        this.complaintDescription = complaintDescription;
+        this.affectedSupplyDate = affectedSupplyDate;
+        this.submissionDate = submissionDate;
         this.status = status;
     }
 
@@ -27,28 +31,36 @@ public class Complaint implements Serializable {
         this.complaintId = complaintId;
     }
 
-    public String getCategory() {
-        return category;
+    public String getComplaintCategory() {
+        return complaintCategory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setComplaintCategory(String complaintCategory) {
+        this.complaintCategory = complaintCategory;
     }
 
-    public String getDescription() {
-        return description;
+    public String getComplaintDescription() {
+        return complaintDescription;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setComplaintDescription(String complaintDescription) {
+        this.complaintDescription = complaintDescription;
     }
 
-    public LocalDate getComplaintDate() {
-        return complaintDate;
+    public LocalDate getAffectedSupplyDate() {
+        return affectedSupplyDate;
     }
 
-    public void setComplaintDate(LocalDate complaintDate) {
-        this.complaintDate = complaintDate;
+    public void setAffectedSupplyDate(LocalDate affectedSupplyDate) {
+        this.affectedSupplyDate = affectedSupplyDate;
+    }
+
+    public LocalDate getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(LocalDate submissionDate) {
+        this.submissionDate = submissionDate;
     }
 
     public String getStatus() {
@@ -63,9 +75,10 @@ public class Complaint implements Serializable {
     public String toString() {
         return "Complaint{" +
                 "complaintId='" + complaintId + '\'' +
-                ", category='" + category + '\'' +
-                ", description='" + description + '\'' +
-                ", complaintDate=" + complaintDate +
+                ", complaintCategory='" + complaintCategory + '\'' +
+                ", complaintDescription='" + complaintDescription + '\'' +
+                ", affectedSupplyDate=" + affectedSupplyDate +
+                ", submissionDate=" + submissionDate +
                 ", status='" + status + '\'' +
                 '}';
     }

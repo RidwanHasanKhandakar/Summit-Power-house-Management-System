@@ -116,11 +116,14 @@ public class PowerDemandRequestViewController
     public void handleClearButton(ActionEvent actionEvent) {
 
         clearForm();
+
     }
 
     @javafx.fxml.FXML
     public void handleHomeButton(ActionEvent actionEvent) {
+
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer", "bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!");
+
     }
 
     public void showError(String txt){

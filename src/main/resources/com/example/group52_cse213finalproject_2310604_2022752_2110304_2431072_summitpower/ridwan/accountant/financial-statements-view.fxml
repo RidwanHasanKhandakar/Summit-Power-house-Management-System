@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="467.0" prefWidth="627.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController">
+   <children>
+      <Label layoutX="218.0" layoutY="14.0" text="Financial Statement" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="555.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Label alignment="CENTER" layoutY="449.0" prefHeight="18.0" prefWidth="641.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label layoutX="20.0" layoutY="63.0" text="Statement Type : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="434.0" layoutY="63.0" text="Reporting Period" textFill="WHITE" underline="true">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="363.0" layoutY="105.0" text="From Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="363.0" layoutY="150.0" text="To Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="115.0" text="Statement Preview " textFill="WHITE" underline="true">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="statementTypeComboBox" layoutX="179.0" layoutY="60.0" prefHeight="25.0" prefWidth="133.0" />
+      <DatePicker fx:id="fromDateDatePicker" layoutX="460.0" layoutY="102.0" prefHeight="25.0" prefWidth="119.0" />
+      <DatePicker fx:id="toDateDatePicker" layoutX="460.0" layoutY="147.0" prefHeight="25.0" prefWidth="119.0" />
+      <Button layoutX="260.0" layoutY="184.0" mnemonicParsing="false" onAction="#handleGenStatement" style="-fx-background-color: #49b0ff;" text="Generate Statement" />
+      <Button layoutX="260.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleRefreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="342.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleClearButton" style="-fx-background-color: #49b0ff;" text="Clear" />
+      <TextArea fx:id="statementPreviewTextArea" layoutX="37.0" layoutY="150.0" prefHeight="282.0" prefWidth="200.0" />
+      <Label fx:id="totalRevLabel" layoutX="515.0" layoutY="200.0" prefHeight="17.0" prefWidth="104.0" />
+      <Label layoutX="397.0" layoutY="199.0" text="Total Revenue : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="397.0" layoutY="224.0" text="Total Expenses : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalExpensesLabel" layoutX="517.0" layoutY="225.0" prefHeight="17.0" prefWidth="104.0" />
+      <Label layoutX="397.0" layoutY="249.0" text="Net Profit : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="netProfitLabel" layoutX="517.0" layoutY="250.0" prefHeight="17.0" prefWidth="104.0" />
+      <TableView fx:id="finalcialStatementTableView" layoutX="245.0" layoutY="291.0" prefHeight="138.0" prefWidth="280.0">
+        <columns>
+          <TableColumn fx:id="accountCol" prefWidth="113.0" text="Account" />
+          <TableColumn fx:id="categoryCol" prefWidth="97.0" text="Category" />
+            <TableColumn fx:id="amountCol" prefWidth="69.0" text="Amount" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
