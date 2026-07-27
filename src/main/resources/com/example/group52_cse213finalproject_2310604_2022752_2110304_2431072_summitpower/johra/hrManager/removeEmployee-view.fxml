@@ -29,12 +29,12 @@
           <TableColumn prefWidth="81.60003507137299" text="Employee ID" />
           <TableColumn prefWidth="116.79993438720703" text="Employee Name" />
             <TableColumn prefWidth="99.99993896484375" text="Phone" />
-            <TableColumn prefWidth="114.39996337890625" text="Email" />
             <TableColumn prefWidth="69.60003662109375" text="DOB" />
             <TableColumn prefWidth="69.60003662109375" text="DOJ" />
             <TableColumn prefWidth="79.2000732421875" text="Department" />
-            <TableColumn prefWidth="79.2000732421875" text="Position" />
-            <TableColumn prefWidth="122.39992675781252" text="Address" />
+            <TableColumn prefWidth="127.20001220703125" text="Address" />
+            <TableColumn prefWidth="77.60003662109375" text="Position" />
+            <TableColumn prefWidth="121.60003662109375" text="Salary" />
         </columns>
       </TableView>
    </children>
