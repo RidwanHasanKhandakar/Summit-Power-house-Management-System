@@ -52,7 +52,7 @@ public class FinancialStatementsViewController
     @javafx.fxml.FXML
     public void handleHomeButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant","AccountantDashboardView.fxml","Accountant Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant","accountant-dashboard-view.fxml","Accountant Dashboard");
 
     }
 
