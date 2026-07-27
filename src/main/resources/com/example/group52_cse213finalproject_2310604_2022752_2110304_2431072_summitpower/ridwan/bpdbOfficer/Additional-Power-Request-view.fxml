@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,12 +16,39 @@
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="467.0" layoutY="74.0" text="Complaint Details" textFill="WHITE">
+      <Label layoutX="33.0" layoutY="70.0" text="Request ID : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="318.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleSubmitComplaintButton" style="-fx-background-color: #49b0ff;" text="Submit Complaint" />
+      <Button layoutX="451.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleSubmitRequestButton" style="-fx-background-color: #49b0ff;" text="Submit Request" />
       <Label alignment="CENTER" layoutY="386.0" prefHeight="18.0" prefWidth="667.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label layoutX="33.0" layoutY="115.0" text="Additional Capacity [MW] : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="388.0" layoutY="67.0" text="Start Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="391.0" layoutY="112.0" text="End Date : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="164.0" text="Justification : " textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="requestIDTextField" layoutX="242.0" layoutY="67.0" prefHeight="25.0" prefWidth="112.0" />
+      <TextField fx:id="additionalCapacityTextField" layoutX="242.0" layoutY="112.0" prefHeight="25.0" prefWidth="112.0" />
+      <DatePicker fx:id="startDateDatePicker" layoutX="486.0" layoutY="64.0" prefHeight="25.0" prefWidth="154.0" />
+      <DatePicker fx:id="endDateDatePicker" layoutX="486.0" layoutY="109.0" prefHeight="25.0" prefWidth="154.0" />
+      <TextArea fx:id="justificationTextArea" layoutX="132.0" layoutY="164.0" prefHeight="208.0" prefWidth="224.0" />
+      <Button layoutX="486.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleClearButton" style="-fx-background-color: #49b0ff;" text="Clear" />
+      <Button layoutX="584.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
