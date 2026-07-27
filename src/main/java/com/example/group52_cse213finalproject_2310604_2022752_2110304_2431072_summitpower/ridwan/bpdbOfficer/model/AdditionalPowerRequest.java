@@ -5,17 +5,21 @@ import java.time.LocalDate;
 
 public class AdditionalPowerRequest implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String requestId;
-    private double requestedCapacity;
+    private double additionalPowerCapacity;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private String justification;
-    private LocalDate requestDate;
     private String status;
 
-    public AdditionalPowerRequest(String requestId, double requestedCapacity, String justification, LocalDate requestDate, String status) {
+    public AdditionalPowerRequest(String requestId, double additionalPowerCapacity, LocalDate startDate, LocalDate endDate, String justification, String status) {
         this.requestId = requestId;
-        this.requestedCapacity = requestedCapacity;
+        this.additionalPowerCapacity = additionalPowerCapacity;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.justification = justification;
-        this.requestDate = requestDate;
         this.status = status;
     }
 
@@ -27,12 +31,28 @@ public class AdditionalPowerRequest implements Serializable {
         this.requestId = requestId;
     }
 
-    public double getRequestedCapacity() {
-        return requestedCapacity;
+    public double getAdditionalPowerCapacity() {
+        return additionalPowerCapacity;
     }
 
-    public void setRequestedCapacity(double requestedCapacity) {
-        this.requestedCapacity = requestedCapacity;
+    public void setAdditionalPowerCapacity(double additionalPowerCapacity) {
+        this.additionalPowerCapacity = additionalPowerCapacity;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
     }
 
     public String getJustification() {
@@ -41,14 +61,6 @@ public class AdditionalPowerRequest implements Serializable {
 
     public void setJustification(String justification) {
         this.justification = justification;
-    }
-
-    public LocalDate getRequestDate() {
-        return requestDate;
-    }
-
-    public void setRequestDate(LocalDate requestDate) {
-        this.requestDate = requestDate;
     }
 
     public String getStatus() {
@@ -63,9 +75,10 @@ public class AdditionalPowerRequest implements Serializable {
     public String toString() {
         return "AdditionalPowerRequest{" +
                 "requestId='" + requestId + '\'' +
-                ", requestedCapacity=" + requestedCapacity +
+                ", additionalPowerCapacity=" + additionalPowerCapacity +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 ", justification='" + justification + '\'' +
-                ", requestDate=" + requestDate +
                 ", status='" + status + '\'' +
                 '}';
     }
