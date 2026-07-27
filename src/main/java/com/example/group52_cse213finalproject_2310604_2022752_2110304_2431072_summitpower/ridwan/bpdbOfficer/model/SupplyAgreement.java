@@ -14,6 +14,9 @@ public class SupplyAgreement implements Serializable {
     private LocalDate endDate;
     private String status;
 
+    public SupplyAgreement() {
+    }
+
     public SupplyAgreement(String agreementId, String consumerName, String agreementType, double capacity, LocalDate startDate, LocalDate endDate, String status) {
         this.agreementId = agreementId;
         this.consumerName = consumerName;

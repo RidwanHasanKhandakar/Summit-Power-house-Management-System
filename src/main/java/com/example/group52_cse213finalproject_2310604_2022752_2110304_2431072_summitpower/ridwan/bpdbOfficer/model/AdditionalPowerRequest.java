@@ -14,6 +14,9 @@ public class AdditionalPowerRequest implements Serializable {
     private String justification;
     private String status;
 
+    public AdditionalPowerRequest() {
+    }
+
     public AdditionalPowerRequest(String requestId, double additionalPowerCapacity, LocalDate startDate, LocalDate endDate, String justification, String status) {
         this.requestId = requestId;
         this.additionalPowerCapacity = additionalPowerCapacity;

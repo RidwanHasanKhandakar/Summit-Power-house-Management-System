@@ -15,6 +15,9 @@ public class Invoice implements Serializable {
     private String paymentStatus;
     private String remarks;
 
+    public Invoice() {
+    }
+
     public Invoice(String invoiceId, String consumerName, double amount, LocalDate dueDate, LocalDate paymentDate, String paymentStatus, String remarks) {
         this.invoiceId = invoiceId;
         this.consumerName = consumerName;

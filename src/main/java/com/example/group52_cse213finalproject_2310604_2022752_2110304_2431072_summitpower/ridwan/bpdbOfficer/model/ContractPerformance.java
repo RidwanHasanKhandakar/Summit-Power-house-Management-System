@@ -16,6 +16,9 @@ public class ContractPerformance implements Serializable {
     private double fulfillmentPercentage;
     private String status;
 
+    public ContractPerformance() {
+    }
+
     public ContractPerformance(String contractID, String consumerName, LocalDate contractStartDate, LocalDate contractEndDate, double contractedCapacity, double suppliedCapacity, double fulfillmentPercentage, String status) {
         this.contractID = contractID;
         this.consumerName = consumerName;

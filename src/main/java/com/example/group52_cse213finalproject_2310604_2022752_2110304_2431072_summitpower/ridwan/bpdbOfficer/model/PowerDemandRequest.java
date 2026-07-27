@@ -13,6 +13,9 @@ public class PowerDemandRequest implements Serializable {
     private String purpose;
     private String remarks;
 
+    public PowerDemandRequest() {
+    }
+
     public PowerDemandRequest(String requestId, double reqCapacity, LocalDate startDate, LocalDate endDate, String priorityLevel, String purpose, String remarks) {
         this.requestId = requestId;
         this.reqCapacity = reqCapacity;

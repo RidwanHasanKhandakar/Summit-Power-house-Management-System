@@ -15,6 +15,9 @@ public class SupplyReport implements Serializable {
     private double transmissionLoss;
     private String remarks;
 
+    public SupplyReport() {
+    }
+
     public SupplyReport(String reportId, String reportType, LocalDate generatedDate, double generatedPower, double suppliedPower, double transmissionLoss, String remarks) {
         this.reportId = reportId;
         this.reportType = reportType;

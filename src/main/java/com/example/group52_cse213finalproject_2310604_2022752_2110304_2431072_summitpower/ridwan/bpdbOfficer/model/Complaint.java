@@ -13,6 +13,9 @@ public class Complaint implements Serializable {
     private LocalDate affectedSupplyDate;
     private String status;
 
+    public Complaint() {
+    }
+
     public Complaint(String complaintId, String complaintCategory, String complaintDescription, LocalDate affectedSupplyDate, String status) {
         this.complaintId = complaintId;
         this.complaintCategory = complaintCategory;
