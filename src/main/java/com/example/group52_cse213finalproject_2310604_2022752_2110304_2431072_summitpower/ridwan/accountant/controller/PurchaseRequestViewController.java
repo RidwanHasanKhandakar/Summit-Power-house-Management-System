@@ -1,7 +1,9 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.PurchaseRequest;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 
 public class PurchaseRequestViewController
@@ -60,6 +62,9 @@ public class PurchaseRequestViewController
 
     @javafx.fxml.FXML
     public void handleHomeButton(ActionEvent actionEvent) {
+
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "accountant", "accountant-dashboard-view.fxml","Accountant Dashboard");
+
     }
 
     @javafx.fxml.FXML
