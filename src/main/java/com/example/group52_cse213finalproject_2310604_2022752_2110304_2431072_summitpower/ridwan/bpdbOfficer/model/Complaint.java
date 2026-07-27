@@ -11,15 +11,13 @@ public class Complaint implements Serializable {
     private String complaintCategory;
     private String complaintDescription;
     private LocalDate affectedSupplyDate;
-    private LocalDate submissionDate;
     private String status;
 
-    public Complaint(String complaintId, String complaintCategory, String complaintDescription, LocalDate affectedSupplyDate, LocalDate submissionDate, String status) {
+    public Complaint(String complaintId, String complaintCategory, String complaintDescription, LocalDate affectedSupplyDate, String status) {
         this.complaintId = complaintId;
         this.complaintCategory = complaintCategory;
         this.complaintDescription = complaintDescription;
         this.affectedSupplyDate = affectedSupplyDate;
-        this.submissionDate = submissionDate;
         this.status = status;
     }
 
@@ -55,14 +53,6 @@ public class Complaint implements Serializable {
         this.affectedSupplyDate = affectedSupplyDate;
     }
 
-    public LocalDate getSubmissionDate() {
-        return submissionDate;
-    }
-
-    public void setSubmissionDate(LocalDate submissionDate) {
-        this.submissionDate = submissionDate;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -78,7 +68,6 @@ public class Complaint implements Serializable {
                 ", complaintCategory='" + complaintCategory + '\'' +
                 ", complaintDescription='" + complaintDescription + '\'' +
                 ", affectedSupplyDate=" + affectedSupplyDate +
-                ", submissionDate=" + submissionDate +
                 ", status='" + status + '\'' +
                 '}';
     }
