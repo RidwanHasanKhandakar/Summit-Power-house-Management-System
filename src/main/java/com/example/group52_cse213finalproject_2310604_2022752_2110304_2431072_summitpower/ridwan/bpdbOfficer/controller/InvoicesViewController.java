@@ -122,7 +122,9 @@ public class InvoicesViewController
     }
 
     public void loadTable(){
+
         invoicesTableView.setItems(InvoicesFileHandler.readAll());
+
     }
 
     public void showError(String txt){
