@@ -5,16 +5,24 @@ import java.time.LocalDate;
 
 public class SupplyReport implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private String reportId;
     private String reportType;
-    private LocalDate generateDate;
-    private String reportingPeriod;
+    private LocalDate generatedDate;
+    private double generatedPower;
+    private double suppliedPower;
+    private double transmissionLoss;
+    private String remarks;
 
-    public SupplyReport(String reportId, String reportType, LocalDate generateDate, String reportingPeriod) {
+    public SupplyReport(String reportId, String reportType, LocalDate generatedDate, double generatedPower, double suppliedPower, double transmissionLoss, String remarks) {
         this.reportId = reportId;
         this.reportType = reportType;
-        this.generateDate = generateDate;
-        this.reportingPeriod = reportingPeriod;
+        this.generatedDate = generatedDate;
+        this.generatedPower = generatedPower;
+        this.suppliedPower = suppliedPower;
+        this.transmissionLoss = transmissionLoss;
+        this.remarks = remarks;
     }
 
     public String getReportId() {
@@ -33,20 +41,44 @@ public class SupplyReport implements Serializable {
         this.reportType = reportType;
     }
 
-    public LocalDate getGenerateDate() {
-        return generateDate;
+    public LocalDate getGeneratedDate() {
+        return generatedDate;
     }
 
-    public void setGenerateDate(LocalDate generateDate) {
-        this.generateDate = generateDate;
+    public void setGeneratedDate(LocalDate generatedDate) {
+        this.generatedDate = generatedDate;
     }
 
-    public String getReportingPeriod() {
-        return reportingPeriod;
+    public double getGeneratedPower() {
+        return generatedPower;
     }
 
-    public void setReportingPeriod(String reportingPeriod) {
-        this.reportingPeriod = reportingPeriod;
+    public void setGeneratedPower(double generatedPower) {
+        this.generatedPower = generatedPower;
+    }
+
+    public double getSuppliedPower() {
+        return suppliedPower;
+    }
+
+    public void setSuppliedPower(double suppliedPower) {
+        this.suppliedPower = suppliedPower;
+    }
+
+    public double getTransmissionLoss() {
+        return transmissionLoss;
+    }
+
+    public void setTransmissionLoss(double transmissionLoss) {
+        this.transmissionLoss = transmissionLoss;
+    }
+
+    public String getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 
     @Override
@@ -54,8 +86,11 @@ public class SupplyReport implements Serializable {
         return "SupplyReport{" +
                 "reportId='" + reportId + '\'' +
                 ", reportType='" + reportType + '\'' +
-                ", generateDate=" + generateDate +
-                ", reportingPeriod='" + reportingPeriod + '\'' +
+                ", generatedDate=" + generatedDate +
+                ", generatedPower=" + generatedPower +
+                ", suppliedPower=" + suppliedPower +
+                ", transmissionLoss=" + transmissionLoss +
+                ", remarks='" + remarks + '\'' +
                 '}';
     }
 }
