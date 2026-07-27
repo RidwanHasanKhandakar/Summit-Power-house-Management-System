@@ -1,14 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.TransmissionLineInfoViewController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="547.0" prefWidth="753.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.TransmissionLineInfoViewController">
+   <children>
+      <Button layoutX="633.0" layoutY="297.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Text fill="WHITE" layoutX="90.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line ID:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="90.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="90.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Source Station:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="400.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltage Level (kV):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="400.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Length (km):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="400.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line Status:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="90.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination Station:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="lineIdTextField" layoutX="235.0" layoutY="89.0" />
+      <TextField fx:id="lineNameTextField" layoutX="235.0" layoutY="138.0" />
+      <TextField fx:id="sourceStationTextField" layoutX="235.0" layoutY="193.0" />
+      <TextField fx:id="destinationStationTextField" layoutX="235.0" layoutY="245.0" />
+      <TextField fx:id="voltageLevelTextField" layoutX="533.0" layoutY="87.0" />
+      <TextField fx:id="lineLengthTextField" layoutX="533.0" layoutY="138.0" />
+      <ComboBox fx:id="lineStatusComboBox" layoutX="533.0" layoutY="193.0" prefWidth="150.0" />
+      <Text fill="WHITE" layoutX="237.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transmission Line Information">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Text>
+      <Button layoutX="533.0" layoutY="297.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="431.0" layoutY="297.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Search" />
+      <TableView fx:id="transmissionLineTableView" layoutX="30.0" layoutY="350.0" prefHeight="147.0" prefWidth="697.0">
+        <columns>
+          <TableColumn fx:id="lineIdColumn" prefWidth="107.20001602172852" text="Line ID" />
+          <TableColumn fx:id="lineNameColumn" prefWidth="126.39994812011719" text="Line Name" />
+            <TableColumn fx:id="sourceStationColumn" prefWidth="112.800048828125" text="Source" />
+            <TableColumn fx:id="destinationStationColumn" prefWidth="116.79998779296875" text="Destination" />
+            <TableColumn fx:id="voltageLevelColumn" prefWidth="119.199951171875" text="Voltage" />
+            <TableColumn fx:id="lineStatusColumn" prefWidth="112.80001220703127" text="Status" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
