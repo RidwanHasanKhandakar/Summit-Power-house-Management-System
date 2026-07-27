@@ -14,50 +14,33 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="38.0" layoutY="75.0" style="-fx-text-fill: white;" text="Employee ID:">
+      <Label layoutX="25.0" layoutY="113.0" style="-fx-text-fill: white;" text="Employee ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="116.0" style="-fx-text-fill: white;" text="Total Days Present:">
+      <Label layoutX="25.0" layoutY="178.0" style="-fx-text-fill: white;" text="Total Days Present:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="340.0" layoutY="75.0" style="-fx-text-fill: white;" text="Overtime Days:">
+      <Label layoutX="28.0" layoutY="243.0" style="-fx-text-fill: white;" text="Overtime Days:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="130.0" layoutY="69.0" />
-      <TextField layoutX="130.0" layoutY="110.0" />
-      <TextField layoutX="434.0" layoutY="69.0" />
-      <Label layoutX="328.0" layoutY="156.0" style="-fx-text-fill: white;" text="Efficiency Score:">
+      <TextField layoutX="148.0" layoutY="109.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField layoutX="148.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField layoutX="148.0" layoutY="239.0" prefHeight="26.0" prefWidth="175.0" />
+      <Label layoutX="25.0" layoutY="316.0" style="-fx-text-fill: white;" text="Efficiency Score:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="369.0" layoutY="114.0" style="-fx-text-fill: white;" text="Email:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="434.0" layoutY="110.0" />
-      <Label layoutX="78.0" layoutY="149.0" style="-fx-text-fill: white;" text="Month:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="87.0" layoutY="188.0" style="-fx-text-fill: white;" text="Year:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <ComboBox layoutX="432.0" layoutY="152.0" prefWidth="150.0" />
-      <ComboBox layoutX="127.0" layoutY="145.0" prefWidth="150.0" />
-      <ComboBox layoutX="127.0" layoutY="184.0" prefWidth="150.0" />
-      <Button layoutX="211.0" layoutY="380.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
+      <ComboBox layoutX="148.0" layoutY="312.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="393.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="522.0" layoutY="380.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="562.0" layoutY="393.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="420.0" layoutY="219.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #49b0ff;" text="Send email" />
    </children>
 </AnchorPane>
