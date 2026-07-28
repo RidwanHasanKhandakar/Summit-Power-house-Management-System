@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class PowerSupplyRecordFileHandler {
 
-    private static final String FILE_NAME = "data/ridwan/powerSupplyRecords.bin";
+    private static final String FILE_NAME = "data/ridwan/bpdbOfficer/powerSupplyRecords.bin";
 
     public static void save(PowerSupplyRecord record){
         ArrayList<PowerSupplyRecord> list = readAll();

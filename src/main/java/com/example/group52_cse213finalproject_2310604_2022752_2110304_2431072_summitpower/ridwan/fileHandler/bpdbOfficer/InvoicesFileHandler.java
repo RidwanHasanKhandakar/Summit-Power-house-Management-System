@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class InvoicesFileHandler {
 
-        private static final String FILE_PATH = "data/ridwan/invoices.bin";
+        private static final String FILE_PATH = "data/ridwan/bpdbOfficer/invoices.bin";
 
         public static void save(Invoice invoice){
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class SupplyAgreementFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/supplyAgreements.bin";
+    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/supplyAgreements.bin";
 
     public static void save(SupplyAgreement agreement){
 

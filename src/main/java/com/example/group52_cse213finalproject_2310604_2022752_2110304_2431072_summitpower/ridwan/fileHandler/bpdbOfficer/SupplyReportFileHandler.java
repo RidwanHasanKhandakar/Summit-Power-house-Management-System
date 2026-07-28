@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class SupplyReportFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/supplyReports.bin";
+    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/supplyReports.bin";
 
     public static void save(SupplyReport report){
 
