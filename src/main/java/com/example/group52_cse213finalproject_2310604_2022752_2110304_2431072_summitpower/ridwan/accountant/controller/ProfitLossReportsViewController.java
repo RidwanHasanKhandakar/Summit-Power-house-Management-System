@@ -25,6 +25,26 @@ public class ProfitLossReportsViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        selectMonthComboBox.getItems().addAll("January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December");
+
+        selectYearComboBox.getItems().addAll("2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024");
+
     }
 
     @javafx.fxml.FXML
