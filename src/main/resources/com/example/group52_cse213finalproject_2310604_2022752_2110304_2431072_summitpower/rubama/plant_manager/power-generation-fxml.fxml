@@ -23,7 +23,7 @@
             <Font name="Times New Roman" size="43.0" />
          </font>
       </Label>
-      <Button layoutX="362.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleViewGeneration" prefHeight="39.0" prefWidth="547.0" style="-fx-background-color: #49b0ff;" text="View Generation">
+      <Button layoutX="362.0" layoutY="364.0" mnemonicParsing="false" onAction="#handleViewGeneration" prefHeight="64.0" prefWidth="547.0" style="-fx-background-color: #49b0ff;" text="View Generation">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
