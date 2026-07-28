@@ -3,13 +3,13 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class AddEmployee implements Serializable {
+public class Employee implements Serializable {
     private String employeeId, employeeName, email, department, position;
     private LocalDate dateOfBirth;
     private int salary, daysPresent, score;
     private float overTimeHours;
 
-    public AddEmployee(String employeeId, String employeeName, String email, String department, String position, LocalDate dateOfBirth, int salary) {
+    public Employee(String employeeId, String employeeName, String email, String department, String position, LocalDate dateOfBirth, int salary) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.email = email;
