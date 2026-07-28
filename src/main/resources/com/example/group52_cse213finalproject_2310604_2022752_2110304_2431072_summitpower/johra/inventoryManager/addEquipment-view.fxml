@@ -40,19 +40,19 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="125.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField layoutX="127.0" layoutY="172.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField layoutX="128.0" layoutY="240.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="equipmentIdTextField" layoutX="125.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="equipmentNameTextField" layoutX="127.0" layoutY="172.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="quantityTextField" layoutX="128.0" layoutY="240.0" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="324.0" layoutY="248.0" style="-fx-text-fill: white;" text="Purchase Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="429.0" layoutY="244.0" />
-      <ComboBox layoutX="427.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="208.0" layoutY="417.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Add Equipment" />
+      <DatePicker fx:id="purchaseDateDatePicker" layoutX="429.0" layoutY="244.0" />
+      <ComboBox fx:id="equipmentCategoryComboBox" layoutX="427.0" layoutY="101.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="208.0" layoutY="417.0" mnemonicParsing="false" onAction="#addEquipmentButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Add Equipment" />
       <Label alignment="CENTER" layoutY="474.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <ComboBox layoutX="429.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="548.0" layoutY="417.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <ComboBox fx:id="vendorComboBox" layoutX="429.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="548.0" layoutY="417.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
