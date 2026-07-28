@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -14,43 +15,47 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="62.0" layoutY="107.0" style="-fx-text-fill: white;" text="Vendor ID:">
+      <Label layoutX="24.0" layoutY="98.0" style="-fx-text-fill: white;" text="Vendor ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="146.0" style="-fx-text-fill: white;" text="Vendor Name:">
+      <Label layoutX="24.0" layoutY="146.0" style="-fx-text-fill: white;" text="Vendor Name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="384.0" layoutY="98.0" style="-fx-text-fill: white;" text="Email:">
+      <Label layoutX="321.0" layoutY="98.0" style="-fx-text-fill: white;" text="Email:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="368.0" layoutY="139.0" style="-fx-text-fill: white;" text="Address:">
+      <Label layoutX="24.0" layoutY="188.0" style="-fx-text-fill: white;" text="Phone:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="85.0" layoutY="187.0" style="-fx-text-fill: white;" text="Phone:">
+      <Label layoutX="322.0" layoutY="146.0" style="-fx-text-fill: white;" text="Equipment Supplied:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="300.0" layoutY="187.0" style="-fx-text-fill: white;" text="Equipment Supplied:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="142.0" layoutY="101.0" />
-      <TextField layoutX="142.0" layoutY="142.0" />
-      <TextField layoutX="143.0" layoutY="183.0" />
-      <TextField layoutX="429.0" layoutY="183.0" />
-      <ComboBox layoutX="429.0" layoutY="135.0" prefWidth="150.0" />
-      <TextField layoutX="429.0" layoutY="94.0" />
-      <Button layoutX="202.0" layoutY="267.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <TextField layoutX="127.0" layoutY="94.0" />
+      <TextField layoutX="127.0" layoutY="142.0" />
+      <TextField layoutX="127.0" layoutY="188.0" />
+      <TextField layoutX="469.0" layoutY="142.0" />
+      <TextField layoutX="469.0" layoutY="94.0" />
+      <Button layoutX="231.0" layoutY="386.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Button layoutX="564.0" layoutY="386.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView layoutY="237.0" prefHeight="122.0" prefWidth="642.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Vendor ID" />
+          <TableColumn prefWidth="115.99994659423828" text="Vendor Name" />
+            <TableColumn prefWidth="143.20001220703125" text="Email" />
+            <TableColumn prefWidth="137.5999755859375" text="Phone" />
+            <TableColumn prefWidth="172.79989624023438" text="Equipment Supplied" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

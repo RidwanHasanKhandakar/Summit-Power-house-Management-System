@@ -16,86 +16,62 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="83.0" style="-fx-text-fill: white;" text="Employee ID:">
+      <Label layoutX="19.0" layoutY="124.0" style="-fx-text-fill: white;" text="Employee ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="16.0" layoutY="124.0" style="-fx-text-fill: white;" text="Employee Name:">
+      <Label layoutX="17.0" layoutY="165.0" style="-fx-text-fill: white;" text="Employee Name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="333.0" layoutY="83.0" style="-fx-text-fill: white;" text="Phone: ">
+      <Label layoutX="334.0" layoutY="124.0" style="-fx-text-fill: white;" text="Phone: ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="195.0" style="-fx-text-fill: white;" text="Address:">
+      <Label layoutX="19.0" layoutY="236.0" style="-fx-text-fill: white;" text="Address:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="121.0" layoutY="79.0" prefHeight="26.0" prefWidth="164.0" />
-      <TextField layoutX="121.0" layoutY="120.0" prefHeight="26.0" prefWidth="164.0" />
-      <TextField layoutX="438.0" layoutY="79.0" prefHeight="26.0" prefWidth="175.0" />
-      <Label layoutX="16.0" layoutY="165.0" style="-fx-text-fill: white;" text="Date of Birth:">
+      <TextField layoutX="122.0" layoutY="120.0" prefHeight="26.0" prefWidth="164.0" />
+      <TextField layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
+      <TextField layoutX="439.0" layoutY="120.0" prefHeight="26.0" prefWidth="175.0" />
+      <Label layoutX="17.0" layoutY="206.0" style="-fx-text-fill: white;" text="Date of Birth:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
-      <Label layoutX="332.0" layoutY="201.0" style="-fx-text-fill: white;" text="Gender:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
+      <DatePicker layoutX="123.0" layoutY="202.0" prefHeight="26.0" prefWidth="164.0" />
       <Button layoutX="222.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Label layoutX="332.0" layoutY="124.0" style="-fx-text-fill: white;" text="Email:">
+      <Label layoutX="333.0" layoutY="165.0" style="-fx-text-fill: white;" text="Email:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="438.0" layoutY="120.0" prefHeight="26.0" prefWidth="175.0" />
-      <Label layoutX="331.0" layoutY="165.0" style="-fx-text-fill: white;" text="Date of Joining:">
+      <TextField layoutX="439.0" layoutY="161.0" prefHeight="26.0" prefWidth="175.0" />
+      <Label layoutX="332.0" layoutY="206.0" style="-fx-text-fill: white;" text="Date of Joining:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="437.0" layoutY="161.0" />
-      <TextArea layoutX="124.0" layoutY="197.0" prefHeight="66.0" prefWidth="164.0" />
+      <DatePicker layoutX="438.0" layoutY="202.0" />
+      <TextArea layoutX="125.0" layoutY="238.0" prefHeight="66.0" prefWidth="164.0" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Label layoutX="17.0" layoutY="278.0" style="-fx-text-fill: white;" text="Position:">
+      <Label layoutX="333.0" layoutY="281.0" style="-fx-text-fill: white;" text="Position:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="332.0" layoutY="240.0" style="-fx-text-fill: white;" text="Department:">
+      <Label layoutX="332.0" layoutY="244.0" style="-fx-text-fill: white;" text="Department:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="331.0" layoutY="281.0" style="-fx-text-fill: white;" text="Religion:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="438.0" layoutY="277.0" prefHeight="26.0" prefWidth="175.0" />
-      <Label layoutX="14.0" layoutY="317.0" style="-fx-text-fill: white;" text="Marital Status:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="331.0" layoutY="320.0" style="-fx-text-fill: white;" text="Salary:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="438.0" layoutY="316.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox layoutX="437.0" layoutY="197.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox layoutX="437.0" layoutY="236.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox layoutX="125.0" layoutY="274.0" prefHeight="26.0" prefWidth="164.0" />
-      <ComboBox layoutX="125.0" layoutY="313.0" prefHeight="26.0" prefWidth="164.0" />
+      <ComboBox layoutX="437.0" layoutY="240.0" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox layoutX="439.0" layoutY="277.0" prefHeight="26.0" prefWidth="175.0" />
       <Button layoutX="565.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
