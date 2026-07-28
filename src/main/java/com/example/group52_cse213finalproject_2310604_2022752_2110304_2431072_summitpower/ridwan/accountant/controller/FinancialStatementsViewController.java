@@ -5,6 +5,7 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 //import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Node;
 
@@ -42,6 +43,11 @@ public class FinancialStatementsViewController
                 "Balance Sheet",
                 "Cash Flow Statement"
         );
+
+        //accountCol.setCellValueFactory(new PropertyValueFactory<>(""));
+        accountCol.setCellValueFactory(new PropertyValueFactory<>("statementId"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
 
     }
 
