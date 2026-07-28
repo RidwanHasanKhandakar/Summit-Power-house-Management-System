@@ -3,7 +3,11 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
+
+import java.util.Optional;
 
 public class AccountantDashboardViewController
 {
@@ -67,7 +71,16 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleLogoutButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout!");
+        alert.setHeaderText("Confirm Logout!");
+        alert.setContentText("Are you sure you want to logout >?");
+        Optional<ButtonType> res = alert.showAndWait();
+        if (res.get()==ButtonType.OK){
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
+        }
+
+
 
     }
 
