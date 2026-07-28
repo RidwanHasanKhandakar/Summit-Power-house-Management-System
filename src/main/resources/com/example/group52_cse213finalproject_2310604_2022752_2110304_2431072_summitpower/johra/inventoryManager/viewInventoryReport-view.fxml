@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.ViewInventoryReportViewController">
+   <children>
+      <Label layoutX="181.0" layoutY="14.0" style="-fx-text-fill: white;" text="View Inventory Report">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Button layoutX="574.0" layoutY="403.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView layoutY="107.0" prefHeight="200.0" prefWidth="642.0">
+        <columns>
+          <TableColumn prefWidth="176.79999387264252" text="Report Type" />
+          <TableColumn minWidth="3.99993896484375" prefWidth="142.39996337890625" text="Category" />
+            <TableColumn minWidth="0.0" prefWidth="138.4000244140625" text="Date" />
+            <TableColumn minWidth="0.0" prefWidth="186.39999389648438" text="Stock Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
