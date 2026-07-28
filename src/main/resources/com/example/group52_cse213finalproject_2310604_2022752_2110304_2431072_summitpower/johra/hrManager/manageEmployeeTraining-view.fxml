@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="542.0" prefWidth="712.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.ManageEmployeeViewController">
+<AnchorPane prefHeight="542.0" prefWidth="712.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.ManageEmployeeTrainingViewController">
    <children>
       <Label layoutX="148.0" layoutY="14.0" style="-fx-text-fill: white;" text="Manage Employee Training Program">
          <font>
@@ -53,10 +53,12 @@
       <Button layoutX="551.0" layoutY="206.0" mnemonicParsing="false" style="-fx-background-color: #49b0ff;" text="Save" />
       <TableView layoutX="-1.0" layoutY="291.0" prefHeight="155.0" prefWidth="712.0">
         <columns>
-          <TableColumn prefWidth="79.20001524686813" text="Employee ID" />
-          <TableColumn prefWidth="191.99998474121094" text="Employee Name" />
-            <TableColumn prefWidth="179.20001220703125" text="Training Name" />
-            <TableColumn prefWidth="107.199951171875" text="Trainer ID" />
+          <TableColumn prefWidth="79.20001524686813" text="Employee ID" maxWidth="792.0001524686813" minWidth="30.0"/>
+          <TableColumn prefWidth="191.99998474121094" text="Employee Name" maxWidth="1919.9998474121094"
+                       minWidth="30.0"/>
+            <TableColumn prefWidth="179.20001220703125" text="Training Name" maxWidth="1792.0001220703125"
+                         minWidth="30.0"/>
+            <TableColumn prefWidth="107.199951171875" text="Trainer ID" maxWidth="1071.99951171875" minWidth="30.0"/>
             <TableColumn prefWidth="156.0" text="Status" />
         </columns>
       </TableView>
