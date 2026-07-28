@@ -1,10 +1,15 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.TrackFuel;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+
+import javax.sound.midi.Track;
+import java.time.LocalDate;
 
 public class TrackFuelViewController
 {
@@ -13,21 +18,21 @@ public class TrackFuelViewController
     @javafx.fxml.FXML
     private Text totalExpensesText;
     @javafx.fxml.FXML
-    private TableColumn amountCol;
+    private TableColumn <TrackFuel,Double> amountCol;
     @javafx.fxml.FXML
-    private TableColumn dateCol;
+    private TableColumn <TrackFuel, LocalDate> dateCol;
     @javafx.fxml.FXML
     private ComboBox <String> expenseCategoryComboBox;
     @javafx.fxml.FXML
     private TextField amountTextField;
     @javafx.fxml.FXML
-    private TableView operationalExpensesTableView;
+    private TableView <TrackFuel> operationalExpensesTableView;
     @javafx.fxml.FXML
     private TextArea descriptionTextArea;
     @javafx.fxml.FXML
-    private TableColumn expenseIDCol;
+    private TableColumn <TrackFuel,Integer> expenseIDCol;
     @javafx.fxml.FXML
-    private TableColumn categoryCol;
+    private TableColumn <TrackFuel,String> categoryCol;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -38,6 +43,11 @@ public class TrackFuelViewController
                 "Maintenance",
                 "Utility",
                 "Other");
+
+        expenseIDCol.setCellValueFactory(new PropertyValueFactory<>("expenseId"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("expenseDate"));
+        amountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
 
     }
 

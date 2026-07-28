@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ProfitLossReports implements Serializable {
 
     private String month;
-    private int year;
+    private String year;
 
     private double salesIncome;
     private double expenses;
@@ -17,7 +17,7 @@ public class ProfitLossReports implements Serializable {
     public ProfitLossReports() {
     }
 
-    public ProfitLossReports(String month, int year, double salesIncome, double expenses, double salaryCost, double fuelCost, double netProfit) {
+    public ProfitLossReports(String month, String year, double salesIncome, double expenses, double salaryCost, double fuelCost, double netProfit) {
         this.month = month;
         this.year = year;
         this.salesIncome = salesIncome;
@@ -35,11 +35,11 @@ public class ProfitLossReports implements Serializable {
         this.month = month;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -87,7 +87,7 @@ public class ProfitLossReports implements Serializable {
     public String toString() {
         return "ProfitLossReports{" +
                 "month='" + month + '\'' +
-                ", year=" + year +
+                ", year='" + year + '\'' +
                 ", salesIncome=" + salesIncome +
                 ", expenses=" + expenses +
                 ", salaryCost=" + salaryCost +

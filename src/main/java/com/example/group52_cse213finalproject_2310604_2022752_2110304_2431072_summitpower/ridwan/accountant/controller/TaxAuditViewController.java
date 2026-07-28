@@ -5,13 +5,16 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.time.LocalDate;
 
 public class TaxAuditViewController
 {
     @javafx.fxml.FXML
     private ComboBox <String> yearComboBox;
     @javafx.fxml.FXML
-    private TableColumn titleCol;
+    private TableColumn <TaxAudit,String> titleCol;
     @javafx.fxml.FXML
     private Label titleLabel;
     @javafx.fxml.FXML
@@ -23,19 +26,19 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     private Label recordTypeLabel;
     @javafx.fxml.FXML
-    private TableColumn recordIDCol;
+    private TableColumn <TaxAudit,Integer> recordIDCol;
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private ComboBox recordTypeComboBox;
+    private ComboBox <String> recordTypeComboBox;
     @javafx.fxml.FXML
-    private TableColumn recordTypeCol;
+    private TableColumn <TaxAudit,String> recordTypeCol;
     @javafx.fxml.FXML
-    private TableColumn yearCol;
+    private TableColumn <TaxAudit,String> yearCol;
     @javafx.fxml.FXML
-    private TableColumn dateCol;
+    private TableColumn <TaxAudit, LocalDate> dateCol;
     @javafx.fxml.FXML
-    private TableColumn statusCol;
+    private TableColumn <TaxAudit,String> statusCol;
     @javafx.fxml.FXML
     private Label recordIDLabel;
 
@@ -56,6 +59,13 @@ public class TaxAuditViewController
                 "2023",
                 "2024"
         );
+
+        recordIDCol.setCellValueFactory(new PropertyValueFactory<>("recordId"));
+        recordTypeCol.setCellValueFactory(new PropertyValueFactory<>("recordType"));
+        titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
+        yearCol.setCellValueFactory(new PropertyValueFactory<>("year"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("createdDate"));
+        statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
     }
 

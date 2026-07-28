@@ -8,7 +8,7 @@ public class TaxAudit implements Serializable {
     private int recordId;
     private String recordType;
     private String title;
-    private int year;
+    private String year;
     private LocalDate createdDate;
     private String status;
     private String details;
@@ -16,7 +16,7 @@ public class TaxAudit implements Serializable {
     public  TaxAudit() {
     }
 
-    public TaxAudit(int recordId, String recordType, String title, int year, LocalDate createdDate, String status, String details) {
+    public TaxAudit(int recordId, String recordType, String title, String year, LocalDate createdDate, String status, String details) {
         this.recordId = recordId;
         this.recordType = recordType;
         this.title = title;
@@ -50,11 +50,11 @@ public class TaxAudit implements Serializable {
         this.title = title;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -88,7 +88,7 @@ public class TaxAudit implements Serializable {
                 "recordId=" + recordId +
                 ", recordType='" + recordType + '\'' +
                 ", title='" + title + '\'' +
-                ", year=" + year +
+                ", year='" + year + '\'' +
                 ", createdDate=" + createdDate +
                 ", status='" + status + '\'' +
                 ", details='" + details + '\'' +

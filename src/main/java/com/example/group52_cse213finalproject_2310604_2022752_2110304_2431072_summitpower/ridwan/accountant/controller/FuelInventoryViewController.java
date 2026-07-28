@@ -5,6 +5,7 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -61,7 +62,12 @@ public class FuelInventoryViewController
                 "Charcoal"
                 );
 
-
+        fuelIDCol.setCellValueFactory(new PropertyValueFactory<>("fuelId"));
+        fuelTypeCol.setCellValueFactory(new PropertyValueFactory<>("fuelType"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        unitCostCol.setCellValueFactory(new PropertyValueFactory<>("unitCost"));
+        totalValueCol.setCellValueFactory(new PropertyValueFactory<>("totalValue"));
+        lastUpdatedCol.setCellValueFactory(new PropertyValueFactory<>("lastUpdated"));
 
     }
 
