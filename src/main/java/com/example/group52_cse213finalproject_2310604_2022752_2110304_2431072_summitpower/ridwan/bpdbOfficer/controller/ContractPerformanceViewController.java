@@ -127,6 +127,14 @@ public class ContractPerformanceViewController
 
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
+
+        contractIDTextField.clear();
+        consumerNameTextField.clear();
+        statusComboBox.setValue("All");
+        viewPerformanceTextArea.clear();
+
+        loadTabel();
+
     }
 
     public void showError(String txt){
