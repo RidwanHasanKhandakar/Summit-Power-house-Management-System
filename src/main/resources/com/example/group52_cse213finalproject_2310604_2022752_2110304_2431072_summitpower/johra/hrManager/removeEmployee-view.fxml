@@ -22,20 +22,16 @@
       </Label>
       <TextField layoutX="131.0" layoutY="89.0" prefHeight="26.0" prefWidth="164.0" />
       <Label alignment="CENTER" layoutY="473.0" prefHeight="18.0" prefWidth="838.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="425.0" layoutY="89.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Remove" />
-      <Button layoutX="773.0" layoutY="435.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="626.0" layoutY="97.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Remove" />
+      <Button layoutX="773.0" layoutY="434.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView layoutY="189.0" prefHeight="200.0" prefWidth="837.0">
         <columns>
           <TableColumn prefWidth="81.60003507137299" text="Employee ID" />
           <TableColumn prefWidth="116.79993438720703" text="Employee Name" />
-            <TableColumn prefWidth="99.99993896484375" text="Phone" />
-            <TableColumn prefWidth="69.60003662109375" text="DOB" />
-            <TableColumn prefWidth="69.60003662109375" text="DOJ" />
             <TableColumn prefWidth="79.2000732421875" text="Department" />
-            <TableColumn prefWidth="127.20001220703125" text="Address" />
             <TableColumn prefWidth="77.60003662109375" text="Position" />
-            <TableColumn prefWidth="121.60003662109375" text="Salary" />
         </columns>
       </TableView>
+      <Button layoutX="307.0" layoutY="89.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Search" />
    </children>
 </AnchorPane>
