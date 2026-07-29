@@ -60,7 +60,8 @@ public class BpdbOfficerDashboardViewController
         alert.setHeaderText("Confirm Logout!");
         alert.setContentText("Are you sure you want to logout >?");
         Optional<ButtonType> res = alert.showAndWait();
-        if (res.get()==ButtonType.OK){
+        if (res.isPresent()&&res.get()==ButtonType.OK){
+            CurrentUser.logout();
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
         }
     }

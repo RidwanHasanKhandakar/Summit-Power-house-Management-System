@@ -11,4 +11,7 @@ public class CurrentUser {
         return currentUser;
     }
 
+    public static void logout() {
+        currentUser=null;
+    }
 }

@@ -46,36 +46,31 @@ public class LogInViewController
 
         for (User user : users){
             if (user.getUserId().equals(userId)&&user.getPassword().equals(password)){
+
+                CurrentUser.setUser(user);
+
                 if (user.getRole().equals("CEO")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo", "ceo-dashboard-view.fxml","CEO Dashboard!");
                 }
                 else if (user.getRole().equals("Plant Manager")) {
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","plant_manager", "plant_manager-dashboard-view.fxml","Plant Manager Dashboard!");
                 }
                 else if (user.getRole().equals("BPDB Officer")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer", "bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!");
                 }
                 else if (user.getRole().equals("Accountant")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "accountant-dashboard-view.fxml","Accountant Dashboard!");
                 }
                 else if (user.getRole().equals("HR Manager")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"johra","hrManager", "dashboard-view.fxml","HR Manager Dashboard!");
                 }
                 else if (user.getRole().equals("Inventory Manager")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"johra","inventoryManager", "dashboard-view.fxml","Inventory Manager Dashboard!");
                 }
                 else if (user.getRole().equals("Engineer")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","engineer", "engineer-dashboard-view.fxml","Engineer Dashboard!");
                 }
                 else if (user.getRole().equals("Grid Operator")){
-                    CurrentUser.setUser(user);
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator", "gridOperator-dashboard-view.fxml","Grid Operator Dashboard!");
                 }
                 return;
