@@ -1,5 +1,6 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.commonFiles;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.CurrentUser;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.UserFileHandler;
@@ -45,6 +46,9 @@ public class LogInViewController
 
         for (User user : users){
             if (user.getUserId().equals(userId)&&user.getPassword().equals(password)){
+
+                CurrentUser.setUser(user);
+
                 if (user.getRole().equals("CEO")){
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo", "ceo-dashboard-view.fxml","CEO Dashboard!");
                 }
