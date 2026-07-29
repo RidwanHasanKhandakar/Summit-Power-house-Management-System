@@ -15,60 +15,60 @@
          </font>
       </Label>
       <Label alignment="CENTER" layoutY="264.0" prefHeight="18.0" prefWidth="398.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
-      <Text fill="WHITE" layoutX="42.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name : ">
+      <Text fill="WHITE" layoutX="19.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="42.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
+      <Text fill="WHITE" layoutX="20.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="242.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID : ">
+      <Text fill="WHITE" layoutX="219.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="242.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+      <Text fill="WHITE" layoutX="219.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="242.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role : ">
+      <Text fill="WHITE" layoutX="219.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="42.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender : ">
+      <Text fill="WHITE" layoutX="20.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="42.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
+      <Text fill="WHITE" layoutX="20.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="42.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address : ">
+      <Text fill="WHITE" layoutX="20.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="42.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth : ">
+      <Text fill="WHITE" layoutX="20.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fx:id="firstNameText" fill="#49b0ff" layoutX="125.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
-      <Text fx:id="lastNameText" layoutX="125.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
-      <Text fx:id="genderText" layoutX="125.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
-      <Text fx:id="phoneText" layoutX="125.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
-      <Text fx:id="addressText" layoutX="113.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="258.13671875" />
-      <Text fx:id="dobText" layoutX="125.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
-      <Text fx:id="userIdText" layoutX="301.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.98046875" />
-      <Text fx:id="emailText" layoutX="301.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.98046875" />
-      <Text fx:id="roleText" layoutX="301.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.98046875" />
+      <Text fx:id="firstNameText" fill="#49b0ff" layoutX="103.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.669921875" />
+      <Text fx:id="lastNameText" fill="#49b0ff" layoutX="103.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.669921875" />
+      <Text fx:id="genderText" fill="#49b0ff" layoutX="103.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.669921875" />
+      <Text fx:id="phoneText" fill="#49b0ff" layoutX="103.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
+      <Text fx:id="addressText" fill="#49b0ff" layoutX="103.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="247.13671875" />
+      <Text fx:id="dobText" fill="#49b0ff" layoutX="107.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
+      <Text fx:id="userIdText" fill="#49b0ff" layoutX="278.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.98046875" />
+      <Text fx:id="emailText" fill="#49b0ff" layoutX="264.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
+      <Text fx:id="roleText" fill="#49b0ff" layoutX="278.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.98046875" />
       <Button layoutX="332.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #49b0ff;" text="Back" />
    </children>
 </AnchorPane>

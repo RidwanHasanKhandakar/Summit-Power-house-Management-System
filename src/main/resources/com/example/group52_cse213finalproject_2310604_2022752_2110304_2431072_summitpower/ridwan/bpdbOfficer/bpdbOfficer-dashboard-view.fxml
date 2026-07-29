@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller.BpdbOfficerDashboardViewController">
    <children>
       <Label layoutX="169.0" layoutY="14.0" text="BPDB Officer Dashboard" textFill="WHITE">
@@ -29,7 +28,10 @@
             <Font name="Times New Roman Bold" size="14.0" />
          </font>
       </Label>
-      <Text fx:id="officerNameText" layoutX="411.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.13671875" />
+      <Text fx:id="officerNameText" fill="#49b0ff" fontSmoothingType="LCD" layoutX="411.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="131.13671875">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font></Text>
       <Label alignment="CENTER" layoutY="399.0" prefHeight="18.0" prefWidth="601.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
    </children>
 </AnchorPane>
