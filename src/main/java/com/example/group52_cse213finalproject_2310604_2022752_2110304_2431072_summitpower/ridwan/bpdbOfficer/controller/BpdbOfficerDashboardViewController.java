@@ -69,7 +69,7 @@ public class BpdbOfficerDashboardViewController
     @javafx.fxml.FXML
     public void handleProfileButton(ActionEvent actionEvent) {
 
-
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan","commonFiles","profile-view.fxml","Profile!");
 
     }
 
