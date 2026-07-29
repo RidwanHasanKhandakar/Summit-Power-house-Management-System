@@ -3,14 +3,14 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class BPDBOfficer extends User implements Serializable {
     private String department;
     private String designation;
 
-
-    public BPDBOfficer(String firstName, String lastName, String address, int phoneNumber, String gender, String userId, String email, String password, String department, String designation) {
-        super(firstName, lastName, address, phoneNumber, gender, userId, email, password);
+    public BPDBOfficer(String firstName, String lastName, String address, int phoneNumber, String gender, LocalDate dateOfBirth, String userId, String email, String password, String role, String department, String designation) {
+        super(firstName, lastName, address, phoneNumber, gender, dateOfBirth, userId, email, password, role);
         this.department = department;
         this.designation = designation;
     }

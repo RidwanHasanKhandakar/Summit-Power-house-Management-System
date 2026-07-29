@@ -2,6 +2,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.UserFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -30,42 +31,103 @@ public class SignUpViewController
     private DatePicker dateOfBirthDatePicker;
     @javafx.fxml.FXML
     private TextField phoneTextField;
+    @javafx.fxml.FXML
+    private ComboBox <String> roleComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
+
         genderComboBox.getItems().addAll("Male","Female","Others");
+
+        roleComboBox.getItems().addAll(
+                "CEO",
+                "Plant Manager",
+                "BPDB Officer",
+                "Accountant",
+                "HR Manager",
+                "Inventory Manager",
+                "Engineer",
+                "Grid Operator");
     }
 
     @javafx.fxml.FXML
     public void handleSignUpButton(ActionEvent actionEvent) {
 
-        String fName = firstNameTextField.getText();
-        String lName = lastNameTextField.getText();
-        String pw = passwordTextField.getText();
-        String address = addressTextField.getText();
+        String fName = firstNameTextField.getText().trim();
+        String lName = lastNameTextField.getText().trim();
+        String pw = passwordTextField.getText().trim();
+        String address = addressTextField.getText().trim();
         String gendar = genderComboBox.getValue();
-        String email = emailTextField.getText();
+        String email = emailTextField.getText().trim();
         boolean terms = termsCheckBox.isSelected();
-        String id = userIdTextField.getText();
+        String id = userIdTextField.getText().trim();
         LocalDate dob = dateOfBirthDatePicker.getValue();
+        String role = roleComboBox.getValue();
         int phone;
 
         try{
-            phone = Integer.parseInt(phoneTextField.getText());
+            if (phoneTextField.getText().trim().length()!=11){
+                showError("Phone number must contain 11 digits.");
+                return;
+            }
+            else {
+                phone = Integer.parseInt(phoneTextField.getText().trim());
+            }
         }catch (NumberFormatException e){
             showError("You need to enter Int for Phone Number");
             return;
         }
 
-        if (fName.isEmpty()||lName.isEmpty()||pw.isEmpty()||address.isEmpty()||gendar.isEmpty()||email.isEmpty()||!terms||id.isEmpty()||dob==null){
+        if (fName.isEmpty()
+                ||lName.isEmpty()
+                ||pw.isEmpty()
+                ||address.isEmpty()
+                ||email.isEmpty()
+                ||!terms
+                ||id.isEmpty()
+                ||dob==null
+                ||gendar==null
+                ||role==null){
             showError("please fill out all fields and accept the terms and conditions!");
             return;
         }
+        else if (pw.length()<6) {
+            showError("Password must be at least 6 characters.");
+            return;
+        }
+        else if (!email.contains("@")||!email.contains(".")){
+            showError("Invalid email address.");
+            return;
+        }
         else {
-            User user = new User(fName,lName,address,phone,gendar,id,email,pw);
-            showSuc("Accountant Created Successfully");
 
+            User user = new User(
+                    fName,
+                    lName,
+                    address,
+                    phone,
+                    gendar,
+                    dob,
+                    id,
+                    email,
+                    pw,
+                    role);
+
+            for (User u : UserFileHandler.readAll()){
+                if(u.getUserId().equalsIgnoreCase(id)){
+                    showError("User Id already exists.");
+                    return;
+                }
+                if (u.getEmail().equalsIgnoreCase(email)){
+                    showError("Email already exists.");
+                    return;
+                }
+            }
+
+            UserFileHandler.save(user);
+            showSuc(role + " Account Created Successfully");
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
+
         }
     }
 
