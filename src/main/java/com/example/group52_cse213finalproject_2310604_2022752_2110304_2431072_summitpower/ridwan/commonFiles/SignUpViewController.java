@@ -71,7 +71,7 @@ public class SignUpViewController
                 return;
             }
             else {
-                phone = Integer.parseInt(phoneTextField.getText());
+                phone = Integer.parseInt(phoneTextField.getText().trim());
             }
         }catch (NumberFormatException e){
             showError("You need to enter Int for Phone Number");
@@ -95,7 +95,7 @@ public class SignUpViewController
             showError("Password must be at least 6 characters.");
             return;
         }
-        else if (!email.contains("@")){
+        else if (!email.contains("@")||!email.contains(".")){
             showError("Invalid email address.");
             return;
         }
