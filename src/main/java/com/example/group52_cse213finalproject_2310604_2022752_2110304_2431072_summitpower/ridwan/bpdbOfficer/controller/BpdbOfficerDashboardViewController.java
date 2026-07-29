@@ -1,11 +1,14 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.CurrentUser;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
+//import sun.net.ftp.FtpDirEntry;
 
 import java.util.Optional;
 
@@ -16,6 +19,13 @@ public class BpdbOfficerDashboardViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        User user = CurrentUser.getUser();
+
+        if (user!=null){
+            officerNameText.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
+        }
+
     }
 
     @javafx.fxml.FXML
