@@ -72,21 +72,40 @@ public class SignUpViewController
             return;
         }
 
-        if (fName.isEmpty()||lName.isEmpty()||pw.isEmpty()||address.isEmpty()||gendar.isEmpty()||email.isEmpty()||!terms||id.isEmpty()||dob==null){
+        if (fName.isEmpty()
+                ||lName.isEmpty()
+                ||pw.isEmpty()
+                ||address.isEmpty()
+                ||email.isEmpty()
+                ||!terms
+                ||id.isEmpty()
+                ||dob==null
+                ||gendar==null
+                ||role==null){
             showError("please fill out all fields and accept the terms and conditions!");
             return;
         }
         else {
 
-            User user = new User(fName,
+            User user = new User(
+                    fName,
                     lName,
                     address,
                     phone,
                     gendar,
+                    dob,
                     id,
                     email,
                     pw,
                     role);
+
+            for (User u : UserFileHandler.readAll()){
+                if(u.getUserId().equalsIgnoreCase(id)){
+                    showError("User Id already exists.");
+                    return;
+                }
+            }
+
             UserFileHandler.save(user);
             showSuc("Accountant Created Successfully");
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");

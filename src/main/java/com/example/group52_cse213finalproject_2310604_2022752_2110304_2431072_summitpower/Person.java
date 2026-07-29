@@ -1,6 +1,7 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class Person implements Serializable {
 
@@ -11,13 +12,15 @@ public class Person implements Serializable {
     private String address;
     private int phoneNumber;
     private String gender;
+    private LocalDate dateOfBirth;
 
-    public Person(String firstName, String lastName, String address, int phoneNumber, String gender) {
+    public Person(String firstName, String lastName, String address, int phoneNumber, String gender, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFirstName() {
@@ -60,8 +63,12 @@ public class Person implements Serializable {
         this.gender = gender;
     }
 
-    public void updateInformation(){
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override
@@ -72,7 +79,7 @@ public class Person implements Serializable {
                 ", address='" + address + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", gender='" + gender + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
                 '}';
     }
-
 }

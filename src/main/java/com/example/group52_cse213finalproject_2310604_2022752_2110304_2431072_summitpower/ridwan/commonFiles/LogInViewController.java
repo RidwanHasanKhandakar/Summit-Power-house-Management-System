@@ -30,10 +30,11 @@ public class LogInViewController
     public void handleLogInButton(ActionEvent actionEvent) {
         String userId = userIdTextField.getText().trim();
         String password = passwordPasswordField.getText().trim();
-//        if (userId.isEmpty()||password.isEmpty()){
-//            showError("Please fill out all fields");
-//            return;
-//        } else if (userId.equals("bpdb")&&password.equals("123")) {
+        if (userId.isEmpty()||password.isEmpty()){
+            showError("Please fill out all fields");
+            return;
+        }
+//        else if (userId.equals("bpdb")&&password.equals("123")) {
 //            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer", "bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!1");
 //        } else if (userId.equals("acc")&&password.equals("321")) {
 //            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan", "accountant", "accountant-dashboard-view.fxml","Accountant Dashboard!1");
@@ -68,8 +69,10 @@ public class LogInViewController
                 else if (user.getRole().equals("Grid Operator")){
                     PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator", "gridOperator-dashboard-view.fxml","Grid Operator Dashboard!");
                 }
+                return;
             }
         }
+        showError("Invalid User Id or Password.");
     }
     public void showError(String txt){
         Alert alert = new Alert(Alert.AlertType.ERROR);
