@@ -4,12 +4,14 @@ public class User extends Person {
     private String userId;
     private String email;
     private String password;
+    private String role;
 
-    public User(String firstName, String lastName, String address, int phoneNumber, String gender, String userId, String email, String password) {
+    public User(String firstName, String lastName, String address, int phoneNumber, String gender, String userId, String email, String password, String role) {
         super(firstName, lastName, address, phoneNumber, gender);
         this.userId = userId;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public String getUserId() {
@@ -36,12 +38,21 @@ public class User extends Person {
         this.password = password;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userId='" + userId + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 
