@@ -53,20 +53,26 @@ public class SignUpViewController
     @javafx.fxml.FXML
     public void handleSignUpButton(ActionEvent actionEvent) {
 
-        String fName = firstNameTextField.getText();
-        String lName = lastNameTextField.getText();
-        String pw = passwordTextField.getText();
-        String address = addressTextField.getText();
+        String fName = firstNameTextField.getText().trim();
+        String lName = lastNameTextField.getText().trim();
+        String pw = passwordTextField.getText().trim();
+        String address = addressTextField.getText().trim();
         String gendar = genderComboBox.getValue();
-        String email = emailTextField.getText();
+        String email = emailTextField.getText().trim();
         boolean terms = termsCheckBox.isSelected();
-        String id = userIdTextField.getText();
+        String id = userIdTextField.getText().trim();
         LocalDate dob = dateOfBirthDatePicker.getValue();
         String role = roleComboBox.getValue();
         int phone;
 
         try{
-            phone = Integer.parseInt(phoneTextField.getText());
+            if (phoneTextField.getText().trim().length()!=11){
+                showError("Phone number must contain 11 digits.");
+                return;
+            }
+            else {
+                phone = Integer.parseInt(phoneTextField.getText());
+            }
         }catch (NumberFormatException e){
             showError("You need to enter Int for Phone Number");
             return;
@@ -83,6 +89,14 @@ public class SignUpViewController
                 ||gendar==null
                 ||role==null){
             showError("please fill out all fields and accept the terms and conditions!");
+            return;
+        }
+        else if (pw.length()<6) {
+            showError("Password must be at least 6 characters.");
+            return;
+        }
+        else if (!email.contains("@")){
+            showError("Invalid email address.");
             return;
         }
         else {
@@ -104,10 +118,14 @@ public class SignUpViewController
                     showError("User Id already exists.");
                     return;
                 }
+                if (u.getEmail().equalsIgnoreCase(email)){
+                    showError("Email already exists.");
+                    return;
+                }
             }
 
             UserFileHandler.save(user);
-            showSuc("Accountant Created Successfully");
+            showSuc(role + " Account Created Successfully");
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
 
         }
