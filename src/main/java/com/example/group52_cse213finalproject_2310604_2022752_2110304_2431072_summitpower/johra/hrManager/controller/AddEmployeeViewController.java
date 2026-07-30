@@ -24,6 +24,22 @@ public class AddEmployeeViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        positionComboBox.getItems().addAll(
+                "Plant Manager",
+                "Accountant",
+                "Executive Officer",
+                "Senior Executive Officer"
+        );
+
+        departmentComboBox.getItems().addAll(
+                "Operations and Maintenance",
+                "Finance and Accounts",
+                "Supply Chain",
+                "Human Resource",
+                "Legal and Regulatory Affairs"
+        );
+
     }
 
     @javafx.fxml.FXML
