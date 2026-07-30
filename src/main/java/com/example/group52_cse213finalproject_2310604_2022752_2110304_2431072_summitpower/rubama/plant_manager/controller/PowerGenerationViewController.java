@@ -6,10 +6,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class ShiftReportFxmlController
+public class PowerGenerationViewController
 {
-    @javafx.fxml.FXML
-    private TableView checkMaintenanceScheduleTableView;
     @javafx.fxml.FXML
     private DatePicker dateDatePicker;
     @javafx.fxml.FXML
@@ -18,6 +16,8 @@ public class ShiftReportFxmlController
     private TableColumn statusCol;
     @javafx.fxml.FXML
     private TableColumn unitNameCol;
+    @javafx.fxml.FXML
+    private TableView powerGenerationTableView;
     @javafx.fxml.FXML
     private ComboBox unitNameComboBox;
     @javafx.fxml.FXML
@@ -30,7 +30,7 @@ public class ShiftReportFxmlController
     }
 
     @javafx.fxml.FXML
-    public void handleViewReport(ActionEvent actionEvent) {
+    public void handleViewGeneration(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
