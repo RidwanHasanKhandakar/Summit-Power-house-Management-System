@@ -106,7 +106,7 @@ public class AdditionalPowerRequestViewController
     @javafx.fxml.FXML
     public void handleHomeButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((javafx.scene.Node) actionEvent.getSource(),"ridwan","bpdbOfficer","bpdbOfficer-dashboard-view","BPDB Officer Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((javafx.scene.Node) actionEvent.getSource(),"ridwan","bpdbOfficer","bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard");
 
     }
 
