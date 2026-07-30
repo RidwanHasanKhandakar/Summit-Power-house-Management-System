@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ViewEmployeeDetailsViewController
 {
@@ -23,6 +24,12 @@ public class ViewEmployeeDetailsViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        departmentCol.setCellValueFactory(new PropertyValueFactory<>("department"));
+        employeeIdCol.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        positionCol.setCellValueFactory(new PropertyValueFactory<>("position"));
+        salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        employeeNameCol.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
     }
 
     @javafx.fxml.FXML
