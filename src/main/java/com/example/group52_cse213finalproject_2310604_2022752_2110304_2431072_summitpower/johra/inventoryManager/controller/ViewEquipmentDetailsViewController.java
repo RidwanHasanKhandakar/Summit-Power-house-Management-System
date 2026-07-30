@@ -3,6 +3,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -23,6 +24,11 @@ public class ViewEquipmentDetailsViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+        equipmentCategoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        equipmentNameCol.setCellValueFactory(new PropertyValueFactory<>("equipmentName"));
+        purchaseDateCol.setCellValueFactory(new PropertyValueFactory<>("purchaseDate"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        vendorCol.setCellValueFactory(new PropertyValueFactory<>("vendor"));
     }
 
     @javafx.fxml.FXML
