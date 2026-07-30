@@ -6,8 +6,10 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class MaintenanceHistoryViewController
+public class ShiftReportViewController
 {
+    @javafx.fxml.FXML
+    private TableView checkMaintenanceScheduleTableView;
     @javafx.fxml.FXML
     private DatePicker dateDatePicker;
     @javafx.fxml.FXML
@@ -22,15 +24,13 @@ public class MaintenanceHistoryViewController
     private TableColumn unitNoCol;
     @javafx.fxml.FXML
     private ComboBox unitNoComboBox;
-    @javafx.fxml.FXML
-    private TableView maintenanceHistoryTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
     }
 
     @javafx.fxml.FXML
-    public void handleCheckMaintenanceHistory(ActionEvent actionEvent) {
+    public void handleViewReport(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML

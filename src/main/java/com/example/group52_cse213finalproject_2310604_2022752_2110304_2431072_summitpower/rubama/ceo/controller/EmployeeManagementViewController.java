@@ -1,5 +1,6 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.EmployeeManagement;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -9,7 +10,7 @@ import javafx.scene.control.TextField;
 public class EmployeeManagementViewController
 {
     @javafx.fxml.FXML
-    private TableView employeeTableView;
+    private TableView <EmployeeManagement> employeeTableView;
     @javafx.fxml.FXML
     private TableColumn employeeNameCol;
     @javafx.fxml.FXML
