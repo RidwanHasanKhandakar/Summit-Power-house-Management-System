@@ -25,22 +25,22 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="456.0" layoutY="104.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="quantityTextField" layoutX="456.0" layoutY="104.0" prefHeight="26.0" prefWidth="150.0" />
       <Label layoutX="335.0" layoutY="161.0" style="-fx-text-fill: white;" text="Issue Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="455.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button layoutX="210.0" layoutY="376.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <DatePicker fx:id="issueDateDatePicker" layoutX="455.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button layoutX="210.0" layoutY="376.0" mnemonicParsing="false" onAction="#savePartsIssuanceButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
       <Label alignment="CENTER" layoutY="419.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="553.0" layoutY="376.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="553.0" layoutY="376.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <Label layoutX="15.0" layoutY="161.0" style="-fx-text-fill: white;" text="Requester Employee ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="160.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
-      <ComboBox layoutX="160.0" layoutY="104.0" prefWidth="150.0" />
+      <TextField fx:id="employeeIdTextField" layoutX="160.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
+      <ComboBox fx:id="equipmentIdComboBox" layoutX="160.0" layoutY="104.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
