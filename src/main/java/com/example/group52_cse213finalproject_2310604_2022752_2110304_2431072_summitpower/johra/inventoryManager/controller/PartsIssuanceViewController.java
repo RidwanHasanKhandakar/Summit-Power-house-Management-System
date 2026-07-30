@@ -16,6 +16,14 @@ public class PartsIssuanceViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        equipmentIdComboBox.getItems().addAll(
+                "100",
+                "101",
+                "102",
+                "103",
+                "104"
+        );
     }
 
     @javafx.fxml.FXML
