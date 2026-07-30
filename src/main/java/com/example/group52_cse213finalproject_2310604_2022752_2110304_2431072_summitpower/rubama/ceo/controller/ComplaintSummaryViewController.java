@@ -36,7 +36,7 @@ public class ComplaintSummaryViewController
 
         customerIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("complaintId"));
-        dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("dateOfComplaint"));
+        dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("complaintDate"));
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
     }
