@@ -18,6 +18,22 @@ public class InventoryReportViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        equipmentOrFuelCategoryComboBox.getItems().addAll(
+                "Turbines",
+                "Pumps",
+                "Generators",
+                "Transformers",
+                "Broilers",
+                "Chemicals"
+        );
+
+        reportTypeComboBox.getItems().addAll(
+                "Maintenance",
+                "Supply Chain Performance",
+                "Audit & Safety"
+
+        );
     }
 
     @javafx.fxml.FXML
