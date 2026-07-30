@@ -15,14 +15,15 @@
          </font>
       </Label>
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="574.0" layoutY="403.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <TableView layoutY="107.0" prefHeight="200.0" prefWidth="642.0">
+      <Button layoutX="574.0" layoutY="403.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView layoutY="144.0" prefHeight="200.0" prefWidth="642.0">
         <columns>
-          <TableColumn prefWidth="176.79999387264252" text="Report Type" />
-          <TableColumn minWidth="3.99993896484375" prefWidth="142.39996337890625" text="Category" />
-            <TableColumn minWidth="0.0" prefWidth="138.4000244140625" text="Date" />
-            <TableColumn minWidth="0.0" prefWidth="186.39999389648438" text="Stock Status" />
+          <TableColumn fx:id="reportTypeCol" prefWidth="152.79999387264252" text="Report Type" />
+          <TableColumn fx:id="fuelOrEquipmentCategoryCol" minWidth="3.99993896484375" prefWidth="166.4000244140625" text="Fuel/Equipment Category" />
+            <TableColumn fx:id="reportDateCol" minWidth="0.0" prefWidth="138.4000244140625" text="Date" />
+            <TableColumn fx:id="stockStatusCol" minWidth="0.0" prefWidth="186.39999389648438" text="Stock Status" />
         </columns>
       </TableView>
+      <Button layoutX="282.0" layoutY="81.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Load" />
    </children>
 </AnchorPane>
