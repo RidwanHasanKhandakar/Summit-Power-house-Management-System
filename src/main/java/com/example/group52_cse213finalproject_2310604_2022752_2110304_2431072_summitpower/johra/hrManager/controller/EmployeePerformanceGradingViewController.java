@@ -17,6 +17,19 @@ public class EmployeePerformanceGradingViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        efficiencyScoreComboBox.getItems().addAll(
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+        );
     }
 
     @javafx.fxml.FXML
