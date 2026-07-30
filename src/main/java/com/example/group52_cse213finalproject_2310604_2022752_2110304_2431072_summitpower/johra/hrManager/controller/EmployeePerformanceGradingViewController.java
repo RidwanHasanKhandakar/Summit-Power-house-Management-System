@@ -11,7 +11,7 @@ public class EmployeePerformanceGradingViewController
     @javafx.fxml.FXML
     private TextField overtimeDaysTextField;
     @javafx.fxml.FXML
-    private ComboBox efficiencyScoreComboBox;
+    private ComboBox<String> efficiencyScoreComboBox;
     @javafx.fxml.FXML
     private TextField employeeIdTextField;
 

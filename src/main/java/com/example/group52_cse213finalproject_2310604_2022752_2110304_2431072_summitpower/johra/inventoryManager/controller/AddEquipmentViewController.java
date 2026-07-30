@@ -8,11 +8,11 @@ public class AddEquipmentViewController
     @javafx.fxml.FXML
     private TextField equipmentNameTextField;
     @javafx.fxml.FXML
-    private ComboBox vendorComboBox;
+    private ComboBox<String> vendorComboBox;
     @javafx.fxml.FXML
     private TextField equipmentIdTextField;
     @javafx.fxml.FXML
-    private ComboBox equipmentCategoryComboBox;
+    private ComboBox<String> equipmentCategoryComboBox;
     @javafx.fxml.FXML
     private DatePicker purchaseDateDatePicker;
     @javafx.fxml.FXML

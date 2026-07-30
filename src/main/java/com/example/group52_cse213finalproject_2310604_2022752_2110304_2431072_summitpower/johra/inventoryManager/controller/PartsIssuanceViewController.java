@@ -6,7 +6,7 @@ import javafx.scene.control.*;
 public class PartsIssuanceViewController
 {
     @javafx.fxml.FXML
-    private ComboBox equipmentIdComboBox;
+    private ComboBox<String> equipmentIdComboBox;
     @javafx.fxml.FXML
     private DatePicker issueDateDatePicker;
     @javafx.fxml.FXML

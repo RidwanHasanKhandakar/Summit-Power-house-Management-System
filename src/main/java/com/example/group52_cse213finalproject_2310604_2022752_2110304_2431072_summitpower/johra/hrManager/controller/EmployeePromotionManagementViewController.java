@@ -1,26 +1,28 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Candidate;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 public class EmployeePromotionManagementViewController
 {
     @javafx.fxml.FXML
-    private ComboBox newpositionTextField;
+    private TableColumn<String, Employee> employeeNameCol;
     @javafx.fxml.FXML
-    private TableColumn employeeNameCol;
-    @javafx.fxml.FXML
-    private TableColumn departNameCol;
+    private TableColumn<String, Employee> departNameCol;
     @javafx.fxml.FXML
     private TextField newSalaryTextField;
     @javafx.fxml.FXML
-    private TableView showTableView;
+    private TableView<Employee> showTableView;
     @javafx.fxml.FXML
-    private TableColumn employeeIdCol;
+    private TableColumn<String, Employee> employeeIdCol;
     @javafx.fxml.FXML
-    private TableColumn newSalaryCol;
+    private TableColumn<Integer, Employee> newSalaryCol;
     @javafx.fxml.FXML
-    private TableColumn newPositionCol;
+    private TableColumn<String, Employee> newPositionCol;
+    @javafx.fxml.FXML
+    private ComboBox<String> newpositionComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {

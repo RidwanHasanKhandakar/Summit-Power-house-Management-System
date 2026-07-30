@@ -8,11 +8,11 @@ public class InventoryReportViewController
     @javafx.fxml.FXML
     private CheckBox stockAvailableCheckBox;
     @javafx.fxml.FXML
-    private ComboBox equipmentOrFuelCategoryComboBox;
+    private ComboBox<String> equipmentOrFuelCategoryComboBox;
     @javafx.fxml.FXML
     private CheckBox stoxkNotAvailableCheckBox;
     @javafx.fxml.FXML
-    private ComboBox reportTypeComboBox;
+    private ComboBox<String> reportTypeComboBox;
     @javafx.fxml.FXML
     private DatePicker reportDateDatePicker;
 

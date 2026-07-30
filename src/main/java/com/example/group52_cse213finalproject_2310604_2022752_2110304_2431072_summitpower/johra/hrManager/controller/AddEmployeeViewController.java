@@ -16,9 +16,9 @@ public class AddEmployeeViewController
     @javafx.fxml.FXML
     private TextField employeeIdTextfield;
     @javafx.fxml.FXML
-    private ComboBox positionComboBox;
+    private ComboBox<String> positionComboBox;
     @javafx.fxml.FXML
-    private ComboBox departmentComboBox;
+    private ComboBox<String> departmentComboBox;
     @javafx.fxml.FXML
     private TextField salaryComboBox;
 

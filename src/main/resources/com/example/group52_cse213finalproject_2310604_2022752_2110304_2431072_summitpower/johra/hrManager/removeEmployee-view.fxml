@@ -22,7 +22,7 @@
           <TableColumn fx:id="employeeIdCol" prefWidth="197.60000306367874" text="Employee ID" />
           <TableColumn fx:id="employeeNameCol" prefWidth="196.00001525878906" text="Employee Name" />
             <TableColumn fx:id="departmentCol" prefWidth="234.39996337890625" text="Department" />
-            <TableColumn fx:id="posistionCol" prefWidth="211.20001220703125" text="Position" />
+            <TableColumn fx:id="positionCol" prefWidth="211.20001220703125" text="Position" />
         </columns>
       </TableView>
       <Button layoutX="97.0" layoutY="110.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />

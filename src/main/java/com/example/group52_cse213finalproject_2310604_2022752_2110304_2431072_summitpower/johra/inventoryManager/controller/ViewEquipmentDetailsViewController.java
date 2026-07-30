@@ -1,22 +1,25 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+
+import java.time.LocalDate;
 
 public class ViewEquipmentDetailsViewController
 {
     @javafx.fxml.FXML
-    private TableView showTableView;
+    private TableView<Equipment> showTableView;
     @javafx.fxml.FXML
-    private TableColumn equipmentCategoryCol;
+    private TableColumn<Equipment, String> equipmentCategoryCol;
     @javafx.fxml.FXML
-    private TableColumn purchaseDateCol;
+    private TableColumn<Equipment, LocalDate> purchaseDateCol;
     @javafx.fxml.FXML
-    private TableColumn quantityCol;
+    private TableColumn<Equipment, String> quantityCol;
     @javafx.fxml.FXML
-    private TableColumn equipmentNameCol;
+    private TableColumn<Equipment, String> equipmentNameCol;
     @javafx.fxml.FXML
-    private TableColumn vendorCol;
+    private TableColumn<Equipment, String> vendorCol;
 
     @javafx.fxml.FXML
     public void initialize() {
