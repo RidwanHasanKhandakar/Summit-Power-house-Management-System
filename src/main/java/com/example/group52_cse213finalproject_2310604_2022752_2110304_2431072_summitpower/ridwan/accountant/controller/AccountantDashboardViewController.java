@@ -84,6 +84,7 @@ public class AccountantDashboardViewController
         alert.setContentText("Are you sure you want to logout >?");
         Optional<ButtonType> res = alert.showAndWait();
         if (res.get()==ButtonType.OK){
+            CurrentUser.logout();
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
         }
 
@@ -92,7 +93,7 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleProfileButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Accountant-Profile-view.fxml","Accountant Profile!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "profile-view.fxml","Accountant Profile!");
 
     }
 
