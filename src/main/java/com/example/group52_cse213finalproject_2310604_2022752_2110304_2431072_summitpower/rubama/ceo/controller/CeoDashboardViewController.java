@@ -27,33 +27,41 @@ public class CeoDashboardViewController
 
     @javafx.fxml.FXML
     public void handleSetOrChangeTariffRates(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "rubama","ceo","tarrif-management-view.fxml","Tarrif Management");
     }
 
     @javafx.fxml.FXML
     public void handleAddOrRemoveAnEmployee(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","employee-management-view.fxml","Employee Management");
     }
 
     @javafx.fxml.FXML
     public void handleViewCustomerComplaintSummary(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","complaint-summary-view.fxml","View Complaint Summary");
     }
 
     @javafx.fxml.FXML
     public void handleViewPlantPerformanceSummary(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","plant-performane-view.fxml","View Plant Performance");
     }
 
     @javafx.fxml.FXML
     public void handleViewTotalRegisteredCustomers(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "rubama","ceo","customer-summary-view.fxml", "View Registered Customers");
     }
 
     @javafx.fxml.FXML
     public void handleApproveFuelPurchaseRequest(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","fuel-purchase-approval.fxml","Approve Fuel Purchase Request");
     }
 
     @javafx.fxml.FXML
     public void handleGenerateWeeklyReport(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","weekly-report-view.fxml","View Weekly Report");
     }
 
     @javafx.fxml.FXML
     public void handleCheckFinancialSummary(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","financial-summary-view.fxml","View Financial Summary");
     }
 }
