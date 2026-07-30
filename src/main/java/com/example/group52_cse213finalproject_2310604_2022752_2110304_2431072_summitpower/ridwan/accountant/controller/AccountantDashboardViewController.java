@@ -87,8 +87,6 @@ public class AccountantDashboardViewController
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
         }
 
-
-
     }
 
     @javafx.fxml.FXML
