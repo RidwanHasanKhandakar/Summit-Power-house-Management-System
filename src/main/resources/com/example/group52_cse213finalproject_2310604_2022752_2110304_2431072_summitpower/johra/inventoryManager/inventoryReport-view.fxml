@@ -21,7 +21,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="329.0" layoutY="96.0" style="-fx-text-fill: white;" text="Category:">
+      <Label layoutX="287.0" layoutY="98.0" style="-fx-text-fill: white;" text="Equipment/Fuel Category:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -31,17 +31,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker layoutX="132.0" layoutY="143.0" />
-      <ComboBox layoutX="435.0" layoutY="92.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox layoutX="133.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="218.0" layoutY="377.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Button layoutX="558.0" layoutY="377.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <DatePicker fx:id="reportDateDatePicker" layoutX="104.0" layoutY="143.0" />
+      <ComboBox fx:id="equipmentOrFuelCategoryComboBox" layoutX="442.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="reportTypeComboBox" layoutX="104.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="218.0" layoutY="377.0" mnemonicParsing="false" onAction="#createReportButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="558.0" layoutY="377.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <Label layoutX="20.0" layoutY="206.0" style="-fx-text-fill: white;" text="Stock Status:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="132.0" layoutY="206.0" mnemonicParsing="false" text="Available" textFill="WHITE" />
-      <CheckBox layoutX="233.0" layoutY="206.0" mnemonicParsing="false" text="Not Available" textFill="WHITE" />
+      <CheckBox fx:id="stockAvailableCheckBox" layoutX="132.0" layoutY="206.0" mnemonicParsing="false" text="Available" textFill="WHITE" />
+      <CheckBox fx:id="stoxkNotAvailableCheckBox" layoutX="233.0" layoutY="206.0" mnemonicParsing="false" text="Not Available" textFill="WHITE" />
    </children>
 </AnchorPane>
