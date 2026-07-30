@@ -16,7 +16,7 @@
             <Font name="Times New Roman" size="43.0" />
          </font>
       </Label>
-      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLoadFinancialSummary" prefHeight="53.0" prefWidth="902.0" style="-fx-background-color: #49b0ff;" text="Load Financial Summary">
+      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLoadFinancialSummary" prefHeight="53.0" prefWidth="941.0" style="-fx-background-color: #49b0ff;" text="Load Financial Summary">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

@@ -26,8 +26,11 @@
           <TableColumn fx:id="approvalStatusCol" prefWidth="231.0" text="Approval Status" />
         </columns>
       </TableView>
-      <Button layoutX="934.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApproveNot" prefHeight="53.0" prefWidth="153.0" text="Approve Not" />
-      <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleAprove" prefHeight="53.0" prefWidth="153.0" text="Approve" />
+      <Button layoutX="934.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApproveNot" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve Not">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve" />
       <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
          <font>
             <Font name="System Bold" size="15.0" />
