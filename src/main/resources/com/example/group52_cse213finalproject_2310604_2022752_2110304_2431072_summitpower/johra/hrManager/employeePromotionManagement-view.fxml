@@ -16,30 +16,20 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="104.0" style="-fx-text-fill: white;" text="Employee ID:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="133.0" layoutY="99.0" />
       <Button layoutX="216.0" layoutY="343.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Update" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="838.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <TableView layoutY="179.0" prefHeight="200.0" prefWidth="837.0">
+      <TableView fx:id="showTableView" layoutY="179.0" prefHeight="200.0" prefWidth="837.0">
          <columns>
-            <TableColumn prefWidth="81.60003507137299" text="Employee ID" />
-            <TableColumn prefWidth="116.79993438720703" text="Employee Name" />
-            <TableColumn prefWidth="99.99993896484375" text="Phone" />
-            <TableColumn prefWidth="69.60003662109375" text="DOB" />
-            <TableColumn prefWidth="69.60003662109375" text="DOJ" />
-            <TableColumn prefWidth="79.2000732421875" text="Department" />
-            <TableColumn prefWidth="80.79998779296875" text="Position" />
-            <TableColumn prefWidth="121.60003662109375" text="Salary" />
-            <TableColumn prefWidth="121.60003662109375" text="Address" />
+            <TableColumn fx:id="employeeIdCol" prefWidth="173.60000306367874" text="Employee ID" />
+            <TableColumn fx:id="employeeNameCol" prefWidth="182.3999786376953" text="Employee Name" />
+            <TableColumn fx:id="departNameCol" prefWidth="164.800048828125" text="Department" />
+            <TableColumn fx:id="newPositionCol" prefWidth="121.60003662109375" text="Position" />
+            <TableColumn fx:id="newSalaryCol" prefWidth="196.0" text="Salary" />
          </columns>
       </TableView>
-      <Button layoutX="329.0" layoutY="401.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Button layoutX="772.0" layoutY="401.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <ComboBox layoutX="387.0" layoutY="99.0" prefWidth="150.0" />
+      <Button layoutX="329.0" layoutY="401.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Update" />
+      <Button layoutX="772.0" layoutY="401.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <ComboBox fx:id="newpositionComboBox" layoutX="387.0" layoutY="99.0" prefWidth="150.0" />
       <Label layoutX="326.0" layoutY="103.0" style="-fx-text-fill: white;" text="Position:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -50,6 +40,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="639.0" layoutY="100.0" />
+      <TextField fx:id="newSalaryTextField" layoutX="639.0" layoutY="100.0" />
+      <Button layoutX="81.0" layoutY="99.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
    </children>
 </AnchorPane>

@@ -22,14 +22,14 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="121.0" layoutY="98.0" prefHeight="26.0" prefWidth="208.0" />
+      <TextField fx:id="employeeIdTextField" layoutX="121.0" layoutY="98.0" prefHeight="26.0" prefWidth="208.0" />
       <Label layoutX="16.0" layoutY="150.0" style="-fx-text-fill: white;" text="Employee Name:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="119.0" layoutY="146.0" prefHeight="26.0" prefWidth="208.0" />
-      <Label layoutX="370.0" layoutY="102.0" style="-fx-text-fill: white;" text="Training Name:">
+      <TextField fx:id="employeeTextField" layoutX="119.0" layoutY="146.0" prefHeight="26.0" prefWidth="208.0" />
+      <Label layoutX="368.0" layoutY="102.0" style="-fx-text-fill: white;" text="Training ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -39,27 +39,25 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="470.0" layoutY="98.0" prefHeight="26.0" prefWidth="208.0" />
-      <ComboBox layoutX="470.0" layoutY="144.0" prefHeight="26.0" prefWidth="208.0" />
+      <ComboBox fx:id="trainingIdComboBox" layoutX="470.0" layoutY="98.0" prefHeight="26.0" prefWidth="208.0" />
+      <ComboBox fx:id="trainerNameComboBox" layoutX="470.0" layoutY="144.0" prefHeight="26.0" prefWidth="208.0" />
       <Label layoutX="14.0" layoutY="210.0" style="-fx-text-fill: white;" text="Status:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox layoutX="119.0" layoutY="210.0" mnemonicParsing="false" text="Training Done" textFill="WHITE" />
-      <CheckBox layoutX="323.0" layoutY="210.0" mnemonicParsing="false" text="Training Not Done" textFill="WHITE" />
+      <CheckBox fx:id="trainingStatusDoneCheckBox" layoutX="119.0" layoutY="210.0" mnemonicParsing="false" text="Training Done" textFill="WHITE" />
+      <CheckBox fx:id="trainingStatusNotDoneCheckBox" layoutX="323.0" layoutY="210.0" mnemonicParsing="false" text="Training Not Done" textFill="WHITE" />
       <Label alignment="CENTER" layoutX="-1.0" layoutY="524.0" prefHeight="18.0" prefWidth="712.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="649.0" layoutY="487.0" mnemonicParsing="false" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Button layoutX="551.0" layoutY="206.0" mnemonicParsing="false" style="-fx-background-color: #49b0ff;" text="Save" />
-      <TableView layoutX="-1.0" layoutY="291.0" prefHeight="155.0" prefWidth="712.0">
+      <Button layoutX="649.0" layoutY="487.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="551.0" layoutY="206.0" mnemonicParsing="false" onAction="#saveTrainingButtonOnAction" style="-fx-background-color: #49b0ff;" text="Save" />
+      <TableView fx:id="showTrainingProgramTableView" layoutX="-1.0" layoutY="291.0" prefHeight="155.0" prefWidth="712.0">
         <columns>
-          <TableColumn prefWidth="79.20001524686813" text="Employee ID" maxWidth="792.0001524686813" minWidth="30.0"/>
-          <TableColumn prefWidth="191.99998474121094" text="Employee Name" maxWidth="1919.9998474121094"
-                       minWidth="30.0"/>
-            <TableColumn prefWidth="179.20001220703125" text="Training Name" maxWidth="1792.0001220703125"
-                         minWidth="30.0"/>
-            <TableColumn prefWidth="107.199951171875" text="Trainer ID" maxWidth="1071.99951171875" minWidth="30.0"/>
-            <TableColumn prefWidth="156.0" text="Status" />
+          <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="30.0" prefWidth="79.20001524686813" text="Employee ID" />
+          <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="191.99998474121094" text="Employee Name" />
+            <TableColumn fx:id="trainingNameCom" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="179.20001220703125" text="Training Name" />
+            <TableColumn fx:id="trainerIdCol" maxWidth="1071.99951171875" minWidth="30.0" prefWidth="107.199951171875" text="Trainer ID" />
+            <TableColumn fx:id="trainingStatusCol" prefWidth="156.0" text="Status" />
         </columns>
       </TableView>
    </children>

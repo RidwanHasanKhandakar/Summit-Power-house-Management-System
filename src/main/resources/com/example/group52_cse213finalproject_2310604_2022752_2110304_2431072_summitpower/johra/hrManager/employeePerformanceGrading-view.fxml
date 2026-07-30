@@ -29,18 +29,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="148.0" layoutY="109.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField layoutX="148.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
-      <TextField layoutX="148.0" layoutY="239.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="employeeIdTextField" layoutX="148.0" layoutY="109.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="totalDaysPresentTextField" layoutX="148.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
+      <TextField fx:id="overtimeDaysTextField" layoutX="148.0" layoutY="239.0" prefHeight="26.0" prefWidth="175.0" />
       <Label layoutX="25.0" layoutY="316.0" style="-fx-text-fill: white;" text="Efficiency Score:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="148.0" layoutY="312.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="393.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
+      <ComboBox fx:id="efficiencyScoreComboBox" layoutX="148.0" layoutY="312.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="393.0" layoutY="154.0" mnemonicParsing="false" onAction="#gradeEmployeeButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Grade Employee" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="562.0" layoutY="393.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Button layoutX="420.0" layoutY="219.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: #49b0ff;" text="Send email" />
+      <Button layoutX="562.0" layoutY="393.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="56.0" style="-fx-background-color: #49b0ff;" text="Home" />
    </children>
 </AnchorPane>
