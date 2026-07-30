@@ -20,6 +20,21 @@ public class AddEquipmentViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        equipmentCategoryComboBox.getItems().addAll(
+                "Primary Generation & Rotating Machinery",
+                "Electrical Systems & Distribution",
+                "Thermal Cycle & Fluid Handling",
+                "Instrumentation & Control"
+        );
+
+        vendorComboBox.getItems().addAll(
+                "GE Vernova",
+                "Siemens Energy",
+                "Mitsubishi Corporation",
+                " Honeywell",
+                "Hitachi Energy"
+        );
     }
 
     @javafx.fxml.FXML
