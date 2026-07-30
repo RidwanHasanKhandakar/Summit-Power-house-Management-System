@@ -33,6 +33,21 @@ public class ManageEmployeeTrainingViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        trainerNameComboBox.getItems().addAll(
+                "Ridwan Hasan Khandakar",
+                "Rubama Mehnaj",
+                "Samia Islam",
+                "Kazi Fatema Tuj Johra"
+        );
+
+        trainingIdComboBox.getItems().addAll(
+                "111",
+                "112",
+                "113",
+                "114"
+        );
+
     }
 
     @javafx.fxml.FXML
