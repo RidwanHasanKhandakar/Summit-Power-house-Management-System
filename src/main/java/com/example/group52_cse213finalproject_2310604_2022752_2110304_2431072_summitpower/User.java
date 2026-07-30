@@ -8,7 +8,7 @@ public class User extends Person {
     private String password;
     private String role;
 
-    public User(String firstName, String lastName, String address, int phoneNumber, String gender, LocalDate dateOfBirth, String userId, String email, String password, String role) {
+    public User(String firstName, String lastName, String address, String phoneNumber, String gender, LocalDate dateOfBirth, String userId, String email, String password, String role) {
         super(firstName, lastName, address, phoneNumber, gender, dateOfBirth);
         this.userId = userId;
         this.email = email;

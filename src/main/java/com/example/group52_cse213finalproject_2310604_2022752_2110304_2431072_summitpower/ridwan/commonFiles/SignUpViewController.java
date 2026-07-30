@@ -63,7 +63,7 @@ public class SignUpViewController
             String id = userIdTextField.getText().trim();
             LocalDate dob = dateOfBirthDatePicker.getValue();
             String role = roleComboBox.getValue();
-            int phone;
+            //String phone;
 
             // Required fields
             if (fName.isEmpty()
@@ -119,10 +119,8 @@ public class SignUpViewController
                 return;
             }
 
-            try {
-                phone = Integer.parseInt(phoneStr);
-            } catch (NumberFormatException e) {
-                showError("Invalid phone number.");
+            if(!phoneStr.matches("\\d{11}")){
+                showError("Phone number ust contain exactly 11 digits.");
                 return;
             }
 
@@ -145,7 +143,7 @@ public class SignUpViewController
                     fName,
                     lName,
                     address,
-                    phone,
+                    phoneStr,
                     gender,
                     dob,
                     id,

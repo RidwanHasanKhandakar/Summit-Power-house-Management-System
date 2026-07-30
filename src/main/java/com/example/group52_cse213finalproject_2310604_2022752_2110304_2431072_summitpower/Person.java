@@ -10,11 +10,11 @@ public class Person implements Serializable {
     private String firstName;
     private String lastName;
     private String address;
-    private int phoneNumber;
+    private String phoneNumber;
     private String gender;
     private LocalDate dateOfBirth;
 
-    public Person(String firstName, String lastName, String address, int phoneNumber, String gender, LocalDate dateOfBirth) {
+    public Person(String firstName, String lastName, String address, String phoneNumber, String gender, LocalDate dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -47,11 +47,11 @@ public class Person implements Serializable {
         this.address = address;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -77,7 +77,7 @@ public class Person implements Serializable {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", gender='" + gender + '\'' +
                 ", dateOfBirth=" + dateOfBirth +
                 '}';
