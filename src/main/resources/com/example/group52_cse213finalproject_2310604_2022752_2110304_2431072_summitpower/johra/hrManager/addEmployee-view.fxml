@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -26,52 +25,40 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="334.0" layoutY="124.0" style="-fx-text-fill: white;" text="Phone: ">
+      <TextField fx:id="employeeIdTextfield" layoutX="122.0" layoutY="120.0" prefHeight="26.0" prefWidth="164.0" />
+      <TextField fx:id="employeeIdComboBox" layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="330.0" layoutY="165.0" style="-fx-text-fill: white;" text="Date of Birth:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="19.0" layoutY="236.0" style="-fx-text-fill: white;" text="Address:">
+      <DatePicker fx:id="dateOfBirthDatePicker" layoutX="437.0" layoutY="160.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="222.0" layoutY="388.0" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Label layoutX="333.0" layoutY="123.0" style="-fx-text-fill: white;" text="Email:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField layoutX="122.0" layoutY="120.0" prefHeight="26.0" prefWidth="164.0" />
-      <TextField layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
-      <TextField layoutX="439.0" layoutY="120.0" prefHeight="26.0" prefWidth="175.0" />
-      <Label layoutX="17.0" layoutY="206.0" style="-fx-text-fill: white;" text="Date of Birth:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <DatePicker layoutX="123.0" layoutY="202.0" prefHeight="26.0" prefWidth="164.0" />
-      <Button layoutX="222.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Label layoutX="333.0" layoutY="165.0" style="-fx-text-fill: white;" text="Email:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="439.0" layoutY="161.0" prefHeight="26.0" prefWidth="175.0" />
-      <Label layoutX="332.0" layoutY="206.0" style="-fx-text-fill: white;" text="Date of Joining:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <DatePicker layoutX="438.0" layoutY="202.0" />
-      <TextArea layoutX="125.0" layoutY="238.0" prefHeight="66.0" prefWidth="164.0" />
+      <TextField fx:id="emailTextField" layoutX="439.0" layoutY="119.0" prefHeight="26.0" prefWidth="175.0" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Label layoutX="333.0" layoutY="281.0" style="-fx-text-fill: white;" text="Position:">
+      <Label layoutX="330.0" layoutY="207.0" style="-fx-text-fill: white;" text="Position:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="332.0" layoutY="244.0" style="-fx-text-fill: white;" text="Department:">
+      <Label layoutX="14.0" layoutY="208.0" style="-fx-text-fill: white;" text="Department:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox layoutX="437.0" layoutY="240.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox layoutX="439.0" layoutY="277.0" prefHeight="26.0" prefWidth="175.0" />
-      <Button layoutX="565.0" layoutY="388.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <ComboBox fx:id="departmentComboBox" layoutX="121.0" layoutY="203.0" prefHeight="26.0" prefWidth="164.0" />
+      <ComboBox fx:id="positionComboBox" layoutX="436.0" layoutY="203.0" prefHeight="26.0" prefWidth="175.0" />
+      <Button layoutX="565.0" layoutY="388.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Label layoutX="14.0" layoutY="253.0" style="-fx-text-fill: white;" text="Salary:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="salaryComboBox" layoutX="121.0" layoutY="248.0" prefHeight="26.0" prefWidth="164.0" />
    </children>
 </AnchorPane>
