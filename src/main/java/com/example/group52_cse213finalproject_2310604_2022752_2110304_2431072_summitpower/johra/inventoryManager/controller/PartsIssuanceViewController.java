@@ -19,7 +19,7 @@ public class PartsIssuanceViewController
     }
 
     @javafx.fxml.FXML
-    public void homeButtonOnAction(gitActionEvent actionEvent) {
+    public void homeButtonOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
