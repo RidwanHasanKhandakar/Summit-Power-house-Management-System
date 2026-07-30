@@ -27,13 +27,22 @@ public class AddEmployeeViewController
 
         positionComboBox.getItems().addAll(
                 "Plant Manager",
-                "Accountant",
-                "Executive Officer",
-                "Senior Executive Officer"
+                "Maintenance Engineer",
+                "Head of Engineering",
+                "Efficiency Engineer",
+                "Finance Manager",
+                "Plant Accountant",
+                "Sourcing Manager",
+                "Store Keeper",
+                "HR Manager",
+                "Site Admin",
+                "Legal Counsel",
+                "HSE Officer"
         );
 
         departmentComboBox.getItems().addAll(
                 "Operations and Maintenance",
+                "Engineering and Technical Services",
                 "Finance and Accounts",
                 "Supply Chain",
                 "Human Resource",
