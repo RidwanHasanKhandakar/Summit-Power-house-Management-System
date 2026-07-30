@@ -18,7 +18,7 @@
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutY="409.0" prefHeight="18.0" prefWidth="629.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label alignment="CENTER" layoutY="409.0" prefHeight="18.0" prefWidth="629.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
       <Label layoutX="27.0" layoutY="64.0" text="Client / Distribution Company : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
