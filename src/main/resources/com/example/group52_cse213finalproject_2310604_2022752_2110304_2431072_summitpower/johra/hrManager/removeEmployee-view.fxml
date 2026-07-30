@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,14 +14,8 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="93.0" style="-fx-text-fill: white;" text="Employee ID:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="employeeIdTextField" layoutX="131.0" layoutY="89.0" prefHeight="26.0" prefWidth="164.0" />
       <Label alignment="CENTER" layoutY="473.0" prefHeight="18.0" prefWidth="838.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="626.0" layoutY="97.0" mnemonicParsing="false" onAction="#removeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Remove" />
+      <Button layoutX="503.0" layoutY="110.0" mnemonicParsing="false" onAction="#removeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Remove" />
       <Button layoutX="773.0" layoutY="434.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView fx:id="removeEmployeeTableView" layoutY="189.0" prefHeight="200.0" prefWidth="837.0">
         <columns>
@@ -32,6 +25,6 @@
             <TableColumn fx:id="posistionCol" prefWidth="211.20001220703125" text="Position" />
         </columns>
       </TableView>
-      <Button layoutX="307.0" layoutY="89.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Search" />
+      <Button layoutX="97.0" layoutY="110.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
    </children>
 </AnchorPane>

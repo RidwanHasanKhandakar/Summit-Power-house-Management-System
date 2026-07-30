@@ -1,5 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
 public class RemoveEmployeeViewController
 {
     @javafx.fxml.FXML
@@ -10,8 +13,6 @@ public class RemoveEmployeeViewController
     private TableColumn posistionCol;
     @javafx.fxml.FXML
     private TableColumn employeeIdCol;
-    @javafx.fxml.FXML
-    private TextField employeeIdTextField;
     @javafx.fxml.FXML
     private TableView removeEmployeeTableView;
 
@@ -27,7 +28,11 @@ public class RemoveEmployeeViewController
     public void homeButtonOnAction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void searchButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void loadTableViewButtonOnAction(ActionEvent actionEvent) {
     }
 }

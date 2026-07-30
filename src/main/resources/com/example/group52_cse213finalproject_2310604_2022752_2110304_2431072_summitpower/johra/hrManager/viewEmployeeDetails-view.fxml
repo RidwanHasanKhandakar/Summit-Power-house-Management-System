@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -15,22 +14,16 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="366.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Show" />
+      <Button layoutX="231.0" layoutY="91.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="718.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="649.0" layoutY="402.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Label layoutX="14.0" layoutY="95.0" style="-fx-text-fill: white;" text="Employee ID:">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField layoutX="117.0" layoutY="91.0" prefHeight="26.0" prefWidth="164.0" />
-      <TableView layoutY="159.0" prefHeight="215.0" prefWidth="718.0">
+      <Button layoutX="649.0" layoutY="402.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView fx:id="showEmployeeTableView" layoutY="159.0" prefHeight="215.0" prefWidth="718.0">
          <columns>
-            <TableColumn maxWidth="792.0001524686813" minWidth="30.0" prefWidth="79.20001524686813" text="Employee ID" />
-            <TableColumn maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="191.99998474121094" text="Employee Name" />
-            <TableColumn maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="179.20001220703125" text="Department" />
-            <TableColumn maxWidth="1071.99951171875" minWidth="30.0" prefWidth="107.199951171875" text="Position" />
-            <TableColumn maxWidth="1071.99951171875" minWidth="30.0" prefWidth="158.39999999999998" text="Salary" />
+            <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="30.0" prefWidth="79.20001524686813" text="Employee ID" />
+            <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="191.99998474121094" text="Employee Name" />
+            <TableColumn fx:id="departmentCol" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="179.20001220703125" text="Department" />
+            <TableColumn fx:id="positionCol" maxWidth="1071.99951171875" minWidth="30.0" prefWidth="107.199951171875" text="Position" />
+            <TableColumn fx:id="salaryCol" maxWidth="1071.99951171875" minWidth="30.0" prefWidth="158.39999999999998" text="Salary" />
          </columns>
       </TableView>
    </children>
