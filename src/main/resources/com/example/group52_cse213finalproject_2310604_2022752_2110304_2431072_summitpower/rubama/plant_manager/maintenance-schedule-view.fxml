@@ -17,7 +17,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="415.0" layoutY="76.0" prefHeight="64.0" prefWidth="504.0" text="Maintenance Schedule View" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+      <Label layoutX="460.0" layoutY="76.0" prefHeight="64.0" prefWidth="404.0" text="Maintenance Schedule" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
          <font>
             <Font name="Times New Roman" size="43.0" />
          </font>
