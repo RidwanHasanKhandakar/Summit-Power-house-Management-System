@@ -26,6 +26,21 @@ public class EmployeePromotionManagementViewController
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        newpositionComboBox.getItems().addAll(
+                "Plant Manager",
+                "Maintenance Engineer",
+                "Head of Engineering",
+                "Efficiency Engineer",
+                "Finance Manager",
+                "Plant Accountant",
+                "Sourcing Manager",
+                "Store Keeper",
+                "HR Manager",
+                "Site Admin",
+                "Legal Counsel",
+                "HSE Officer"
+        );
     }
 
     @javafx.fxml.FXML
