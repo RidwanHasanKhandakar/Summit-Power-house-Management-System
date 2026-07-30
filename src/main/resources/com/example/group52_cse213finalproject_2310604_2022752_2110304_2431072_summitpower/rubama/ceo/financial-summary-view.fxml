@@ -16,7 +16,7 @@
             <Font name="Times New Roman" size="43.0" />
          </font>
       </Label>
-      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLoadFinancialSummary" prefHeight="53.0" prefWidth="902.0" style="-fx-background-color: #49b0ff;" text="Load Financial Summary">
+      <Button layoutX="160.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleLoadFinancialSummary" prefHeight="53.0" prefWidth="941.0" style="-fx-background-color: #49b0ff;" text="Load Financial Summary">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -25,12 +25,13 @@
       <DatePicker fx:id="toDatePicker" layoutX="430.0" layoutY="225.0" prefHeight="39.0" prefWidth="393.0" />
       <Label layoutX="338.0" layoutY="166.0" text="From:" textFill="WHITE" />
       <Label layoutX="338.0" layoutY="230.0" prefHeight="21.0" prefWidth="38.0" text="To:" textFill="WHITE" />
-      <TableView fx:id="financialSummaryTableView" layoutX="68.0" layoutY="432.0" prefHeight="365.0" prefWidth="1117.0">
+      <TableView fx:id="financialSummaryTableView" layoutX="29.0" layoutY="432.0" prefHeight="365.0" prefWidth="1216.0">
         <columns>
-          <TableColumn fx:id="dateCol" prefWidth="192.0" text="Date" />
-          <TableColumn fx:id="revenueCol" prefWidth="266.0" text="Revenue" />
-            <TableColumn fx:id="fuelCostCol" prefWidth="327.0" text="Fuel Cost" />
-            <TableColumn fx:id="operationalCostCol" prefWidth="331.0" text="Operational Cost" />
+          <TableColumn fx:id="fromDateCol" prefWidth="164.0" text="From-Date" />
+          <TableColumn fx:id="toDateCol" prefWidth="248.0" text="To-Date" />
+            <TableColumn fx:id="revenueCol" prefWidth="245.0" text="Revenue" />
+            <TableColumn fx:id="fuelCostCol" prefWidth="285.0" text="Fuel Cost" />
+            <TableColumn fx:id="operationalCostCol" prefWidth="273.0" text="Operational Cost" />
         </columns>
       </TableView>
       <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
