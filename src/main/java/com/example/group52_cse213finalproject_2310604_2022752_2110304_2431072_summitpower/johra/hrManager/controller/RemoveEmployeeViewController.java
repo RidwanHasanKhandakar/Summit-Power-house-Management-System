@@ -7,15 +7,15 @@ import javafx.scene.control.*;
 public class RemoveEmployeeViewController
 {
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeNameCol;
+    private TableColumn<Employee, String> employeeNameCol;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> departmentCol;
+    private TableColumn<Employee, String> departmentCol;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeIdCol;
+    private TableColumn<Employee, String> employeeIdCol;
     @javafx.fxml.FXML
     private TableView<Employee> removeEmployeeTableView;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> positionCol;
+    private TableColumn<Employee, String> positionCol;
 
     @javafx.fxml.FXML
     public void initialize() {

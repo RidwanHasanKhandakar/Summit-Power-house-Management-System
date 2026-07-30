@@ -11,9 +11,9 @@ public class ManageEmployeeTrainingViewController
     @javafx.fxml.FXML
     private CheckBox trainingStatusDoneCheckBox;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeNameCol;
+    private TableColumn<Employee, String> employeeNameCol;
     @javafx.fxml.FXML
-    private TableColumn<Boolean, Employee> trainingStatusCol;
+    private TableColumn<Employee, Boolean> trainingStatusCol;
     @javafx.fxml.FXML
     private ComboBox<String> trainerNameComboBox;
     @javafx.fxml.FXML
@@ -23,11 +23,11 @@ public class ManageEmployeeTrainingViewController
     @javafx.fxml.FXML
     private TableView<Employee> showTrainingProgramTableView;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeIdCol;
+    private TableColumn<Employee, String> employeeIdCol;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> trainingNameCom;
+    private TableColumn<Employee, String> trainingNameCom;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> trainerIdCol;
+    private TableColumn<Employee, String> trainerIdCol;
     @javafx.fxml.FXML
     private TextField employeeIdTextField;
 

@@ -8,19 +8,19 @@ import javafx.scene.control.*;
 public class EmployeePromotionManagementViewController
 {
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeNameCol;
+    private TableColumn<Employee, String> employeeNameCol;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> departNameCol;
+    private TableColumn<Employee, String> departNameCol;
     @javafx.fxml.FXML
     private TextField newSalaryTextField;
     @javafx.fxml.FXML
     private TableView<Employee> showTableView;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> employeeIdCol;
+    private TableColumn<Employee, String> employeeIdCol;
     @javafx.fxml.FXML
-    private TableColumn<Integer, Employee> newSalaryCol;
+    private TableColumn<Employee, Integer> newSalaryCol;
     @javafx.fxml.FXML
-    private TableColumn<String, Employee> newPositionCol;
+    private TableColumn<Employee, String> newPositionCol;
     @javafx.fxml.FXML
     private ComboBox<String> newpositionComboBox;
 
