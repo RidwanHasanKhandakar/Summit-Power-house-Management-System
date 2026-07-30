@@ -21,7 +21,7 @@
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutY="307.0" prefHeight="18.0" prefWidth="665.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Label alignment="CENTER" layoutY="307.0" prefHeight="18.0" prefWidth="665.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
       <Button layoutX="557.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
       <Label layoutX="30.0" layoutY="110.0" text="Complaint Category : " textFill="WHITE">
          <font>
