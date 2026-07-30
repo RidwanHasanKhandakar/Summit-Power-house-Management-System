@@ -6,7 +6,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="262.0" prefWidth="398.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.commonFiles.ProfileViewController">
    <children>
       <Label layoutX="139.0" layoutY="14.0" text="My Profile" textFill="WHITE">
@@ -25,17 +24,17 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="219.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID : ">
+      <Text fill="WHITE" layoutX="199.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="219.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
+      <Text fill="WHITE" layoutX="199.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="219.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role : ">
+      <Text fill="WHITE" layoutX="199.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role : ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -66,9 +65,9 @@
       <Text fx:id="phoneText" fill="#49b0ff" layoutX="103.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="100.13671875" />
       <Text fx:id="addressText" fill="#49b0ff" layoutX="103.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="247.13671875" />
       <Text fx:id="dobText" fill="#49b0ff" layoutX="107.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
-      <Text fx:id="userIdText" fill="#49b0ff" layoutX="278.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.98046875" />
-      <Text fx:id="emailText" fill="#49b0ff" layoutX="264.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.0" />
-      <Text fx:id="roleText" fill="#49b0ff" layoutX="278.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.98046875" />
+      <Text fx:id="userIdText" fill="#49b0ff" layoutX="258.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="70.98046875" />
+      <Text fx:id="emailText" fill="#49b0ff" layoutX="240.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="146.4000244140625" />
+      <Text fx:id="roleText" fill="#49b0ff" layoutX="258.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.98046875" />
       <Button layoutX="332.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleBackButton" style="-fx-background-color: #49b0ff;" text="Back" />
    </children>
 </AnchorPane>
