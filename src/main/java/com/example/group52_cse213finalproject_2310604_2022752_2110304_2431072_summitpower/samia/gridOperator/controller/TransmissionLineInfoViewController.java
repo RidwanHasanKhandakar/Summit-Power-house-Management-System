@@ -74,7 +74,6 @@ public class TransmissionLineInfoViewController
         voltageLevelTextField.clear();
         lineLengthTextField.clear();
         lineStatusComboBox.setValue(null);
-
         transmissionLineTableView.getSelectionModel().clearSelection();
     }
 

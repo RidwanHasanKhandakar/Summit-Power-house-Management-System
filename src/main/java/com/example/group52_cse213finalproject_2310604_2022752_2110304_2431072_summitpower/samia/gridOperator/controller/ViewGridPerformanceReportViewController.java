@@ -79,22 +79,13 @@ public class ViewGridPerformanceReportViewController
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
         reportIdTextField.clear();
-
         gridSectionComboBox.setValue(null);
-
         totalLoadMWTextField.clear();
-
         availableCapacityMWTextField.clear();
-
         gridEfficiencyTextField.clear();
-
         performanceStatusComboBox.setValue(null);
-
         reportDatePicker.setValue(null);
-
-        gridPerformanceTableView
-                .getSelectionModel()
-                .clearSelection();
+        gridPerformanceTableView.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML

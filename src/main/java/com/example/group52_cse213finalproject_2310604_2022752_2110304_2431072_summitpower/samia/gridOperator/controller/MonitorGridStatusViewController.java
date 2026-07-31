@@ -42,6 +42,17 @@ public class MonitorGridStatusViewController
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
+        gridIdTextField.clear();
+
+        gridSectionComboBox.setValue(null);
+
+        gridStatusComboBox.setValue(null);
+
+        voltageTextField.clear();
+
+        frequencyTextField.clear();
+
+        monitoringDatePicker.setValue(null);
     }
 
     @javafx.fxml.FXML

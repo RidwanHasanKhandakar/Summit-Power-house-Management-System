@@ -42,6 +42,12 @@ public class MonitorLoadDemandViewController
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
+        demandIdTextField.clear();
+        gridSectionComboBox.setValue(null);
+        currentLoadMWTextField.clear();
+        availableCapacityMWTextField.clear();
+        demandStatusComboBox.setValue(null);
+        monitoringDatePicker.setValue(null);
     }
 
     @javafx.fxml.FXML

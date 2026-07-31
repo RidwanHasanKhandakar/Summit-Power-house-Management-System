@@ -67,17 +67,11 @@ public class RecordGridOperationLogViewController
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
         operationIdTextField.clear();
-
         gridSectionComboBox.setValue(null);
-
         operationTypeComboBox.setValue(null);
-
         operationDatePicker.setValue(null);
-
         operatorNameTextField.clear();
-
         remarksTextArea.clear();
-
         operationLogTableView.getSelectionModel().clearSelection();
     }
 
