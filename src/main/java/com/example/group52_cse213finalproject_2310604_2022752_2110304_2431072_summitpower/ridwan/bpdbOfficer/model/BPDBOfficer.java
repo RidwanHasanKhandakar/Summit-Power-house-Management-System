@@ -9,7 +9,7 @@ public class BPDBOfficer extends User implements Serializable {
     private String department;
     private String designation;
 
-    public BPDBOfficer(String firstName, String lastName, String address, int phoneNumber, String gender, LocalDate dateOfBirth, String userId, String email, String password, String role, String department, String designation) {
+    public BPDBOfficer(String firstName, String lastName, String address, String phoneNumber, String gender, LocalDate dateOfBirth, String userId, String email, String password, String role, String department, String designation) {
         super(firstName, lastName, address, phoneNumber, gender, dateOfBirth, userId, email, password, role);
         this.department = department;
         this.designation = designation;
