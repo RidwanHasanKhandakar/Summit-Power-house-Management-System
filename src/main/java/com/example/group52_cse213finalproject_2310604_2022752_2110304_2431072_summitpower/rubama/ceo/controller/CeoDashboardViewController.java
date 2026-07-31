@@ -27,7 +27,7 @@ public class CeoDashboardViewController
 
     @javafx.fxml.FXML
     public void handleSetOrChangeTariffRates(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "rubama","ceo","tarrif-management-view.fxml","Tarrif Management");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "rubama","ceo","tariff-management-view.fxml","Tarrif Management");
     }
 
     @javafx.fxml.FXML
@@ -42,7 +42,7 @@ public class CeoDashboardViewController
 
     @javafx.fxml.FXML
     public void handleViewPlantPerformanceSummary(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","plant-performane-view.fxml","View Plant Performance");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","plant-performance-view.fxml","View Plant Performance");
     }
 
     @javafx.fxml.FXML
