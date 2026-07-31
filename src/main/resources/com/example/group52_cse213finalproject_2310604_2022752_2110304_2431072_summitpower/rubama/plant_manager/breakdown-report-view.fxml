@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="860.0" prefWidth="1281.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.controller.BreakdownReportViewController">
    <children>
       <Label layoutX="415.0" layoutY="61.0" prefHeight="64.0" prefWidth="327.0" text="Breakdown Report" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
@@ -41,5 +40,6 @@
             <TableColumn fx:id="statusCol" prefWidth="267.0" text="Status" />
          </columns>
       </TableView>
+      <Label alignment="CENTER" layoutX="-8.0" layoutY="834.0" prefHeight="39.0" prefWidth="1281.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
    </children>
 </AnchorPane>
