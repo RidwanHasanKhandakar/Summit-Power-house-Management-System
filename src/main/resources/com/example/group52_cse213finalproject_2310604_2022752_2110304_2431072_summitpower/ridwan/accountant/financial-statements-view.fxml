@@ -10,15 +10,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="467.0" prefWidth="627.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController">
+<AnchorPane prefHeight="467.0" prefWidth="668.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.controller.FinancialStatementsViewController">
    <children>
       <Label layoutX="218.0" layoutY="14.0" text="Financial Statement" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="555.0" layoutY="404.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Label alignment="CENTER" layoutY="449.0" prefHeight="18.0" prefWidth="641.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
+      <Button layoutX="597.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Label alignment="CENTER" layoutY="449.0" prefHeight="18.0" prefWidth="680.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
       <Label layoutX="20.0" layoutY="63.0" text="Statement Type : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
@@ -69,11 +69,13 @@
          </font>
       </Label>
       <Label fx:id="netProfitLabel" layoutX="517.0" layoutY="250.0" prefHeight="17.0" prefWidth="104.0" />
-      <TableView fx:id="finalcialStatementTableView" layoutX="245.0" layoutY="291.0" prefHeight="138.0" prefWidth="280.0">
+      <TableView fx:id="finalcialStatementTableView" layoutX="245.0" layoutY="291.0" prefHeight="138.0" prefWidth="419.0">
         <columns>
-          <TableColumn fx:id="accountCol" prefWidth="113.0" text="Account" />
-          <TableColumn fx:id="categoryCol" prefWidth="97.0" text="Category" />
-            <TableColumn fx:id="amountCol" prefWidth="69.0" text="Amount" />
+          <TableColumn fx:id="satementIDCol" prefWidth="113.0" text="Satement ID" />
+          <TableColumn fx:id="TypeCol" prefWidth="97.0" text="Type" />
+            <TableColumn fx:id="RevenueCol" prefWidth="69.0" text="Revenue" />
+            <TableColumn fx:id="ExpensesCol" prefWidth="69.0" text="Expenses" />
+            <TableColumn fx:id="netProfitCol" prefWidth="69.0" text="Net Profit" />
         </columns>
       </TableView>
    </children>
