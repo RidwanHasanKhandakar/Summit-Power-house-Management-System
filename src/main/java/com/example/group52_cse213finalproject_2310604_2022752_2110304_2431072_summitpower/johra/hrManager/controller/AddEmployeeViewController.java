@@ -10,8 +10,7 @@ import javafx.scene.control.TextField;
 import java.io.File;
 import java.io.FileWriter;
 
-public class AddEmployeeViewController
-{
+public class AddEmployeeViewController {
     @javafx.fxml.FXML
     private TextField employeeIdComboBox;
     @javafx.fxml.FXML
@@ -63,16 +62,6 @@ public class AddEmployeeViewController
 
     @javafx.fxml.FXML
     public void addEmployeeButtonOnAction(ActionEvent actionEvent) {
-        String str = employeeIdTextfield.getText();
 
-        File f = new File("EmployeeList.txt");
-
-        try{
-        FileWriter fw = new FileWriter(f);
-        fw.write(str);
-        fw.close();
     }
-        catch(Exception e){
-            e.printStackTrace();
-        }
 }

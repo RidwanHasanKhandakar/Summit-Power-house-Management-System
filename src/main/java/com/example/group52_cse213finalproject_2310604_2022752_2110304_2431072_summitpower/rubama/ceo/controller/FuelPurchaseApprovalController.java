@@ -19,7 +19,7 @@ public class FuelPurchaseApprovalController
 
     @javafx.fxml.FXML
     public void initialize() {
-        approvalStatusCol.setCellValueFactory(new PlantPerformanceViewController("requests"));
+        approvalStatusCol.setCellValueFactory(new PropertyValueFactory<>("requests"));
         requestsCol.setCellValueFactory(new PropertyValueFactory<>("approvalStatus"));
     }
 

@@ -43,7 +43,6 @@ public class WeeklyReportViewController
 
     @javafx.fxml.FXML
     public void handleReturn(ActionEvent actionEvent) {
-        public void handleReturn(ActionEvent actionEvent) {
             PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","ceo-dashboard-view.fxml","CEO Dashboard");
     }
 }
