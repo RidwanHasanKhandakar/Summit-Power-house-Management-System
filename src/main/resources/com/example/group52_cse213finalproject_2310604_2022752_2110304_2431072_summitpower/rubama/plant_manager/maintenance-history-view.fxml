@@ -4,9 +4,10 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="797.0" prefWidth="1251.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.controller.MaintenanceHistoryViewController">
    <children>
@@ -27,5 +28,18 @@
       <Label layoutX="453.0" layoutY="218.0" text="Unit No.:" textFill="WHITE" />
       <DatePicker fx:id="dateDatePicker" layoutX="553.0" layoutY="273.0" />
       <Label layoutX="455.0" layoutY="278.0" prefHeight="21.0" prefWidth="41.0" text="Date:" textFill="WHITE" />
+      <Button layoutX="382.0" layoutY="384.0" mnemonicParsing="false" onAction="#handleCheckMaintenanceHistory" prefHeight="64.0" prefWidth="547.0" style="-fx-background-color: #49b0ff;" text="Check Maintenance History">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="maintenanceHistoryTableView" layoutX="110.0" layoutY="499.0" prefHeight="246.0" prefWidth="1066.0">
+         <columns>
+            <TableColumn fx:id="dateCol" prefWidth="224.00003051757812" text="Date" />
+            <TableColumn fx:id="unitNoCol" prefWidth="254.0" text="Unit No" />
+            <TableColumn fx:id="unitNameCol" prefWidth="320.0" text="Unit Name" />
+            <TableColumn fx:id="statusCol" prefWidth="267.0" text="Status" />
+         </columns>
+      </TableView>
    </children>
 </AnchorPane>

@@ -52,7 +52,46 @@ public class ProfileViewController
     @javafx.fxml.FXML
     public void handleBackButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer","bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!");
+        //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer","bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!");
+        User user = CurrentUser.getUser();
 
+        if (user==null){
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridawn","commonFiles","log-in-view.fxml","Log In!");
+            return;
+        }
+
+        switch (user.getRole()){
+            case "CEO":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","ceo-dashboard-view-fxml","CEO Dashboard!");
+                break;
+
+            case "Plant Manager":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","plantManager","plant-manager-view-fxml","Plant Manager Dashboard!");
+                break;
+
+            case "BPDB Officer":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","bpdbOfficer","bpdbOfficer-dashboard-view.fxml","BPDB Officer Dashboard!");
+                break;
+
+            case "Accountant":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan","accountant","accountant-dashboard-view-fxml","Accountant Dashboard!");
+                break;
+
+            case "HR Manager":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra","hrManager","dashboard-view.fxml","HR Manager Dashboard!");
+                break;
+
+            case "Inventory Manager":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"johra", "inventoryManager", "dashboard-view.fxml","Inventory Manager Dashboard!");
+                break;
+
+            case "Engineer":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "samia","engineer","engineer-dashboard-view.fxml","Engineer Dashboard!");
+                break;
+
+            case "Grid Operator":
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard!");
+                break;
+        }
     }
 }

@@ -6,7 +6,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
-public class PowerGenerationFxmlController
+public class PowerGenerationViewController
 {
     @javafx.fxml.FXML
     private DatePicker dateDatePicker;

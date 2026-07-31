@@ -53,82 +53,117 @@ public class SignUpViewController
     @javafx.fxml.FXML
     public void handleSignUpButton(ActionEvent actionEvent) {
 
-        String fName = firstNameTextField.getText().trim();
-        String lName = lastNameTextField.getText().trim();
-        String pw = passwordTextField.getText().trim();
-        String address = addressTextField.getText().trim();
-        String gendar = genderComboBox.getValue();
-        String email = emailTextField.getText().trim();
-        boolean terms = termsCheckBox.isSelected();
-        String id = userIdTextField.getText().trim();
-        LocalDate dob = dateOfBirthDatePicker.getValue();
-        String role = roleComboBox.getValue();
-        int phone;
+            String fName = firstNameTextField.getText().trim();
+            String lName = lastNameTextField.getText().trim();
+            String pw = passwordTextField.getText().trim();
+            String address = addressTextField.getText().trim();
+            String gender = genderComboBox.getValue();
+            String email = emailTextField.getText().trim();
+            boolean terms = termsCheckBox.isSelected();
+            String id = userIdTextField.getText().trim();
+            LocalDate dob = dateOfBirthDatePicker.getValue();
+            String role = roleComboBox.getValue();
+            //String phone;
 
-        try{
-            if (phoneTextField.getText().trim().length()!=11){
-                showError("Phone number must contain 11 digits.");
+            // Required fields
+            if (fName.isEmpty()
+                    || lName.isEmpty()
+                    || pw.isEmpty()
+                    || address.isEmpty()
+                    || email.isEmpty()
+                    || id.isEmpty()
+                    || dob == null
+                    || gender == null
+                    || role == null
+                    || !terms) {
+
+                showError("Please fill out all fields and accept the terms and conditions.");
                 return;
             }
-            else {
-                phone = Integer.parseInt(phoneTextField.getText().trim());
+
+            // Name validation
+            if (!fName.matches("[A-Za-z ]+") || !lName.matches("[A-Za-z ]+")) {
+                showError("First and Last Name can contain only letters.");
+                return;
             }
-        }catch (NumberFormatException e){
-            showError("You need to enter Int for Phone Number");
-            return;
-        }
 
-        if (fName.isEmpty()
-                ||lName.isEmpty()
-                ||pw.isEmpty()
-                ||address.isEmpty()
-                ||email.isEmpty()
-                ||!terms
-                ||id.isEmpty()
-                ||dob==null
-                ||gendar==null
-                ||role==null){
-            showError("please fill out all fields and accept the terms and conditions!");
-            return;
-        }
-        else if (pw.length()<6) {
-            showError("Password must be at least 6 characters.");
-            return;
-        }
-        else if (!email.contains("@")||!email.contains(".")){
-            showError("Invalid email address.");
-            return;
-        }
-        else {
+            // User ID
+            if (id.contains(" ")) {
+                showError("User ID cannot contain spaces.");
+                return;
+            }
 
-            User user = new User(
-                    fName,
-                    lName,
-                    address,
-                    phone,
-                    gendar,
-                    dob,
-                    id,
-                    email,
-                    pw,
-                    role);
+            // Password
+            if (pw.length() < 6) {
+                showError("Password must be at least 6 characters.");
+                return;
+            }
 
-            for (User u : UserFileHandler.readAll()){
-                if(u.getUserId().equalsIgnoreCase(id)){
-                    showError("User Id already exists.");
+            // Email
+            if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
+                showError("Invalid email address.");
+                return;
+            }
+
+            // Date of Birth
+            if (dob.isAfter(LocalDate.now())) {
+                showError("Date of Birth cannot be in the future.");
+                return;
+            }
+
+            // Phone Number
+            String phoneStr = phoneTextField.getText().trim();
+
+            if (!phoneStr.matches("\\d{11}")) {
+                showError("Phone number must contain exactly 11 digits.");
+                return;
+            }
+
+            if(!phoneStr.matches("\\d{11}")){
+                showError("Phone number ust contain exactly 11 digits.");
+                return;
+            }
+
+            // Duplicate check
+            for (User u : UserFileHandler.readAll()) {
+
+                if (u.getUserId().equalsIgnoreCase(id)) {
+                    showError("User ID already exists.");
                     return;
                 }
-                if (u.getEmail().equalsIgnoreCase(email)){
+
+                if (u.getEmail().equalsIgnoreCase(email)) {
                     showError("Email already exists.");
                     return;
                 }
             }
 
-            UserFileHandler.save(user);
-            showSuc(role + " Account Created Successfully");
-            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "log-in-view.fxml","Log in!");
+            // Create User
+            User user = new User(
+                    fName,
+                    lName,
+                    address,
+                    phoneStr,
+                    gender,
+                    dob,
+                    id,
+                    email,
+                    pw,
+                    role
+            );
 
-        }
+            UserFileHandler.save(user);
+
+            showSuc(role + " Account Created Successfully.");
+
+            PrimarySceneSwitcher.primarySwitchScene(
+                    (Node) actionEvent.getSource(),
+                    "ridwan",
+                    "commonFiles",
+                    "log-in-view.fxml",
+                    "Log In"
+            );
+
     }
 
     @javafx.fxml.FXML
