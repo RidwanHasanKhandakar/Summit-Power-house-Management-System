@@ -1,6 +1,7 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -9,10 +10,10 @@ import javafx.scene.control.TextField;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class AddEmployeeViewController {
-    @javafx.fxml.FXML
-    private TextField employeeIdComboBox;
     @javafx.fxml.FXML
     private TextField emailTextField;
     @javafx.fxml.FXML
@@ -24,7 +25,11 @@ public class AddEmployeeViewController {
     @javafx.fxml.FXML
     private ComboBox<String> departmentComboBox;
     @javafx.fxml.FXML
-    private TextField salaryComboBox;
+    private TextField employeeNameTextField;
+    @javafx.fxml.FXML
+    private TextField salaryTextField;
+
+    public static ArrayList<Employee> employeeList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,6 +67,17 @@ public class AddEmployeeViewController {
 
     @javafx.fxml.FXML
     public void addEmployeeButtonOnAction(ActionEvent actionEvent) {
+        String employeeId = employeeIdTextfield.getText();
+        String employeeName = employeeNameTextField.getText();
+        String email = emailTextField.getText();
+        String department = departmentComboBox.getValue();
+        String position = positionComboBox.getValue();
+        LocalDate dateOfBirth = dateOfBirthDatePicker.getValue();
+        int salary = Integer.parseInt(salaryTextField.getText());
+
+        Employee currentEmployee = new Employee(employeeId, employeeName, email, department, position, dateOfBirth, salary);
+
+        employeeList.add(currentEmployee);
 
     }
 }
