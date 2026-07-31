@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -79,26 +81,18 @@ public class ViewGridPerformanceReportViewController
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
         reportIdTextField.clear();
-
         gridSectionComboBox.setValue(null);
-
         totalLoadMWTextField.clear();
-
         availableCapacityMWTextField.clear();
-
         gridEfficiencyTextField.clear();
-
         performanceStatusComboBox.setValue(null);
-
         reportDatePicker.setValue(null);
-
-        gridPerformanceTableView
-                .getSelectionModel()
-                .clearSelection();
+        gridPerformanceTableView.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard");
     }
 
     @javafx.fxml.FXML

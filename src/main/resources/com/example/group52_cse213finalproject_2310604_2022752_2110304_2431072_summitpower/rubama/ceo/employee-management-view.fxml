@@ -20,12 +20,12 @@
       <TextField fx:id="employeeNameTextField" layoutX="566.0" layoutY="149.0" />
       <ComboBox fx:id="roleComboBox" layoutX="566.0" layoutY="270.0" prefHeight="31.0" prefWidth="187.0" />
       <TextField fx:id="employeeIdTextField" layoutX="566.0" layoutY="208.0" />
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="48.0" prefWidth="311.0" text="Add Employee">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="48.0" prefWidth="311.0" style="-fx-background-color: #49b0ff;" text="Add Employee">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="790.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleRemoveEmployee" prefHeight="48.0" prefWidth="311.0" text="Remove Employee" />
+      <Button layoutX="790.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleRemoveEmployee" prefHeight="48.0" prefWidth="311.0" style="-fx-background-color: #49b0ff;" text="Remove Employee" />
       <TableView fx:id="employeeTableView" layoutX="34.0" layoutY="453.0" prefHeight="329.0" prefWidth="1182.0">
         <columns>
           <TableColumn fx:id="employeeNameCol" prefWidth="423.0" text="Employee Name" />

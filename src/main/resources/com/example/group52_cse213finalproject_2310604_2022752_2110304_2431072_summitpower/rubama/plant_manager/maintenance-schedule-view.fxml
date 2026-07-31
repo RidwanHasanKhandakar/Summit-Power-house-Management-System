@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.controller.MaintenanceScheduleViewController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="841.0" prefWidth="1260.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.controller.MaintenanceScheduleViewController">
+   <children>
+      <Button layoutX="1035.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="460.0" layoutY="76.0" prefHeight="64.0" prefWidth="404.0" text="Maintenance Schedule" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+         <font>
+            <Font name="Times New Roman" size="43.0" />
+         </font>
+      </Label>
+      <Button layoutX="382.0" layoutY="384.0" mnemonicParsing="false" onAction="#handleViewSchedule" prefHeight="64.0" prefWidth="547.0" style="-fx-background-color: #49b0ff;" text="View Schedule">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="unitNameComboBox" layoutX="584.0" layoutY="184.0" prefHeight="31.0" prefWidth="217.0" />
+      <ComboBox fx:id="unitNoComboBox" layoutX="584.0" layoutY="242.0" prefHeight="31.0" prefWidth="217.0" />
+      <Label layoutX="484.0" layoutY="184.0" text="Unit Name:" textFill="WHITE" />
+      <Label layoutX="484.0" layoutY="242.0" text="Unit No:" textFill="WHITE" />
+      <DatePicker fx:id="dateDatePicker" layoutX="584.0" layoutY="297.0" />
+      <Label layoutX="486.0" layoutY="302.0" prefHeight="21.0" prefWidth="41.0" text="Date:" textFill="WHITE" />
+      <TableView fx:id="checkMaintenanceScheduleTableView" layoutX="110.0" layoutY="499.0" prefHeight="246.0" prefWidth="1066.0">
+         <columns>
+            <TableColumn fx:id="dateCol" prefWidth="224.00003051757812" text="Date" />
+            <TableColumn fx:id="unitNameCol" prefWidth="254.0" text="Unit Name" />
+            <TableColumn fx:id="unitNoCol" prefWidth="320.0" text="Unit No" />
+            <TableColumn fx:id="statusCol" prefWidth="267.0" text="Status" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutY="834.0" prefHeight="39.0" prefWidth="1273.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
+   </children>
 </AnchorPane>

@@ -36,8 +36,8 @@
             <TableColumn fx:id="descriptionCol" prefWidth="281.0" text="Description" />
         </columns>
       </TableView>
-      <DatePicker fx:id="dateOfComplaintDatePicker" layoutX="717.0" layoutY="172.0" prefHeight="31.0" prefWidth="176.0" />
-      <Label layoutX="644.0" layoutY="177.0" text="Date:" textFill="#fffefe" />
+      <DatePicker fx:id="dateOfComplaintDatePicker" layoutX="773.0" layoutY="172.0" prefHeight="31.0" prefWidth="176.0" />
+      <Label layoutX="644.0" layoutY="177.0" text="Complaint Date:" textFill="#fffefe" />
       <Label layoutX="421.0" layoutY="43.0" prefHeight="64.0" prefWidth="365.0" text="Complaint Summary" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
          <font>
             <Font name="Times New Roman" size="43.0" />
