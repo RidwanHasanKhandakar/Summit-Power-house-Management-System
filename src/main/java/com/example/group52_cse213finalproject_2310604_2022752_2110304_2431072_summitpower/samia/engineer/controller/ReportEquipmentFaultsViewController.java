@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller;
 
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -42,10 +44,17 @@ public class ReportEquipmentFaultsViewController
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
+        faultIdTextField.clear();
+        generatorIdTextField.clear();
+        faultCategoryComboBox.setValue(null);
+        reportDatePicker.setValue(null);
+        faultSeverityComboBox.setValue(null);
+        faultDescriptionTextArea.clear();
     }
 
     @javafx.fxml.FXML
     public void backButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","engineer","engineer-dashboard-view.fxml","Engineer Dashboard");
     }
 
     @javafx.fxml.FXML
