@@ -36,5 +36,6 @@
       <Button layoutX="210.0" layoutY="332.0" mnemonicParsing="false" onAction="#createNoticeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Create" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="569.0" layoutY="387.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="18.0" layoutY="387.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

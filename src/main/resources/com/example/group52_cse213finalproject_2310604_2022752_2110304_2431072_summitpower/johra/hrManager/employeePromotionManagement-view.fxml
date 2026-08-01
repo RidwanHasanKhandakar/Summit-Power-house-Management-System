@@ -18,7 +18,7 @@
       </Label>
       <Button layoutX="216.0" layoutY="343.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Update" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="838.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <TableView fx:id="showTableView" layoutY="179.0" prefHeight="200.0" prefWidth="837.0">
+      <TableView fx:id="showTableView" layoutX="11.0" layoutY="179.0" prefHeight="200.0" prefWidth="810.0">
          <columns>
             <TableColumn fx:id="employeeIdCol" prefWidth="173.60000306367874" text="Employee ID" />
             <TableColumn fx:id="employeeNameCol" prefWidth="182.3999786376953" text="Employee Name" />
@@ -42,5 +42,6 @@
       </Label>
       <TextField fx:id="newSalaryTextField" layoutX="639.0" layoutY="100.0" />
       <Button layoutX="81.0" layoutY="99.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="22.0" layoutY="401.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

@@ -60,5 +60,6 @@
          </font>
       </Label>
       <TextField fx:id="salaryTextField" layoutX="121.0" layoutY="248.0" prefHeight="26.0" prefWidth="164.0" />
+      <Button layoutX="17.0" layoutY="388.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>
