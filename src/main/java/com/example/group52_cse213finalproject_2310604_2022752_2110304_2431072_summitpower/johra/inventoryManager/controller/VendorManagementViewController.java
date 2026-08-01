@@ -36,14 +36,49 @@ public class VendorManagementViewController
 
     @javafx.fxml.FXML
     public void createVendorButtonOnAction(ActionEvent actionEvent) {
+
+        if(vendorIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(vendorNameTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(emailTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(suppliedEquipmentTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
     }
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-View.fxml", "Inventory Manager Dashboard");
     }
 
     @javafx.fxml.FXML
     public void loadTableViewButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        vendorIdTextField.clear();
+        vendorNameTextField.clear();
+        suppliedEquipmentTextField.clear();
+        emailTextField.clear();
+
     }
 }
