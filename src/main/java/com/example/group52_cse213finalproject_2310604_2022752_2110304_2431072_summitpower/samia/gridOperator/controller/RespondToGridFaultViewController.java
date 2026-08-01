@@ -127,6 +127,5 @@ public class RespondToGridFaultViewController
         showSuccess("Grid fault response saved successfully.");
 
         refreshButton(null);
-
     }
 }
