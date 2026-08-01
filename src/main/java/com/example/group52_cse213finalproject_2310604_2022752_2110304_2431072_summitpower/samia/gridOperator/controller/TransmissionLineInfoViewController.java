@@ -48,23 +48,17 @@ public class TransmissionLineInfoViewController
                 "Under Maintenance",
                 "Fault"
         );
-        lineIdColumn.setCellValueFactory(
-                new PropertyValueFactory<>("lineId"));
+        lineIdColumn.setCellValueFactory(new PropertyValueFactory<>("lineId"));
 
-        lineNameColumn.setCellValueFactory(
-                new PropertyValueFactory<>("lineName"));
+        lineNameColumn.setCellValueFactory(new PropertyValueFactory<>("lineName"));
 
-        sourceStationColumn.setCellValueFactory(
-                new PropertyValueFactory<>("sourceStation"));
+        sourceStationColumn.setCellValueFactory(new PropertyValueFactory<>("sourceStation"));
 
-        destinationStationColumn.setCellValueFactory(
-                new PropertyValueFactory<>("destinationStation"));
+        destinationStationColumn.setCellValueFactory(new PropertyValueFactory<>("destinationStation"));
 
-        voltageLevelColumn.setCellValueFactory(
-                new PropertyValueFactory<>("voltageLevel"));
+        voltageLevelColumn.setCellValueFactory(new PropertyValueFactory<>("voltageLevel"));
 
-        lineStatusColumn.setCellValueFactory(
-                new PropertyValueFactory<>("lineStatus"));
+        lineStatusColumn.setCellValueFactory(new PropertyValueFactory<>("lineStatus"));
     }
 
     @javafx.fxml.FXML
