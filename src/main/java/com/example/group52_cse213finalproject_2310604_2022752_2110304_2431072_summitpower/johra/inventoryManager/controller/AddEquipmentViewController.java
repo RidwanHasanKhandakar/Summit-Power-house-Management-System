@@ -41,10 +41,54 @@ public class AddEquipmentViewController
 
     @javafx.fxml.FXML
     public void addEquipmentButtonOnAction(ActionEvent actionEvent) {
+
+        if(equipmentIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(equipmentNameTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(quantityTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(vendorComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(equipmentCategoryComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(purchaseDateDatePicker == null){
+            showError("Field cannot be empty");
+        }
     }
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        equipmentIdTextField.clear();
+        equipmentNameTextField.clear();
+        quantityTextField.clear();
+        equipmentCategoryComboBox.setValue(null);
+        vendorComboBox.setValue(null);
+        purchaseDateDatePicker.setValue(null);
+
     }
 }
