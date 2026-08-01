@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class Tender implements Serializable {
     private String tenderId, tenderTitle, equipmentName;
+    private String estimatedBudget;
     private LocalDate closingDate;
 
     public Tender(String tenderId, String tenderTitle, String equipmentName, LocalDate closingDate) {

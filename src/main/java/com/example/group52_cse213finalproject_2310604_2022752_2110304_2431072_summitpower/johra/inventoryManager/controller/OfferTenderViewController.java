@@ -33,6 +33,22 @@ public class OfferTenderViewController
     @javafx.fxml.FXML
     public void initialize() {
 
+        if(tenderIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(tenderTitleTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(equipmentNameTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(closingDateDatePicker == null){
+            showError("Field cannot be empty");
+        }
+
     }
 
     @javafx.fxml.FXML
@@ -42,5 +58,27 @@ public class OfferTenderViewController
 
     @javafx.fxml.FXML
     public void createTenderButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void loadTableView(ActionEvent actionEvent) {
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        tenderIdTextField.clear();
+        tenderTitleTextField.clear();
+        equipmentNameTextField.clear();
+        closingDateDatePicker.setValue(null);
+
     }
 }
