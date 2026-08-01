@@ -16,45 +16,45 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Section:">
+      <Text fill="WHITE" layoutX="70.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Section:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Status:">
+      <Text fill="WHITE" layoutX="396.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltage (kV):">
+      <Text fill="WHITE" layoutX="70.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltage (kV):">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency (Hz):">
+      <Text fill="WHITE" layoutX="396.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency (Hz):">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitoring Date:">
+      <Text fill="WHITE" layoutX="70.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitoring Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
       <TextField fx:id="gridIdTextField" layoutX="221.0" layoutY="112.0" prefHeight="26.0" prefWidth="186.0" />
-      <TextField fx:id="frequencyTextField" layoutX="222.0" layoutY="349.0" prefHeight="18.0" prefWidth="186.0" />
-      <TextField fx:id="voltageTextField" layoutX="222.0" layoutY="289.0" prefHeight="19.0" prefWidth="186.0" />
-      <ComboBox fx:id="gridSectionComboBox" layoutX="222.0" layoutY="171.0" prefHeight="19.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" />
-      <ComboBox fx:id="gridStatusComboBox" layoutX="221.0" layoutY="229.0" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" />
-      <DatePicker fx:id="monitoringDatePicker" layoutX="222.0" layoutY="412.0" prefHeight="26.0" prefWidth="186.0" />
+      <TextField fx:id="frequencyTextField" layoutX="534.0" layoutY="339.0" prefHeight="26.0" prefWidth="155.0" />
+      <TextField fx:id="voltageTextField" layoutX="209.0" layoutY="337.0" prefHeight="26.0" prefWidth="155.0" />
+      <ComboBox fx:id="gridSectionComboBox" layoutX="209.0" layoutY="272.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="gridStatusComboBox" layoutX="534.0" layoutY="275.0" prefHeight="26.0" prefWidth="155.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="monitoringDatePicker" layoutX="209.0" layoutY="407.0" prefHeight="26.0" prefWidth="155.0" />
       <Text fill="WHITE" layoutX="261.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monitor Grid Status">
          <font>
             <Font name="Times New Roman Bold" size="28.0" />
          </font>
       </Text>
-      <Button layoutX="431.0" layoutY="486.0" mnemonicParsing="false" onAction="#searchButton" style="-fx-background-color: #49b0ff;" text="Search" />
-      <Button layoutX="543.0" layoutY="486.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="662.0" layoutY="486.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="492.0" layoutY="184.0" mnemonicParsing="false" onAction="#searchButton" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #49b0ff;" text="Search" />
+      <Button layoutX="518.0" layoutY="512.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="637.0" layoutY="512.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <AnchorPane layoutX="-10.0" layoutY="585.0" prefHeight="18.0" prefWidth="778.0" style="-fx-background-color: #49b0ff;">
          <opaqueInsets>
             <Insets />
