@@ -1,8 +1,11 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.MonitorLoadDemandFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.MonitorLoadDemand;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -36,10 +39,58 @@ public class MonitorLoadDemandViewController
                 "High Demand",
                 "Critical"
         );
+
+        currentLoadMWTextField.setEditable(false);
+        availableCapacityMWTextField.setEditable(false);
+
+        gridSectionComboBox.setDisable(true);
+        demandStatusComboBox.setDisable(true);
+
+        monitoringDatePicker.setDisable(true);
+    }
+
+    public void showSuccess(String txt){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
+    public void showError(String txt){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
     }
 
     @javafx.fxml.FXML
     public void searchButton(ActionEvent actionEvent) {
+        String demandId = demandIdTextField.getText().trim();
+
+        if (demandId.isEmpty()) {
+            showError("Please enter Demand ID.");
+            return;
+        }
+
+        for (MonitorLoadDemand demand : MonitorLoadDemandFileHandler.readAll()) {
+
+            if (demand.getDemandId().equalsIgnoreCase(demandId)) {
+
+                gridSectionComboBox.setValue(demand.getGridSection());
+                currentLoadMWTextField.setText(String.valueOf(demand.getCurrentLoadMW()));
+                availableCapacityMWTextField.setText(String.valueOf(demand.getAvailableCapacityMW()));
+                demandStatusComboBox.setValue(demand.getDemandStatus());
+                monitoringDatePicker.setValue(demand.getMonitoringDate());
+
+                showSuccess("Record Found!");
+                return;
+            }
+        }
+
+        refreshButton(null);
+        showError("No record found with this Demand ID.");
     }
 
     @javafx.fxml.FXML
