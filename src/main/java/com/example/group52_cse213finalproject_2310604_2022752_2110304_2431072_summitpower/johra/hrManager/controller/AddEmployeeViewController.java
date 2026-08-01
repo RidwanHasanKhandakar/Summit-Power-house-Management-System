@@ -4,6 +4,7 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -12,6 +13,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddEmployeeViewController {
     @javafx.fxml.FXML
@@ -29,7 +31,7 @@ public class AddEmployeeViewController {
     @javafx.fxml.FXML
     private TextField salaryTextField;
 
-    public static ArrayList<Employee> employeeList = new ArrayList<>();
+    public static List<Employee> employeeList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -62,22 +64,79 @@ public class AddEmployeeViewController {
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboardView.fxml", "HR Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboard-view.fxml", "HR Manager Dashboard");
     }
 
     @javafx.fxml.FXML
     public void addEmployeeButtonOnAction(ActionEvent actionEvent) {
+
         String employeeId = employeeIdTextfield.getText();
         String employeeName = employeeNameTextField.getText();
         String email = emailTextField.getText();
         String department = departmentComboBox.getValue();
+
+        if(department == null){
+            showError("Please select a department");
+        }
         String position = positionComboBox.getValue();
+
+        if(position == null){
+            showError("Please select a position");
+        }
+
         LocalDate dateOfBirth = dateOfBirthDatePicker.getValue();
+
+        if(dateOfBirth == null){
+            showError("Please pick a date");
+        }
+        if(dateOfBirth.isAfter(LocalDate.now())){
+            showError("Date of birth cannot be in future!");
+            return;
+        }
+
         int salary = Integer.parseInt(salaryTextField.getText());
+
+        if(employeeName.isEmpty()){
+            showError("Field cannot be empty");
+        }
+        if(employeeId.isEmpty()){
+            showError("Field cannot be empty");
+        }
+        if(email.isEmpty()){
+            showError("Field cannot be empty");
+        }
+        if(salary <= 0){
+            showError("Salary cannot be less than 0");
+        }
 
         Employee currentEmployee = new Employee(employeeId, employeeName, email, department, position, dateOfBirth, salary);
 
         employeeList.add(currentEmployee);
+
+        //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "viewEmployeeDetails-view.fxml", "View Employee");
+
+
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        employeeIdTextfield.clear();
+        employeeNameTextField.clear();
+        emailTextField.clear();
+        positionComboBox.setValue(null);
+        departmentComboBox.setValue(null);
+        emailTextField.clear();
+        salaryTextField.clear();
+        dateOfBirthDatePicker.setValue(null);
 
     }
 }
