@@ -4,21 +4,24 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Notice implements Serializable {
-    private LocalDate publishDate;
-    private String subject, content;
+    private String noticeId, subject, content, createdBy;
+    private LocalDate publishDate, expiryDate;
 
-    public Notice(LocalDate publishDate, String subject, String content) {
-        this.publishDate = publishDate;
+    public Notice(String noticeId, String subject, String content, String createdBy, LocalDate publishDate, LocalDate expiryDate) {
+        this.noticeId = noticeId;
         this.subject = subject;
         this.content = content;
-    }
-
-    public LocalDate getPublishDate() {
-        return publishDate;
-    }
-
-    public void setPublishDate(LocalDate publishDate) {
+        this.createdBy = createdBy;
         this.publishDate = publishDate;
+        this.expiryDate = expiryDate;
+    }
+
+    public String getNoticeId() {
+        return noticeId;
+    }
+
+    public void setNoticeId(String noticeId) {
+        this.noticeId = noticeId;
     }
 
     public String getSubject() {
@@ -37,12 +40,39 @@ public class Notice implements Serializable {
         this.content = content;
     }
 
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public LocalDate getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(LocalDate publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public LocalDate getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
     @Override
     public String toString() {
         return "Notice{" +
-                "publishDate=" + publishDate +
+                "noticeId='" + noticeId + '\'' +
                 ", subject='" + subject + '\'' +
                 ", content='" + content + '\'' +
+                ", createdBy='" + createdBy + '\'' +
+                ", publishDate=" + publishDate +
+                ", expiryDate=" + expiryDate +
                 '}';
     }
 }
