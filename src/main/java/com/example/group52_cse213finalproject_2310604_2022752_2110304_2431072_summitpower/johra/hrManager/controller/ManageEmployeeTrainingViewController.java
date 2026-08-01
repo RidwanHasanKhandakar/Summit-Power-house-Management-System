@@ -9,8 +9,6 @@ import javafx.scene.control.*;
 public class ManageEmployeeTrainingViewController
 {
     @javafx.fxml.FXML
-    private TextField employeeTextField;
-    @javafx.fxml.FXML
     private CheckBox trainingStatusDoneCheckBox;
     @javafx.fxml.FXML
     private TableColumn<Employee, String> employeeNameCol;
@@ -32,6 +30,8 @@ public class ManageEmployeeTrainingViewController
     private TableColumn<Employee, String> trainerIdCol;
     @javafx.fxml.FXML
     private TextField employeeIdTextField;
+    @javafx.fxml.FXML
+    private TextField employeeNameTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -59,5 +59,41 @@ public class ManageEmployeeTrainingViewController
 
     @javafx.fxml.FXML
     public void saveTrainingButtonOnAction(ActionEvent actionEvent) {
+
+        if(employeeIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(employeeNameTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(trainingIdComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(trainerNameComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+        }
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("null");
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        employeeIdTextField.clear();
+        employeeNameTextField.clear();
+        trainingIdComboBox.setValue(null);
+        trainerNameComboBox.setValue(null);
+        trainingStatusNotDoneCheckBox.setSelected(false);
+        trainingStatusDoneCheckBox.setSelected(false);
+
     }
 }
