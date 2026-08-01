@@ -1,12 +1,11 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.RespondToGridFaultFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.RespondToGridFault;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class RespondToGridFaultViewController
 {
@@ -43,6 +42,21 @@ public class RespondToGridFaultViewController
                 "Resolved"
         );
     }
+    public void showSuccess(String txt){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
+    public void showError(String txt){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
@@ -61,5 +75,58 @@ public class RespondToGridFaultViewController
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
+        if (faultIdTextField.getText().trim().isEmpty()) {
+            showError("Please enter Fault ID.");
+            return;
+        }
+
+        if (gridSectionComboBox.getValue() == null) {
+            showError("Please select Grid Section.");
+            return;
+        }
+
+        if (faultTypeComboBox.getValue() == null) {
+            showError("Please select Fault Type.");
+            return;
+        }
+
+        if (faultDatePicker.getValue() == null) {
+            showError("Please select Fault Date.");
+            return;
+        }
+
+        if (faultStatusComboBox.getValue() == null) {
+            showError("Please select Fault Status.");
+            return;
+        }
+
+        String responseAction = responseActionTextArea.getText().trim();
+
+        if (responseAction.isEmpty()) {
+            showError("Please enter Response Action.");
+            return;
+        }
+
+        if (responseAction.length() > 300) {
+            showError("Response Action cannot exceed 300 characters.");
+            return;
+        }
+
+        RespondToGridFault respondToGridFault =
+                new RespondToGridFault(
+                        faultIdTextField.getText().trim(),
+                        gridSectionComboBox.getValue(),
+                        faultTypeComboBox.getValue(),
+                        faultDatePicker.getValue(),
+                        responseAction,
+                        faultStatusComboBox.getValue()
+                );
+
+        RespondToGridFaultFileHandler.save(respondToGridFault);
+
+        showSuccess("Grid fault response saved successfully.");
+
+        refreshButton(null);
+
     }
 }
