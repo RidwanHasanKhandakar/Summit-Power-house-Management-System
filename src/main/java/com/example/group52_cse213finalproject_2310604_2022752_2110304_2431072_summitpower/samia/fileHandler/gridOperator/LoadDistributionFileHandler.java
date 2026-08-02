@@ -8,8 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class LoadDistributionFileHandler {
-    private static final String FILE_PATH =
-            "data/samia/gridOperator/LoadDistribution.bin";
+    private static final String FILE_PATH = "data/samia/gridOperator/LoadDistribution.bin";
 
     public static void save(LoadDistribution loadDistribution) {
 

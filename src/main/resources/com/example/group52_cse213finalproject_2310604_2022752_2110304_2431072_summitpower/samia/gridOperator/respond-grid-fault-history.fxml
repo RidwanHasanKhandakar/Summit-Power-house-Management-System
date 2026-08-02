@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="564.0" prefWidth="835.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.RespondGridFaultHistoryController">
+   <children>
+      <Button layoutX="671.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <TableView fx:id="tableview" layoutX="62.0" layoutY="88.0" prefHeight="420.0" prefWidth="716.0">
+        <columns>
+          <TableColumn fx:id="gridSectionTabCol" prefWidth="134.4000015258789" text="Grid Section" />
+          <TableColumn fx:id="faultTypeTabCol" prefWidth="143.19998168945312" text="Fault Type" />
+            <TableColumn fx:id="faultDateTabCol" prefWidth="149.5999755859375" text="Fault Date" />
+            <TableColumn fx:id="responseActionTabCol" prefWidth="153.60000610351562" text="Response Action" />
+            <TableColumn fx:id="faultStatusTabCol" prefWidth="136.79998779296875" text="Fault Status" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutY="595.0" prefHeight="18.0" prefWidth="843.0" style="-fx-background-color: #49b0ff;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text fill="WHITE" layoutX="374.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="85.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault ID:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="333.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Fault History">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

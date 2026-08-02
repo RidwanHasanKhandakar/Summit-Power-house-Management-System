@@ -94,7 +94,7 @@ public class SynchronizeGenWNationalGridViewController
         double gridVoltage;
 
         try {
-            generatorVoltage = Double.parseDouble(generatorVoltageTextField.getText());
+            generatorVoltage = Double.parseDouble(generatorVoltageTextField.getText().trim());
 
             if (generatorVoltage <= 0) {
                 showError("Generator Voltage must be greater than 0.");
@@ -107,7 +107,7 @@ public class SynchronizeGenWNationalGridViewController
         }
 
         try {
-            gridVoltage = Double.parseDouble(gridVoltageTextField.getText());
+            gridVoltage = Double.parseDouble(gridVoltageTextField.getText().trim());
 
             if (gridVoltage <= 0) {
                 showError("Grid Voltage must be greater than 0.");
@@ -151,8 +151,14 @@ public class SynchronizeGenWNationalGridViewController
 
         SynchronizeGenWNationalGridFileHandler.save(sync);
 
-        showSuccess("Synchronization record saved successfully.");
-
         refreshButton(null);
+
+        showSuccess("Synchronization record saved successfully.");
+    }
+
+    @javafx.fxml.FXML
+    public void viewHistoryButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene(
+                (Node) actionEvent.getSource(), "samia", "gridOperator", "synchronize-generator-history.fxml", "Synchronization History");
     }
 }

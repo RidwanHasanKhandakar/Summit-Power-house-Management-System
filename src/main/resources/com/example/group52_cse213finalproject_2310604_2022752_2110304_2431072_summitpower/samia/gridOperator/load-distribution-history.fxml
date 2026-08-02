@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="515.0" prefWidth="807.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.LoadDistributionHistoryController">
+   <children>
+      <Text fill="WHITE" layoutX="287.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load Distribution History">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableView" layoutX="60.0" layoutY="80.0" prefHeight="355.0" prefWidth="686.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="gridColumn" prefWidth="75.0" text="Grid Section" />
+            <TableColumn fx:id="loadColumn" prefWidth="75.0" text="Load(MW)" />
+            <TableColumn fx:id="statusColumn" prefWidth="119.20001220703125" text="Distribution Status" />
+            <TableColumn fx:id="dateColumn" prefWidth="112.79998779296875" text="Distribution Date" />
+            <TableColumn fx:id="remarksColumn" prefWidth="227.19998779296873" text="Remarks" />
+        </columns>
+      </TableView>
+      <Button layoutX="684.0" layoutY="455.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
