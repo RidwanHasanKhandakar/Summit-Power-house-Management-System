@@ -32,7 +32,7 @@ public class FuelRequestViewController
 
     @javafx.fxml.FXML
     public void initialize() {
-        unitNameComboBox.getItems().addAll("Operations","Management","HR","Engineer","Accounts","Grid Operation");
+        unitNameComboBox.getItems().addAll("Thermal Power","Hydroelectric Power","Biomass Power","Solar Power","Nuclear Power");
         fuelTypeComboBox.getItems().addAll("Coal","Natural Gas","Nuclear Fuel","Petroleum","Organic Fuel");
 
         unitNameCol.setCellValueFactory(new PropertyValueFactory<>("unitName"));

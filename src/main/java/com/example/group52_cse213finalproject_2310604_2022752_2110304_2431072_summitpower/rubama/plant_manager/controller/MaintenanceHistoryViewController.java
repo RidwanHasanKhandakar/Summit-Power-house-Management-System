@@ -31,8 +31,8 @@ public class MaintenanceHistoryViewController
 
     @javafx.fxml.FXML
     public void initialize() {
-        unitNameComboBox.getItems().addAll("Operations","Management","HR","Engineer","Accounts","Grid Operation");
-        unitNoComboBox.getItems().addAll("Op121","Mgt131","Hr141","Eng151","Acn161","Go171");
+        unitNameComboBox.getItems().addAll("Thermal Power","Hydroelectric Power","Biomass Power","Solar Power","Nuclear Power");
+        unitNoComboBox.getItems().addAll("TP12","HP13","BP14","SP15","NP16");
 
         unitNameCol.setCellValueFactory(new PropertyValueFactory<>("unitName"));
         unitNoCol.setCellValueFactory(new PropertyValueFactory<>("unitNo"));
