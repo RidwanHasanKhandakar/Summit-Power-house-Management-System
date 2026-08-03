@@ -39,4 +39,8 @@ build/
 
 ### Ignore the bin files ###
 
-*.bin
+#*.bin
+
+### Project data files ###
+
+data/
