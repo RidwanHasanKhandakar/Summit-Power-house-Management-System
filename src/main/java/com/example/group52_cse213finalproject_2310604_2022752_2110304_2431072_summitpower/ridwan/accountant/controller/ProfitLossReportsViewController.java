@@ -74,7 +74,7 @@ public class ProfitLossReportsViewController
     @javafx.fxml.FXML
     public void handleGenerateReportButton(ActionEvent actionEvent) {
 
-        if (selectMonthComboBox.getValue()==null && selectYearComboBox.getValue()==null){
+        if (selectMonthComboBox.getValue()==null || selectYearComboBox.getValue()==null){
             showError("Please select a month and year.");
             return;
         }
@@ -109,8 +109,8 @@ public class ProfitLossReportsViewController
     }
 
     public void showSuc(String txt){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("confirmation");
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success!");
         alert.setHeaderText(null);
         alert.setContentText(txt);
         alert.showAndWait();
