@@ -63,7 +63,35 @@ public class SalaryPaymentsViewController
     @javafx.fxml.FXML
     public void handleProcessPaymentButton(ActionEvent actionEvent) {
 
+        SalaryPayments selected = salaryTableView.getSelectionModel().getSelectedItem();
 
+        if (selected==null){
+            showError("Please select a salary payment to process.");
+            return;
+        }
+        if (paymentComboBox.getValue()==null){
+            showError("Please select a payment method.");
+            return;
+        }
+        if (paymentdateDatePicker.getValue()==null){
+            showError("Please select a payment date.");
+            return;
+        }
+        if (selected.getPaymentStatus().equalsIgnoreCase("Paid")){
+            showError("This salary payment has already been processed.");
+            return;
+        }
+
+        selected.setPaymentMethod(paymentComboBox.getValue());
+        selected.getPaymentDate(paymentdateDatePicker.getValue());
+        selected.setPaymentStatus("Paid");
+        selected.setMonth(selectMonthComboBox.getValue());
+
+        SalaryPaymentsFileHandler.overwrite(salaryTableView.getItems());
+
+        salaryTableView.refresh();
+
+        showSuc("Salary payment for " + selected.getEmployeeName() + " processed successfully.");
 
     }
 
