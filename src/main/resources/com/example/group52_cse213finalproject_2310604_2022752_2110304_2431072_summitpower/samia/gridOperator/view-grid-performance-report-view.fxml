@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -9,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane prefHeight="667.0" prefWidth="875.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.ViewGridPerformanceReportViewController">
    <children>
@@ -61,12 +61,13 @@
       <Button layoutX="353.0" layoutY="341.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #49b0ff;" text="Generate Report" />
       <TableView fx:id="gridPerformanceTableView" layoutX="48.0" layoutY="400.0" prefHeight="159.0" prefWidth="784.0">
         <columns>
-          <TableColumn fx:id="reportIdTabCol" prefWidth="118.39997100830078" text="Report ID" />
-          <TableColumn fx:id="gridSectionTabCol" prefWidth="119.99996948242188" text="Grid Section" />
-            <TableColumn fx:id="totalLoadTabCol" prefWidth="135.2000732421875" text="Total Load (MW)" />
-            <TableColumn fx:id="availableCapacityTabCol" prefWidth="166.39993286132812" text="Available Capacity (MW)" />
-            <TableColumn fx:id="gridEfficiencyTabCol" prefWidth="123.199951171875" text="Efficiency (%)" />
-            <TableColumn fx:id="performanceStatusTabCol" prefWidth="119.2000732421875" text="Status" />
+          <TableColumn fx:id="reportIdTabCol" prefWidth="93.59996795654297" text="Report ID" />
+          <TableColumn fx:id="gridSectionTabCol" prefWidth="100.79998779296875" text="Grid Section" />
+            <TableColumn fx:id="totalLoadTabCol" prefWidth="117.5999755859375" text="Total Load (MW)" />
+            <TableColumn fx:id="availableCapacityTabCol" prefWidth="159.99996948242188" text="Available Capacity (MW)" />
+            <TableColumn fx:id="gridEfficiencyTabCol" prefWidth="97.5999755859375" text="Efficiency (%)" />
+            <TableColumn fx:id="performanceStatusTabCol" prefWidth="104.800048828125" text="Status" />
+            <TableColumn fx:id="reportDateTabCol" prefWidth="108.7999267578125" text="Report Date" />
         </columns>
       </TableView>
       <Text fill="WHITE" layoutX="302.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Grid Performance Report">
@@ -74,5 +75,13 @@
             <Font name="Times New Roman Bold" size="23.0" />
          </font>
       </Text>
+      <AnchorPane layoutX="-7.0" layoutY="653.0" prefHeight="18.0" prefWidth="886.0" style="-fx-background-color: #49b0ff;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text fill="WHITE" layoutX="407.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -2,12 +2,11 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.LogIncome;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.LogIncomeFileHandler;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 
@@ -38,6 +37,8 @@ public class LogIncomeViewController
     @javafx.fxml.FXML
     private Text totalRevenueText;
 
+    private int saleCounter = 1;
+
     @javafx.fxml.FXML
     public void initialize() {
 
@@ -47,10 +48,26 @@ public class LogIncomeViewController
         unitsCol.setCellValueFactory(new PropertyValueFactory<>("unitsSold"));
         revenueCol.setCellValueFactory(new PropertyValueFactory<>("revenueAmount"));
 
+        ObservableList<LogIncome> list = LogIncomeFileHandler.readAll();
+        salesIncomeTableView.setItems(list);
+
+        if (!list.isEmpty()){
+            saleCounter = list.get(list.size()-1).getSaleID() + 1;
+        }
+        calculateTotalRevenue();
+
     }
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
+
+        clientCompanyTextField.clear();
+        soldTextField.clear();
+        revenueTextField.clear();
+        dateDatePicker.setValue(null);
+
+        salesIncomeTableView.getSelectionModel().clearSelection();
+
     }
 
     @javafx.fxml.FXML
@@ -62,5 +79,69 @@ public class LogIncomeViewController
 
     @javafx.fxml.FXML
     public void handleLogSaleButton(ActionEvent actionEvent) {
+
+        if (clientCompanyTextField.getText().isEmpty() || soldTextField.getText().isEmpty() || revenueTextField.getText().isEmpty() || dateDatePicker.getValue() == null) {
+            showError("Please fill in all fields before logging a sale.");
+            return;
+        }
+
+        double unitSold;
+        double revenueAmount;
+
+        try{
+            unitSold = Double.parseDouble(soldTextField.getText().trim());
+            revenueAmount = Double.parseDouble(revenueTextField.getText().trim());
+        }
+        catch (NumberFormatException e){
+            showError("Please enter valid numbers for units sold and revenue amount.");
+            return;
+        }
+
+        if (unitSold <= 0 || revenueAmount <= 0) {
+            showError("Units sold and revenue amount must be greater than zero.");
+            return;
+        }
+
+        LogIncome income = new LogIncome(saleCounter++, clientCompanyTextField.getText().trim(), unitSold, revenueAmount, dateDatePicker.getValue());
+
+        LogIncomeFileHandler.save(income);
+
+        salesIncomeTableView.setItems(LogIncomeFileHandler.readAll());
+
+        calculateTotalRevenue();
+
+        showSuc("Electricity sale logged successfully!");
+
+        handleClearButton(null);
+
     }
+
+    private void calculateTotalRevenue() {
+
+        double totalRevenue = 0;
+        for (LogIncome income : salesIncomeTableView.getItems()) {
+            totalRevenue += income.getRevenueAmount();
+        }
+
+        totalRevenueText.setText(String.format("%.2f", totalRevenue));
+
+    }
+
+
+    public void showError(String txt){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
+    public void showSuc(String txt){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success!");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
 }

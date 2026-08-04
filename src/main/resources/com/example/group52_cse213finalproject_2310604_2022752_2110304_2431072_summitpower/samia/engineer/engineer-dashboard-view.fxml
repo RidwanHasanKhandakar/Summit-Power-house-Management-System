@@ -27,7 +27,7 @@
       <Button layoutX="441.0" layoutY="314.0" mnemonicParsing="false" onAction="#logoutButton" style="-fx-background-color: #49b0ff;" text="Logout" />
       <Button layoutX="46.0" layoutY="332.0" mnemonicParsing="false" onAction="#manageSparePartsReqButton" style="-fx-background-color: #49b0ff;" text="Manage Spare Parts Requests" />
       <Label layoutX="-3.0" layoutY="385.0" prefHeight="20.0" prefWidth="616.0" style="-fx-background-color: #49b0ff;" textAlignment="CENTER" textFill="WHITE" />
-      <Label layoutX="259.0" layoutY="386.0" prefHeight="18.0" prefWidth="103.0" text="Mission 9232 LDT." />
+      <Label layoutX="259.0" layoutY="386.0" prefHeight="18.0" prefWidth="103.0" text="Mission 9232 LDT." textFill="WHITE" />
       <Button layoutX="490.0" layoutY="54.0" mnemonicParsing="false" onAction="#profileButton" style="-fx-background-color: #49b0ff;" text="Profile" />
    </children>
 </AnchorPane>

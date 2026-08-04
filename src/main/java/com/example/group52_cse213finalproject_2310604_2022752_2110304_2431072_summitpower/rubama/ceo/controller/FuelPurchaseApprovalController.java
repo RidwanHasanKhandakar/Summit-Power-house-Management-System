@@ -19,12 +19,8 @@ public class FuelPurchaseApprovalController
 
     @javafx.fxml.FXML
     public void initialize() {
-        approvalStatusCol.setCellValueFactory(new PropertyValueFactory<>("requests"));
-        requestsCol.setCellValueFactory(new PropertyValueFactory<>("approvalStatus"));
-    }
-
-    @Deprecated
-    public void handleAprove(ActionEvent actionEvent) {
+        approvalStatusCol.setCellValueFactory(new PropertyValueFactory<>("approvalStatus"));
+        requestsCol.setCellValueFactory(new PropertyValueFactory<>("requests"));
     }
 
     @javafx.fxml.FXML

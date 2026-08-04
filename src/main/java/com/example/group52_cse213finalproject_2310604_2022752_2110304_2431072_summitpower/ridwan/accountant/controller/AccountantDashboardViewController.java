@@ -36,7 +36,7 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleTaxAndAuditRequestButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Tax-And-Audit-Request-view.fxml","Tax And Audit Request!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "tax-audit-view.fxml","Tax And Audit Records!");
 
     }
 
@@ -64,7 +64,7 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleApprovePurchaseRequestButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Approve-Purchase-Request-view.fxml","Approve Purchase Request!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "purchase-request-view.fxml","Approve Purchase Request!");
 
     }
 
@@ -93,7 +93,7 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleProfileButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "profile-view.fxml","Accountant Profile!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","commonFiles", "profile-view.fxml","Accountant Profile!");
 
     }
 

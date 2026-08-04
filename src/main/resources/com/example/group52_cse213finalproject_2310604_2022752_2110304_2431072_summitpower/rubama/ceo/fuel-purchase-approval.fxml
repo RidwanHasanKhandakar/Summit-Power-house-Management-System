@@ -30,7 +30,10 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve" />
+      <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
          <font>
             <Font name="System Bold" size="15.0" />

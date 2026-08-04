@@ -40,5 +40,6 @@
             <TableColumn fx:id="statusCol" prefWidth="267.0" text="Status" />
          </columns>
       </TableView>
+      <Label alignment="CENTER" layoutY="834.0" prefHeight="39.0" prefWidth="1273.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
    </children>
 </AnchorPane>
