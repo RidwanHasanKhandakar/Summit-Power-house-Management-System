@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class LogIncomeFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/logInCome.bin";
     public static void save(LogIncome logIncome) {
         ObservableList<LogIncome> list = readAll();
         list.add(logIncome);

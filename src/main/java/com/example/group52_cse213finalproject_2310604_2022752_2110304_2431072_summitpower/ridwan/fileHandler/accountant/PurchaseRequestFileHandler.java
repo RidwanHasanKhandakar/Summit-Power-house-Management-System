@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PurchaseRequestFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/purchaseRequest.bin";
     public static void save(PurchaseRequest purchaseRequest) {
         ObservableList<PurchaseRequest> list = readAll();
         list.add(purchaseRequest);

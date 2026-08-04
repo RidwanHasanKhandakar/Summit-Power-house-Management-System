@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class SalaryPaymentsFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/salaryPayments.bin";
     public static void save(SalaryPayments salaryPayments) {
         ObservableList<SalaryPayments> list = readAll();
         list.add(salaryPayments);

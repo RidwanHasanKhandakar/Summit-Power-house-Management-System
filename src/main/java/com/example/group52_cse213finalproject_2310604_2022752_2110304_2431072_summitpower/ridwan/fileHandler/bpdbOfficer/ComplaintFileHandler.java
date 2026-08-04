@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ComplaintFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/complaints.txt";
+    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/complaints.bin";
 
     public static void save(Complaint complaint) {
         ObservableList<Complaint> list = readAll();
