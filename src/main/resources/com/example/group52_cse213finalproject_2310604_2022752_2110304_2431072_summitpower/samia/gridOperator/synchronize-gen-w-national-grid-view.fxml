@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="550.0" prefWidth="754.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.SynchronizeGenWNationalGridViewController">
    <children>
-      <Button layoutX="522.0" layoutY="478.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="398.0" layoutY="508.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
       <Text fill="WHITE" layoutX="77.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Synchronization ID:">
          <font>
             <Font size="14.0" />
@@ -47,8 +47,8 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="596.0" layoutY="478.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="683.0" layoutY="478.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="568.0" layoutY="508.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="657.0" layoutY="508.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <TextField fx:id="synchronizationIdTextField" layoutX="257.0" layoutY="93.0" prefHeight="26.0" prefWidth="160.0" />
       <TextField fx:id="generatorVoltageTextField" layoutX="257.0" layoutY="274.0" prefHeight="26.0" prefWidth="160.0" />
       <TextField fx:id="generatorIdTextField" layoutX="257.0" layoutY="153.0" prefHeight="26.0" prefWidth="160.0" />
@@ -69,5 +69,6 @@
             <Text fill="WHITE" layoutX="322.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <Button layoutX="461.0" layoutY="508.0" mnemonicParsing="false" onAction="#viewHistoryButton" style="-fx-background-color: #49b0ff;" text="View History" />
    </children>
 </AnchorPane>
