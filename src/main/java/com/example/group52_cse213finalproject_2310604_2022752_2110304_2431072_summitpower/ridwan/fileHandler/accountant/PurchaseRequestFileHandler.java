@@ -42,4 +42,19 @@ public class PurchaseRequestFileHandler {
 
     }
 
+    public static void overwrite(ObservableList<PurchaseRequest> list) {
+
+        try {
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+
+            oos.writeObject(new ArrayList<>(list));
+
+            oos.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
