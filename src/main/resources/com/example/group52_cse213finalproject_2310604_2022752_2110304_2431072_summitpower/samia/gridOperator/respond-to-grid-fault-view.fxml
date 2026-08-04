@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="528.0" prefWidth="699.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.RespondToGridFaultViewController">
    <children>
-      <Button layoutX="475.0" layoutY="497.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="453.0" layoutY="497.0" mnemonicParsing="false" onAction="#viewHistoryButton" style="-fx-background-color: #49b0ff;" text="View History" />
       <Text fill="WHITE" layoutX="75.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault ID:">
          <font>
             <Font size="14.0" />
@@ -43,8 +43,8 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Button layoutX="559.0" layoutY="497.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="662.0" layoutY="497.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="577.0" layoutY="497.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="671.0" layoutY="497.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <TextField fx:id="faultIdTextField" layoutX="200.0" layoutY="108.0" />
       <TextArea fx:id="responseActionTextArea" layoutX="199.0" layoutY="330.0" prefHeight="74.0" prefWidth="188.0" />
       <ComboBox fx:id="gridSectionComboBox" layoutX="200.0" layoutY="167.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
@@ -64,5 +64,6 @@
             <Text fill="WHITE" layoutX="322.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <Button layoutX="379.0" layoutY="497.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
    </children>
 </AnchorPane>
