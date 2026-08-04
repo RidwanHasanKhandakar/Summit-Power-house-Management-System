@@ -3,12 +3,18 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.CurrentUser;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.User;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.rrhinSceneSwitch;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class AccountantDashboardViewController
@@ -26,6 +32,10 @@ public class AccountantDashboardViewController
 
     }
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     @javafx.fxml.FXML
     public void handleTrackFuelButton(ActionEvent actionEvent) {
 
@@ -34,16 +44,22 @@ public class AccountantDashboardViewController
     }
 
     @javafx.fxml.FXML
-    public void handleTaxAndAuditRequestButton(ActionEvent actionEvent) {
+    public void handleTaxAndAuditRequestButton(ActionEvent actionEvent) throws IOException {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "tax-audit-view.fxml","Tax And Audit Records!");
+        //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "tax-audit-view.fxml","Tax And Audit Records!");
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower/ridwan/accountant/tax-audit-view.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Tax Audit!");
 
     }
 
     @javafx.fxml.FXML
     public void handleProfitLossReportsButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Profit-Loss-Reports-view.fxml","Profit Loss Reports!");
+        //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Profit-Loss-Reports-view.fxml","Profit Loss Reports!");
+        rrhinSceneSwitch.rahinSceneSwitcher((Node) actionEvent.getSource(), "accountant", "Profit-Loss-Reports-view.fxml","Profit Loss Reports!");
 
     }
 

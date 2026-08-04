@@ -51,7 +51,7 @@
       <Button layoutX="260.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleRefreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
       <Button layoutX="342.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleClearButton" style="-fx-background-color: #49b0ff;" text="Clear" />
       <TextArea fx:id="statementPreviewTextArea" layoutX="37.0" layoutY="150.0" prefHeight="282.0" prefWidth="200.0" />
-      <Label fx:id="totalRevLabel" layoutX="515.0" layoutY="200.0" prefHeight="17.0" prefWidth="104.0" />
+      <Label fx:id="totalRevLabel" layoutX="515.0" layoutY="200.0" prefHeight="17.0" prefWidth="104.0" textFill="#49b0ff" />
       <Label layoutX="397.0" layoutY="199.0" text="Total Revenue : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
@@ -62,13 +62,13 @@
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="totalExpensesLabel" layoutX="517.0" layoutY="225.0" prefHeight="17.0" prefWidth="104.0" />
+      <Label fx:id="totalExpensesLabel" layoutX="517.0" layoutY="225.0" prefHeight="17.0" prefWidth="104.0" textFill="#49b0ff" />
       <Label layoutX="397.0" layoutY="249.0" text="Net Profit : " textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="netProfitLabel" layoutX="517.0" layoutY="250.0" prefHeight="17.0" prefWidth="104.0" />
+      <Label fx:id="netProfitLabel" layoutX="517.0" layoutY="250.0" prefHeight="17.0" prefWidth="104.0" textFill="#49b0ff" />
       <TableView fx:id="finalcialStatementTableView" layoutX="245.0" layoutY="291.0" prefHeight="138.0" prefWidth="419.0">
         <columns>
           <TableColumn fx:id="satementIDCol" prefWidth="113.0" text="Satement ID" />
