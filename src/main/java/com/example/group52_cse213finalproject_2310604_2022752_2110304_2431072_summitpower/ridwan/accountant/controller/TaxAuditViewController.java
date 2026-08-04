@@ -3,6 +3,8 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.TaxAudit;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.TaxAuditFileHandler;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -101,6 +103,31 @@ public class TaxAuditViewController
 
     @javafx.fxml.FXML
     public void handleLoadRecordsButton(ActionEvent actionEvent) {
+
+        if (recordTypeComboBox.getValue()==null){
+            showErr("Please select a record type.");
+            return;
+        }
+        if (yearComboBox.getValue()==null){
+            showErr("Please select a year.");
+            return;
+        }
+
+        ObservableList<TaxAudit> filteredList = FXCollections.observableArrayList();
+
+        for (TaxAudit rec : TaxAuditFileHandler.readAll()){
+            boolean matchedType = recordTypeComboBox.getValue().equals("All") || rec.getRecordType().equals(recordTypeComboBox.getValue());
+            boolean yearMatched = yearComboBox.getValue().equals("All") || rec.getYear().equals(yearComboBox.getValue());
+            boolean searchMatched = searchTextField.getText().isEmpty() || rec.getTitle().toLowerCase().contains(searchTextField.getText().trim().toLowerCase());
+
+            if (matchedType&&yearMatched&&searchMatched){
+                filteredList.add(rec);
+            }
+        }
+
+        taxAndAuditTableView.setItems(filteredList);
+        showInfo(filteredList.size()+" record(s) found.");
+
     }
 
     @javafx.fxml.FXML
@@ -110,4 +137,25 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     public void handleViewDetailsButton(ActionEvent actionEvent) {
     }
+
+    public void showErr(String txt){
+
+        Alert a = new Alert(Alert.AlertType.ERROR);
+        a.setTitle("Error!");
+        a.setHeaderText(null);
+        a.setContentText(txt);
+        a.showAndWait();
+
+    }
+
+    public void showInfo(String txt){
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setTitle("Information");
+        a.setHeaderText(null);
+        a.setContentText(txt);
+        a.showAndWait();
+
+    }
+
 }
