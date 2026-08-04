@@ -2,6 +2,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.TaxAudit;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.TaxAuditFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -57,7 +58,9 @@ public class TaxAuditViewController
                 "2021",
                 "2022",
                 "2023",
-                "2024"
+                "2024",
+                "2025",
+                "2026"
         );
 
         recordIDCol.setCellValueFactory(new PropertyValueFactory<>("recordId"));
@@ -66,6 +69,8 @@ public class TaxAuditViewController
         yearCol.setCellValueFactory(new PropertyValueFactory<>("year"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("createdDate"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
 
     }
 
