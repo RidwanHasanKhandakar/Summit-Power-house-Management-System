@@ -132,10 +132,34 @@ public class TaxAuditViewController
 
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
+
+        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        showInfo("Table refreshed.");
+
     }
 
     @javafx.fxml.FXML
     public void handleViewDetailsButton(ActionEvent actionEvent) {
+
+        TaxAudit selected = taxAndAuditTableView.getSelectionModel().getSelectedItem();
+
+        if (selected==null){
+            showErr("Please select a record.");
+            return;
+        }
+
+        recordIDLabel.setText(String.valueOf(selected.getRecordId()));
+        recordTypeLabel.setText(selected.getRecordType());
+        titleLabel.setText(selected.getTitle());
+        createdDateLabel.setText(String.valueOf(selected.getCreatedDate()));
+        statusLabel.setText(selected.getStatus());
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Record Details");
+        alert.setHeaderText("Details of Record ID: " + selected.getRecordId());
+        alert.setContentText(selected.getDetails());
+        alert.showAndWait();
+
     }
 
     public void showErr(String txt){
