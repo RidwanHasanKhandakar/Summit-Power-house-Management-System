@@ -76,6 +76,20 @@ public class TaxAuditViewController
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
+
+        recordTypeComboBox.getSelectionModel().clearSelection();
+        yearComboBox.getSelectionModel().clearSelection();
+
+        searchTextField.clear();
+
+        recordIDLabel.setText(" ");
+        recordTypeLabel.setText(" ");
+        titleLabel.setText(" ");
+        createdDateLabel.setText(" ");
+        statusLabel.setText(" ");
+
+        taxAndAuditTableView.getSelectionModel().clearSelection();
+
     }
 
     @javafx.fxml.FXML
