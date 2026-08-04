@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class TrackFuelFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/trackFuel.bin";
     public static void save(TrackFuel trackFuel) {
         ObservableList<TrackFuel> list = readAll();
         list.add(trackFuel);
