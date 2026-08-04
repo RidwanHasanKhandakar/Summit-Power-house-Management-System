@@ -83,7 +83,7 @@ public class SalaryPaymentsViewController
         }
 
         selected.setPaymentMethod(paymentComboBox.getValue());
-        selected.getPaymentDate(paymentdateDatePicker.getValue());
+        selected.setPaymentDate(paymentdateDatePicker.getValue());
         selected.setPaymentStatus("Paid");
         selected.setMonth(selectMonthComboBox.getValue());
 
@@ -111,6 +111,13 @@ public class SalaryPaymentsViewController
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
+
+        paymentComboBox.getSelectionModel().clearSelection();
+        selectMonthComboBox.getSelectionModel().clearSelection();
+        paymentdateDatePicker.setValue(null);
+
+        salaryTableView.getSelectionModel().clearSelection();
+
     }
 
     @javafx.fxml.FXML
@@ -122,6 +129,10 @@ public class SalaryPaymentsViewController
 
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
+
+        salaryTableView.setItems(SalaryPaymentsFileHandler.readAll());
+        showSuc("Salary payments refreshed successfully.");
+
     }
 
     public void showSuc(String txt){
