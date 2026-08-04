@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class TaxAuditFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/taxAudit.bin";
     public static void save(TaxAudit taxAudit) {
         ObservableList<TaxAudit> list = readAll();
         list.add(taxAudit);

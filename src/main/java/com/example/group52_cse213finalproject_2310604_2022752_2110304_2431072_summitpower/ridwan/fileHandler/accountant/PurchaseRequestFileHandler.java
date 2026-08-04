@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class PurchaseRequestFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/purchaseRequest.bin";
     public static void save(PurchaseRequest purchaseRequest) {
         ObservableList<PurchaseRequest> list = readAll();
         list.add(purchaseRequest);
@@ -40,6 +40,21 @@ public class PurchaseRequestFileHandler {
             return FXCollections.observableArrayList();
         }
 
+    }
+
+    public static void overwrite(ObservableList<PurchaseRequest> list) {
+
+        try {
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+
+            oos.writeObject(new ArrayList<>(list));
+
+            oos.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

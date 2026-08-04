@@ -124,9 +124,14 @@ public class RespondToGridFaultViewController
 
         RespondToGridFaultFileHandler.save(respondToGridFault);
 
-        showSuccess("Grid fault response saved successfully.");
-
         refreshButton(null);
 
+        showSuccess("Grid fault response saved successfully.");
+    }
+
+    @javafx.fxml.FXML
+    public void viewHistoryButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene(
+                (Node) actionEvent.getSource(), "samia", "gridOperator", "respond-grid-fault-history.fxml", "Grid Fault History");
     }
 }

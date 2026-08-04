@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="641.0" prefWidth="827.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.SynchronizeGeneratorHistoryController">
+   <children>
+      <Button layoutX="678.0" layoutY="555.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <TableView fx:id="tableview" layoutX="16.0" layoutY="103.0" prefHeight="422.0" prefWidth="798.0">
+        <columns>
+          <TableColumn fx:id="idTabCol" prefWidth="87.20003986358643" text="Generator ID" />
+          <TableColumn fx:id="synchroIdTabCol" prefWidth="119.19998168945312" text="Synchronization ID" />
+            <TableColumn fx:id="genVoltTabCol" prefWidth="117.5999755859375" text="Generator Voltage" />
+            <TableColumn fx:id="gridVoltTabCol" prefWidth="90.39996337890625" text="Grid Voltage" />
+            <TableColumn fx:id="synchroStatusTabCol" prefWidth="137.59988403320312" text="Synchronization Status" />
+            <TableColumn fx:id="synchroDateTabCol" prefWidth="144.800048828125" text="Synchronization Date" />
+            <TableColumn fx:id="gridSectionTabCol" prefWidth="100.7999267578125" text="Grid Section" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="247.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Synchronize Generate History">
+         <font>
+            <Font name="Times New Roman Bold" size="22.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutY="631.0" prefHeight="18.0" prefWidth="827.0" style="-fx-background-color: #49b0ff;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text fill="WHITE" layoutX="357.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

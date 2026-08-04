@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class ContractPerformanceFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/contractPerformance.txt";
+    private static final String FILE_PATH = "data/ridwan/bpdbOfficer/contractPerformance.bin";
 
     public static void save(ContractPerformance contractPerformance) {
         ObservableList<ContractPerformance> list = readAll();

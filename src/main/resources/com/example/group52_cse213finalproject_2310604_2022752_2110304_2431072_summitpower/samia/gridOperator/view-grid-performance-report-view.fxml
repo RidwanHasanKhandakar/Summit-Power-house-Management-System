@@ -61,12 +61,13 @@
       <Button layoutX="353.0" layoutY="341.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #49b0ff;" text="Generate Report" />
       <TableView fx:id="gridPerformanceTableView" layoutX="48.0" layoutY="400.0" prefHeight="159.0" prefWidth="784.0">
         <columns>
-          <TableColumn fx:id="reportIdTabCol" prefWidth="118.39997100830078" text="Report ID" />
-          <TableColumn fx:id="gridSectionTabCol" prefWidth="119.99996948242188" text="Grid Section" />
-            <TableColumn fx:id="totalLoadTabCol" prefWidth="135.2000732421875" text="Total Load (MW)" />
-            <TableColumn fx:id="availableCapacityTabCol" prefWidth="166.39993286132812" text="Available Capacity (MW)" />
-            <TableColumn fx:id="gridEfficiencyTabCol" prefWidth="123.199951171875" text="Efficiency (%)" />
-            <TableColumn fx:id="performanceStatusTabCol" prefWidth="119.2000732421875" text="Status" />
+          <TableColumn fx:id="reportIdTabCol" prefWidth="93.59996795654297" text="Report ID" />
+          <TableColumn fx:id="gridSectionTabCol" prefWidth="100.79998779296875" text="Grid Section" />
+            <TableColumn fx:id="totalLoadTabCol" prefWidth="117.5999755859375" text="Total Load (MW)" />
+            <TableColumn fx:id="availableCapacityTabCol" prefWidth="159.99996948242188" text="Available Capacity (MW)" />
+            <TableColumn fx:id="gridEfficiencyTabCol" prefWidth="97.5999755859375" text="Efficiency (%)" />
+            <TableColumn fx:id="performanceStatusTabCol" prefWidth="104.800048828125" text="Status" />
+            <TableColumn fx:id="reportDateTabCol" prefWidth="108.7999267578125" text="Report Date" />
         </columns>
       </TableView>
       <Text fill="WHITE" layoutX="302.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Grid Performance Report">

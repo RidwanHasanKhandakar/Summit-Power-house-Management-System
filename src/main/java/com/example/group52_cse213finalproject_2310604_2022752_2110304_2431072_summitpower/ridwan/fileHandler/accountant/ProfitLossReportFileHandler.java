@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ProfitLossReportFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/ProfitLossReport.bin";
     public static void save(ProfitLossReports profitLossReports) {
         ObservableList<ProfitLossReports> list = readAll();
         list.add(profitLossReports);

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class FuelInventoryFileHandler {
 
-    private static final String FILE_PATH = "data/ridwan/accountant/financialStatement.bin";
+    private static final String FILE_PATH = "data/ridwan/accountant/fuelInventory.bin";
     public static void save(FuelInventory fuelInventory) {
         ObservableList<FuelInventory> list = readAll();
         list.add(fuelInventory);
