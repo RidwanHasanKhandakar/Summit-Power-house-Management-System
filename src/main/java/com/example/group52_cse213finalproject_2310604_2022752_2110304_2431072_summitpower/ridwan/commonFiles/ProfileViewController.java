@@ -74,7 +74,7 @@ public class ProfileViewController
                 break;
 
             case "Accountant":
-                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan","accountant","accountant-dashboard-view-fxml","Accountant Dashboard!");
+                PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan","accountant","accountant-dashboard-view.fxml","Accountant Dashboard!");
                 break;
 
             case "HR Manager":
