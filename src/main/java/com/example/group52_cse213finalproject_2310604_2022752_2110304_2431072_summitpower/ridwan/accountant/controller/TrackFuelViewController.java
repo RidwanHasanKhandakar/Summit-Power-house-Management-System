@@ -37,7 +37,7 @@ public class TrackFuelViewController
     @javafx.fxml.FXML
     private TableColumn <TrackFuel,String> categoryCol;
 
-    //private int expenseCounter = 1;
+    private int expenseCounter = 1;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -161,9 +161,10 @@ public class TrackFuelViewController
         }
 
         TrackFuel ex = new TrackFuel(
+                expenseCounter,
                 expenseCategoryComboBox.getValue(),
-                descriptionTextArea.getText().trim(),
                 amount,
+                descriptionTextArea.getText().trim(),
                 expenseDateDatePicker.getValue()
         );
 
