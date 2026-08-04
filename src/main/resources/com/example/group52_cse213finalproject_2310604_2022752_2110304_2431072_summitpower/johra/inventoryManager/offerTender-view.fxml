@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.OfferTenderViewController">
    <children>
-      <Label layoutX="228.0" layoutY="14.0" style="-fx-text-fill: white;" text="Offer Tender">
+      <Label layoutX="235.0" layoutY="14.0" style="-fx-text-fill: white;" text="Offer Tender">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -34,10 +34,10 @@
          </font>
       </Label>
       <DatePicker fx:id="closingDateDatePicker" layoutX="155.0" layoutY="155.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button layoutX="226.0" layoutY="372.0" mnemonicParsing="false" onAction="#createTenderButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Create Tender" />
-      <Button layoutX="559.0" layoutY="372.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="225.0" layoutY="203.0" mnemonicParsing="false" onAction="#createTenderButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Create Tender" />
+      <Button layoutX="558.0" layoutY="391.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TextField fx:id="tenderTitleTextField" layoutX="458.0" layoutY="90.0" />
-      <TableView fx:id="showTenderTableView" layoutY="224.0" prefHeight="120.0" prefWidth="632.0">
+      <TableView fx:id="showTenderTableView" layoutX="7.0" layoutY="254.0" prefHeight="120.0" prefWidth="616.0">
         <columns>
           <TableColumn fx:id="tenderIdCol" prefWidth="150.4000244140625" text="Tender ID" />
           <TableColumn fx:id="tenderTitleCol" minWidth="0.0" prefWidth="162.39996337890625" text="Tender Title" />
@@ -51,5 +51,7 @@
          </font>
       </Label>
       <TextField fx:id="equipmentNameTextField" layoutX="458.0" layoutY="155.0" />
+      <Button layoutX="244.0" layoutY="391.0" mnemonicParsing="false" onAction="#loadTableView" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="14.0" layoutY="391.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

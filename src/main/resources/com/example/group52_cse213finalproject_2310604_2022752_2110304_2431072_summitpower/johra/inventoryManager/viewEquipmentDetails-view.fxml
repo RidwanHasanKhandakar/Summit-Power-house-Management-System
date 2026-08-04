@@ -16,7 +16,7 @@
       </Label>
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="574.0" layoutY="403.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <TableView fx:id="showTableView" layoutY="149.0" prefHeight="226.0" prefWidth="642.0">
+      <TableView fx:id="showTableView" layoutX="10.0" layoutY="149.0" prefHeight="226.0" prefWidth="618.0">
         <columns>
           <TableColumn fx:id="equipmentNameCol" prefWidth="123.20001065731049" text="Equipment Name" />
           <TableColumn fx:id="equipmentCategoryCol" prefWidth="123.99994659423828" text="Category" />

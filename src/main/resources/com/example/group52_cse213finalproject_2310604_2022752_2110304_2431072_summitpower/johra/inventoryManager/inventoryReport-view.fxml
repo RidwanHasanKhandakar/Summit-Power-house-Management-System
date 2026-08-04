@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -16,7 +17,7 @@
          </font>
       </Label>
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Label layoutX="24.0" layoutY="98.0" style="-fx-text-fill: white;" text="Report Type:">
+      <Label layoutX="361.0" layoutY="147.0" style="-fx-text-fill: white;" text="Report Type:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -31,17 +32,24 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker fx:id="reportDateDatePicker" layoutX="104.0" layoutY="143.0" />
+      <DatePicker fx:id="reportDateDatePicker" layoutX="93.0" layoutY="143.0" prefHeight="26.0" prefWidth="150.0" />
       <ComboBox fx:id="equipmentOrFuelCategoryComboBox" layoutX="442.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
-      <ComboBox fx:id="reportTypeComboBox" layoutX="104.0" layoutY="93.0" prefHeight="26.0" prefWidth="175.0" />
+      <ComboBox fx:id="reportTypeComboBox" layoutX="441.0" layoutY="142.0" prefHeight="26.0" prefWidth="175.0" />
       <Button layoutX="218.0" layoutY="377.0" mnemonicParsing="false" onAction="#createReportButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Button layoutX="558.0" layoutY="377.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="561.0" layoutY="390.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <Label layoutX="20.0" layoutY="206.0" style="-fx-text-fill: white;" text="Stock Status:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <CheckBox fx:id="stockAvailableCheckBox" layoutX="132.0" layoutY="206.0" mnemonicParsing="false" text="Available" textFill="WHITE" />
-      <CheckBox fx:id="stoxkNotAvailableCheckBox" layoutX="233.0" layoutY="206.0" mnemonicParsing="false" text="Not Available" textFill="WHITE" />
+      <CheckBox fx:id="stockNotAvailableCheckBox" layoutX="233.0" layoutY="206.0" mnemonicParsing="false" text="Not Available" textFill="WHITE" />
+      <Label layoutX="20.0" layoutY="98.0" style="-fx-text-fill: white;" text="Report ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="reportIdTextField" layoutX="92.0" layoutY="94.0" />
+      <Button layoutX="22.0" layoutY="390.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>
