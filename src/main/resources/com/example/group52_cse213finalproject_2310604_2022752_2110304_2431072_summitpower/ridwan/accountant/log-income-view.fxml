@@ -60,7 +60,7 @@
             <Font name="Times New Roman Bold" size="16.0" />
          </font>
       </Label>
-      <Text fx:id="totalRevenueText" layoutX="471.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="132.0" />
+      <Text fx:id="totalRevenueText" fill="#49b0ff" layoutX="471.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="132.0" />
       <Line endX="321.0" layoutX="303.0" layoutY="257.0" startX="-303.0" stroke="#49b0ff" strokeWidth="5.0" />
    </children>
 </AnchorPane>
