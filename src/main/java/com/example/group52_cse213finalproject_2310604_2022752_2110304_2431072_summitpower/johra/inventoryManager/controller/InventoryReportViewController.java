@@ -12,11 +12,13 @@ public class InventoryReportViewController
     @javafx.fxml.FXML
     private ComboBox<String> equipmentOrFuelCategoryComboBox;
     @javafx.fxml.FXML
-    private CheckBox stoxkNotAvailableCheckBox;
-    @javafx.fxml.FXML
     private ComboBox<String> reportTypeComboBox;
     @javafx.fxml.FXML
     private DatePicker reportDateDatePicker;
+    @javafx.fxml.FXML
+    private TextField reportIdTextField;
+    @javafx.fxml.FXML
+    private CheckBox stockNotAvailableCheckBox;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -45,5 +47,39 @@ public class InventoryReportViewController
 
     @javafx.fxml.FXML
     public void createReportButtonOnAction(ActionEvent actionEvent) {
+
+        if(reportIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(reportTypeComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+        }
+
+        if(reportDateDatePicker == null){
+            showError("Field cannot be empty");
+        }
+
+    }
+
+    public void showError(String text){
+
+        Alert alert =new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        reportIdTextField.clear();
+        equipmentOrFuelCategoryComboBox.setValue(null);
+        reportDateDatePicker.setValue(null);
+        stockAvailableCheckBox.setSelected(false);
+        stockNotAvailableCheckBox.setSelected(false);
+
     }
 }

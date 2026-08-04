@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class InventoryReport implements Serializable {
     private LocalDate reportDate;
-    private String equipmentOrFuelCategory, reportType;
+    private String equipmentOrFuelCategory, reportType, reportId;
     private Boolean stockAvailable, stoxkNotAvailable;
 
     public InventoryReport(LocalDate reportDate, String equipmentOrFuelCategory, String reportType, Boolean stockAvailable, Boolean stoxkNotAvailable) {

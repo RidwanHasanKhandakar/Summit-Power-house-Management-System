@@ -54,7 +54,7 @@ public class DashboardViewController
         Optional<ButtonType> res = alert.showAndWait();
         if(res.isPresent() && res.get() == ButtonType.OK){
             CurrentUser.logout();
-            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "sign-up-view.fxml", "Sign Up");
+            PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "log-in-view.fxml", "Login");
         }
     }
 
