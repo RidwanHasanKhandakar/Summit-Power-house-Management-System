@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.AddEquipmentFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -69,6 +71,12 @@ public class AddEquipmentViewController
         if(purchaseDateDatePicker == null){
             showError("Field cannot be empty");
         }
+
+        Equipment equipment = new Equipment(equipmentIdTextField.getText(), equipmentNameTextField.getText(), equipmentCategoryComboBox.getValue(), vendorComboBox.getValue(), quantityTextField.getText(), purchaseDateDatePicker.getValue());
+
+        AddEquipmentFileHandler.save(equipment);
+
+        showInformation("Equipment added successfully!");
     }
 
     @javafx.fxml.FXML
@@ -79,6 +87,14 @@ public class AddEquipmentViewController
     public void showError(String text){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation");
         alert.setHeaderText(null);
         alert.setContentText(text);
         alert.showAndWait();

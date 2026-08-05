@@ -1,11 +1,14 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.AddEquipmentFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.OfferTenderFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Tender;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -33,6 +36,21 @@ public class OfferTenderViewController
     @javafx.fxml.FXML
     public void initialize() {
 
+        tenderIdCol.setCellValueFactory(new PropertyValueFactory<>("tenderId"));
+        tenderTitleCol.setCellValueFactory(new PropertyValueFactory<>("tenderTitle"));
+        equipmentCol.setCellValueFactory(new PropertyValueFactory<>("equipmentName"));
+        closingDateCol.setCellValueFactory(new PropertyValueFactory<>("closingDate"));
+
+    }
+
+    @javafx.fxml.FXML
+    public void homeButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-view.fxml", "Inventory Manager Dashboard");
+    }
+
+    @javafx.fxml.FXML
+    public void createTenderButtonOnAction(ActionEvent actionEvent) {
+
         if(tenderIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
         }
@@ -49,24 +67,32 @@ public class OfferTenderViewController
             showError("Field cannot be empty");
         }
 
-    }
+        Tender tender = new Tender(tenderIdTextField.getText(), tenderTitleTextField.getText(), equipmentNameTextField.getText(), closingDateDatePicker.getValue());
 
-    @javafx.fxml.FXML
-    public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
-    }
+        OfferTenderFileHandler.save(tender);
 
-    @javafx.fxml.FXML
-    public void createTenderButtonOnAction(ActionEvent actionEvent) {
+        showTenderTableView.setItems(OfferTenderFileHandler.readAll());
+
+
+        showInformation("Tender added successfully!");
     }
 
     @javafx.fxml.FXML
     public void loadTableView(ActionEvent actionEvent) {
+
     }
 
     public void showError(String text){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Confirmation");
         alert.setHeaderText(null);
         alert.setContentText(text);
         alert.showAndWait();
