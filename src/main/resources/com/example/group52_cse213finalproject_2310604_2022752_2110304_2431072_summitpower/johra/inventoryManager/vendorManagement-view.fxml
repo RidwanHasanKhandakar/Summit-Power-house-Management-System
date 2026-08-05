@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.VendorManagementViewController">
    <children>
-      <Label layoutX="180.0" layoutY="14.0" style="-fx-text-fill: white;" text="Vendor Management">
+      <Label layoutX="201.0" layoutY="14.0" style="-fx-text-fill: white;" text="Vendor Management">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -51,6 +51,6 @@
         </columns>
       </TableView>
       <Button layoutX="394.0" layoutY="399.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Load" />
-      <Button layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>
