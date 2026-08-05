@@ -48,11 +48,16 @@ public class LogIncomeViewController
         unitsCol.setCellValueFactory(new PropertyValueFactory<>("unitsSold"));
         revenueCol.setCellValueFactory(new PropertyValueFactory<>("revenueAmount"));
 
+        loadData();
+
+    }
+
+    private void loadData(){
+
         ObservableList<LogIncome> list = LogIncomeFileHandler.readAll();
         salesIncomeTableView.setItems(list);
-
         if (!list.isEmpty()){
-            saleCounter = list.get(list.size()-1).getSaleID() + 1;
+            saleCounter=list.get(list.size()-1).getSaleID()+1;
         }
         calculateTotalRevenue();
 
@@ -106,9 +111,11 @@ public class LogIncomeViewController
 
         LogIncomeFileHandler.save(income);
 
-        salesIncomeTableView.setItems(LogIncomeFileHandler.readAll());
+        //salesIncomeTableView.setItems(LogIncomeFileHandler.readAll());
 
-        calculateTotalRevenue();
+        loadData();
+
+        //calculateTotalRevenue();
 
         showSuc("Electricity sale logged successfully!");
 
@@ -119,7 +126,7 @@ public class LogIncomeViewController
     private void calculateTotalRevenue() {
 
         double totalRevenue = 0;
-        for (LogIncome income : salesIncomeTableView.getItems()) {
+        for (LogIncome income : LogIncomeFileHandler.readAll()) {
             totalRevenue += income.getRevenueAmount();
         }
 
