@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class EmployeeTrainingFileHandler {
 
-    private static final String FILE_PATH = "data/johra/inventoryManager/employeeTraining.bin";
+    private static final String FILE_PATH = "data/johra/hrManager/employeeTraining.bin";
     public static void save(EmployeeTraining employeeTraining) {
         ObservableList<EmployeeTraining> list = readAll();
         list.add(employeeTraining);
