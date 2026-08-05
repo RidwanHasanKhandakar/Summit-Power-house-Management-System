@@ -85,7 +85,7 @@ public class LogIncomeViewController
     @javafx.fxml.FXML
     public void handleLogSaleButton(ActionEvent actionEvent) {
 
-        if (clientCompanyTextField.getText().isEmpty() || soldTextField.getText().isEmpty() || revenueTextField.getText().isEmpty() || dateDatePicker.getValue() == null) {
+        if (clientCompanyTextField.getText().isBlank() || soldTextField.getText().isBlank() || revenueTextField.getText().isBlank() || dateDatePicker.getValue() == null) {
             showError("Please fill in all fields before logging a sale.");
             return;
         }
