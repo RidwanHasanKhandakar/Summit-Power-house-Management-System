@@ -41,7 +41,7 @@ public class DashboardViewController
 
     @javafx.fxml.FXML
     public void logoutButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "log-in-view.fxml", "Login");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "log-in-view.fxml", "Login");
 
     }
 

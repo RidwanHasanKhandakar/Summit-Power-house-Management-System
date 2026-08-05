@@ -56,7 +56,7 @@ public class ManageEmployeeTrainingViewController
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboardView.fxml", "HR Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboard-view.fxml", "HR Manager Dashboard");
     }
 
     @javafx.fxml.FXML
@@ -96,7 +96,7 @@ public class ManageEmployeeTrainingViewController
     public void showInformation(String text){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information");
-        alert.setHeaderText("null");
+        alert.setHeaderText("Success");
         alert.setContentText(text);
         alert.showAndWait();
     }

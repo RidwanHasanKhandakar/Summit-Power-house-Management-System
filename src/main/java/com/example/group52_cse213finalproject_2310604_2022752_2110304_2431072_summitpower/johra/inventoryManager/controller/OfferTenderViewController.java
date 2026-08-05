@@ -73,7 +73,6 @@ public class OfferTenderViewController
 
         showTenderTableView.setItems(OfferTenderFileHandler.readAll());
 
-
         showInformation("Tender added successfully!");
     }
 
