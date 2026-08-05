@@ -65,7 +65,7 @@ public class CreateNoticeViewController
 
         CreateNoticeFileHandler.save(notice);
 
-        showConfirmation("Equipment added successfully!");
+        showConfirmation("Notice created successfully!");
 
     }
 
