@@ -66,11 +66,6 @@ public class LoadDistributionViewController
     }
 
     @javafx.fxml.FXML
-    public void BackButton(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard");
-    }
-
-    @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
         if (distributionIdTextField.getText().trim().isEmpty()) {
             showError("Please enter Distribution ID.");
@@ -133,9 +128,25 @@ public class LoadDistributionViewController
         );
 
         LoadDistributionFileHandler.save(loadDistribution);
+        System.out.println("Saved!");
+        System.out.println(loadDistribution);
+        System.out.println(LoadDistributionFileHandler.readAll());
+        System.out.println("Saved records: " + LoadDistributionFileHandler.readAll().size());
 
         showSuccess("Load Distribution saved successfully.");
 
         refreshButton(null);
+    }
+
+    @javafx.fxml.FXML
+    public void viewHistoryButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene(
+                (Node) actionEvent.getSource(), "samia", "gridOperator", "load-distribution-history.fxml", "Load Distribution History");
+    }
+
+    @javafx.fxml.FXML
+    public void backButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard");
+
     }
 }

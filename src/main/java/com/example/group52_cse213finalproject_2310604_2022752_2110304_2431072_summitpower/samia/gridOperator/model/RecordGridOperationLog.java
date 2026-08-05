@@ -4,18 +4,29 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class RecordGridOperationLog implements Serializable {
-    private String operationId,gridSection,operationType;
+    private String operationId;
+    private String gridId;
+    private String gridSection;
+    private String operationType;
+    private String gridStatus;
     private LocalDate operationDate;
-    private String operatorName,remarks;
+    private double voltage;
+    private double frequency;
+    private String operatorName;
+    private String remarks;
 
     public RecordGridOperationLog() {
     }
 
-    public RecordGridOperationLog(String operationId, String gridSection, String operationType, LocalDate operationDate, String operatorName, String remarks) {
+    public RecordGridOperationLog(String operationId, String gridId, String gridSection, String operationType, String gridStatus, LocalDate operationDate, double voltage, double frequency, String operatorName, String remarks) {
         this.operationId = operationId;
+        this.gridId = gridId;
         this.gridSection = gridSection;
         this.operationType = operationType;
+        this.gridStatus = gridStatus;
         this.operationDate = operationDate;
+        this.voltage = voltage;
+        this.frequency = frequency;
         this.operatorName = operatorName;
         this.remarks = remarks;
     }
@@ -26,6 +37,14 @@ public class RecordGridOperationLog implements Serializable {
 
     public void setOperationId(String operationId) {
         this.operationId = operationId;
+    }
+
+    public String getGridId() {
+        return gridId;
+    }
+
+    public void setGridId(String gridId) {
+        this.gridId = gridId;
     }
 
     public String getGridSection() {
@@ -44,12 +63,36 @@ public class RecordGridOperationLog implements Serializable {
         this.operationType = operationType;
     }
 
+    public String getGridStatus() {
+        return gridStatus;
+    }
+
+    public void setGridStatus(String gridStatus) {
+        this.gridStatus = gridStatus;
+    }
+
     public LocalDate getOperationDate() {
         return operationDate;
     }
 
     public void setOperationDate(LocalDate operationDate) {
         this.operationDate = operationDate;
+    }
+
+    public double getVoltage() {
+        return voltage;
+    }
+
+    public void setVoltage(double voltage) {
+        this.voltage = voltage;
+    }
+
+    public double getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(double frequency) {
+        this.frequency = frequency;
     }
 
     public String getOperatorName() {
@@ -72,9 +115,13 @@ public class RecordGridOperationLog implements Serializable {
     public String toString() {
         return "RecordGridOperationLog{" +
                 "operationId='" + operationId + '\'' +
+                ", gridId='" + gridId + '\'' +
                 ", gridSection='" + gridSection + '\'' +
                 ", operationType='" + operationType + '\'' +
+                ", gridStatus='" + gridStatus + '\'' +
                 ", operationDate=" + operationDate +
+                ", voltage=" + voltage +
+                ", frequency=" + frequency +
                 ", operatorName='" + operatorName + '\'' +
                 ", remarks='" + remarks + '\'' +
                 '}';

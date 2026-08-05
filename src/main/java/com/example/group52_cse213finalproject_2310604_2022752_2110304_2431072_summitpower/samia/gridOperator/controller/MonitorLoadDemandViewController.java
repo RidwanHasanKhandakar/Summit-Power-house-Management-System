@@ -1,13 +1,11 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.MonitorLoadDemandFileHandler;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.MonitorLoadDemand;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.LoadDistributionFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.LoadDistribution;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class MonitorLoadDemandViewController
@@ -15,38 +13,24 @@ public class MonitorLoadDemandViewController
     @javafx.fxml.FXML
     private TextField currentLoadMWTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> demandStatusComboBox;
-    @javafx.fxml.FXML
-    private DatePicker monitoringDatePicker;
-    @javafx.fxml.FXML
     private TextField demandIdTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> gridSectionComboBox;
-    @javafx.fxml.FXML
     private TextField availableCapacityMWTextField;
+    @javafx.fxml.FXML
+    private TextField demandStatusTextField;
+    @javafx.fxml.FXML
+    private TextField monitoringDateTextField;
+    @javafx.fxml.FXML
+    private TextField gridSectionTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-        gridSectionComboBox.getItems().addAll(
-                "North Grid",
-                "South Grid",
-                "East Grid",
-                "West Grid"
-        );
-        demandStatusComboBox.getItems().addAll(
-                "Normal",
-                "High Demand",
-                "Critical"
-        );
-
+        gridSectionTextField.setEditable(false);
         currentLoadMWTextField.setEditable(false);
         availableCapacityMWTextField.setEditable(false);
-
-        gridSectionComboBox.setDisable(true);
-        demandStatusComboBox.setDisable(true);
-
-        monitoringDatePicker.setDisable(true);
+        demandStatusTextField.setEditable(false);
+        monitoringDateTextField.setEditable(false);
     }
 
     public void showSuccess(String txt){
@@ -74,15 +58,31 @@ public class MonitorLoadDemandViewController
             return;
         }
 
-        for (MonitorLoadDemand demand : MonitorLoadDemandFileHandler.readAll()) {
+        for (LoadDistribution demand : LoadDistributionFileHandler.readAll()) {
 
-            if (demand.getDemandId().equalsIgnoreCase(demandId)) {
+            if (demand.getDistributionId().equalsIgnoreCase(demandId)) {
 
-                gridSectionComboBox.setValue(demand.getGridSection());
-                currentLoadMWTextField.setText(String.valueOf(demand.getCurrentLoadMW()));
-                availableCapacityMWTextField.setText(String.valueOf(demand.getAvailableCapacityMW()));
-                demandStatusComboBox.setValue(demand.getDemandStatus());
-                monitoringDatePicker.setValue(demand.getMonitoringDate());
+                gridSectionTextField.setText(demand.getGridSection());
+
+                currentLoadMWTextField.setText(String.valueOf(demand.getLoadMW()));
+
+// Assume every grid has 1000 MW capacity
+                double totalCapacity = 1000;
+                double availableCapacity = totalCapacity - demand.getLoadMW();
+
+                availableCapacityMWTextField.setText(String.valueOf(availableCapacity));
+
+                if (demand.getLoadMW() < 500) {
+                    demandStatusTextField.setText("Normal");
+                }
+                else if (demand.getLoadMW() < 800) {
+                    demandStatusTextField.setText("High Demand");
+                }
+                else {
+                    demandStatusTextField.setText("Critical");
+                }
+
+                monitoringDateTextField.setText(demand.getDistributionDate().toString());
 
                 showSuccess("Record Found!");
                 return;
@@ -95,12 +95,12 @@ public class MonitorLoadDemandViewController
 
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
-        demandIdTextField.clear();
-        gridSectionComboBox.setValue(null);
+        gridSectionTextField.clear();
         currentLoadMWTextField.clear();
         availableCapacityMWTextField.clear();
-        demandStatusComboBox.setValue(null);
-        monitoringDatePicker.setValue(null);
+        demandStatusTextField.clear();
+        monitoringDateTextField.clear();
+        demandIdTextField.clear();
     }
 
     @javafx.fxml.FXML
@@ -108,3 +108,4 @@ public class MonitorLoadDemandViewController
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard");
     }
 }
+//The monitor page retrieves the load information from the previously scheduled load distribution record. Therefore the Distribution ID is used as the unique identifier.
