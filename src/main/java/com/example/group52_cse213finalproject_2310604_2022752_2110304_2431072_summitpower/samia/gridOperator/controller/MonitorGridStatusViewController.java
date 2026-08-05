@@ -2,7 +2,9 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.MonitorGridStatusFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.RecordGridOperationLogFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.MonitorGridStatus;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.RecordGridOperationLog;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -15,37 +17,23 @@ public class MonitorGridStatusViewController
     @javafx.fxml.FXML
     private TextField gridIdTextField;
     @javafx.fxml.FXML
-    private DatePicker monitoringDatePicker;
-    @javafx.fxml.FXML
-    private ComboBox<String> gridStatusComboBox;
-    @javafx.fxml.FXML
     private TextField frequencyTextField;
     @javafx.fxml.FXML
-    private ComboBox<String> gridSectionComboBox;
-    @javafx.fxml.FXML
     private TextField voltageTextField;
+    @javafx.fxml.FXML
+    private TextField monitoringDateTextField;
+    @javafx.fxml.FXML
+    private TextField gridSectionTextField;
+    @javafx.fxml.FXML
+    private TextField gridStatusTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
-        gridSectionComboBox.getItems().addAll(
-                "North Grid",
-                "South Grid",
-                "East Grid",
-                "West Grid"
-        );
-
-        gridStatusComboBox.getItems().addAll(
-                "Normal",
-                "Maintenance",
-                "Fault"
-        );
+        gridSectionTextField.setEditable(false);
+        gridStatusTextField.setEditable(false);
         voltageTextField.setEditable(false);
         frequencyTextField.setEditable(false);
-
-        gridSectionComboBox.setDisable(true);
-        gridStatusComboBox.setDisable(true);
-
-        monitoringDatePicker.setDisable(true);
+        monitoringDateTextField.setEditable(false);
     }
 
     public void showSuccess(String txt){
@@ -73,26 +61,27 @@ public class MonitorGridStatusViewController
             return;
         }
 
-        for (MonitorGridStatus status : MonitorGridStatusFileHandler.readAll()) {
+        for (RecordGridOperationLog status : RecordGridOperationLogFileHandler.readAll()) {
 
             if (status.getGridId().equalsIgnoreCase(gridId)) {
 
-                gridSectionComboBox.setValue(status.getGridSection());
-                gridStatusComboBox.setValue(status.getGridStatus());
+                gridSectionTextField.setText(status.getGridSection());
+                gridStatusTextField.setText(status.getGridStatus());
                 voltageTextField.setText(String.valueOf(status.getVoltage()));
                 frequencyTextField.setText(String.valueOf(status.getFrequency()));
-                monitoringDatePicker.setValue(status.getMonitoringDate());
+                monitoringDateTextField.setText(status.getOperationDate().toString());
 
                 showSuccess("Record Found!");
                 return;
             }
         }
 
-        gridSectionComboBox.setValue(null);
-        gridStatusComboBox.setValue(null);
+        // If no record is found
+        gridSectionTextField.clear();
+        gridStatusTextField.clear();
         voltageTextField.clear();
         frequencyTextField.clear();
-        monitoringDatePicker.setValue(null);
+        monitoringDateTextField.clear();
 
         showError("No record found with this Grid ID.");
     }
@@ -100,11 +89,11 @@ public class MonitorGridStatusViewController
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
         gridIdTextField.clear();
-        gridSectionComboBox.setValue(null);
-        gridStatusComboBox.setValue(null);
+        gridSectionTextField.clear();
+        gridStatusTextField.clear();
         voltageTextField.clear();
         frequencyTextField.clear();
-        monitoringDatePicker.setValue(null);
+        monitoringDateTextField.clear();
     }
 
     @javafx.fxml.FXML

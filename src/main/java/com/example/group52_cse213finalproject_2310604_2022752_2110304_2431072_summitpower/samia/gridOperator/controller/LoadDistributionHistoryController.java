@@ -30,6 +30,8 @@ public class LoadDistributionHistoryController
 
     @javafx.fxml.FXML
     public void initialize() {
+        System.out.println("History Controller Loaded");
+
         idColumn.setCellValueFactory(new PropertyValueFactory<>("distributionId"));
         gridColumn.setCellValueFactory(new PropertyValueFactory<>("gridSection"));
         loadColumn.setCellValueFactory(new PropertyValueFactory<>("loadMW"));

@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="667.0" prefWidth="875.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.ViewGridPerformanceReportViewController">
    <children>
-      <Button layoutX="794.0" layoutY="588.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="798.0" layoutY="595.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <Text fill="WHITE" layoutX="85.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report ID:">
          <font>
             <Font size="14.0" />
@@ -34,32 +34,31 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="85.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Efficiency (%):">
+      <Text fill="WHITE" layoutX="80.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Efficiency (%):">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="458.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance Status:">
+      <Text fill="WHITE" layoutX="458.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="85.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:">
+      <Text fill="WHITE" layoutX="85.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
       <TextField fx:id="reportIdTextField" layoutX="238.0" layoutY="101.0" />
       <ComboBox fx:id="gridSectionComboBox" layoutX="628.0" layoutY="100.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
-      <DatePicker fx:id="reportDatePicker" layoutX="236.0" layoutY="273.0" prefHeight="26.0" prefWidth="150.0" />
+      <DatePicker fx:id="reportDatePicker" layoutX="237.0" layoutY="210.0" prefHeight="26.0" prefWidth="150.0" />
       <TextField fx:id="totalLoadMWTextField" layoutX="238.0" layoutY="158.0" />
-      <TextField fx:id="gridEfficiencyTextField" layoutX="238.0" layoutY="213.0" />
-      <ComboBox fx:id="performanceStatusComboBox" layoutX="628.0" layoutY="213.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <TextField fx:id="gridEfficiencyTextField" layoutX="238.0" layoutY="341.0" />
       <TextField fx:id="availableCapacityMWTextField" layoutX="628.0" layoutY="157.0" />
-      <Button layoutX="692.0" layoutY="588.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="607.0" layoutY="588.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Button layoutX="353.0" layoutY="341.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #49b0ff;" text="Generate Report" />
-      <TableView fx:id="gridPerformanceTableView" layoutX="48.0" layoutY="400.0" prefHeight="159.0" prefWidth="784.0">
+      <Button layoutX="696.0" layoutY="595.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="611.0" layoutY="595.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="506.0" layoutY="260.0" mnemonicParsing="false" onAction="#generateReportButton" prefHeight="26.0" prefWidth="173.0" style="-fx-background-color: #49b0ff;" text="Generate Report" />
+      <TableView fx:id="gridPerformanceTableView" layoutX="48.0" layoutY="413.0" prefHeight="159.0" prefWidth="784.0">
         <columns>
           <TableColumn fx:id="reportIdTabCol" prefWidth="93.59996795654297" text="Report ID" />
           <TableColumn fx:id="gridSectionTabCol" prefWidth="100.79998779296875" text="Grid Section" />
@@ -83,5 +82,6 @@
             <Text fill="WHITE" layoutX="407.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <TextField fx:id="performanceStatusTextField" layoutX="637.0" layoutY="341.0" />
    </children>
 </AnchorPane>
