@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -11,17 +13,17 @@
 
 <AnchorPane prefHeight="603.0" prefWidth="830.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.ManageSparePartsReqViewController">
    <children>
-      <Text fill="WHITE" layoutX="103.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name:">
+      <Text fill="WHITE" layoutX="104.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="103.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:">
+      <Text fill="WHITE" layoutX="104.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity:" wrappingWidth="68.42089843750023">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="103.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Name:">
+      <Text fill="WHITE" layoutX="457.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Name:">
          <font>
             <Font size="14.0" />
          </font>
@@ -31,22 +33,22 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="100.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Date:">
+      <Text fill="WHITE" layoutX="457.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="100.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Status:">
+      <Text fill="WHITE" layoutX="457.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
       <TextField fx:id="requestIdTextField" layoutX="239.0" layoutY="111.0" prefHeight="26.0" prefWidth="179.0" />
-      <TextField fx:id="partNameTextField" layoutX="239.0" layoutY="178.0" prefHeight="26.0" prefWidth="179.0" />
-      <TextField fx:id="quantityTextField" layoutX="239.0" layoutY="251.0" prefHeight="26.0" prefWidth="179.0" />
-      <TextField fx:id="supplierNameTextField" layoutX="239.0" layoutY="324.0" prefHeight="26.0" prefWidth="179.0" />
-      <DatePicker fx:id="requestDatePicker" layoutX="239.0" layoutY="406.0" prefHeight="26.0" prefWidth="179.0" />
-      <ComboBox fx:id="requestStatusComboBox" layoutX="239.0" layoutY="486.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" />
+      <TextField fx:id="partNameTextField" layoutX="591.0" layoutY="111.0" prefHeight="26.0" prefWidth="179.0" />
+      <TextField fx:id="quantityTextField" layoutX="239.0" layoutY="177.0" prefHeight="26.0" prefWidth="179.0" />
+      <TextField fx:id="supplierNameTextField" layoutX="239.0" layoutY="232.0" prefHeight="26.0" prefWidth="179.0" />
+      <DatePicker fx:id="requestDatePicker" layoutX="591.0" layoutY="177.0" prefHeight="26.0" prefWidth="179.0" />
+      <ComboBox fx:id="requestStatusComboBox" layoutX="591.0" layoutY="232.0" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" />
       <Button layoutX="512.0" layoutY="524.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
       <Button layoutX="607.0" layoutY="524.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
       <Button layoutX="720.0" layoutY="524.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
@@ -63,5 +65,15 @@
             <Text fill="WHITE" layoutX="395.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <TableView fx:id="tableview" layoutX="51.0" layoutY="314.0" prefHeight="178.0" prefWidth="739.0">
+        <columns>
+          <TableColumn fx:id="requestIdTabCol" prefWidth="117.60000228881836" text="Request ID" />
+          <TableColumn fx:id="partNameTabCol" prefWidth="117.59999084472656" text="Part Name" />
+            <TableColumn fx:id="quantityTabCol" prefWidth="125.60003662109375" text="Quantity" />
+            <TableColumn fx:id="supplierNameTabCol" prefWidth="119.20001220703125" text="Supplier Name" />
+            <TableColumn fx:id="requestStatusTabCol" prefWidth="126.4000244140625" text="Request Status" />
+            <TableColumn fx:id="requestDateTabCol" prefWidth="128.79997558593755" text="Request Date" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

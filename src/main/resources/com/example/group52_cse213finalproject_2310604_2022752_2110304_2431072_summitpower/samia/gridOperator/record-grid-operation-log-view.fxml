@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="579.0" prefWidth="844.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.RecordGridOperationLogViewController">
    <children>
-      <Button layoutX="504.0" layoutY="315.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="591.0" layoutY="545.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
       <Text fill="WHITE" layoutX="70.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operation ID:">
          <font>
             <Font size="14.0" />
@@ -25,7 +25,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="70.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operation Type:">
+      <Text fill="WHITE" layoutX="69.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operation Type:">
          <font>
             <Font size="14.0" />
          </font>
@@ -35,7 +35,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="69.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operator Name:">
+      <Text fill="WHITE" layoutX="69.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operator Name:">
          <font>
             <Font size="14.0" />
          </font>
@@ -45,23 +45,25 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView fx:id="operationLogTableView" layoutX="47.0" layoutY="367.0" prefHeight="164.0" prefWidth="750.0">
+      <TableView fx:id="operationLogTableView" layoutX="46.0" layoutY="362.0" prefHeight="164.0" prefWidth="750.0">
         <columns>
-          <TableColumn fx:id="operationIdColumn" prefWidth="151.99999237060547" text="Operation ID" />
-          <TableColumn fx:id="gridSectionColumn" prefWidth="152.00003051757812" text="Grid Section" />
-            <TableColumn fx:id="operationTypeColumn" prefWidth="149.60003662109375" text="Operation Type" />
-            <TableColumn fx:id="operationDateColumn" prefWidth="149.60000610351562" text="Date" />
-            <TableColumn fx:id="operatorNameColumn" prefWidth="148.0" text="Operator Name" />
+          <TableColumn fx:id="operationIdColumn" prefWidth="110.39995956420898" text="Operation ID" />
+          <TableColumn fx:id="gridIdColumn" prefWidth="104.80006408691406" text="Grid Id" />
+            <TableColumn fx:id="gridSectionColumn" prefWidth="129.60003662109375" text="Grid Section" />
+            <TableColumn fx:id="operationTypeColumn" prefWidth="138.39996337890625" text="Operation Type" />
+            <TableColumn fx:id="operationDateColumn" prefWidth="134.4000244140625" text="Date" />
+            <TableColumn fx:id="operatorNameColumn" prefWidth="131.199951171875" text="Operation Name" />
+            <TableColumn fx:id="gridSectionColumn1" prefWidth="288.00006103515625" text="Grid Section" />
         </columns>
       </TableView>
       <TextField fx:id="operationIdTextField" layoutX="199.0" layoutY="96.0" />
-      <TextField fx:id="operatorNameTextField" layoutX="199.0" layoutY="207.0" />
+      <TextField fx:id="operatorNameTextField" layoutX="199.0" layoutY="268.0" />
       <DatePicker fx:id="operationDatePicker" layoutX="520.0" layoutY="150.0" prefHeight="26.0" prefWidth="150.0" />
-      <ComboBox fx:id="operationTypeComboBox" layoutX="199.0" layoutY="152.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="operationTypeComboBox" layoutX="198.0" layoutY="226.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
       <ComboBox fx:id="gridSectionComboBox" layoutX="520.0" layoutY="96.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
-      <TextArea fx:id="remarksTextArea" layoutX="504.0" layoutY="195.0" prefHeight="68.0" prefWidth="214.0" />
-      <Button layoutX="603.0" layoutY="315.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="710.0" layoutY="315.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <TextArea fx:id="remarksTextArea" layoutX="504.0" layoutY="190.0" prefHeight="70.0" prefWidth="214.0" />
+      <Button layoutX="670.0" layoutY="545.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="764.0" layoutY="545.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <Text fill="WHITE" layoutX="290.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Record Grid Operation Log">
          <font>
             <Font name="Times New Roman Bold" size="22.0" />
@@ -75,5 +77,29 @@
             <Text fill="WHITE" layoutX="411.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <Text fill="WHITE" layoutX="70.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid ID:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="gridIdTextField" layoutX="198.0" layoutY="137.0" prefHeight="26.0" prefWidth="150.0" />
+      <Text fill="WHITE" layoutX="70.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grid Status:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="gridStatusComboBox" layoutX="198.0" layoutY="182.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
+      <Text fill="WHITE" layoutX="69.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Voltage (kV):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="voltageTextField" layoutX="198.0" layoutY="314.0" />
+      <Text fill="WHITE" layoutX="395.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency (Hz):">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="frequencyTextField" layoutX="520.0" layoutY="269.0" />
    </children>
 </AnchorPane>
