@@ -37,6 +37,6 @@
             <Text fill="WHITE" layoutX="357.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
-      <Button layoutX="74.0" layoutY="533.0" mnemonicParsing="false" onAction="#maintenancePerformanceReportButton" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: #49b0ff;" text="Maintenance Performance Report" />
+      <Button layoutX="74.0" layoutY="533.0" mnemonicParsing="false" onAction="#maintenancePerformanceAnalyticsButton" prefHeight="26.0" prefWidth="290.0" style="-fx-background-color: #49b0ff;" text="Maintenance Performance Analytics" />
    </children>
 </AnchorPane>

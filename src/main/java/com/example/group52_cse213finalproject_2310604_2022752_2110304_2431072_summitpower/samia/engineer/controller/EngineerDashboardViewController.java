@@ -75,7 +75,11 @@ public class EngineerDashboardViewController
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","engineer","engineering-performance-view.fxml","Generate engineering performance reports");
     }
 
+
     @javafx.fxml.FXML
-    public void maintenancePerformanceReportButton(ActionEvent actionEvent) {
+    public void maintenancePerformanceAnalyticsButton(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene(
+                (Node) actionEvent.getSource(), "samia", "engineer", "maintenance-performance-analytics.fxml", "Maintenance Performance Analytics"
+        );
     }
 }
