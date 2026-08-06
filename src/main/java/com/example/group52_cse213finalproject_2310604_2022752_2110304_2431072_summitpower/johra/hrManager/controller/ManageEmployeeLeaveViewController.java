@@ -57,6 +57,61 @@ public class ManageEmployeeLeaveViewController
     @javafx.fxml.FXML
     public void saveEmployeeLeaveButtonOnAction(ActionEvent actionEvent) {
 
+        if(leaveIdTextField.getText().isEmpty()){
+
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(employeeIdTextField.getText().isEmpty()){
+
+            showError("Field cannot be empty");
+            return;
+
+        }
+
+        if(leaveTypeComboBox.getValue().isEmpty()){
+
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(reasonComboBox.getValue().isEmpty()){
+
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(startDateDatePicker.getValue() == null){
+
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(endDateDatePicker.getValue() == null){
+
+            showError("Field cannot be empty");
+            return;
+        }
+
+
+
+    }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    public void showError(String text){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText(text);
+            alert.showAndWait();
     }
 
     @javafx.fxml.FXML
