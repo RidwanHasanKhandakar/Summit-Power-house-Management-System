@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 public class DashboardViewController
 {
     @javafx.fxml.FXML
-    private Label officerNameLabel;
+    private Label inventoryManagerOfficerNameLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -18,7 +18,7 @@ public class DashboardViewController
         User user = CurrentUser.getUser();
 
         if (user!=null){
-            officerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
+            inventoryManagerOfficerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
         }
     }
 
@@ -72,5 +72,10 @@ public class DashboardViewController
     public void removeEquipmentButtonOnAction(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "removeEquipment-view.fxml", "Remove Equipment");
 
+    }
+
+    @javafx.fxml.FXML
+    public void ProfileButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "profile-view.fxml", "Profile");
     }
 }

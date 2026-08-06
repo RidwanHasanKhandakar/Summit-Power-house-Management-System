@@ -13,15 +13,16 @@ import java.util.Optional;
 
 public class DashboardViewController
 {
+
     @javafx.fxml.FXML
-    private Label officerNameLabel;
+    private Label hrManagerOfficerNameLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
         User user = CurrentUser.getUser();
 
         if (user!=null){
-            officerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
+            hrManagerOfficerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
         }
     }
 
