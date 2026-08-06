@@ -81,8 +81,7 @@ public class MonitorGeneratorStatusViewController {
         for(MonitorGeneratorStatus status :
                 MonitorGeneratorStatusFileHandler.readAll()){
 
-            if(status.getGeneratorId().equalsIgnoreCase(generatorIdTextField.getText().trim())
-                    && status.getPlantUnit().equals(plantUnitComBox.getValue())){
+            if(status.getGeneratorId().equalsIgnoreCase(generatorIdTextField.getText().trim()) && status.getPlantUnit().equals(plantUnitComBox.getValue())){
 
                 runningStatusTextField.setText(status.getRunningStatus());
                 powerOutputTextField.setText(String.valueOf(status.getPowerOutput()));

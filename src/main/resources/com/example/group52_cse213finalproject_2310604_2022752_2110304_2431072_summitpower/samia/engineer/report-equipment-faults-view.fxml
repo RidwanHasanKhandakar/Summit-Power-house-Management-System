@@ -1,38 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="411.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.ReportEquipmentFaultsViewController">
+<AnchorPane prefHeight="598.0" prefWidth="842.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.ReportEquipmentFaultsViewController">
    <children>
-      <Text fill="WHITE" layoutX="68.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault ID:" />
-      <Text fill="WHITE" layoutX="68.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment ID:" />
-      <Text fill="WHITE" layoutX="66.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:" />
-      <Text fill="WHITE" layoutX="66.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Category:" />
-      <Text fill="WHITE" layoutX="64.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:" />
-      <Text fill="WHITE" layoutX="65.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Severity:" />
-      <Text fill="WHITE" layoutX="64.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Description:" />
-      <TextField fx:id="faultIdTextField" layoutX="176.0" layoutY="72.0" />
-      <TextField fx:id="equipmentIdTextField" layoutX="177.0" layoutY="107.0" />
-      <TextField fx:id="generatorIdTextField" layoutX="177.0" layoutY="147.0" />
-      <ComboBox fx:id="faultCategoryComboBox" layoutX="177.0" layoutY="188.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
-      <ComboBox fx:id="faultSeverityComboBox" layoutX="177.0" layoutY="225.0" prefWidth="150.0" style="-fx-background-color: #49b0ff;" />
-      <TextArea fx:id="faultDescriptionTextArea" layoutX="176.0" layoutY="304.0" prefHeight="58.0" prefWidth="150.0" />
-      <Button layoutX="443.0" layoutY="336.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="519.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
-      <Button layoutX="380.0" layoutY="336.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Text fill="WHITE" layoutX="188.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Equipment Faults" wrappingWidth="211.329345703125">
+      <Text fill="WHITE" layoutX="68.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault ID:">
          <font>
-            <Font name="Times New Roman Bold" size="19.0" />
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="425.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipment ID:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="66.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Generator ID:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="425.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Category:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="425.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Date:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="64.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Severity:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="64.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fault Description:">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="faultIdTextField" layoutX="198.0" layoutY="73.0" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="equipmentIdTextField" layoutX="562.0" layoutY="75.0" prefHeight="26.0" prefWidth="170.0" />
+      <TextField fx:id="generatorIdTextField" layoutX="198.0" layoutY="131.0" prefHeight="26.0" prefWidth="170.0" />
+      <ComboBox fx:id="faultCategoryComboBox" layoutX="562.0" layoutY="130.0" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="faultSeverityComboBox" layoutX="198.0" layoutY="186.0" prefHeight="26.0" prefWidth="170.0" style="-fx-background-color: #49b0ff;" />
+      <TextArea fx:id="faultDescriptionTextArea" layoutX="198.0" layoutY="235.0" prefHeight="58.0" prefWidth="182.0" />
+      <Button layoutX="648.0" layoutY="551.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="744.0" layoutY="551.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="563.0" layoutY="551.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Text fill="WHITE" layoutX="320.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Report Equipment Faults" wrappingWidth="262.52935791015625">
+         <font>
+            <Font name="Times New Roman Bold" size="23.0" />
          </font>
       </Text>
-      <DatePicker fx:id="reportDatePicker" layoutX="177.0" layoutY="265.0" prefHeight="26.0" prefWidth="150.0" />
+      <DatePicker fx:id="reportDatePicker" layoutX="562.0" layoutY="184.0" prefHeight="26.0" prefWidth="170.0" />
+      <AnchorPane layoutY="614.0" prefHeight="19.0" prefWidth="849.0" style="-fx-background-color: #49b0ff;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text fill="WHITE" layoutX="377.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="29.0" layoutY="329.0" prefHeight="200.0" prefWidth="796.0">
+        <columns>
+          <TableColumn fx:id="faultIdTabCol" prefWidth="90.39999771118164" text="Fault ID" />
+          <TableColumn fx:id="equipmentIdTabCol" prefWidth="92.00003051757812" text="Equipment ID" />
+            <TableColumn fx:id="generatorIdTabCol" prefWidth="92.80003356933594" text="Generator ID" />
+            <TableColumn fx:id="faultCategoryTabCol" prefWidth="103.20001220703125" text="Fault Category" />
+            <TableColumn fx:id="faultSeverityTabCol" prefWidth="110.4000244140625" text="Fault Severity" />
+            <TableColumn fx:id="reportDateTabCol" prefWidth="108.0" text="Report Date" />
+            <TableColumn fx:id="faultDescriptionTabCol" prefWidth="204.0" text="Fault Description" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
