@@ -112,7 +112,7 @@ public class ComplaintSubmissionViewController
 
         Complaint complaint = new Complaint(id, category, details, affectedDate, status);
 
-        //ComplaintFileHandler.save(complaint);
+        ComplaintFileHandler.save(complaint);
 
         showSuc("Complaint submitted successfully!");
 
