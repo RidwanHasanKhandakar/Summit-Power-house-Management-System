@@ -55,7 +55,7 @@
       </Text>
       <Button layoutX="342.0" layoutY="495.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
       <Button layoutX="540.0" layoutY="495.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="632.0" layoutY="495.0" mnemonicParsing="false" onAction="#BackButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="632.0" layoutY="495.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <AnchorPane layoutY="585.0" prefHeight="18.0" prefWidth="768.0" style="-fx-background-color: #49b0ff;">
          <opaqueInsets>
             <Insets />

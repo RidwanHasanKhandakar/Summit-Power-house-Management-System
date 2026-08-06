@@ -39,10 +39,10 @@
       <TextField fx:id="vendorNameTextField" layoutX="127.0" layoutY="142.0" />
       <TextField fx:id="suppliedEquipmentTextField" layoutX="469.0" layoutY="142.0" />
       <TextField fx:id="emailTextField" layoutX="469.0" layoutY="94.0" />
-      <Button layoutX="231.0" layoutY="386.0" mnemonicParsing="false" onAction="#createVendorButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="158.0" layoutY="399.0" mnemonicParsing="false" onAction="#createVendorButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="564.0" layoutY="386.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <TableView fx:id="showTableView" layoutY="197.0" prefHeight="162.0" prefWidth="642.0">
+      <Button layoutX="564.0" layoutY="399.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <TableView fx:id="showTableView" layoutX="7.0" layoutY="197.0" prefHeight="162.0" prefWidth="628.0">
         <columns>
           <TableColumn fx:id="vendorIdCol" prefWidth="75.0" text="Vendor ID" />
           <TableColumn fx:id="vendorNameCol" prefWidth="215.20001983642578" text="Vendor Name" />
@@ -50,6 +50,7 @@
             <TableColumn fx:id="suppliedEquipmentCol" prefWidth="172.80001831054688" text="Equipment Supplied" />
         </columns>
       </TableView>
-      <Button layoutX="24.0" layoutY="386.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="394.0" layoutY="399.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

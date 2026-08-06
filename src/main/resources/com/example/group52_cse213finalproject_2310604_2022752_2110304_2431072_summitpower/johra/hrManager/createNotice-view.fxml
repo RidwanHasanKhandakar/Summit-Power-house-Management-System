@@ -26,15 +26,34 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextArea fx:id="contentTextArea" layoutX="98.0" layoutY="169.0" prefHeight="84.0" prefWidth="482.0" />
-      <Label layoutX="20.0" layoutY="82.0" style="-fx-text-fill: white;" text="Publish Date:">
+      <TextArea fx:id="contentTextArea" layoutX="98.0" layoutY="169.0" prefHeight="45.0" prefWidth="482.0" />
+      <Label layoutX="351.0" layoutY="82.0" style="-fx-text-fill: white;" text="Publish Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker fx:id="publishDateDatePicker" layoutX="100.0" layoutY="78.0" prefHeight="26.0" prefWidth="482.0" />
-      <Button layoutX="210.0" layoutY="332.0" mnemonicParsing="false" onAction="#createNoticeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Create" />
+      <DatePicker fx:id="publishDateDatePicker" layoutX="442.0" layoutY="78.0" prefHeight="26.0" prefWidth="140.0" />
+      <Button layoutX="210.0" layoutY="278.0" mnemonicParsing="false" onAction="#createNoticeButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Create" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="569.0" layoutY="387.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="18.0" layoutY="387.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Label layoutX="18.0" layoutY="81.0" style="-fx-text-fill: white;" text="Notice ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="noticeIdTextField" layoutX="99.0" layoutY="78.0" />
+      <Label layoutX="20.0" layoutY="236.0" style="-fx-text-fill: white;" text="Created By:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="createdbyTextField" layoutX="101.0" layoutY="233.0" />
+      <Label layoutX="351.0" layoutY="236.0" style="-fx-text-fill: white;" text="Expiry Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="expiryDateDatePicker" layoutX="442.0" layoutY="231.0" prefHeight="26.0" prefWidth="140.0" />
    </children>
 </AnchorPane>

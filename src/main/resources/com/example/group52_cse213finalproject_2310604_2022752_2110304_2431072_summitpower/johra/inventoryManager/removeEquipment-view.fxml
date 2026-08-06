@@ -16,7 +16,7 @@
       </Label>
       <Button layoutX="380.0" layoutY="91.0" mnemonicParsing="false" onAction="#removeButtonOnACtion" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Remove Damaged Equipment" />
       <Label alignment="CENTER" layoutY="429.0" prefHeight="18.0" prefWidth="632.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button fx:id="homeButtonOnAction" layoutX="560.0" layoutY="379.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="560.0" layoutY="379.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="52.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView fx:id="showTableView" layoutY="148.0" prefHeight="200.0" prefWidth="632.0">
         <columns>
           <TableColumn fx:id="equipmentIdCol" prefWidth="82.4000244140625" text="Equipment ID" />

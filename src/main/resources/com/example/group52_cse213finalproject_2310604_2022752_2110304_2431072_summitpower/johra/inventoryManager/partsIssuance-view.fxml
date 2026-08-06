@@ -4,43 +4,55 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.PartsIssuanceViewController">
+<AnchorPane prefHeight="482.0" prefWidth="622.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.PartsIssuanceViewController">
    <children>
-      <Label layoutX="220.0" layoutY="14.0" style="-fx-text-fill: white;" text="Parts Issuance">
+      <Label layoutX="230.0" layoutY="14.0" style="-fx-text-fill: white;" text="Parts Issuance">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="108.0" style="-fx-text-fill: white;" text="Equipment ID:">
+      <Label layoutX="15.0" layoutY="86.0" style="-fx-text-fill: white;" text="Equipment ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="335.0" layoutY="108.0" style="-fx-text-fill: white;" text="Quantity Required:">
+      <Label layoutX="335.0" layoutY="86.0" style="-fx-text-fill: white;" text="Quantity Required:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="quantityTextField" layoutX="456.0" layoutY="104.0" prefHeight="26.0" prefWidth="150.0" />
-      <Label layoutX="335.0" layoutY="161.0" style="-fx-text-fill: white;" text="Issue Date:">
+      <TextField fx:id="quantityTextField" layoutX="456.0" layoutY="82.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="335.0" layoutY="139.0" style="-fx-text-fill: white;" text="Issue Date:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <DatePicker fx:id="issueDateDatePicker" layoutX="455.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button layoutX="210.0" layoutY="376.0" mnemonicParsing="false" onAction="#savePartsIssuanceButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Label alignment="CENTER" layoutY="419.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Button layoutX="553.0" layoutY="376.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <Label layoutX="15.0" layoutY="161.0" style="-fx-text-fill: white;" text="Requester Employee ID:">
+      <DatePicker fx:id="issueDateDatePicker" layoutX="455.0" layoutY="135.0" prefHeight="26.0" prefWidth="150.0" />
+      <Button layoutX="270.0" layoutY="187.0" mnemonicParsing="false" onAction="#savePartsIssuanceButtonOnAction" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Label alignment="CENTER" layoutY="463.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <Button layoutX="560.0" layoutY="423.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="51.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Label layoutX="15.0" layoutY="139.0" style="-fx-text-fill: white;" text="Requester Employee ID:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="employeeIdTextField" layoutX="160.0" layoutY="157.0" prefHeight="26.0" prefWidth="150.0" />
-      <ComboBox fx:id="equipmentIdComboBox" layoutX="160.0" layoutY="104.0" prefWidth="150.0" />
+      <TextField fx:id="requesterEmployeeIdTextField" layoutX="160.0" layoutY="135.0" prefHeight="26.0" prefWidth="150.0" />
+      <ComboBox fx:id="equipmentIdComboBox" layoutX="160.0" layoutY="82.0" prefWidth="150.0" />
+      <Button layoutX="220.0" layoutY="423.0" mnemonicParsing="false" onAction="#loadTableView" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load Table" />
+      <TableView fx:id="showTableView" layoutX="12.0" layoutY="241.0" prefHeight="158.0" prefWidth="597.0">
+        <columns>
+          <TableColumn fx:id="equipmentIdCol" prefWidth="128.00002765655518" text="Equipment ID" />
+          <TableColumn fx:id="requesterEmployeeIdCol" prefWidth="171.19996643066406" text="Requester Employee ID" />
+            <TableColumn fx:id="quantityCol" prefWidth="127.2000732421875" text="Quantity Required" />
+            <TableColumn fx:id="issueDateCol" prefWidth="169.5999755859375" text="Issue Date" />
+        </columns>
+      </TableView>
+      <Button layoutX="15.0" layoutY="423.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

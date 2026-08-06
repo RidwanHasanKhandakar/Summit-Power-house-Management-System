@@ -26,7 +26,7 @@
          </font>
       </Label>
       <TextField fx:id="employeeIdTextfield" layoutX="122.0" layoutY="120.0" prefHeight="26.0" prefWidth="164.0" />
-      <TextField fx:id="employeeIdComboBox" layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
+      <TextField fx:id="employeeNameTextField" layoutX="122.0" layoutY="161.0" prefHeight="26.0" prefWidth="164.0" />
       <Label layoutX="330.0" layoutY="165.0" style="-fx-text-fill: white;" text="Date of Birth:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -59,6 +59,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="salaryComboBox" layoutX="121.0" layoutY="248.0" prefHeight="26.0" prefWidth="164.0" />
+      <TextField fx:id="salaryTextField" layoutX="121.0" layoutY="248.0" prefHeight="26.0" prefWidth="164.0" />
+      <Button layoutX="17.0" layoutY="388.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

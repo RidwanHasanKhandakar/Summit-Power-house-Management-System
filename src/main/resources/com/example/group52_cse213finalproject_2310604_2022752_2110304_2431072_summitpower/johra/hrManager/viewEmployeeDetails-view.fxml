@@ -7,24 +7,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.ViewEmployeeDetailsViewController">
+<AnchorPane prefHeight="457.0" prefWidth="691.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.ViewEmployeeDetailsViewController">
    <children>
-      <Label layoutX="193.0" layoutY="14.0" style="-fx-text-fill: white;" text="View Employee Details">
+      <Label layoutX="231.0" layoutY="14.0" style="-fx-text-fill: white;" text="View Employee Details">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="231.0" layoutY="91.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="269.0" layoutY="91.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="718.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="649.0" layoutY="402.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
-      <TableView fx:id="showEmployeeTableView" layoutY="159.0" prefHeight="215.0" prefWidth="718.0">
+      <TableView fx:id="showEmployeeTableView" layoutX="15.0" layoutY="159.0" prefHeight="215.0" prefWidth="686.0">
          <columns>
-            <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="30.0" prefWidth="79.20001524686813" text="Employee ID" />
-            <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="191.99998474121094" text="Employee Name" />
-            <TableColumn fx:id="departmentCol" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="179.20001220703125" text="Department" />
-            <TableColumn fx:id="positionCol" maxWidth="1071.99951171875" minWidth="30.0" prefWidth="107.199951171875" text="Position" />
-            <TableColumn fx:id="salaryCol" maxWidth="1071.99951171875" minWidth="30.0" prefWidth="158.39999999999998" text="Salary" />
+            <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="0.0" prefWidth="36.80001926422119" text="Employee ID" />
+            <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="80.79998397827148" text="Employee Name" />
+            <TableColumn fx:id="emailCol" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="64.79998779296875" text="Email" />
+            <TableColumn fx:id="departmentCol" maxWidth="1071.99951171875" minWidth="28.79998779296875" prefWidth="136.8000030517578" text="Department" />
+            <TableColumn fx:id="positionCol" maxWidth="1071.99951171875" minWidth="0.0" prefWidth="122.39996337890625" text="Position" />
+            <TableColumn fx:id="dobCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="129.5999755859375" text="DOB" />
+            <TableColumn fx:id="salaryCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="129.5999755859375" text="Salary" />
          </columns>
       </TableView>
+      <Button layoutX="15.0" layoutY="402.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

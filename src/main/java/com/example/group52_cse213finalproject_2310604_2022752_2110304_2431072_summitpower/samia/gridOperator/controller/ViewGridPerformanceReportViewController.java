@@ -27,8 +27,6 @@ public class ViewGridPerformanceReportViewController
     @javafx.fxml.FXML
     private DatePicker reportDatePicker;
     @javafx.fxml.FXML
-    private ComboBox<String> performanceStatusComboBox;
-    @javafx.fxml.FXML
     private TableColumn<ViewGridPerformanceReport,Double> gridEfficiencyTabCol;
     @javafx.fxml.FXML
     private TableColumn<ViewGridPerformanceReport,String> reportIdTabCol;
@@ -42,6 +40,8 @@ public class ViewGridPerformanceReportViewController
     private TableColumn<ViewGridPerformanceReport,String> gridSectionTabCol;
     @javafx.fxml.FXML
     private TableColumn<ViewGridPerformanceReport,LocalDate> reportDateTabCol;
+    @javafx.fxml.FXML
+    private TextField performanceStatusTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -52,12 +52,6 @@ public class ViewGridPerformanceReportViewController
                 "East Grid",
                 "West Grid"
         );
-        performanceStatusComboBox.getItems().addAll(
-                "Excellent",
-                "Good",
-                "Average",
-                "Poor"
-        );
         reportIdTabCol.setCellValueFactory(new PropertyValueFactory<>("reportId"));
         gridSectionTabCol.setCellValueFactory(new PropertyValueFactory<>("gridSection"));
         totalLoadTabCol.setCellValueFactory(new PropertyValueFactory<>("totalLoadMW"));
@@ -67,7 +61,7 @@ public class ViewGridPerformanceReportViewController
         reportDateTabCol.setCellValueFactory(new PropertyValueFactory<>("reportDate"));
         gridPerformanceTableView.setItems(ViewGridPerformanceReportFileHandler.readAll());
         gridEfficiencyTextField.setEditable(false);
-        performanceStatusComboBox.setDisable(true);
+        performanceStatusTextField.setEditable(false);
     }
 
     @javafx.fxml.FXML
@@ -77,7 +71,7 @@ public class ViewGridPerformanceReportViewController
         totalLoadMWTextField.clear();
         availableCapacityMWTextField.clear();
         gridEfficiencyTextField.clear();
-        performanceStatusComboBox.getSelectionModel().clearSelection();
+        performanceStatusTextField.clear();
         reportDatePicker.setValue(null);
         gridPerformanceTableView.getSelectionModel().clearSelection();
     }
@@ -125,16 +119,16 @@ public class ViewGridPerformanceReportViewController
                     String.format("%.2f", efficiency));
 
             if (efficiency >= 95) {
-                performanceStatusComboBox.setValue("Excellent");
+                performanceStatusTextField.setText("Excellent");
             }
             else if (efficiency >= 85) {
-                performanceStatusComboBox.setValue("Good");
+                performanceStatusTextField.setText("Good");
             }
             else if (efficiency >= 70) {
-                performanceStatusComboBox.setValue("Average");
+                performanceStatusTextField.setText("Average");
             }
             else {
-                performanceStatusComboBox.setValue("Poor");
+                performanceStatusTextField.setText("Poor");
             }
 
         }
@@ -193,7 +187,7 @@ public class ViewGridPerformanceReportViewController
         }
 
         double gridEfficiency = Double.parseDouble(gridEfficiencyTextField.getText());
-        if (performanceStatusComboBox.getValue() == null) {
+        if (performanceStatusTextField.getText().trim().isEmpty()) {
             showError("Please click Generate Report first.");
             return;
         }
@@ -215,7 +209,7 @@ public class ViewGridPerformanceReportViewController
                 totalLoad,
                 availableCapacity,
                 gridEfficiency,
-                performanceStatusComboBox.getValue(),
+                performanceStatusTextField.getText().trim(),
                 reportDatePicker.getValue()
         );
 
