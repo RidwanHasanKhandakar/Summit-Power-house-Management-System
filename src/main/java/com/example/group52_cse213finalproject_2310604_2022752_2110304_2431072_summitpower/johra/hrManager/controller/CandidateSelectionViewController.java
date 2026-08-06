@@ -111,7 +111,7 @@ public class CandidateSelectionViewController
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboardView.fxml", "HR Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboard-view.fxml", "HR Manager Dashboard");
     }
 
     @javafx.fxml.FXML
