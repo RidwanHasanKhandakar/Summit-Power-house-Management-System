@@ -77,7 +77,10 @@ public class UpdateMaintenanceStatusViewController
         generatorIdTextField.clear();
         maintenanceStatusComboBox.setValue(null);
         maintenanceDatePicker.setValue(null);
+        updatedByTextField.clear();
         remarksTextArea.clear();
+        tableView.getSelectionModel().clearSelection();
+
     }
 
     @javafx.fxml.FXML
@@ -87,5 +90,66 @@ public class UpdateMaintenanceStatusViewController
 
     @javafx.fxml.FXML
     public void updateButton(ActionEvent actionEvent) {
+        if(maintenanceIdTextField.getText().trim().isEmpty()){
+            showError("Please enter Maintenance ID.");
+            return;
+        }
+
+        if(generatorIdTextField.getText().trim().isEmpty()){
+            showError("Please enter Generator ID.");
+            return;
+        }
+
+        if(maintenanceDatePicker.getValue() == null){
+            showError("Please select Maintenance Date.");
+            return;
+        }
+
+        if(maintenanceDatePicker.getValue().isBefore(LocalDate.now())){
+            showError("Maintenance Date cannot be in the past.");
+            return;
+        }
+
+        if(maintenanceStatusComboBox.getValue() == null){
+            showError("Please select Maintenance Status.");
+            return;
+        }
+
+        if(updatedByTextField.getText().trim().isEmpty()){
+            showError("Please enter Updated By.");
+            return;
+        }
+
+        if(remarksTextArea.getText().trim().isEmpty()){
+            showError("Please enter Remarks.");
+            return;
+        }
+
+        for(UpdateMaintenanceStatus s : UpdateMaintenanceStatusFileHandler.readAll()){
+
+            if(s.getMaintenanceId().equalsIgnoreCase(
+                    maintenanceIdTextField.getText().trim())){
+
+                showError("Maintenance ID already exists.");
+                return;
+            }
+        }
+
+        UpdateMaintenanceStatus status = new UpdateMaintenanceStatus(
+                maintenanceIdTextField.getText().trim(),
+                generatorIdTextField.getText().trim(),
+                maintenanceDatePicker.getValue(),
+                maintenanceStatusComboBox.getValue(),
+                updatedByTextField.getText().trim(),
+                remarksTextArea.getText().trim()
+        );
+
+        UpdateMaintenanceStatusFileHandler.save(status);
+        tableView.getItems().setAll(UpdateMaintenanceStatusFileHandler.readAll()
+        );
+
+        refreshButton(null);
+
+        showSuccess("Maintenance Status Updated Successfully.");
     }
 }
