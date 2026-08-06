@@ -194,15 +194,12 @@ public class EquipmentEfficiencyViewController
         }
         double efficiency = Double.parseDouble(efficiencyTextField.getText());
 
-
-        EquipmentEfficiency equipment = new EquipmentEfficiency(
-                equipmentIdTextField.getText().trim(),
+        EquipmentEfficiency equipment = new EquipmentEfficiency(equipmentIdTextField.getText().trim(),
                 generatorIdTextField.getText().trim(),
                 powerOutput,
                 fuelConsumption,
                 efficiency,
-                analysisDatePicker.getValue()
-        );
+                analysisDatePicker.getValue());
 
         EquipmentEfficiencyFileHandler.save(equipment);
         tableView.setItems(EquipmentEfficiencyFileHandler.readAll());

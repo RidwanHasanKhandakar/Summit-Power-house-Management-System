@@ -1,8 +1,11 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.model.MonitorGeneratorStatus;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.engineer.MonitorGeneratorStatusFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -37,10 +40,63 @@ public class MonitorGeneratorStatusViewController {
                 "Unit 3",
                 "Unit 4"
         );
+        runningStatusTextField.setEditable(false);
+        powerOutputTextField.setEditable(false);
+        voltageTextField.setEditable(false);
+        frequencyTextField.setEditable(false);
+        fuelLevelTextField.setEditable(false);
+        engineTemperatureTextField.setEditable(false);
+        runningHoursTextField.setEditable(false);
+        maintenanceDateDatePicker.setEditable(false);
+    }
+
+    public void showSuccess(String txt){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
+    }
+
+    public void showError(String txt){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(txt);
+        alert.showAndWait();
     }
 
     @javafx.fxml.FXML
     public void searchButton(ActionEvent actionEvent) {
+        if(generatorIdTextField.getText().trim().isEmpty()){
+            showError("Please enter Generator ID.");
+            return;
+        }
+
+        if(plantUnitComBox.getValue()==null){
+            showError("Please select Plant Unit.");
+            return;
+        }
+
+        for(MonitorGeneratorStatus status :
+                MonitorGeneratorStatusFileHandler.readAll()){
+
+            if(status.getGeneratorId().equalsIgnoreCase(generatorIdTextField.getText().trim()) && status.getPlantUnit().equals(plantUnitComBox.getValue())){
+
+                runningStatusTextField.setText(status.getRunningStatus());
+                powerOutputTextField.setText(String.valueOf(status.getPowerOutput()));
+                voltageTextField.setText(String.valueOf(status.getVoltage()));
+                frequencyTextField.setText(String.valueOf(status.getFrequency()));
+                fuelLevelTextField.setText(String.valueOf(status.getFuelLevel()));
+                engineTemperatureTextField.setText(String.valueOf(status.getEngineTemperature()));
+                runningHoursTextField.setText(String.valueOf(status.getRunningHours()));
+                maintenanceDateDatePicker.setValue(status.getLastMaintenanceDate());
+                showSuccess("Generator Found.");
+                return;
+            }
+        }
+
+        showError("Generator not found.");
 
     }
 

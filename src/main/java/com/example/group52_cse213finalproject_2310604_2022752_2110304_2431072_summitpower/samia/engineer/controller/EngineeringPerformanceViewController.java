@@ -44,7 +44,6 @@ public class EngineeringPerformanceViewController
 
         efficiencyTextField.setEditable(false);
         performanceStatusTextField.setEditable(false);
-
         reportIdTabCol.setCellValueFactory(new PropertyValueFactory<>("reportId"));
         generatorIdTabCol.setCellValueFactory(new PropertyValueFactory<>("generatorId"));
         powerOutputTabCol.setCellValueFactory(new PropertyValueFactory<>("powerOutput"));
@@ -192,20 +191,16 @@ public class EngineeringPerformanceViewController
 
         double efficiency = Double.parseDouble(efficiencyTextField.getText());
 
-        EngineeringPerformance performance =
-                new EngineeringPerformance(
-                        reportIdTextField.getText().trim(),
+        EngineeringPerformance performance = new EngineeringPerformance(reportIdTextField.getText().trim(),
                         generatorIdTextField.getText().trim(),
                         reportDatePicker.getValue(),
                         powerOutput,
                         efficiency,
-                        performanceStatusTextField.getText().trim()
-                );
+                        performanceStatusTextField.getText().trim());
 
         EngineeringPerformanceFileHandler.save(performance);
 
-        tableView.setItems(
-                EngineeringPerformanceFileHandler.readAll());
+        tableView.setItems(EngineeringPerformanceFileHandler.readAll());
 
         refreshButton(null);
 

@@ -138,8 +138,7 @@ public class ManageSparePartsReqViewController
                         quantity,
                         supplierNameTextField.getText().trim(),
                         requestDatePicker.getValue(),
-                        requestStatusComboBox.getValue()
-                );
+                        requestStatusComboBox.getValue());
         ManageSparePartsReqFileHandler.save(request);
         tableview.setItems(ManageSparePartsReqFileHandler.readAll());
         refreshButton(null);
