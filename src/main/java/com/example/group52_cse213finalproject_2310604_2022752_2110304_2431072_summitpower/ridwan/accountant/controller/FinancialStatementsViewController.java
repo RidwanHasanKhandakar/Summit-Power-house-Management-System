@@ -2,7 +2,13 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.FinancialStatement;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.FinancialStatementFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.LogIncome;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.SalaryPayments;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.TrackFuel;
+//import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.FinancialStatementFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.LogIncomeFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.SalaryPaymentsFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.TrackFuelFileHandler;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -40,7 +46,7 @@ public class FinancialStatementsViewController
     @javafx.fxml.FXML
     private TableColumn <FinancialStatement,Integer> satementIDCol;
 
-    private int statementCounter = 1;
+    //private int statementCounter = 1;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -59,15 +65,17 @@ public class FinancialStatementsViewController
         TypeCol.setCellValueFactory(new PropertyValueFactory<>("statementType"));
         ExpensesCol.setCellValueFactory(new PropertyValueFactory<>("totalExpenses"));
 
-        finalcialStatementTableView.setItems(FinancialStatementFileHandler.readAll());
+//        finalcialStatementTableView.setItems(FinancialStatementFileHandler.readAll());
+//
+//        ObservableList<FinancialStatement> list = FinancialStatementFileHandler.readAll();
+//
+//        finalcialStatementTableView.setItems(list);
+//
+//        if(!list.isEmpty()){
+//            statementCounter = list.get(list.size()-1).getStatementId()+1;
+//        }
 
-        ObservableList<FinancialStatement> list = FinancialStatementFileHandler.readAll();
-
-        finalcialStatementTableView.setItems(list);
-
-        if(!list.isEmpty()){
-            statementCounter = list.get(list.size()-1).getStatementId()+1;
-        }
+        finalcialStatementTableView.getItems().clear();
 
     }
 
@@ -103,8 +111,17 @@ public class FinancialStatementsViewController
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
 
-        finalcialStatementTableView.setItems(FinancialStatementFileHandler.readAll());
-        showInformation("Table Refreshed");
+        //finalcialStatementTableView.setItems(FinancialStatementFileHandler.readAll());
+
+        finalcialStatementTableView.getItems().clear();
+
+        totalRevLabel.setText("");
+        totalExpensesLabel.setText("");
+        netProfitLabel.setText("");
+
+        statementPreviewTextArea.clear();
+
+        showInformation("Ready to generate a new statement.");
 
     }
 
@@ -131,25 +148,64 @@ public class FinancialStatementsViewController
 
 //        finalcialStatementTableView.getItems().clear();
 
-        double rev = 250000000;
-        double ex = 14200000;
-        double profit = rev-ex;
+        double revenue = 0;
+        double expenses = 0;
+//        double profit = revenue-ex;
 
-        FinancialStatement statement = new FinancialStatement(statementCounter++,
+        //REVENUE FROM LOG-INCOME.BIN
+        for (LogIncome income : LogIncomeFileHandler.readAll()){
+
+            if (!income.getTransactionDate().isBefore(fromDateDatePicker.getValue())
+                    &&
+                !income.getTransactionDate().isAfter(toDateDatePicker.getValue())){
+                revenue +=income.getRevenueAmount();
+            }
+
+        }
+
+        //FUEL & OPERATIONAL EXPENSE
+        for (TrackFuel expense : TrackFuelFileHandler.readAll()){
+
+            if (!expense.getExpenseDate().isBefore(fromDateDatePicker.getValue())
+                    &&
+                !expense.getExpenseDate().isAfter(toDateDatePicker.getValue())){
+                expenses+=expense.getAmount();
+            }
+
+        }
+
+        //SALARY EXPENSE
+        for (SalaryPayments salary: SalaryPaymentsFileHandler.readAll()){
+
+            if (salary.getPaymentDate()!=null && !salary.getPaymentDate().isBefore(fromDateDatePicker.getValue())
+            &&
+            !salary.getPaymentDate().isAfter(toDateDatePicker.getValue())
+            &&
+            salary.getPaymentStatus().equalsIgnoreCase("Paid")){
+                expenses+=salary.getSalary();
+            }
+
+        }
+
+        double profit = revenue-expenses;
+
+        FinancialStatement statement = new FinancialStatement(
+                1,
                 statementTypeComboBox.getValue(),
                 fromDateDatePicker.getValue(),
                 toDateDatePicker.getValue(),
-                rev,
-                ex,
-                profit);
+                revenue,
+                expenses,
+                profit
+        );
 
-        FinancialStatementFileHandler.save(statement);
-        finalcialStatementTableView.setItems(FinancialStatementFileHandler.readAll());
+        finalcialStatementTableView.getItems().clear();
+        finalcialStatementTableView.getItems().add(statement);
 
         //finalcialStatementTableView.getItems().clear();
 
-        totalRevLabel.setText(String.format("%.2f",rev));
-        totalExpensesLabel.setText(String.format("%.2f",ex));
+        totalRevLabel.setText(String.format("%.2f", revenue));
+        totalExpensesLabel.setText(String.format("%.2f",expenses));
         netProfitLabel.setText(String.format("%.2f",profit));
 
         statementPreviewTextArea.setText(
