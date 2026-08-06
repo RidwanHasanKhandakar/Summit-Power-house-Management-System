@@ -2,12 +2,14 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.TariffManagement;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class TariffManagementViewController
 {
@@ -26,6 +28,8 @@ public class TariffManagementViewController
     @javafx.fxml.FXML
     private TextField setTariffRateTextField;
 
+    private ArrayList<TariffManagement> allTariffs = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void initialize() {
         customerTypeComboBox.getItems().addAll("Industrial Customer","Residential Customer","Commercial Customer");
@@ -37,6 +41,25 @@ public class TariffManagementViewController
 
     @javafx.fxml.FXML
     public void handleSetTariff(ActionEvent actionEvent) {
+        String type = customerTypeComboBox.getValue();
+        String rateText = setTariffRateTextField.getText().trim();
+        LocalDate date = setTariffDatePicker.getValue();
+
+        if (type == null || rateText.isEmpty() || date == null) {
+            System.out.println("Please fill all fields.");
+            return;
+        }
+
+        int rate = Integer.parseInt(rateText);
+
+        TariffManagement tariff = new TariffManagement(type, rate, date);
+        allTariffs.add(tariff);
+
+        tariffTableView.getItems().setAll(FXCollections.observableArrayList(allTariffs));
+
+        customerTypeComboBox.getSelectionModel().clearSelection();
+        setTariffRateTextField.clear();
+        setTariffDatePicker.setValue(null);
     }
 
     @javafx.fxml.FXML
