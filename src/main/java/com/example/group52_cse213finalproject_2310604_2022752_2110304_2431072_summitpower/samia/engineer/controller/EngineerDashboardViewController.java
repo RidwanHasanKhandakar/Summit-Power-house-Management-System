@@ -12,8 +12,6 @@ import java.util.Optional;
 
 public class EngineerDashboardViewController
 {
-    @javafx.fxml.FXML
-    private Text officerNameText;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -75,5 +73,9 @@ public class EngineerDashboardViewController
     @javafx.fxml.FXML
     public void engineeringPerformanceButton(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","engineer","engineering-performance-view.fxml","Generate engineering performance reports");
+    }
+
+    @javafx.fxml.FXML
+    public void maintenancePerformanceReportButton(ActionEvent actionEvent) {
     }
 }
