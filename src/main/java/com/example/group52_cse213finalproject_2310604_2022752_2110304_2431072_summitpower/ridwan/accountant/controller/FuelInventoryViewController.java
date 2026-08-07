@@ -72,7 +72,9 @@ public class FuelInventoryViewController
         totalValueCol.setCellValueFactory(new PropertyValueFactory<>("totalValue"));
         lastUpdatedCol.setCellValueFactory(new PropertyValueFactory<>("lastUpdated"));
 
-        fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+        //fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+
+        handleRefreshButton(null);
 
     }
 
@@ -87,6 +89,17 @@ public class FuelInventoryViewController
     public void handleRefreshButton(ActionEvent actionEvent) {
 
         fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+
+        fuelTypeComboBox.getSelectionModel().select("All");
+
+        fromDateDatePicker.setValue(null);
+        toDateDatePicker.setValue(null);
+
+        totalQuantityLabel.setText("");
+        totalInventoryValueLabel.setText("");
+        avrgUnitCostLabel.setText("");
+
+
         showInformation("Inventory refreshed!");
 
     }
