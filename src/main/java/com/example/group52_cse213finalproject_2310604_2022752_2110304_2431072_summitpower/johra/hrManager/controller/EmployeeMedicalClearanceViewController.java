@@ -73,7 +73,7 @@ public class EmployeeMedicalClearanceViewController
 
         }
 
-        EmployeeMedicalClearance employeeMedicalClearance = new EmployeeMedicalClearance(clearanceIdTextField.getText(), employeeNameTextField.getText(), employeeNameTextField.getText(), doctorNameTextField.getText(), medicalStatusComboBox.getValue(), checkupDateDatePicker.getValue());
+        EmployeeMedicalClearance employeeMedicalClearance = new EmployeeMedicalClearance(clearanceIdTextField.getText(), employeeIdTextField.getText(), employeeNameTextField.getText(), doctorNameTextField.getText(), medicalStatusComboBox.getValue(), checkupDateDatePicker.getValue());
 
         EmployeeMedicalClearanceFileHandler.save(employeeMedicalClearance);
 
