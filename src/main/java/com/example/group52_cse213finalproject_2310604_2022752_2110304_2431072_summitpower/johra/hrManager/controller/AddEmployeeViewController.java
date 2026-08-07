@@ -1,6 +1,7 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.AddEmplyeeFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -31,7 +32,7 @@ public class AddEmployeeViewController {
     @javafx.fxml.FXML
     private TextField salaryTextField;
 
-    public static List<Employee> employeeList = new ArrayList<>();
+    //public static List<Employee> employeeList = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -77,45 +78,80 @@ public class AddEmployeeViewController {
 
         if(department == null){
             showError("Please select a department");
+            return;
         }
+
         String position = positionComboBox.getValue();
 
         if(position == null){
             showError("Please select a position");
+            return;
         }
 
         LocalDate dateOfBirth = dateOfBirthDatePicker.getValue();
 
         if(dateOfBirth == null){
             showError("Please pick a date");
+            return;
         }
+
         if(dateOfBirth.isAfter(LocalDate.now())){
             showError("Date of birth cannot be in future!");
             return;
         }
 
-        int salary = Integer.parseInt(salaryTextField.getText());
-
         if(employeeName.isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
+
         if(employeeId.isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
+
         if(email.isEmpty()){
             showError("Field cannot be empty");
-        }
-        if(salary <= 0){
-            showError("Salary cannot be less than 0");
+            return;
         }
 
-        Employee currentEmployee = new Employee(employeeId, employeeName, email, department, position, dateOfBirth, salary);
+        if(salaryTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+            return;
+        }
 
-        employeeList.add(currentEmployee);
+        int salary;
+
+        try{
+            salary = Integer.parseInt(salaryTextField.getText());
+
+            if(salary <= 0){
+                showError("Salary cannot be less than 0");
+                return;
+            }
+        }
+        catch(NumberFormatException e){
+            showError("Salary must be a number");
+            return;
+        }
+
+
+
+        Employee addEmployee = new Employee(employeeId, employeeName, email, department, position, dateOfBirth, salary);
+
+        AddEmplyeeFileHandler.save(addEmployee);
 
         //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "viewEmployeeDetails-view.fxml", "View Employee");
 
+        showInformation("Employee added successfully !");
+    }
 
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
+        alert.setContentText(text);
+        alert.showAndWait();
     }
 
     public void showError(String text){
