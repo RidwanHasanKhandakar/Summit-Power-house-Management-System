@@ -64,4 +64,9 @@ public class CeoDashboardViewController
     public void handleCheckFinancialSummary(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","financial-summary-view.fxml","View Financial Summary");
     }
+
+    @javafx.fxml.FXML
+    public void handleCustomerComplaint(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"rubama","ceo","customer-complaint-view.fxml","View Customer Complaint");
+    }
 }

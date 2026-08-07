@@ -12,7 +12,10 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button layoutX="467.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleCheckFinancialSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Check financial summary" />
+      <Button layoutX="467.0" layoutY="263.0" mnemonicParsing="false" onAction="#handleCheckFinancialSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Check financial summary">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="467.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleSetOrChangeTariffRates" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text=" Set or change tariff rates" />
       <Button layoutX="467.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleViewPlantPerformanceSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View plant performance summary">
          <font>
@@ -34,5 +37,6 @@
             <Font size="28.0" />
          </font>
       </Label>
+      <Button layoutX="467.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleCustomerComplaint" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Customer Complaint" />
    </children>
 </AnchorPane>

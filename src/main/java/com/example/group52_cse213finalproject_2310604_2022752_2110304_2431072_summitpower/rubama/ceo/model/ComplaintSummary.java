@@ -3,23 +3,14 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import java.time.LocalDate;
 
 public class ComplaintSummary {
-    private String customerId,status,complaintId,description;
+    private String status,complaintId,description;
     private LocalDate complaintDate;
 
-    public ComplaintSummary(String customerId, String status, String complaintId, String description, LocalDate complaintDate) {
-        this.customerId = customerId;
+    public ComplaintSummary(String status, String complaintId, String description, LocalDate complaintDate) {
         this.status = status;
         this.complaintId = complaintId;
         this.description = description;
         this.complaintDate = complaintDate;
-    }
-
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
     }
 
     public String getStatus() {
@@ -57,8 +48,7 @@ public class ComplaintSummary {
     @Override
     public String toString() {
         return "ComplaintSummary{" +
-                "customerId='" + customerId + '\'' +
-                ", status='" + status + '\'' +
+                "status='" + status + '\'' +
                 ", complaintId='" + complaintId + '\'' +
                 ", description='" + description + '\'' +
                 ", complaintDate=" + complaintDate +
