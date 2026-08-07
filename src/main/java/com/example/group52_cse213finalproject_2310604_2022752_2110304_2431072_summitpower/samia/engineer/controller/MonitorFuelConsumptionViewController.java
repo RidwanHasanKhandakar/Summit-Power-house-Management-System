@@ -129,8 +129,8 @@ public class MonitorFuelConsumptionViewController
             showError("Please select Monitoring Date.");
             return;
         }
-        if(monitoringDatePicker.getValue().isBefore(LocalDate.now())){
-            showError("Monitoring Date cannot be in the past.");
+        if(monitoringDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Monitoring Date cannot be in the future.");
             return;
         }
 

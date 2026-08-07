@@ -119,8 +119,8 @@ public class EngineeringPerformanceViewController
             return;
         }
 
-        if (reportDatePicker.getValue().isBefore(java.time.LocalDate.now())) {
-            showError("Report Date cannot be in the past.");
+        if (reportDatePicker.getValue().isAfter(LocalDate.now())) {
+            showError("Report Date cannot be in the future.");
             return;
         }
 
@@ -186,8 +186,8 @@ public class EngineeringPerformanceViewController
             return;
         }
 
-        if (reportDatePicker.getValue().isBefore(java.time.LocalDate.now())) {
-            showError("Report Date cannot be in the past.");
+        if (reportDatePicker.getValue().isAfter(LocalDate.now())) {
+            showError("Report Date cannot be in the future.");
             return;
         }
 

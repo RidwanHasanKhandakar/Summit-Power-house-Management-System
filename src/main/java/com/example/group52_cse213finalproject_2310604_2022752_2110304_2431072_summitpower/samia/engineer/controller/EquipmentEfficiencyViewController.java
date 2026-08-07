@@ -127,8 +127,8 @@ public class EquipmentEfficiencyViewController
             showError("Please select Analysis Date.");
             return;
         }
-        if (analysisDatePicker.getValue().isBefore(java.time.LocalDate.now())) {
-            showError("Analysis Date cannot be in the past.");
+        if (analysisDatePicker.getValue().isAfter(LocalDate.now())) {
+            showError("Analysis Date cannot be in the future.");
             return;
         }
 
@@ -188,8 +188,8 @@ public class EquipmentEfficiencyViewController
             showError("Please select Analysis Date.");
             return;
         }
-        if (analysisDatePicker.getValue().isBefore(java.time.LocalDate.now())) {
-            showError("Analysis Date cannot be in the past.");
+        if (analysisDatePicker.getValue().isAfter(LocalDate.now())) {
+            showError("Analysis Date cannot be in the future.");
             return;
         }
         double efficiency = Double.parseDouble(efficiencyTextField.getText());

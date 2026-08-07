@@ -105,8 +105,8 @@ public class UpdateMaintenanceStatusViewController
             return;
         }
 
-        if(maintenanceDatePicker.getValue().isBefore(LocalDate.now())){
-            showError("Maintenance Date cannot be in the past.");
+        if(maintenanceDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Maintenance Date cannot be in the future.");
             return;
         }
 
