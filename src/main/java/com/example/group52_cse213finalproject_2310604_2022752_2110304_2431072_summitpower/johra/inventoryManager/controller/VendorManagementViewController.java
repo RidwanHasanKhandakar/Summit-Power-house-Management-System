@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.util.ArrayList;
+
 public class VendorManagementViewController
 {
     @javafx.fxml.FXML
@@ -32,36 +34,62 @@ public class VendorManagementViewController
     @javafx.fxml.FXML
     public void initialize() {
 
+        vendorIdCol.setCellValueFactory(new PropertyValueFactory<>("vendorId"));
+        vendorNameCol.setCellValueFactory(new PropertyValueFactory<>("vendorName"));
+        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        suppliedEquipmentCol.setCellValueFactory(new PropertyValueFactory<>("suppliedEquipment"));
+
     }
+
+    ArrayList<Vendor> vendorList  = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void createVendorButtonOnAction(ActionEvent actionEvent) {
 
         if(vendorIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(vendorNameTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(emailTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(suppliedEquipmentTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
+        Vendor vendor = new Vendor(vendorIdTextField.getText(), vendorNameTextField.getText(), emailTextField.getText(), suppliedEquipmentTextField.getText());
+
+        vendorList.add(vendor);
+
+        showInformation("Vendor information recorded successfully !");
     }
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-View.fxml", "Inventory Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-view.fxml", "Inventory Manager Dashboard");
     }
 
     @javafx.fxml.FXML
     public void loadTableViewButtonOnAction(ActionEvent actionEvent) {
+
+        showTableView.getItems().addAll(vendorList);
+    }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
+        alert.setContentText(text);
+        alert.showAndWait();
     }
 
     public void showError(String text){

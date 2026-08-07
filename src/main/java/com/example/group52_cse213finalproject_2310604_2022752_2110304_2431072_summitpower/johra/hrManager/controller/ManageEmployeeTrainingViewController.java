@@ -1,7 +1,9 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.EmployeeTrainingFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.EmployeeTraining;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -54,7 +56,7 @@ public class ManageEmployeeTrainingViewController
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboardView.fxml", "HR Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "dashboard-view.fxml", "HR Manager Dashboard");
     }
 
     @javafx.fxml.FXML
@@ -75,12 +77,31 @@ public class ManageEmployeeTrainingViewController
         if(trainerNameComboBox.getValue().isEmpty()){
             showError("Field cannot be empty");
         }
+
+        if(trainingStatusDoneCheckBox.isSelected() == trainingStatusNotDoneCheckBox.isSelected()){
+            showError("Select either done or not done for status");
+            return;
+        }
+
+        EmployeeTraining employeeTraining = new EmployeeTraining(employeeIdTextField.getText(), employeeNameTextField.getText(), trainingIdComboBox.getValue(), trainerNameComboBox.getValue(), trainingStatusDoneCheckBox.isSelected(), trainingStatusNotDoneCheckBox.isSelected());
+
+        EmployeeTrainingFileHandler.save(employeeTraining);
+
+        showInformation("Training information recorded successfully !");
     }
 
     public void showError(String text){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("null");
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
         alert.setContentText(text);
         alert.showAndWait();
     }

@@ -7,14 +7,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.DashboardViewController">
    <children>
-      <Button layoutX="41.0" layoutY="62.0" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Add Employee" />
-      <Button layoutX="41.0" layoutY="101.0" mnemonicParsing="false" onAction="#removeCurrentEmployeeOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Remove Current Employee" />
-      <Button layoutX="40.0" layoutY="262.0" mnemonicParsing="false" onAction="#createNoticeButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Create Notice" />
-      <Button layoutX="40.0" layoutY="220.0" mnemonicParsing="false" onAction="#manageEmployeeTrainingButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Manage Employee Training" />
-      <Button layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#performanceGradingButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Performance Grading" />
-      <Button layoutX="42.0" layoutY="344.0" mnemonicParsing="false" onAction="#candidateSelectionButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Candidate Selection" />
-      <Button layoutX="42.0" layoutY="306.0" mnemonicParsing="false" onAction="#managePromotionButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="Manage Promotion" />
-      <Button layoutX="41.0" layoutY="140.0" mnemonicParsing="false" onAction="#viewEmployeeDetailsButtonOnAction" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #49b0ff;" text="View Employee Details" />
+      <Button layoutX="41.0" layoutY="62.0" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Add Employee" />
+      <Button layoutX="41.0" layoutY="137.0" mnemonicParsing="false" onAction="#viewEmployeeDetailsButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Show Employee Details" />
+      <Button layoutX="40.0" layoutY="262.0" mnemonicParsing="false" onAction="#createNoticeButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Create Notice" />
+      <Button layoutX="40.0" layoutY="220.0" mnemonicParsing="false" onAction="#manageEmployeeTrainingButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Manage Employee Training" />
+      <Button layoutX="41.0" layoutY="180.0" mnemonicParsing="false" onAction="#manageEmployeeLeaveButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Manage Employee Leave" />
+      <Button layoutX="42.0" layoutY="344.0" mnemonicParsing="false" onAction="#employeeMedicalClearanceButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Employee Medical Clearance" />
+      <Button layoutX="42.0" layoutY="306.0" mnemonicParsing="false" onAction="#performanceGradingButtonOnAction" prefHeight="26.0" prefWidth="186.0" style="-fx-background-color: #49b0ff;" text="Performance Grading" />
+      <Button layoutX="42.0" layoutY="100.0" mnemonicParsing="false" onAction="#employeeAwardManagementButtonOnAction" prefHeight="26.0" prefWidth="185.0" style="-fx-background-color: #49b0ff;" text="Employee Award Management" />
       <Button layoutX="497.0" layoutY="62.0" mnemonicParsing="false" onAction="#profileButtonOnAction" style="-fx-background-color: #49b0ff;" text="Profile" />
       <Button layoutX="505.0" layoutY="344.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" style="-fx-background-color: #49b0ff;" text="LogOut" />
       <Label layoutX="300.0" layoutY="118.0" style="-fx-text-fill: white;" text="Officer Name:">
@@ -27,7 +27,7 @@
          </font>
       </Label>
       <Label alignment="CENTER" layoutY="419.0" prefHeight="18.0" prefWidth="622.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
-      <Label fx:id="officerNameLabel" layoutX="393.0" layoutY="119.0" prefHeight="18.0" prefWidth="224.0" textFill="WHITE">
+      <Label fx:id="hrManagerOfficerNameLabel" layoutX="393.0" layoutY="119.0" prefHeight="18.0" prefWidth="224.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>

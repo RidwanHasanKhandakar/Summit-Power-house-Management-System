@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,20 +15,26 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="269.0" layoutY="91.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
+      <Button layoutX="422.0" layoutY="90.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Load" />
       <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="718.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="649.0" layoutY="402.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView fx:id="showEmployeeTableView" layoutX="15.0" layoutY="159.0" prefHeight="215.0" prefWidth="686.0">
          <columns>
-            <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="0.0" prefWidth="36.80001926422119" text="Employee ID" />
-            <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="80.79998397827148" text="Employee Name" />
-            <TableColumn fx:id="emailCol" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="64.79998779296875" text="Email" />
-            <TableColumn fx:id="departmentCol" maxWidth="1071.99951171875" minWidth="28.79998779296875" prefWidth="136.8000030517578" text="Department" />
-            <TableColumn fx:id="positionCol" maxWidth="1071.99951171875" minWidth="0.0" prefWidth="122.39996337890625" text="Position" />
-            <TableColumn fx:id="dobCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="129.5999755859375" text="DOB" />
+            <TableColumn fx:id="employeeIdCol" maxWidth="792.0001524686813" minWidth="0.0" prefWidth="86.40002155303955" text="Employee ID" />
+            <TableColumn fx:id="employeeNameCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="131.199951171875" text="Employee Name" />
+            <TableColumn fx:id="emailCol" maxWidth="1792.0001220703125" minWidth="30.0" prefWidth="103.20008850097656" text="Email" />
+            <TableColumn fx:id="departmentCol" maxWidth="1071.99951171875" minWidth="28.79998779296875" prefWidth="116.800048828125" text="Department" />
+            <TableColumn fx:id="positionCol" maxWidth="1071.99951171875" minWidth="0.0" prefWidth="79.20001220703125" text="Position" />
+            <TableColumn fx:id="dobCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="60.0" text="DOB" />
             <TableColumn fx:id="salaryCol" maxWidth="1919.9998474121094" minWidth="30.0" prefWidth="129.5999755859375" text="Salary" />
          </columns>
       </TableView>
-      <Button layoutX="15.0" layoutY="402.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="15.0" layoutY="402.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="62.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Label layoutX="77.0" layoutY="94.0" style="-fx-text-fill: white;" text="Department:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="filterDepartmentComboBox" layoutX="163.0" layoutY="90.0" prefHeight="26.0" prefWidth="154.0" />
    </children>
 </AnchorPane>

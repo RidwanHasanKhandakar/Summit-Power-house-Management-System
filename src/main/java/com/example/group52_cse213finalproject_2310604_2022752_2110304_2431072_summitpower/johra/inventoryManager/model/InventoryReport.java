@@ -6,14 +6,15 @@ import java.time.LocalDate;
 public class InventoryReport implements Serializable {
     private LocalDate reportDate;
     private String equipmentOrFuelCategory, reportType, reportId;
-    private Boolean stockAvailable, stoxkNotAvailable;
+    private Boolean stockAvailable, stockNotAvailable;
 
-    public InventoryReport(LocalDate reportDate, String equipmentOrFuelCategory, String reportType, Boolean stockAvailable, Boolean stoxkNotAvailable) {
+    public InventoryReport(LocalDate reportDate, String equipmentOrFuelCategory, String reportType, String reportId, Boolean stockAvailable, Boolean stockNotAvailable) {
         this.reportDate = reportDate;
         this.equipmentOrFuelCategory = equipmentOrFuelCategory;
         this.reportType = reportType;
+        this.reportId = reportId;
         this.stockAvailable = stockAvailable;
-        this.stoxkNotAvailable = stoxkNotAvailable;
+        this.stockNotAvailable = stockNotAvailable;
     }
 
     public LocalDate getReportDate() {
@@ -40,6 +41,14 @@ public class InventoryReport implements Serializable {
         this.reportType = reportType;
     }
 
+    public String getReportId() {
+        return reportId;
+    }
+
+    public void setReportId(String reportId) {
+        this.reportId = reportId;
+    }
+
     public Boolean getStockAvailable() {
         return stockAvailable;
     }
@@ -48,12 +57,21 @@ public class InventoryReport implements Serializable {
         this.stockAvailable = stockAvailable;
     }
 
-    public Boolean getStoxkNotAvailable() {
-        return stoxkNotAvailable;
+    public Boolean getStockNotAvailable() {
+        return stockNotAvailable;
     }
 
-    public void setStoxkNotAvailable(Boolean stoxkNotAvailable) {
-        this.stoxkNotAvailable = stoxkNotAvailable;
+    public void setStockNotAvailable(Boolean stockNotAvailable) {
+        this.stockNotAvailable = stockNotAvailable;
+    }
+
+    public String getStockStatus(){
+        if(stockAvailable){
+            return "Available";
+        }
+        else{
+            return "Not Available";
+        }
     }
 
     @Override
@@ -62,8 +80,9 @@ public class InventoryReport implements Serializable {
                 "reportDate=" + reportDate +
                 ", equipmentOrFuelCategory='" + equipmentOrFuelCategory + '\'' +
                 ", reportType='" + reportType + '\'' +
+                ", reportId='" + reportId + '\'' +
                 ", stockAvailable=" + stockAvailable +
-                ", stoxkNotAvailable=" + stoxkNotAvailable +
+                ", stockNotAvailable=" + stockNotAvailable +
                 '}';
     }
 }

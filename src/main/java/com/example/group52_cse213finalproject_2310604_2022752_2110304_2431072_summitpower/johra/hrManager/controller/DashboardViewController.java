@@ -13,21 +13,17 @@ import java.util.Optional;
 
 public class DashboardViewController
 {
+
     @javafx.fxml.FXML
-    private Label officerNameLabel;
+    private Label hrManagerOfficerNameLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
         User user = CurrentUser.getUser();
 
         if (user!=null){
-            officerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
+            hrManagerOfficerNameLabel.setText(CurrentUser.getUser().getFirstName()+" "+CurrentUser.getUser().getLastName());
         }
-    }
-
-    @javafx.fxml.FXML
-    public void managePromotionButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "employeePromotionManagement-view.fxml", "Manage Promotion");
     }
 
     @javafx.fxml.FXML
@@ -38,11 +34,6 @@ public class DashboardViewController
     @javafx.fxml.FXML
     public void profileButtonOnAction(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "profile-view.fxml", "Profile");
-    }
-
-    @javafx.fxml.FXML
-    public void viewEmployeeDetailsButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "viewEmployeeDetails-view.fxml", "View Employee Details");
     }
 
     @javafx.fxml.FXML
@@ -64,11 +55,6 @@ public class DashboardViewController
     }
 
     @javafx.fxml.FXML
-    public void candidateSelectionButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "candidateSelection-view.fxml", "Candidate Selection");
-    }
-
-    @javafx.fxml.FXML
     public void addEmployeeButtonOnAction(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "addEmployee-view.fxml", "Add Employee");
     }
@@ -79,7 +65,22 @@ public class DashboardViewController
     }
 
     @javafx.fxml.FXML
-    public void removeCurrentEmployeeOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "removeEmployee-view.fxml", "Remove Employee");
+    public void employeeMedicalClearanceButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "employeeMedicalClearance-view.fxml", "Employee Medical Clearance");
+    }
+
+    @javafx.fxml.FXML
+    public void manageEmployeeLeaveButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "manageEmployeeLeave-view.fxml", "Manage Employee Leave");
+    }
+
+    @javafx.fxml.FXML
+    public void employeeAwardManagementButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "employeeAwardManagement-view.fxml", "Employee Award Management");
+    }
+
+    @javafx.fxml.FXML
+    public void viewEmployeeDetailsButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "viewEmployeeDetails-view.fxml", "View Employee Details");
     }
 }

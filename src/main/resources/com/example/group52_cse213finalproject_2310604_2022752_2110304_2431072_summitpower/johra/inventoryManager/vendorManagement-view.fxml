@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.VendorManagementViewController">
    <children>
-      <Label layoutX="180.0" layoutY="14.0" style="-fx-text-fill: white;" text="Vendor Management">
+      <Label layoutX="201.0" layoutY="14.0" style="-fx-text-fill: white;" text="Vendor Management">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -44,13 +44,16 @@
       <Button layoutX="564.0" layoutY="399.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="54.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView fx:id="showTableView" layoutX="7.0" layoutY="197.0" prefHeight="162.0" prefWidth="628.0">
         <columns>
-          <TableColumn fx:id="vendorIdCol" prefWidth="75.0" text="Vendor ID" />
-          <TableColumn fx:id="vendorNameCol" prefWidth="215.20001983642578" text="Vendor Name" />
-            <TableColumn fx:id="emailCol" prefWidth="179.199951171875" text="Email" />
-            <TableColumn fx:id="suppliedEquipmentCol" prefWidth="172.80001831054688" text="Equipment Supplied" />
+          <TableColumn fx:id="vendorIdCol" prefWidth="75.0" text="Vendor ID" maxWidth="750.0" minWidth="30.0"/>
+          <TableColumn fx:id="vendorNameCol" prefWidth="215.20001983642578" text="Vendor Name"
+                       maxWidth="2152.000198364258" minWidth="30.0"/>
+            <TableColumn fx:id="emailCol" prefWidth="179.199951171875" text="Email" maxWidth="1791.99951171875"
+                         minWidth="30.0"/>
+            <TableColumn fx:id="suppliedEquipmentCol" prefWidth="172.80001831054688" text="Equipment Supplied"
+                         maxWidth="1728.0001831054688" minWidth="30.0"/>
         </columns>
       </TableView>
       <Button layoutX="394.0" layoutY="399.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Load" />
-      <Button layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="24.0" layoutY="399.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
    </children>
 </AnchorPane>

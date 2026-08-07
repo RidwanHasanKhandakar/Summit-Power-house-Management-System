@@ -1,9 +1,13 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.InventoryReportFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.InventoryReport;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+
+import java.time.LocalDate;
 
 public class InventoryReportViewController
 {
@@ -42,7 +46,7 @@ public class InventoryReportViewController
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-view.fxml", "Inventory Manager Dashboard");
     }
 
     @javafx.fxml.FXML
@@ -50,15 +54,34 @@ public class InventoryReportViewController
 
         if(reportIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(reportTypeComboBox.getValue().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
-        if(reportDateDatePicker == null){
+        if(reportDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
         }
+
+        if(reportDateDatePicker.getValue().isBefore(LocalDate.now())){
+            showError("Date cannot be in future");
+            return;
+        }
+
+        if(stockAvailableCheckBox.isSelected() == stockNotAvailableCheckBox.isSelected()){
+            showError("Please select either Available or Not Available for stock status");
+            return;
+        }
+
+        InventoryReport inventoryReport = new InventoryReport(reportDateDatePicker.getValue(), equipmentOrFuelCategoryComboBox.getValue(), reportTypeComboBox.getValue(), reportIdTextField.getText(), stockAvailableCheckBox.isSelected(), stockNotAvailableCheckBox.isSelected());
+
+        InventoryReportFileHandler.save(inventoryReport);
+
+        showInformation("Inventory report created successfully");
 
     }
 
@@ -67,6 +90,17 @@ public class InventoryReportViewController
         Alert alert =new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText(null);
+        alert.setContentText(text);
+        alert.showAndWait();
+
+    }
+
+
+    public void showInformation(String text){
+
+        Alert alert =new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
         alert.setContentText(text);
         alert.showAndWait();
 
