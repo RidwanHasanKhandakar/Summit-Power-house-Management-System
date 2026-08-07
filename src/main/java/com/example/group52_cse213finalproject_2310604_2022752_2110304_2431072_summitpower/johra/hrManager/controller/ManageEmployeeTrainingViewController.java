@@ -78,6 +78,11 @@ public class ManageEmployeeTrainingViewController
             showError("Field cannot be empty");
         }
 
+        if(trainingStatusDoneCheckBox.isSelected() == trainingStatusNotDoneCheckBox.isSelected()){
+            showError("Select either done or not done for status");
+            return;
+        }
+
         EmployeeTraining employeeTraining = new EmployeeTraining(employeeIdTextField.getText(), employeeNameTextField.getText(), trainingIdComboBox.getValue(), trainerNameComboBox.getValue(), trainingStatusDoneCheckBox.isSelected(), trainingStatusNotDoneCheckBox.isSelected());
 
         EmployeeTrainingFileHandler.save(employeeTraining);
