@@ -54,18 +54,27 @@ public class InventoryReportViewController
 
         if(reportIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(reportTypeComboBox.getValue().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(reportDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(reportDateDatePicker.getValue().isBefore(LocalDate.now())){
+            showError("Date cannot be in future");
+            return;
         }
 
         if(stockAvailableCheckBox.isSelected() == stockNotAvailableCheckBox.isSelected()){
             showError("Please select either Available or Not Available for stock status");
+            return;
         }
 
         InventoryReport inventoryReport = new InventoryReport(reportDateDatePicker.getValue(), equipmentOrFuelCategoryComboBox.getValue(), reportTypeComboBox.getValue(), reportIdTextField.getText(), stockAvailableCheckBox.isSelected(), stockNotAvailableCheckBox.isSelected());

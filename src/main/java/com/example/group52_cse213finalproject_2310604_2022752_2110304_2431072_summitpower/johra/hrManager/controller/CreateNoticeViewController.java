@@ -39,26 +39,37 @@ public class CreateNoticeViewController
 
         if(noticeIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(subjectTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(contentTextArea.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(createdbyTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
-        if(publishDateDatePicker == null){
+        if(publishDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
         }
 
-        if(expiryDateDatePicker == null){
+        if(expiryDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(expiryDateDatePicker.getValue().isBefore(publishDateDatePicker.getValue())){
+            showError("Expiry Date cannot be before publish Date");
+            return;
         }
 
         Notice notice = new Notice(noticeIdTextField.getText(), subjectTextField.getText(), contentTextArea.getText(), createdbyTextField.getText(), publishDateDatePicker.getValue(), expiryDateDatePicker.getValue());

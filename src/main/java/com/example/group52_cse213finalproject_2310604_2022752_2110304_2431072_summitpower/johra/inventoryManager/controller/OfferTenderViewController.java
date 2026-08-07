@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import javax.print.attribute.standard.Destination;
 import java.time.LocalDate;
 
 public class OfferTenderViewController
@@ -53,31 +54,40 @@ public class OfferTenderViewController
 
         if(tenderIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(tenderTitleTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(equipmentNameTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
-        if(closingDateDatePicker == null){
+        if(closingDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
         }
 
-        Tender tender = new Tender(tenderIdTextField.getText(), tenderTitleTextField.getText(), equipmentNameTextField.getText(), closingDateDatePicker.getValue());
+        if(closingDateDatePicker.getValue().isBefore(LocalDate.now())){
+            showError("Closing date cannot be in the past");
+            return;
+        }
+
+        Tender tender = new Tender(tenderIdTextField.getText(), tenderTitleTextField.getText(), equipmentNameTextField.getText(),closingDateDatePicker.getValue());
 
         OfferTenderFileHandler.save(tender);
-
-        showTenderTableView.setItems(OfferTenderFileHandler.readAll());
 
         showInformation("Tender added successfully!");
     }
 
     @javafx.fxml.FXML
     public void loadTableView(ActionEvent actionEvent) {
+
+        showTenderTableView.setItems(OfferTenderFileHandler.readAll());
 
     }
 

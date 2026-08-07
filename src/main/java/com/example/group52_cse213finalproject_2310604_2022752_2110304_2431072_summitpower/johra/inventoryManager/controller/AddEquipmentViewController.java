@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class AddEquipmentViewController
@@ -50,26 +51,37 @@ public class AddEquipmentViewController
 
         if(equipmentIdTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(equipmentNameTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(quantityTextField.getText().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(vendorComboBox.getValue().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(equipmentCategoryComboBox.getValue().isEmpty()){
             showError("Field cannot be empty");
+            return;
         }
 
         if(purchaseDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(purchaseDateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Purchase date cannot be in future !");
+            return;
         }
 
         Equipment equipment = new Equipment(equipmentIdTextField.getText(), equipmentNameTextField.getText(), equipmentCategoryComboBox.getValue(), vendorComboBox.getValue(), quantityTextField.getText(), purchaseDateDatePicker.getValue());

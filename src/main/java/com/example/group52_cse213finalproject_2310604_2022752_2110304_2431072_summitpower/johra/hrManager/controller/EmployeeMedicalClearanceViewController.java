@@ -9,6 +9,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.*
         ;
 
+import java.time.LocalDate;
+
 public class EmployeeMedicalClearanceViewController
 {
     @javafx.fxml.FXML
@@ -71,6 +73,11 @@ public class EmployeeMedicalClearanceViewController
             showError("Field cannot be empty");
             return;
 
+        }
+
+        if(checkupDateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Date cannot be after today !");
+            return;
         }
 
         EmployeeMedicalClearance employeeMedicalClearance = new EmployeeMedicalClearance(medicalRecordIdTextField.getText(), employeeIdTextField.getText(), employeeNameTextField.getText(), doctorNameTextField.getText(), fitnessStatusComboBox.getValue(), checkupDateDatePicker.getValue());
