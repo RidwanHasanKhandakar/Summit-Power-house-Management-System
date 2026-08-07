@@ -8,8 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class RecordGridOperationLogFileHandler {
-    private static final String FILE_PATH =
-            "data/samia/gridOperator/RecordGridOperationLog.bin";
+    private static final String FILE_PATH = "data/samia/gridOperator/RecordGridOperationLog.bin";
 
     public static void save(RecordGridOperationLog log){
 

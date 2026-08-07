@@ -108,4 +108,3 @@ public class MonitorLoadDemandViewController
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"samia","gridOperator","gridOperator-dashboard-view.fxml","Grid Operator Dashboard");
     }
 }
-//The monitor page retrieves the load information from the previously scheduled load distribution record. Therefore the Distribution ID is used as the unique identifier.
