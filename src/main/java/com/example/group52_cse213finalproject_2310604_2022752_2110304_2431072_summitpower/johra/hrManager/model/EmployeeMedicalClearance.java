@@ -5,24 +5,24 @@ import java.time.LocalDate;
 
 public class EmployeeMedicalClearance implements Serializable {
 
-    private String clearanceId, employeeId, employeeName, doctorName, medicalStatus;
+    private String medicalRecordId, employeeId, employeeName, doctorName, fitnessStatus;
     private LocalDate checkupDate;
 
-    public EmployeeMedicalClearance(String clearanceId, String employeeId, String employeeName, String doctorName, String medicalStatus, LocalDate checkupDate) {
-        this.clearanceId = clearanceId;
+    public EmployeeMedicalClearance(String medicalRecordId, String employeeId, String employeeName, String doctorName, String fitnessStatus, LocalDate checkupDate) {
+        this.medicalRecordId = medicalRecordId;
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.doctorName = doctorName;
-        this.medicalStatus = medicalStatus;
+        this.fitnessStatus = fitnessStatus;
         this.checkupDate = checkupDate;
     }
 
-    public String getClearanceId() {
-        return clearanceId;
+    public String getMedicalRecordId() {
+        return medicalRecordId;
     }
 
-    public void setClearanceId(String clearanceId) {
-        this.clearanceId = clearanceId;
+    public void setMedicalRecordId(String medicalRecordId) {
+        this.medicalRecordId = medicalRecordId;
     }
 
     public String getEmployeeId() {
@@ -49,12 +49,12 @@ public class EmployeeMedicalClearance implements Serializable {
         this.doctorName = doctorName;
     }
 
-    public String getMedicalStatus() {
-        return medicalStatus;
+    public String getFitnessStatus() {
+        return fitnessStatus;
     }
 
-    public void setMedicalStatus(String medicalStatus) {
-        this.medicalStatus = medicalStatus;
+    public void setFitnessStatus(String fitnessStatus) {
+        this.fitnessStatus = fitnessStatus;
     }
 
     public LocalDate getCheckupDate() {
@@ -68,11 +68,11 @@ public class EmployeeMedicalClearance implements Serializable {
     @Override
     public String toString() {
         return "EmployeeMedicalClearance{" +
-                "clearanceId='" + clearanceId + '\'' +
+                "medicalRecordId='" + medicalRecordId + '\'' +
                 ", employeeId='" + employeeId + '\'' +
                 ", employeeName='" + employeeName + '\'' +
                 ", doctorName='" + doctorName + '\'' +
-                ", medicalStatus='" + medicalStatus + '\'' +
+                ", fitnessStatus='" + fitnessStatus + '\'' +
                 ", checkupDate=" + checkupDate +
                 '}';
     }

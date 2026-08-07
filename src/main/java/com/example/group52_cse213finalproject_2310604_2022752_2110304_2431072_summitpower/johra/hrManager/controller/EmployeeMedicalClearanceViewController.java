@@ -12,10 +12,6 @@ import javafx.scene.control.*
 public class EmployeeMedicalClearanceViewController
 {
     @javafx.fxml.FXML
-    private TextField clearanceIdTextField;
-    @javafx.fxml.FXML
-    private ComboBox<String> medicalStatusComboBox;
-    @javafx.fxml.FXML
     private TextField employeeNameTextField;
     @javafx.fxml.FXML
     private TextField doctorNameTextField;
@@ -23,14 +19,18 @@ public class EmployeeMedicalClearanceViewController
     private DatePicker checkupDateDatePicker;
     @javafx.fxml.FXML
     private TextField employeeIdTextField;
+    @javafx.fxml.FXML
+    private TextField medicalRecordIdTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> fitnessStatusComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-        medicalStatusComboBox.getItems().addAll(
-                "Cleared",
-                "Pending",
-                "Not Cleared"
+        fitnessStatusComboBox.getItems().addAll(
+                "Fit for Duty",
+                "Fit with Restrictions",
+                "Not Fit for Duty"
         );
 
     }
@@ -52,7 +52,7 @@ public class EmployeeMedicalClearanceViewController
 
         }
 
-        if(clearanceIdTextField.getText().isEmpty()){
+        if(medicalRecordIdTextField.getText().isEmpty()){
 
             showError("Field cannot be empty");
             return;
@@ -73,7 +73,7 @@ public class EmployeeMedicalClearanceViewController
 
         }
 
-        EmployeeMedicalClearance employeeMedicalClearance = new EmployeeMedicalClearance(clearanceIdTextField.getText(), employeeIdTextField.getText(), employeeNameTextField.getText(), doctorNameTextField.getText(), medicalStatusComboBox.getValue(), checkupDateDatePicker.getValue());
+        EmployeeMedicalClearance employeeMedicalClearance = new EmployeeMedicalClearance(medicalRecordIdTextField.getText(), employeeIdTextField.getText(), employeeNameTextField.getText(), doctorNameTextField.getText(), fitnessStatusComboBox.getValue(), checkupDateDatePicker.getValue());
 
         EmployeeMedicalClearanceFileHandler.save(employeeMedicalClearance);
 
@@ -109,8 +109,8 @@ public class EmployeeMedicalClearanceViewController
     @javafx.fxml.FXML
     public void refreshButtonOnAction(ActionEvent actionEvent) {
 
-        clearanceIdTextField.clear();
-        medicalStatusComboBox.setValue(null);
+        medicalRecordIdTextField.clear();
+        fitnessStatusComboBox.setValue(null);
         employeeNameTextField.clear();
         doctorNameTextField.clear();
         checkupDateDatePicker.setValue(null);
