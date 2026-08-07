@@ -72,7 +72,7 @@ public class ManageEmployeeLeaveViewController
 
         }
 
-        if(leaveTypeComboBox.getValue().isEmpty()){
+        if(leaveTypeComboBox.getValue() == null){
 
             showError("Field cannot be empty");
             return;
@@ -94,6 +94,10 @@ public class ManageEmployeeLeaveViewController
 
             showError("Field cannot be empty");
             return;
+        }
+
+        if (endDateDatePicker.getValue().isBefore(startDateDatePicker.getValue())){
+            showError("End date cannot be before start date");
         }
 
         EmployeeLeave employeeLeave = new EmployeeLeave(leaveIdTextField.getText(), employeeIdTextField.getText(), leaveTypeComboBox.getValue(), totalDaysTextField.getText(), reasonComboBox.getValue(), startDateDatePicker.getValue(), endDateDatePicker.getValue());
