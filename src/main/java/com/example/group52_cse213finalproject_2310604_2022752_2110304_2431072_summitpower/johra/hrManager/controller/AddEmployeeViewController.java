@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddEmployeeViewController {
+public class  AddEmployeeViewController {
     @javafx.fxml.FXML
     private TextField emailTextField;
     @javafx.fxml.FXML
