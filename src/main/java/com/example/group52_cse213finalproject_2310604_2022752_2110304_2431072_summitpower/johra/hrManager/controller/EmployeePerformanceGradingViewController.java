@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class EmployeePerformanceGradingViewController
@@ -18,15 +19,13 @@ public class EmployeePerformanceGradingViewController
     @javafx.fxml.FXML
     private ComboBox<String> evaluationYearComboBox;
     @javafx.fxml.FXML
-    private ComboBox<String> finalRatingComboBox;
-    @javafx.fxml.FXML
     private ComboBox<String> teamworkScoreComboBox;
     @javafx.fxml.FXML
     private ComboBox<String> attendanceScoreComboBox;
     @javafx.fxml.FXML
-    private ComboBox<String> evaluationEndMonthComboBox;
+    private Label finalRatingLabel;
     @javafx.fxml.FXML
-    private ComboBox<String> evaluationStartMonthComboBox;
+    private ComboBox<String> evaluationMonthComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -70,35 +69,7 @@ public class EmployeePerformanceGradingViewController
                 "10"
         );
 
-        finalRatingComboBox.getItems().addAll(
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
-        );
-
-        evaluationStartMonthComboBox.getItems().addAll(
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-        );
-
-        evaluationEndMonthComboBox.getItems().addAll(
+        evaluationMonthComboBox.getItems().addAll(
                 "January",
                 "February",
                 "March",
@@ -151,12 +122,7 @@ public class EmployeePerformanceGradingViewController
             return;
         }
 
-        if(evaluationStartMonthComboBox.getValue() == null){
-            showError("Field cannot be empty");
-            return;
-        }
-
-        if(evaluationEndMonthComboBox.getValue() == null){
+        if(evaluationMonthComboBox.getValue() == null){
             showError("Field cannot be empty");
             return;
         }
@@ -166,13 +132,14 @@ public class EmployeePerformanceGradingViewController
             return;
         }
 
-        if(finalRatingComboBox.getValue() == null){
-            showError("Field cannot be empty");
-            return;
-        }
+        int attendance = Integer.parseInt(attendanceScoreComboBox.getValue());
+        int teamwork = Integer.parseInt(teamworkScoreComboBox.getValue());
+        int efficiency = Integer.parseInt(efficiencyScoreComboBox.getValue());
+        int finalRating = (attendance + teamwork + efficiency) / 3;
 
-        PerformanceGrading performanceGrading = new PerformanceGrading(employeeIdTextField.getText(), evaluationStartMonthComboBox.getValue(), evaluationEndMonthComboBox.getValue(), evaluationYearComboBox.getValue(), attendanceScoreComboBox.getValue(), teamworkScoreComboBox.getValue(), efficiencyScoreComboBox.getValue(), finalRatingComboBox.getValue());
+        finalRatingLabel.setText(String.valueOf(finalRating));
 
+        PerformanceGrading performanceGrading = new PerformanceGrading(employeeIdTextField.getText(), evaluationMonthComboBox.getValue(), evaluationYearComboBox.getValue(), attendanceScoreComboBox.getValue(), teamworkScoreComboBox.getValue(), efficiencyScoreComboBox.getValue(), String.valueOf(finalRating));
         PerformanceGradingFileHandler.save(performanceGrading);
 
         showInformation("Performance grading saved successfully !");
@@ -202,10 +169,8 @@ public class EmployeePerformanceGradingViewController
         attendanceScoreComboBox.setValue(null);
         teamworkScoreComboBox.setValue(null);
         efficiencyScoreComboBox.setValue(null);
-        evaluationStartMonthComboBox.setValue(null);
-        evaluationEndMonthComboBox.setValue(null);
+        evaluationMonthComboBox.setValue(null);
         evaluationYearComboBox.setValue(null);
-        finalRatingComboBox.setValue(null);
 
     }
 
