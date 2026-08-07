@@ -1,15 +1,16 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.ComplaintSummary;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.CustomerComplaint;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.fileHandler.ceo.CustomerComplaintFileHandler;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class ComplaintSummaryViewController
 {
@@ -18,68 +19,82 @@ public class ComplaintSummaryViewController
     @javafx.fxml.FXML
     private DatePicker dateOfComplaintDatePicker;
     @javafx.fxml.FXML
-    private TableColumn <ComplaintSummary,String> complaintIdCol;
+    private TableColumn <CustomerComplaint,String> complaintIdCol;
     @javafx.fxml.FXML
-    private TableColumn <ComplaintSummary,String> statusCol;
+    private TableColumn <CustomerComplaint,String> statusCol;
     @javafx.fxml.FXML
     private ComboBox <String> statusComboBox;
     @javafx.fxml.FXML
-    private TextField customerIdTextField;
+    private TableColumn <CustomerComplaint,LocalDate> dateOfComplaintCol;
     @javafx.fxml.FXML
-    private TableColumn <ComplaintSummary,LocalDate> dateOfComplaintCol;
+    private TableView <CustomerComplaint> complaintTableView;
     @javafx.fxml.FXML
-    private TableColumn <ComplaintSummary,String> customerIdCol;
-    @javafx.fxml.FXML
-    private TableView <ComplaintSummary> complaintTableView;
-    @javafx.fxml.FXML
-    private TableColumn <ComplaintSummary,String> descriptionCol;
+    private TableColumn <CustomerComplaint,String> categoryCol;
 
-    private ArrayList<ComplaintSummary> allComplaints = new ArrayList<>();
+    //private ArrayList<Complaint> allComplaints = new ArrayList<>();
 
     @javafx.fxml.FXML
     public void initialize() {
-        statusComboBox.getItems().addAll("Resolved", "Unresolved", "Pending");
 
-        customerIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("complaintId"));
-        dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("complaintDate"));
-        descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
+        statusComboBox.getItems().addAll("Pending", "In Progress", "Resolved","Closed");
+        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("dateOfComplaint"));
+
+        complaintTableView.setItems(CustomerComplaintFileHandler.readAll());
     }
 
     @javafx.fxml.FXML
     public void handleComplaintSummary(ActionEvent actionEvent) {
-        int total = 0, resolved = 0, unresolved = 0, pending = 0;
+        int total = 0;
+        int pending = 0;
+        int inProgress = 0;
+        int resolved = 0;
+        int closed = 0;
 
-        for (ComplaintSummary c : complaintTableView.getItems()) {
+        for (CustomerComplaint c : CustomerComplaintFileHandler.readAll()) {
+
             total++;
-            String s = c.getStatus();
-            if ("Resolved".equals(s)) resolved++;
-            else if ("Unresolved".equals(s)) unresolved++;
-            else if ("Pending".equals(s)) pending++;
+
+            switch (c.getStatus()) {
+
+                case "Pending":
+                    pending++;
+                    break;
+
+                case "In Progress":
+                    inProgress++;
+                    break;
+
+                case "Resolved":
+                    resolved++;
+                    break;
+
+                case "Closed":
+                    closed++;
+                    break;
+            }
         }
 
-        String summary = "Total: " + total +
-                "  |  Resolved: " + resolved +
-                "  |  Unresolved: " + unresolved +
-                "  |  Pending: " + pending;
-        viewComplaintSummaryLabel.setText(summary);
+        viewComplaintSummaryLabel.setText(
+                "Total: " + total +
+                        "\nPending: " + pending +
+                        "\nIn Progress: " + inProgress +
+                        "\nResolved: " + resolved +
+                        "\nClosed: " + closed
+        );
     }
 
     @javafx.fxml.FXML
     public void handleViewComplaints(ActionEvent actionEvent) {
-        String customerId = customerIdTextField.getText().trim();
+        ObservableList<CustomerComplaint> filtered = FXCollections.observableArrayList();
         LocalDate date = dateOfComplaintDatePicker.getValue();
         String status = statusComboBox.getValue();
 
-        ArrayList<ComplaintSummary> filtered = new ArrayList<>();
+        for (CustomerComplaint c : CustomerComplaintFileHandler.readAll()) {
 
-        for (ComplaintSummary c : allComplaints) {
-            boolean match = customerId.isEmpty() || c.getCustomerId().equals(customerId);
-
-            if (date != null && !c.getComplaintDate().equals(date)) {
-                match = false;
-            }
+            boolean match = date == null || c.getDateOfComplaint().equals(date);
             if (status != null && !c.getStatus().equals(status)) {
                 match = false;
             }
@@ -88,7 +103,8 @@ public class ComplaintSummaryViewController
                 filtered.add(c);
             }
         }
-        complaintTableView.getItems().setAll(FXCollections.observableArrayList(filtered));
+
+        complaintTableView.setItems(filtered);
     }
 
     @javafx.fxml.FXML
