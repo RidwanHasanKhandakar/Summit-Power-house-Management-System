@@ -39,7 +39,7 @@ public class AccountantDashboardViewController
     @javafx.fxml.FXML
     public void handleTrackFuelButton(ActionEvent actionEvent) {
 
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "Fuel-Inventory-view.fxml","Fuel Inventory!");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(),"ridwan","accountant", "fuel-inventory-view.fxml","Fuel Inventory!");
 
     }
 

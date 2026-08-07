@@ -34,11 +34,20 @@ public class CustomerComplaintViewController
     @javafx.fxml.FXML
     public void initialize() {
         statusComboBox.getItems().addAll("Pending", "In Progress", "Resolved","Closed");
-        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+
+        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("complaintId"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));  // FIXED
         dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("dateOfComplaint"));
+
+        //complaintTableView.setItems(CustomerComplaintFileHandler.readAll());
+
+        loadTable();
+    }
+
+    private void loadTable() {
         complaintTableView.setItems(CustomerComplaintFileHandler.readAll());
+        complaintTableView.refresh();
     }
 
     public void showError(String txt){
@@ -63,6 +72,15 @@ public class CustomerComplaintViewController
     }
 
 
+    private void clearFields(){
+
+        complaintIdTextField.clear();
+        categoryTextField.clear();
+        statusComboBox.setValue(null);
+        dateOfComplaintDatePicker1.setValue(null);
+
+    }
+
     @javafx.fxml.FXML
     public void handleSaveComplaints(ActionEvent actionEvent) {
         CustomerComplaint complaint = new CustomerComplaint(
@@ -71,13 +89,12 @@ public class CustomerComplaintViewController
                 categoryTextField.getText().trim(),
                 dateOfComplaintDatePicker1.getValue()
         );
-        CustomerComplaintFileHandler.save(complaint);
-        complaintTableView.setItems(CustomerComplaintFileHandler.readAll());
 
-        complaintIdTextField.clear();
-        categoryTextField.clear();
-        statusComboBox.setValue(null);
-        dateOfComplaintDatePicker1.setValue(null);
+        CustomerComplaintFileHandler.save(complaint);
+
+        loadTable();
+        clearFields();
+
         showSuccess("Complaint saved successfully.");
 
     }

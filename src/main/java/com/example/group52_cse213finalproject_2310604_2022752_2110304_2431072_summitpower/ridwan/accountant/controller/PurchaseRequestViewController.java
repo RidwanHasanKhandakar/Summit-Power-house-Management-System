@@ -71,7 +71,8 @@ public class PurchaseRequestViewController {
         costCol.setCellValueFactory(new PropertyValueFactory<>("cost"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        purchaseAppTableView.setItems(PurchaseRequestFileHandler.readAll());
+        //purchaseAppTableView.setItems(PurchaseRequestFileHandler.readAll());
+        loadTable();
 
         purchaseAppTableView.getSelectionModel().selectedItemProperty().addListener((obs, oldValue, selected) -> {
 
@@ -88,6 +89,10 @@ public class PurchaseRequestViewController {
 
     }
 
+    private void loadTable(){
+        purchaseAppTableView.setItems(PurchaseRequestFileHandler.readAll());
+    }
+
     @javafx.fxml.FXML
     public void handleLoadRequestButton(ActionEvent actionEvent) {
 
@@ -97,6 +102,10 @@ public class PurchaseRequestViewController {
 
             try {
                 minimumAmount = Double.parseDouble(minimumAmountTextField.getText().trim());
+                if (minimumAmount<0){
+                    showError("Minimum amount cannot be negative.");
+                    return;
+                }
             } catch (NumberFormatException e) {
                 showError("Minimum amount must be numeric.");
                 return;
@@ -143,13 +152,41 @@ public class PurchaseRequestViewController {
             return;
         }
 
-        selected.setStatus("Approved");
+        if (selected.getStatus().equalsIgnoreCase("Approved")){
+            showInformation("This request is already approved.");
+            return;
+        }
 
-        PurchaseRequestFileHandler.overwrite(purchaseAppTableView.getItems());
+        if (selected.getStatus().equalsIgnoreCase("Rejected")){
+            showError("Rejected requests cannot be approved.");
+            return;
+        }
 
-        purchaseAppTableView.refresh();
+        ObservableList<PurchaseRequest> allReqs = PurchaseRequestFileHandler.readAll();
+        for (PurchaseRequest request:allReqs){
+            if (request.getRequestId()==selected.getRequestId()){
+                request.setStatus("Approved");
+                request.setRemarks("Approved by Accountant");
+                break;
+            }
+        }
 
-        showInformation("Purchase request approved.");
+        PurchaseRequestFileHandler.overwrite(allReqs);
+
+        loadTable();
+
+        purchaseAppTableView.getSelectionModel().clearSelection();
+        showInformation("Purchase request approved successfully.");
+
+        //selected.setStatus("Approved");
+
+        //PurchaseRequestFileHandler.overwrite(purchaseAppTableView.getItems());
+
+
+
+        //purchaseAppTableView.refresh();
+
+        //showInformation("Purchase request approved.");
 
     }
 
@@ -163,20 +200,59 @@ public class PurchaseRequestViewController {
             return;
         }
 
-        selected.setStatus("Rejected");
+        if (selected.getStatus().equalsIgnoreCase("Rejected")) {
+            showInformation("This request is already rejected.");
+            return;
+        }
 
-        PurchaseRequestFileHandler.overwrite(purchaseAppTableView.getItems());
+        if (selected.getStatus().equalsIgnoreCase("Approved")) {
+            showError("Approved requests cannot be rejected.");
+            return;
+        }
 
-        purchaseAppTableView.refresh();
+        ObservableList<PurchaseRequest> allRequests = PurchaseRequestFileHandler.readAll();
 
-        showInformation("Purchase request rejected.");
+        for (PurchaseRequest request : allRequests) {
+
+            if (request.getRequestId() == selected.getRequestId()) {
+
+                request.setStatus("Rejected");
+                request.setRemarks("Rejected by Accountant");
+                break;
+
+            }
+
+        }
+
+//        selected.setStatus("Rejected");
+//
+//        PurchaseRequestFileHandler.overwrite(purchaseAppTableView.getItems());
+//
+//        purchaseAppTableView.refresh();
+//
+//        showInformation("Purchase request rejected.");
+
+        PurchaseRequestFileHandler.overwrite(allRequests);
+
+        loadTable();
+
+        purchaseAppTableView.getSelectionModel().clearSelection();
+
+        showInformation("Purchase request rejected successfully.");
 
     }
 
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
 
-        purchaseAppTableView.setItems(PurchaseRequestFileHandler.readAll());
+        loadTable();
+
+        requestIDLabel.setText("");
+        requestByLabel.setText("");
+        departmentLabel.setText("");
+        estCostLabel.setText("");
+
+        purchaseAppTableView.getSelectionModel().clearSelection();
 
         showInformation("Table refreshed.");
 
