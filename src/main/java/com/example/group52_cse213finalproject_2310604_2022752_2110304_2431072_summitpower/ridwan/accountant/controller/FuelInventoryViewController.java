@@ -122,7 +122,13 @@ public class FuelInventoryViewController
             totalUnitCost+=fuel.getUnitCost();
         }
 
-        double avrgCost = totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        //double avrgCost = totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        double avrgCost =0;
+
+        if (!fuelInventoryValuationTableView.getItems().isEmpty()){
+            avrgCost=totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        }
+
 
         totalQuantityLabel.setText(String.format("%.2f",totalQuantity));
 
@@ -141,14 +147,14 @@ public class FuelInventoryViewController
             showError("Please select a fuel type.");
             return;
         }
-        if(fromDateDatePicker.getValue()==null){
-            showError("Please select From date.");
-            return;
-        }
-        if(toDateDatePicker.getValue()==null){
-            showError("Please select To date.");
-            return;
-        }
+//        if(fromDateDatePicker.getValue()==null){
+//            showError("Please select From date.");
+//            return;
+//        }
+//        if(toDateDatePicker.getValue()==null){
+//            showError("Please select To date.");
+//            return;
+//        }
         if (fromDateDatePicker.getValue().isAfter(toDateDatePicker.getValue())){
             showError("From date cannot be after to Date.");
             return;
