@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.ShowEquipmentViewController">
    <children>
       <TableView fx:id="showTableView" layoutX="12.0" layoutY="75.0" prefHeight="200.0" prefWidth="574.0">
@@ -18,6 +17,6 @@
             <TableColumn fx:id="purchaseDateCol" prefWidth="121.60003662109375" text="Purchase Date" />
         </columns>
       </TableView>
-      <Button layoutX="528.0" layoutY="325.0" mnemonicParsing="false" onAction="#backButtonOnAction" text="Back" />
+      <Button layoutX="540.0" layoutY="341.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: #49b0ff;" text="Back" />
    </children>
 </AnchorPane>

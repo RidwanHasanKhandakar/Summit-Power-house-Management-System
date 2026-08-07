@@ -45,4 +45,5 @@ public class ShowEquipmentViewController
     public void backButtonOnAction(ActionEvent actionEvent) throws IOException {
         JohraSceneSwitch.johraSceneSwitch((Node) actionEvent.getSource(), "inventoryManager", "addEquipment-view.fxml", "Add Equipments");
     }
+
 }
