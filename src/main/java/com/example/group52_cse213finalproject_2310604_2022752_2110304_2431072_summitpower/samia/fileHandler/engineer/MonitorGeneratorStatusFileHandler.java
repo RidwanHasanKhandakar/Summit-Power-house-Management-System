@@ -15,9 +15,15 @@ public class MonitorGeneratorStatusFileHandler {
         ObservableList<MonitorGeneratorStatus> list = readAll();
         list.add(status);
 
+        File file = new File(FILE_PATH);
+
+        if (file.getParentFile() != null && !file.getParentFile().exists()) {
+            file.getParentFile().mkdirs();
+        }
+
         try {
             ObjectOutputStream oos =
-                    new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+                    new ObjectOutputStream(new FileOutputStream(file));
 
             oos.writeObject(new ArrayList<>(list));
             oos.close();
@@ -26,7 +32,6 @@ public class MonitorGeneratorStatusFileHandler {
             e.printStackTrace();
         }
     }
-
 
     @SuppressWarnings("unchecked")
     public static ObservableList<MonitorGeneratorStatus> readAll() {
@@ -37,15 +42,15 @@ public class MonitorGeneratorStatusFileHandler {
             return FXCollections.observableArrayList();
         }
 
-
         try {
-
             ObjectInputStream ois =
-                    new ObjectInputStream(new FileInputStream(FILE_PATH));
+                    new ObjectInputStream(new FileInputStream(file));
 
             ArrayList<MonitorGeneratorStatus> list =
                     (ArrayList<MonitorGeneratorStatus>) ois.readObject();
+
             ois.close();
+
             return FXCollections.observableArrayList(list);
 
         } catch (Exception e) {
