@@ -1,6 +1,7 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.JohraSceneSwitch;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.AddEquipmentFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
 import javafx.collections.FXCollections;
@@ -121,6 +122,13 @@ public class AddEquipmentViewController
         equipmentCategoryComboBox.setValue(null);
         vendorComboBox.setValue(null);
         purchaseDateDatePicker.setValue(null);
+
+    }
+
+    @javafx.fxml.FXML
+    public void viewButtonOnAction(ActionEvent actionEvent) throws IOException{
+
+        JohraSceneSwitch.johraSceneSwitch((Node) actionEvent.getSource(), "inventoryManager", "showEquipment-view.fxml", "Show Equipments");
 
     }
 }
