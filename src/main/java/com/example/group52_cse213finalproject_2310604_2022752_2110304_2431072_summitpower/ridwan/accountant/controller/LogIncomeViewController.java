@@ -102,6 +102,11 @@ public class LogIncomeViewController
             return;
         }
 
+        if (dateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Transaction date cannot be in the future.");
+            return;
+        }
+
         if (unitSold <= 0 || revenueAmount <= 0) {
             showError("Units sold and revenue amount must be greater than zero.");
             return;
@@ -126,7 +131,7 @@ public class LogIncomeViewController
     private void calculateTotalRevenue() {
 
         double totalRevenue = 0;
-        for (LogIncome income : LogIncomeFileHandler.readAll()) {
+        for (LogIncome income : salesIncomeTableView.getItems()) {
             totalRevenue += income.getRevenueAmount();
         }
 
