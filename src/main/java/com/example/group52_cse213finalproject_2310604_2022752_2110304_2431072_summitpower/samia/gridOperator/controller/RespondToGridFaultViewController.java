@@ -94,6 +94,10 @@ public class RespondToGridFaultViewController
             showError("Please select Fault Date.");
             return;
         }
+        if (faultDatePicker.getValue().isAfter(java.time.LocalDate.now())) {
+            showError("Fault Date cannot be in the future.");
+            return;
+        }
 
         if (faultStatusComboBox.getValue() == null) {
             showError("Please select Fault Status.");
