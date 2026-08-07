@@ -157,8 +157,21 @@ public class FuelInventoryViewController
         ObservableList<FuelInventory>filterdList = FXCollections.observableArrayList();
 
         for (FuelInventory fuel : FuelInventoryFileHandler.readAll()){
-            boolean typeMatch = fuelTypeComboBox.getValue().equals("All")||fuel.getFuelType().equalsIgnoreCase(fuelTypeComboBox.getValue());
-            boolean dateMatch = !fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue())&&!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            boolean typeMatch =
+                    fuelTypeComboBox.getValue()==null
+                            ||
+                            fuelTypeComboBox.getValue().equals("All")
+                            ||
+                            fuel.getFuelType().equalsIgnoreCase(fuelTypeComboBox.getValue()
+                            );
+            //boolean dateMatch = !fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue())&&!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            boolean dateMatch = true;
+            if(fromDateDatePicker.getValue()!=null){
+                dateMatch&=!fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue());
+            }
+            if (toDateDatePicker.getValue()!=null){
+                dateMatch&=!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            }
             if(typeMatch&&dateMatch){
                 filterdList.add(fuel);
             }
