@@ -1,13 +1,14 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class EquipmentMaintenanceInventory {
+public class EquipmentMaintenanceHistory implements Serializable {
 
     private String maintenanceId, equipmentId, sparePartsUsed, quantityUsed, technician;
     private LocalDate maintenanceDate;
 
-    public EquipmentMaintenanceInventory(String maintenanceId, String equipmentId, String sparePartsUsed, String quantityUsed, String technician, LocalDate maintenanceDate) {
+    public EquipmentMaintenanceHistory(String maintenanceId, String equipmentId, String sparePartsUsed, String quantityUsed, String technician, LocalDate maintenanceDate) {
         this.maintenanceId = maintenanceId;
         this.equipmentId = equipmentId;
         this.sparePartsUsed = sparePartsUsed;

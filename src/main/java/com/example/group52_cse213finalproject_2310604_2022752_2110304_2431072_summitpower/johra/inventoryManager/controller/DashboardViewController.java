@@ -11,6 +11,10 @@ public class DashboardViewController
 {
     @javafx.fxml.FXML
     private Label inventoryManagerOfficerNameLabel;
+    @javafx.fxml.FXML
+    private Label officerNameLabel;
+    @javafx.fxml.FXML
+    private Label addNameLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -57,25 +61,23 @@ public class DashboardViewController
     }
 
     @javafx.fxml.FXML
-    public void viewEquipmentDetailsButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "viewEquipmentDetails-view.fxml", "View Equipment Details");
-
-    }
-
-    @javafx.fxml.FXML
     public void inventoryReportButtonOnAction(ActionEvent actionEvent) {
         PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "inventoryReport-view.fxml", "Inventory Report");
 
     }
 
     @javafx.fxml.FXML
-    public void removeEquipmentButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "removeEquipment-view.fxml", "Remove Equipment");
-
+    public void ProfileButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "profile-view.fxml", "Profile");
     }
 
     @javafx.fxml.FXML
-    public void ProfileButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "ridwan", "commonFiles", "profile-view.fxml", "Profile");
+    public void equipmentMaintenanceHistoryButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "equipmentMaintenanceHistory-view.fxml", "Profile");
+    }
+
+    @javafx.fxml.FXML
+    public void fuelConsumptionButtonOnAction(ActionEvent actionEvent) {
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "fuelConsumptionTracking-view.fxml", "Fuel Consumption");
     }
 }

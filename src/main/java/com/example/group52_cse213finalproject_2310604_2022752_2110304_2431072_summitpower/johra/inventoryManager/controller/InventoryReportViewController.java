@@ -68,7 +68,7 @@ public class InventoryReportViewController
 
         InventoryReportFileHandler.save(inventoryReport);
 
-        showConfirmation("Inventory report created successfully");
+        showInformation("Inventory report created successfully");
 
     }
 
@@ -83,11 +83,11 @@ public class InventoryReportViewController
     }
 
 
-    public void showConfirmation(String text){
+    public void showInformation(String text){
 
-        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
+        Alert alert =new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
         alert.setContentText(text);
         alert.showAndWait();
 

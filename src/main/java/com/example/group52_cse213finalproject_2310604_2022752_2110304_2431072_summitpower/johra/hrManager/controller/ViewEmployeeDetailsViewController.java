@@ -1,10 +1,12 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.AddEmplyeeFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Employee;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -30,9 +32,20 @@ public class ViewEmployeeDetailsViewController
     private TableColumn<Employee, LocalDate> dobCol;
     @javafx.fxml.FXML
     private TableColumn<Employee, String> emailCol;
+    @javafx.fxml.FXML
+    private ComboBox<String> filterDepartmentComboBox;
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        filterDepartmentComboBox.getItems().addAll(
+                "Operations and Maintenance",
+                "Engineering and Technical Services",
+                "Finance and Accounts",
+                "Supply Chain",
+                "Human Resource",
+                "Legal and Regulatory Affairs"
+        );
 
         employeeIdCol.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         employeeNameCol.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
@@ -42,7 +55,9 @@ public class ViewEmployeeDetailsViewController
         dobCol.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
         salaryCol.setCellValueFactory(new PropertyValueFactory<>("salary"));
 
-        showEmployeeTableView.setItems(FXCollections.observableList(AddEmployeeViewController.employeeList));
+        //showEmployeeTableView.setItems(AddEmplyeeFileHandler.readAll());
+
+        //showEmployeeTableView.setItems(FXCollections.observableList(AddEmployeeViewController.employeeList));
     }
 
     @javafx.fxml.FXML
@@ -53,7 +68,29 @@ public class ViewEmployeeDetailsViewController
     @javafx.fxml.FXML
     public void loadTableViewButtonOnAction(ActionEvent actionEvent) {
 
-        showEmployeeTableView.setItems(FXCollections.observableList(AddEmployeeViewController.employeeList));
+        String department =  filterDepartmentComboBox.getValue();
+
+        showEmployeeTableView.getItems().clear();
+
+        if (department == null) {
+            showEmployeeTableView.setItems(AddEmplyeeFileHandler.readAll());
+            return;
+        }
+
+        for(Employee employee : AddEmplyeeFileHandler.readAll()){
+            if(employee.getDepartment().equals(department)){
+                showEmployeeTableView.getItems().add(employee);
+            }
+        }
+
+        //showEmployeeTableView.setItems(FXCollections.observableList(AddEmployeeViewController.employeeList));
+
+    }
+
+    @javafx.fxml.FXML
+    public void refreshButtonOnAction(ActionEvent actionEvent) {
+
+        filterDepartmentComboBox.setValue(null);
 
     }
 }

@@ -1,14 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller.EmployeeMedicalClearanceViewController">
+   <children>
+      <Label layoutX="212.0" layoutY="14.0" style="-fx-text-fill: white;" text="Medical Clearance ">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="76.0" style="-fx-text-fill: white;" text="Clearance ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="clearanceIdTextField" layoutX="117.0" layoutY="72.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="14.0" layoutY="137.0" style="-fx-text-fill: white;" text="Employee ID:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="employeeIdTextField" layoutX="117.0" layoutY="133.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="318.0" layoutY="76.0" style="-fx-text-fill: white;" text="Checkup Date:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="137.0" style="-fx-text-fill: white;" text="Employee Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="checkupDateDatePicker" layoutX="422.0" layoutY="71.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="14.0" layoutY="191.0" style="-fx-text-fill: white;" text="Medical Status:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="medicalStatusComboBox" layoutX="117.0" layoutY="187.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="319.0" layoutY="191.0" style="-fx-text-fill: white;" text="Doctor Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="employeeNameTextField" layoutX="422.0" layoutY="132.0" prefHeight="26.0" prefWidth="164.0" />
+      <Button layoutX="231.0" layoutY="307.0" mnemonicParsing="false" onAction="#saveRecordButtonOnAction" prefHeight="26.0" prefWidth="179.0" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="577.0" layoutY="403.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="50.0" style="-fx-background-color: #49b0ff;" text="Home" />
+      <Button layoutX="14.0" layoutY="403.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" prefHeight="26.0" prefWidth="58.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Label alignment="CENTER" layoutY="439.0" prefHeight="18.0" prefWidth="642.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
+      <TextField fx:id="doctorNameTextField" layoutX="422.0" layoutY="187.0" prefHeight="26.0" prefWidth="164.0" />
+   </children>
 </AnchorPane>

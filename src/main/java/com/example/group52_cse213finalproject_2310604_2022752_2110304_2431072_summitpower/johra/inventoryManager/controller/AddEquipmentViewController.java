@@ -68,7 +68,7 @@ public class AddEquipmentViewController
             showError("Field cannot be empty");
         }
 
-        if(purchaseDateDatePicker == null){
+        if(purchaseDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
         }
 

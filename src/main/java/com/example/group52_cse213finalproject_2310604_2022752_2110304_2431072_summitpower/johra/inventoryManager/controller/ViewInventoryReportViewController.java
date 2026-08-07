@@ -45,7 +45,7 @@ public class ViewInventoryReportViewController
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-view.fxml", "Inventory Manager Dashboard");
     }
 
     @javafx.fxml.FXML

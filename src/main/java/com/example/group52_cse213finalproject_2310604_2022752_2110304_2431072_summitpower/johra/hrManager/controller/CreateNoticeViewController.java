@@ -65,7 +65,7 @@ public class CreateNoticeViewController
 
         CreateNoticeFileHandler.save(notice);
 
-        showConfirmation("Notice created successfully!");
+        showInformation("Notice created successfully !");
 
     }
 
@@ -77,10 +77,10 @@ public class CreateNoticeViewController
         alert.showAndWait();
     }
 
-    public void showConfirmation(String text){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
         alert.setContentText(text);
         alert.showAndWait();
     }

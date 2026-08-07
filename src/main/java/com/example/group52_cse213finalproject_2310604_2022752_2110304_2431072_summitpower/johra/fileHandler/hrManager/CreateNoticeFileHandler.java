@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class CreateNoticeFileHandler {
 
-    private static final String FILE_PATH = "data/johra/inventoryManager/createNotice.bin";
+    private static final String FILE_PATH = "data/johra/hrManager/createNotice.bin";
     public static void save(Notice notice) {
         ObservableList<Notice> list = readAll();
         list.add(notice);

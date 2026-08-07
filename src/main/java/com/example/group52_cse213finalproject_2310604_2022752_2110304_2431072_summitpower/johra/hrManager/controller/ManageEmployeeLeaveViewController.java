@@ -1,6 +1,8 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.EmployeeLeaveFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.EmployeeTrainingFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.EmployeeLeave;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
@@ -94,7 +96,11 @@ public class ManageEmployeeLeaveViewController
             return;
         }
 
+        EmployeeLeave employeeLeave = new EmployeeLeave(leaveIdTextField.getText(), employeeIdTextField.getText(), leaveTypeComboBox.getValue(), totalDaysTextField.getText(), reasonComboBox.getValue(), startDateDatePicker.getValue(), endDateDatePicker.getValue());
 
+        EmployeeLeaveFileHandler.save(employeeLeave);
+
+        showInformation("Employee leave information recorded successfully !");
 
     }
 
@@ -121,8 +127,9 @@ public class ManageEmployeeLeaveViewController
         employeeIdTextField.clear();
         leaveTypeComboBox.setValue(null);
         reasonComboBox.setValue(null);
-        totalDaysTextField.getText();
-        startDateDatePicker.getValue();
-        endDateDatePicker.getValue();
+        totalDaysTextField.clear();
+        startDateDatePicker.setValue(null);
+        endDateDatePicker.setValue(null);
+
     }
 }
