@@ -21,10 +21,6 @@ public class RecordGridOperationLogViewController
     @javafx.fxml.FXML
     private ComboBox<String> operationTypeComboBox;
     @javafx.fxml.FXML
-    private TableColumn<RecordGridOperationLog,String> operatorNameColumn;
-    @javafx.fxml.FXML
-    private TableColumn<RecordGridOperationLog,String> gridSectionColumn;
-    @javafx.fxml.FXML
     private TextField operationIdTextField;
     @javafx.fxml.FXML
     private TextField operatorNameTextField;
@@ -36,6 +32,21 @@ public class RecordGridOperationLogViewController
     private ComboBox<String> gridSectionComboBox;
     @javafx.fxml.FXML
     private TableColumn<RecordGridOperationLog,String> operationIdColumn;
+    @javafx.fxml.FXML
+    private TextField gridIdTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> gridStatusComboBox;
+    @javafx.fxml.FXML
+    private TextField frequencyTextField;
+    @javafx.fxml.FXML
+    private TextField voltageTextField;
+    @javafx.fxml.FXML
+    private TableColumn<RecordGridOperationLog, String> gridIdColumn;
+    @javafx.fxml.FXML
+    private TableColumn<RecordGridOperationLog, String> gridSectionColumn;
+    @javafx.fxml.FXML
+    private TableColumn<RecordGridOperationLog, String> operatorNameColumn;
+
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -51,16 +62,17 @@ public class RecordGridOperationLogViewController
                 "Maintenance",
                 "Emergency Shutdown"
         );
+        gridStatusComboBox.getItems().addAll(
+                "Normal",
+                "Maintenance",
+                "Fault"
+        );
         operationIdColumn.setCellValueFactory(new PropertyValueFactory<>("operationId"));
-
+        gridIdColumn.setCellValueFactory(new PropertyValueFactory<>("gridId"));
         gridSectionColumn.setCellValueFactory(new PropertyValueFactory<>("gridSection"));
-
         operationTypeColumn.setCellValueFactory(new PropertyValueFactory<>("operationType"));
-
         operationDateColumn.setCellValueFactory(new PropertyValueFactory<>("operationDate"));
-
         operatorNameColumn.setCellValueFactory(new PropertyValueFactory<>("operatorName"));
-
         operationLogTableView.setItems(RecordGridOperationLogFileHandler.readAll());
     }
     public void showSuccess(String txt){
@@ -82,11 +94,20 @@ public class RecordGridOperationLogViewController
     @javafx.fxml.FXML
     public void refreshButton(ActionEvent actionEvent) {
         operationIdTextField.clear();
+        gridIdTextField.clear();
+
         gridSectionComboBox.setValue(null);
         operationTypeComboBox.setValue(null);
+        gridStatusComboBox.setValue(null);
+
+        voltageTextField.clear();
+        frequencyTextField.clear();
+
         operationDatePicker.setValue(null);
+
         operatorNameTextField.clear();
         remarksTextArea.clear();
+
         operationLogTableView.getSelectionModel().clearSelection();
     }
 
@@ -97,62 +118,101 @@ public class RecordGridOperationLogViewController
 
     @javafx.fxml.FXML
     public void saveButton(ActionEvent actionEvent) {
-        if (operationIdTextField.getText().trim().isEmpty()) {
+        if(operationIdTextField.getText().trim().isEmpty()){
             showError("Please enter Operation ID.");
             return;
         }
 
-        if (gridSectionComboBox.getValue() == null) {
+        if(gridIdTextField.getText().trim().isEmpty()){
+            showError("Please enter Grid ID.");
+            return;
+        }
+
+        if(gridSectionComboBox.getValue()==null){
             showError("Please select Grid Section.");
             return;
         }
 
-        if (operationTypeComboBox.getValue() == null) {
+        if(operationTypeComboBox.getValue()==null){
             showError("Please select Operation Type.");
             return;
         }
 
-        if (operationDatePicker.getValue() == null) {
+        if(gridStatusComboBox.getValue()==null){
+            showError("Please select Grid Status.");
+            return;
+        }
+
+        if(operationDatePicker.getValue()==null){
             showError("Please select Operation Date.");
             return;
         }
-        if (operationDatePicker.getValue().isBefore(LocalDate.now())) {
+
+        if(operationDatePicker.getValue().isBefore(LocalDate.now())){
             showError("Operation Date cannot be in the past.");
             return;
         }
 
-        if (operatorNameTextField.getText().trim().isEmpty()) {
+        if(operatorNameTextField.getText().trim().isEmpty()){
             showError("Please enter Operator Name.");
+            return;
+        }
+
+        if(voltageTextField.getText().trim().isEmpty()){
+            showError("Please enter Voltage.");
+            return;
+        }
+
+        if(frequencyTextField.getText().trim().isEmpty()){
+            showError("Please enter Frequency.");
+            return;
+        }
+
+        double voltage;
+        double frequency;
+
+        try{
+            voltage = Double.parseDouble(voltageTextField.getText());
+            frequency = Double.parseDouble(frequencyTextField.getText());
+        }
+        catch(NumberFormatException e){
+            showError("Voltage and Frequency must be numeric.");
             return;
         }
 
         String remarks = remarksTextArea.getText().trim();
 
-        if (remarks.isEmpty()) {
+        if(remarks.isEmpty()){
             showError("Please enter Remarks.");
             return;
         }
 
-        if (remarks.length() > 300) {
+        if(remarks.length()>300){
             showError("Remarks cannot exceed 300 characters.");
             return;
         }
 
         RecordGridOperationLog log = new RecordGridOperationLog(
                 operationIdTextField.getText().trim(),
+                gridIdTextField.getText().trim(),
                 gridSectionComboBox.getValue(),
                 operationTypeComboBox.getValue(),
+                gridStatusComboBox.getValue(),
                 operationDatePicker.getValue(),
+                voltage,
+                frequency,
                 operatorNameTextField.getText().trim(),
                 remarks
         );
 
         RecordGridOperationLogFileHandler.save(log);
 
-        operationLogTableView.setItems(RecordGridOperationLogFileHandler.readAll());
-
-        refreshButton(null);
+        operationLogTableView.setItems(
+                RecordGridOperationLogFileHandler.readAll()
+        );
 
         showSuccess("Operation Log saved successfully.");
+
+        refreshButton(null);
     }
 }

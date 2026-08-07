@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="547.0" prefWidth="753.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller.TransmissionLineInfoViewController">
    <children>
-      <Button layoutX="635.0" layoutY="307.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="687.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <Text fill="WHITE" layoutX="88.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Line ID:">
          <font>
             <Font size="14.0" />
@@ -60,9 +60,9 @@
             <Font name="Times New Roman Bold" size="25.0" />
          </font>
       </Text>
-      <Button layoutX="535.0" layoutY="307.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="433.0" layoutY="307.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Search" />
-      <TableView fx:id="transmissionLineTableView" layoutX="39.0" layoutY="379.0" prefHeight="147.0" prefWidth="697.0">
+      <Button layoutX="587.0" layoutY="529.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="498.0" layoutY="529.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <TableView fx:id="transmissionLineTableView" layoutX="39.0" layoutY="336.0" prefHeight="147.0" prefWidth="697.0">
         <columns>
           <TableColumn fx:id="lineIdColumn" prefWidth="107.20001602172852" text="Line ID" />
           <TableColumn fx:id="lineNameColumn" prefWidth="126.39994812011719" text="Line Name" />

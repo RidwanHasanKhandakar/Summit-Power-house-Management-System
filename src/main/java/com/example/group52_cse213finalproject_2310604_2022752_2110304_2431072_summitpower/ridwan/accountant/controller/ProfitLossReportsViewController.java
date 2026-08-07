@@ -2,7 +2,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.ProfitLossReports;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.ProfitLossReportFileHandler;
+//import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant.ProfitLossReportFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -89,7 +89,7 @@ public class ProfitLossReportsViewController
         ProfitLossReports report = new
                 ProfitLossReports(selectMonthComboBox.getValue(),selectYearComboBox.getValue(),salesIncome,expenses,salaryCost,fuelCost,profitLoss);
 
-        ProfitLossReportFileHandler.save(report);
+        //ProfitLossReportFileHandler.save(report);
 
         totalSalesIncomeText.setText(String.format("%.2f",salesIncome));
         totalExpenseText.setText(String.format("%.2f",expenses));

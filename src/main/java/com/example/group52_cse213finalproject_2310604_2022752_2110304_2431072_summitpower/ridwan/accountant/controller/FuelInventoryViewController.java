@@ -72,7 +72,9 @@ public class FuelInventoryViewController
         totalValueCol.setCellValueFactory(new PropertyValueFactory<>("totalValue"));
         lastUpdatedCol.setCellValueFactory(new PropertyValueFactory<>("lastUpdated"));
 
-        fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+        //fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+
+        handleRefreshButton(null);
 
     }
 
@@ -87,6 +89,17 @@ public class FuelInventoryViewController
     public void handleRefreshButton(ActionEvent actionEvent) {
 
         fuelInventoryValuationTableView.setItems(FuelInventoryFileHandler.readAll());
+
+        fuelTypeComboBox.getSelectionModel().select("All");
+
+        fromDateDatePicker.setValue(null);
+        toDateDatePicker.setValue(null);
+
+        totalQuantityLabel.setText("");
+        totalInventoryValueLabel.setText("");
+        avrgUnitCostLabel.setText("");
+
+
         showInformation("Inventory refreshed!");
 
     }
@@ -109,7 +122,13 @@ public class FuelInventoryViewController
             totalUnitCost+=fuel.getUnitCost();
         }
 
-        double avrgCost = totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        //double avrgCost = totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        double avrgCost =0;
+
+        if (!fuelInventoryValuationTableView.getItems().isEmpty()){
+            avrgCost=totalUnitCost/fuelInventoryValuationTableView.getItems().size();
+        }
+
 
         totalQuantityLabel.setText(String.format("%.2f",totalQuantity));
 
@@ -128,14 +147,14 @@ public class FuelInventoryViewController
             showError("Please select a fuel type.");
             return;
         }
-        if(fromDateDatePicker.getValue()==null){
-            showError("Please select From date.");
-            return;
-        }
-        if(toDateDatePicker.getValue()==null){
-            showError("Please select To date.");
-            return;
-        }
+//        if(fromDateDatePicker.getValue()==null){
+//            showError("Please select From date.");
+//            return;
+//        }
+//        if(toDateDatePicker.getValue()==null){
+//            showError("Please select To date.");
+//            return;
+//        }
         if (fromDateDatePicker.getValue().isAfter(toDateDatePicker.getValue())){
             showError("From date cannot be after to Date.");
             return;
@@ -144,8 +163,21 @@ public class FuelInventoryViewController
         ObservableList<FuelInventory>filterdList = FXCollections.observableArrayList();
 
         for (FuelInventory fuel : FuelInventoryFileHandler.readAll()){
-            boolean typeMatch = fuelTypeComboBox.getValue().equals("All")||fuel.getFuelType().equalsIgnoreCase(fuelTypeComboBox.getValue());
-            boolean dateMatch = !fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue())&&!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            boolean typeMatch =
+                    fuelTypeComboBox.getValue()==null
+                            ||
+                            fuelTypeComboBox.getValue().equals("All")
+                            ||
+                            fuel.getFuelType().equalsIgnoreCase(fuelTypeComboBox.getValue()
+                            );
+            //boolean dateMatch = !fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue())&&!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            boolean dateMatch = true;
+            if(fromDateDatePicker.getValue()!=null){
+                dateMatch&=!fuel.getLastUpdated().isBefore(fromDateDatePicker.getValue());
+            }
+            if (toDateDatePicker.getValue()!=null){
+                dateMatch&=!fuel.getLastUpdated().isAfter(toDateDatePicker.getValue());
+            }
             if(typeMatch&&dateMatch){
                 filterdList.add(fuel);
             }

@@ -48,11 +48,16 @@ public class LogIncomeViewController
         unitsCol.setCellValueFactory(new PropertyValueFactory<>("unitsSold"));
         revenueCol.setCellValueFactory(new PropertyValueFactory<>("revenueAmount"));
 
+        loadData();
+
+    }
+
+    private void loadData(){
+
         ObservableList<LogIncome> list = LogIncomeFileHandler.readAll();
         salesIncomeTableView.setItems(list);
-
         if (!list.isEmpty()){
-            saleCounter = list.get(list.size()-1).getSaleID() + 1;
+            saleCounter=list.get(list.size()-1).getSaleID()+1;
         }
         calculateTotalRevenue();
 
@@ -80,7 +85,7 @@ public class LogIncomeViewController
     @javafx.fxml.FXML
     public void handleLogSaleButton(ActionEvent actionEvent) {
 
-        if (clientCompanyTextField.getText().isEmpty() || soldTextField.getText().isEmpty() || revenueTextField.getText().isEmpty() || dateDatePicker.getValue() == null) {
+        if (clientCompanyTextField.getText().isBlank() || soldTextField.getText().isBlank() || revenueTextField.getText().isBlank() || dateDatePicker.getValue() == null) {
             showError("Please fill in all fields before logging a sale.");
             return;
         }
@@ -97,6 +102,11 @@ public class LogIncomeViewController
             return;
         }
 
+        if (dateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Transaction date cannot be in the future.");
+            return;
+        }
+
         if (unitSold <= 0 || revenueAmount <= 0) {
             showError("Units sold and revenue amount must be greater than zero.");
             return;
@@ -106,9 +116,11 @@ public class LogIncomeViewController
 
         LogIncomeFileHandler.save(income);
 
-        salesIncomeTableView.setItems(LogIncomeFileHandler.readAll());
+        //salesIncomeTableView.setItems(LogIncomeFileHandler.readAll());
 
-        calculateTotalRevenue();
+        loadData();
+
+        //calculateTotalRevenue();
 
         showSuc("Electricity sale logged successfully!");
 
@@ -143,5 +155,5 @@ public class LogIncomeViewController
         alert.setContentText(txt);
         alert.showAndWait();
     }
-
+            //riRohan
 }

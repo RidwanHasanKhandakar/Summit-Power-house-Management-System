@@ -5,13 +5,15 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="408.0" prefWidth="786.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.PreventiveMaintenanceViewController">
+<AnchorPane prefHeight="614.0" prefWidth="858.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.engineer.controller.PreventiveMaintenanceViewController">
    <children>
       <Label layoutX="59.0" layoutY="79.0" text="Maintenance ID:" textFill="WHITE">
          <font>
@@ -21,58 +23,71 @@
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="57.0" layoutY="176.0" prefHeight="20.0" prefWidth="87.0" text="Plant Unit:" textFill="WHITE">
+      <Label layoutX="434.0" layoutY="79.0" prefHeight="20.0" prefWidth="87.0" text="Plant Unit:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="55.0" layoutY="322.0" prefHeight="20.0" prefWidth="125.0" text="Maintenance Type:" textFill="WHITE">
+      <Label layoutX="432.0" layoutY="177.0" prefHeight="20.0" prefWidth="125.0" text="Maintenance Type:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="56.0" layoutY="276.0" prefHeight="20.0" prefWidth="107.0" text="Scheduled Date:" textFill="WHITE">
+      <Label layoutX="55.0" layoutY="177.0" prefHeight="20.0" prefWidth="107.0" text="Scheduled Date:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="54.0" layoutY="227.0" text="Engineer Name:" textFill="WHITE">
+      <Label layoutX="432.0" layoutY="126.0" text="Engineer Name:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="56.0" layoutY="377.0" text="Priority:" textFill="WHITE">
+      <Label layoutX="55.0" layoutY="231.0" text="Priority:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="56.0" layoutY="431.0" text="Maintenance Status:" textFill="WHITE">
+      <Label layoutX="432.0" layoutY="231.0" text="Maintenance Status:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Label layoutX="56.0" layoutY="492.0" prefHeight="18.0" prefWidth="62.0" text="Remarks:" textFill="WHITE">
+      <Label layoutX="55.0" layoutY="278.0" prefHeight="18.0" prefWidth="62.0" text="Remarks:" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Label>
-      <Button layoutX="481.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
-      <Button layoutX="574.0" layoutY="522.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="680.0" layoutY="522.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="516.0" layoutY="532.0" mnemonicParsing="false" onAction="#saveButton" style="-fx-background-color: #49b0ff;" text="Save" />
+      <Button layoutX="609.0" layoutY="532.0" mnemonicParsing="false" onAction="#refreshButton" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="715.0" layoutY="532.0" mnemonicParsing="false" onAction="#backButton" style="-fx-background-color: #49b0ff;" text="Back" />
       <Label layoutX="238.0" layoutY="21.0" text="Schedule Preventive Maintenance" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="maintenanceIdTextField" layoutX="230.0" layoutY="76.0" prefHeight="26.0" prefWidth="174.0" />
-      <TextField fx:id="generatorIdTextField" layoutX="230.0" layoutY="123.0" prefHeight="26.0" prefWidth="174.0" />
-      <TextField fx:id="engineerNameTextField" layoutX="230.0" layoutY="224.0" prefHeight="26.0" prefWidth="174.0" />
-      <ComboBox fx:id="plantUnitComboBox" layoutX="230.0" layoutY="173.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
-      <ComboBox fx:id="maintenanceTypeComboBox" layoutX="230.0" layoutY="374.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
-      <ComboBox fx:id="maintenanceStatusComboBox" layoutX="230.0" layoutY="427.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
-      <ComboBox fx:id="priorityComboBox" layoutX="230.0" layoutY="319.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
-      <DatePicker fx:id="scheduledDatePicker" layoutX="230.0" layoutY="273.0" prefHeight="26.0" prefWidth="174.0" />
-      <TextArea fx:id="remarksTextArea" layoutX="230.0" layoutY="475.0" prefHeight="54.0" prefWidth="174.0" />
-      <AnchorPane layoutY="595.0" prefHeight="18.0" prefWidth="786.0" style="-fx-background-color: #49b0ff;">
+      <TextField fx:id="maintenanceIdTextField" layoutX="212.0" layoutY="74.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextField fx:id="generatorIdTextField" layoutX="212.0" layoutY="121.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextField fx:id="engineerNameTextField" layoutX="583.0" layoutY="123.0" prefHeight="26.0" prefWidth="174.0" />
+      <ComboBox fx:id="plantUnitComboBox" layoutX="582.0" layoutY="76.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="maintenanceTypeComboBox" layoutX="585.0" layoutY="173.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="maintenanceStatusComboBox" layoutX="585.0" layoutY="228.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
+      <ComboBox fx:id="priorityComboBox" layoutX="212.0" layoutY="226.0" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #49b0ff;" />
+      <DatePicker fx:id="scheduledDatePicker" layoutX="212.0" layoutY="172.0" prefHeight="26.0" prefWidth="174.0" />
+      <TextArea fx:id="remarksTextArea" layoutX="212.0" layoutY="269.0" prefHeight="54.0" prefWidth="174.0" />
+      <AnchorPane layoutY="595.0" prefHeight="19.0" prefWidth="858.0" style="-fx-background-color: #49b0ff;">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
          <children>
-            <Text fill="WHITE" layoutX="345.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
+            <Text fill="WHITE" layoutX="404.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <TableView fx:id="tableView" layoutX="9.0" layoutY="344.0" prefHeight="166.0" prefWidth="842.0">
+        <columns>
+          <TableColumn fx:id="maintenanceIdTabCol" prefWidth="96.80001831054688" text="Maintenance ID" />
+          <TableColumn fx:id="generatorIdTabCol" prefWidth="83.99996948242188" text="Generator ID" />
+            <TableColumn fx:id="plantUnitTabCol" prefWidth="68.79998779296875" text="Plant Unit" />
+            <TableColumn fx:id="engineerNameTabCol" prefWidth="96.0" text="Engineer Name" />
+            <TableColumn fx:id="maintenanceTypeTabCol" prefWidth="112.0" text="Maintenance Type" />
+            <TableColumn fx:id="priorityTabCol" minWidth="0.0" prefWidth="56.799957275390625" text="Priority" />
+            <TableColumn fx:id="maintenanceStatusTabCol" prefWidth="123.20001220703125" text="Maintenance Status" />
+            <TableColumn fx:id="scheduledDateTabCol" prefWidth="98.39990234375" text="Scheduled Date" />
+            <TableColumn fx:id="remarksTabCol" prefWidth="109.60009765625" text="Remarks" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

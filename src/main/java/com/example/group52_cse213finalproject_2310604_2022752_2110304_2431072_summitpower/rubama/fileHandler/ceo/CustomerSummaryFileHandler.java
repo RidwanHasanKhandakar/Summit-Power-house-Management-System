@@ -1,19 +1,18 @@
-package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.accountant;
+package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.fileHandler.ceo;
 
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.FinancialStatement;
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.accountant.model.ProfitLossReports;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.ComplaintSummary;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.CustomerSummary;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.ArrayList;
 
-public class ProfitLossReportFileHandler {
-
-    private static final String FILE_PATH = "data/ridwan/accountant/ProfitLossReport.bin";
-    public static void save(ProfitLossReports profitLossReports) {
-        ObservableList<ProfitLossReports> list = readAll();
-        list.add(profitLossReports);
+public class CustomerSummaryFileHandler {
+    private static final String FILE_PATH = "data/rubama/ceo/customerSummary.bin";
+    public static void save(CustomerSummary customerSummary) {
+        ObservableList<CustomerSummary> list = readAll();
+        list.add(customerSummary);
         try{
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
             oos.writeObject(new ArrayList<>(list));
@@ -23,16 +22,15 @@ public class ProfitLossReportFileHandler {
         }
     }
 
-    public static ObservableList<ProfitLossReports> readAll() {
+    public static ObservableList<CustomerSummary> readAll() {
 
         File file = new File(FILE_PATH);
         if (!file.exists()||file.length()==0) {
             return FXCollections.observableArrayList();
         }
-
         try{
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH));
-            ArrayList<ProfitLossReports> list = (ArrayList<ProfitLossReports>) ois.readObject();
+            ArrayList<CustomerSummary> list = (ArrayList<CustomerSummary>) ois.readObject();
             ois.close();
             return FXCollections.observableArrayList(list);
         }catch (Exception e){
@@ -41,5 +39,4 @@ public class ProfitLossReportFileHandler {
         }
 
     }
-
 }
