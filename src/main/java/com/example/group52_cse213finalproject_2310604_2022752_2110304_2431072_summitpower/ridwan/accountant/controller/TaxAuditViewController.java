@@ -75,6 +75,12 @@ public class TaxAuditViewController
         //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
         loadAllData();
 
+        taxAndAuditTableView.getSelectionModel().selectedItemProperty().addListener((observable ,oldValue,selected)->{
+            if (selected!=null){
+                showSelectedRecord(selected);
+            }
+        });
+
     }
 
     private void loadAllData(){
@@ -84,6 +90,8 @@ public class TaxAuditViewController
         taxAndAuditTableView.setItems(list);
 
     }
+
+
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
