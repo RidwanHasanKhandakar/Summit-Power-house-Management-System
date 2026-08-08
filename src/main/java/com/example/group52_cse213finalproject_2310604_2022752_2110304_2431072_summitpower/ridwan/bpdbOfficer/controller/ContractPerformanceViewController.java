@@ -111,7 +111,7 @@ public class ContractPerformanceViewController
         ObservableList<ContractPerformance> filtered = FXCollections.observableArrayList();
 
         for (ContractPerformance contract : all){
-            boolean matchID = contractID.isEmpty() || contract.getConsumerName().toLowerCase().contains(contractID);
+            boolean matchID = contractID.isEmpty() || contract.getContractID().toLowerCase().contains(contractID);
             boolean matchConsumer = consumerName.isEmpty()||contract.getConsumerName().toLowerCase().contains(consumerName);
             boolean matchStatus = status ==null || status.equals("All")||contract.getStatus().equalsIgnoreCase(status);
 
