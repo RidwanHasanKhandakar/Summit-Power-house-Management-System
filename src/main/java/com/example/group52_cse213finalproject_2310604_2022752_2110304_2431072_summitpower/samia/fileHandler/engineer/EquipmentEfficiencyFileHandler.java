@@ -8,8 +8,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class EquipmentEfficiencyFileHandler {
-    private static final String FILE_PATH =
-            "data/samia/engineer/EquipmentEfficiency.bin";
+    private static final String FILE_PATH = "data/samia/engineer/EquipmentEfficiency.bin";
 
     public static void save(EquipmentEfficiency equipment) {
 
@@ -39,8 +38,7 @@ public class EquipmentEfficiencyFileHandler {
         try {
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH));
 
-            ArrayList<EquipmentEfficiency> list =
-                    (ArrayList<EquipmentEfficiency>) ois.readObject();
+            ArrayList<EquipmentEfficiency> list = (ArrayList<EquipmentEfficiency>) ois.readObject();
 
             ois.close();
 

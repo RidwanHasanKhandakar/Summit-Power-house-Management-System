@@ -1,14 +1,20 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.JohraSceneSwitch;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.hrManager.CreateNoticeFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.AddEquipmentFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.hrManager.model.Notice;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Equipment;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.Vendor;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*
         ;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class CreateNoticeViewController
 {
@@ -28,6 +34,7 @@ public class CreateNoticeViewController
     @javafx.fxml.FXML
     public void initialize() {
     }
+
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent actionEvent) {
@@ -59,6 +66,11 @@ public class CreateNoticeViewController
 
         if(publishDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(publishDateDatePicker.getValue().isBefore(LocalDate.now())){
+            showError("Publish Date must be today! ");
             return;
         }
 
@@ -105,6 +117,12 @@ public class CreateNoticeViewController
         createdbyTextField.clear();
         publishDateDatePicker.setValue(null);
         expiryDateDatePicker.setValue(null);
+
+    }
+
+    @javafx.fxml.FXML
+    public void loadNoticeButtonOnAction(ActionEvent actionEvent) throws IOException {
+        JohraSceneSwitch.johraSceneSwitch((Node) actionEvent.getSource(), "hrManager", "noticeDetails-view.fxml", "Notice Details");
 
     }
 }

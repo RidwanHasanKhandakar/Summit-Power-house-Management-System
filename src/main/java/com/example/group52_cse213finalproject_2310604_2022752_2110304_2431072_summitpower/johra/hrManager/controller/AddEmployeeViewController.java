@@ -95,8 +95,8 @@ public class  AddEmployeeViewController {
             return;
         }
 
-        if(dateOfBirth.isAfter(LocalDate.now())){
-            showError("Date of birth cannot be in future!");
+        if(dateOfBirthDatePicker.getValue().isAfter(LocalDate.now().minusYears(20))){
+            showError("Employee must be 20 years old!");
             return;
         }
 
@@ -135,13 +135,9 @@ public class  AddEmployeeViewController {
             return;
         }
 
-
-
         Employee addEmployee = new Employee(employeeId, employeeName, email, department, position, dateOfBirth, salary);
 
         AddEmplyeeFileHandler.save(addEmployee);
-
-        //PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "hrManager", "viewEmployeeDetails-view.fxml", "View Employee");
 
         showInformation("Employee added successfully !");
     }
@@ -175,4 +171,5 @@ public class  AddEmployeeViewController {
         dateOfBirthDatePicker.setValue(null);
 
     }
+
 }
