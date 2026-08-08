@@ -5,33 +5,65 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class CustomerComplaintFileHandler {
-    private static final String FILE_NAME = "data/rubama/ceo/CustomerComplaint.bin";
+
+    private static final String FILE_NAME =
+            "data/rubama/ceo/CustomerComplaint.bin";
+
 
     public static void save(CustomerComplaint complaint) {
 
+        if (complaint == null) {
+            return;
+        }
+
         ObservableList<CustomerComplaint> list = readAll();
+
         list.add(complaint);
 
-        try(ObjectOutputStream oos =
-                    new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+        File file = new File(FILE_NAME);
 
-            oos.writeObject(list);
+        File parentDirectory = file.getParentFile();
+
+        if (parentDirectory != null && !parentDirectory.exists()) {
+            parentDirectory.mkdirs();
+        }
+
+        try (ObjectOutputStream oos =
+                     new ObjectOutputStream(
+                             new FileOutputStream(file))) {
+
+            oos.writeObject(new ArrayList<>(list));
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
+    @SuppressWarnings("unchecked")
     public static ObservableList<CustomerComplaint> readAll() {
 
-        try(ObjectInputStream ois =
-                    new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+        File file = new File(FILE_NAME);
 
-            return (ObservableList<CustomerComplaint>) ois.readObject();
+        if (!file.exists() || file.length() == 0) {
+            return FXCollections.observableArrayList();
+        }
+
+        try (ObjectInputStream ois =
+                     new ObjectInputStream(
+                             new FileInputStream(file))) {
+
+            ArrayList<CustomerComplaint> list =
+                    (ArrayList<CustomerComplaint>) ois.readObject();
+
+            return FXCollections.observableArrayList(list);
 
         } catch (IOException | ClassNotFoundException e) {
+
+            e.printStackTrace();
 
             return FXCollections.observableArrayList();
         }
