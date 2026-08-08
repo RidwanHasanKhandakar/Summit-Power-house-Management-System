@@ -72,8 +72,37 @@ public class TaxAuditViewController
         dateCol.setCellValueFactory(new PropertyValueFactory<>("createdDate"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        loadAllData();
 
+        taxAndAuditTableView.getSelectionModel().selectedItemProperty().addListener((observable ,oldValue,selected)->{
+            if (selected!=null){
+                showSelectedRecord(selected);
+            }
+        });
+
+    }
+
+    private void loadAllData(){
+
+        ObservableList<TaxAudit> list = TaxAuditFileHandler.readAll();
+
+        taxAndAuditTableView.setItems(list);
+
+    }
+
+    private void showSelectedRecord(TaxAudit record){
+
+        recordIDLabel.setText(String.valueOf(record.getRecordId()));
+        recordTypeLabel.setText(safeText(record.getRecordType()));
+        titleLabel.setText(safeText(record.getTitle()));
+        createdDateLabel.setText(record.getCreatedDate()==null?"":record.getCreatedDate().toString());
+        statusLabel.setText(safeText(record.getStatus()));
+
+    }
+
+    private String safeText(String text){
+        return text == null ? "":text;
     }
 
     @javafx.fxml.FXML
@@ -90,7 +119,7 @@ public class TaxAuditViewController
         createdDateLabel.setText(" ");
         statusLabel.setText(" ");
 
-        taxAndAuditTableView.getSelectionModel().clearSelection();
+       taxAndAuditTableView.getSelectionModel().clearSelection();
 
     }
 
@@ -104,6 +133,10 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     public void handleLoadRecordsButton(ActionEvent actionEvent) {
 
+//        String selectedType = recordTypeComboBox.getValue();
+//        String selectedYear = yearComboBox.getValue();
+        String searchText = searchTextField.getText().trim();
+
         if (recordTypeComboBox.getValue()==null){
             showErr("Please select a record type.");
             return;
@@ -115,15 +148,30 @@ public class TaxAuditViewController
 
         ObservableList<TaxAudit> filteredList = FXCollections.observableArrayList();
 
-        for (TaxAudit rec : TaxAuditFileHandler.readAll()){
+        ObservableList<TaxAudit> allrecords = TaxAuditFileHandler.readAll();
+
+        for (TaxAudit rec : allrecords){
             boolean matchedType = recordTypeComboBox.getValue().equals("All") || rec.getRecordType().equals(recordTypeComboBox.getValue());
             boolean yearMatched = yearComboBox.getValue().equals("All") || rec.getYear().equals(yearComboBox.getValue());
-            boolean searchMatched = searchTextField.getText().isEmpty() || rec.getTitle().toLowerCase().contains(searchTextField.getText().trim().toLowerCase());
+            //boolean searchMatched = searchTextField.getText().isEmpty() || rec.getTitle().toLowerCase().contains(searchTextField.getText().trim().toLowerCase());
+
+            boolean searchMatched = true;
+
+            if (!searchText.isEmpty()){
+                boolean idMatched = String.valueOf(rec.getRecordId()).contains(searchText);
+                boolean titleMatched = rec.getTitle()!=null&&rec.getTitle().toLowerCase().contains(searchText.toLowerCase());
+                searchMatched=idMatched||titleMatched;
+            }
+
 
             if (matchedType&&yearMatched&&searchMatched){
                 filteredList.add(rec);
             }
         }
+
+        taxAndAuditTableView.setItems(filteredList);
+
+        showInfo(filteredList.size()+"records (s) found.");
 
         taxAndAuditTableView.setItems(filteredList);
         showInfo(filteredList.size()+" record(s) found.");
@@ -133,31 +181,27 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
 
-        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
-        showInfo("Table refreshed.");
+        //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        loadAllData();
+        showInfo("Tax & Audit records refreshed.");
 
     }
 
     @javafx.fxml.FXML
     public void handleViewDetailsButton(ActionEvent actionEvent) {
 
-        TaxAudit selected = taxAndAuditTableView.getSelectionModel().getSelectedItem();
-
-        if (selected==null){
-            showErr("Please select a record.");
-            return;
-        }
-
-        recordIDLabel.setText(String.valueOf(selected.getRecordId()));
-        recordTypeLabel.setText(selected.getRecordType());
-        titleLabel.setText(selected.getTitle());
-        createdDateLabel.setText(String.valueOf(selected.getCreatedDate()));
-        statusLabel.setText(selected.getStatus());
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        TaxAudit selected = taxAndAuditTableView .getSelectionModel() .getSelectedItem(); if (selected == null) {
+            showErr("Please select a record."); return; }
+        showSelectedRecord(selected); Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Record Details");
-        alert.setHeaderText("Details of Record ID: " + selected.getRecordId());
-        alert.setContentText(selected.getDetails());
+        alert.setHeaderText( "Record ID: " + selected.getRecordId() );
+        String details = "Record Type : " + safeText(selected.getRecordType()) + "\n\n" +
+                "Title : " + safeText(selected.getTitle()) + "\n\n" +
+                "Year : " + safeText(selected.getYear()) + "\n\n" +
+                "Created Date : " + ( selected.getCreatedDate() == null ? "" : selected.getCreatedDate() .toString() ) + "\n\n" +
+                "Status : " + safeText(selected.getStatus()) + "\n\n" +
+                "Details :\n" + safeText(selected.getDetails());
+        alert.setContentText(details);
         alert.showAndWait();
 
     }
