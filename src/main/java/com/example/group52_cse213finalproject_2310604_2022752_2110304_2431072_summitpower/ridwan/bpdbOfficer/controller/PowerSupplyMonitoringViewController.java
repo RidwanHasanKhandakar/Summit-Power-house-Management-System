@@ -87,37 +87,69 @@ public class PowerSupplyMonitoringViewController
     @javafx.fxml.FXML
     public void handleSearchButton(ActionEvent actionEvent) {
 
-        String keyword = searchRecordTextField.getText().trim().toLowerCase();
+        String keyword =
+                searchRecordTextField.getText().trim().toLowerCase();
+
         String region = supplyRegionComboBox.getValue();
+
         String status = supplyStatusComboBox.getValue();
 
-        ObservableList<PowerSupplyRecord> filtered = FXCollections.observableArrayList();
+        ObservableList<PowerSupplyRecord> filtered =
+                FXCollections.observableArrayList();
 
-        for (PowerSupplyRecord record : PowerSupplyRecordFileHandler.readAll()){
+
+        for (PowerSupplyRecord record :
+                PowerSupplyRecordFileHandler.readAll()) {
+
             boolean match = true;
 
-            if (!keyword.isEmpty()){
-                if (!(record.getRecordId().toLowerCase().contains(keyword)||record.getConsumerName().toLowerCase().contains(keyword))){
-                    match=false;
+
+            // Search by Record ID or Consumer Name
+            if (!keyword.isEmpty()) {
+
+                boolean recordIdMatch =
+                        record.getRecordId()
+                                .toLowerCase()
+                                .contains(keyword);
+
+                boolean consumerNameMatch =
+                        record.getConsumerName()
+                                .toLowerCase()
+                                .contains(keyword);
+
+                if (!recordIdMatch && !consumerNameMatch) {
+                    match = false;
                 }
             }
 
-            if (!region.equals("All")&&!record.getRegion().equals(region)){
-                match=false;
+
+            // Filter by Region
+            if (region != null &&
+                    !region.equals("All") &&
+                    !record.getRegion().equalsIgnoreCase(region)) {
+
+                match = false;
             }
 
-            if (!status.equals("All")&&!record.getStatus().equals(status)){
-                match=false;
+
+            // Filter by Status
+            if (status != null &&
+                    !status.equals("All") &&
+                    !record.getStatus().equalsIgnoreCase(status)) {
+
+                match = false;
             }
 
-            if (match){
+
+            if (match) {
                 filtered.add(record);
             }
         }
 
-        powerSupplyRecordsTableView.setItems(filtered);
 
+        powerSupplyRecordsTableView.setItems(filtered);
     }
+
 
     @javafx.fxml.FXML
     public void handleViewDetailsButton(ActionEvent actionEvent) {
