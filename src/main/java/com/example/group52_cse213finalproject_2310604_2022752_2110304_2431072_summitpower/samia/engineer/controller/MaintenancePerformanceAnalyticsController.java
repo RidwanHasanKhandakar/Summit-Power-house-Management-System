@@ -84,7 +84,9 @@ public class MaintenancePerformanceAnalyticsController
             }
         }
 
-        ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(new PieChart.Data("Excellent", excellent), new PieChart.Data("Good", good), new PieChart.Data("Average", average), new PieChart.Data("Poor", poor));
+        ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(new PieChart.Data(
+                "Excellent", excellent), new PieChart.Data("Good", good), new PieChart.Data("Average", average),
+                new PieChart.Data("Poor", poor));
 
         performancePieChart.setData(pieData);
     }
