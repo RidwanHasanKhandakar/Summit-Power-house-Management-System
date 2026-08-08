@@ -2,6 +2,8 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.model.BreakdownReport;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -31,6 +33,8 @@ public class BreakdownReportViewController
     @javafx.fxml.FXML
     private ComboBox <String> unitNoComboBox;
 
+    private ObservableList<BreakdownReport> allReports = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
         unitNameComboBox.getItems().addAll("Thermal Power","Hydroelectric Power","Biomass Power","Solar Power","Nuclear Power");
@@ -41,10 +45,36 @@ public class BreakdownReportViewController
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
 
+        allReports.add(new BreakdownReport("Thermal Power", "TP12", "Operational", LocalDate.of(2026, 8, 1)));
+        allReports.add(new BreakdownReport("Hydroelectric Power", "HP13", "Breakdown", LocalDate.of(2026, 8, 2)));
+        allReports.add(new BreakdownReport("Solar Power", "SP15", "Maintenance", LocalDate.of(2026, 8, 3)));
+        allReports.add(new BreakdownReport("Nuclear Power", "NP16", "Operational", LocalDate.of(2026, 8, 4)));
+        allReports.add(new BreakdownReport("Thermal Power", "TP12", "Breakdown", LocalDate.of(2026, 8, 5)));
+
+        checkMaintenanceScheduleTableView.setItems(allReports);
     }
 
     @javafx.fxml.FXML
     public void handleViewBreakDownReport(ActionEvent actionEvent) {
+        String selectedUnit = unitNameComboBox.getValue();
+        String selectedUnitNo = unitNoComboBox.getValue();
+        LocalDate selectedDate = dateDatePicker.getValue();
+
+        ObservableList<BreakdownReport> filtered = FXCollections.observableArrayList();
+
+        for (BreakdownReport r : allReports) {
+            boolean match = selectedUnit == null || r.getUnitName().equals(selectedUnit);
+
+            if (selectedUnitNo != null && !r.getUnitNo().equals(selectedUnitNo))
+                match = false;
+            if (selectedDate != null && !r.getDate().equals(selectedDate))
+                match = false;
+
+            if (match) {
+                filtered.add(r);
+            }
+        }
+        checkMaintenanceScheduleTableView.setItems(filtered);
     }
 
     @javafx.fxml.FXML

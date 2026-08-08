@@ -2,6 +2,8 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.model.MaintenanceHistory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -31,6 +33,8 @@ public class MaintenanceHistoryViewController
     @javafx.fxml.FXML
     private TableView <MaintenanceHistory> maintenanceHistoryTableView;
 
+    private ObservableList<MaintenanceHistory> allHistory = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
         unitNameComboBox.getItems().addAll("Thermal Power","Hydroelectric Power","Biomass Power","Solar Power","Nuclear Power");
@@ -40,10 +44,33 @@ public class MaintenanceHistoryViewController
         unitNoCol.setCellValueFactory(new PropertyValueFactory<>("unitNo"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        allHistory.add(new MaintenanceHistory("Thermal Power", "TP12", "Completed", LocalDate.of(2026, 8, 1)));
+        allHistory.add(new MaintenanceHistory("Hydroelectric Power", "HP13", "Scheduled", LocalDate.of(2026, 8, 2)));
+        allHistory.add(new MaintenanceHistory("Solar Power", "SP15", "In Progress", LocalDate.of(2026, 8, 3)));
+        allHistory.add(new MaintenanceHistory("Nuclear Power", "NP16", "Completed", LocalDate.of(2026, 8, 4)));
+        allHistory.add(new MaintenanceHistory("Thermal Power", "TP12", "Overdue", LocalDate.of(2026, 8, 5)));
+
+        maintenanceHistoryTableView.setItems(allHistory);
     }
 
     @javafx.fxml.FXML
     public void handleCheckMaintenanceHistory(ActionEvent actionEvent) {
+        String unit = unitNameComboBox.getValue();
+        String unitNo = unitNoComboBox.getValue();
+        LocalDate date = dateDatePicker.getValue();
+
+        ObservableList<MaintenanceHistory> filtered = FXCollections.observableArrayList();
+
+        for (MaintenanceHistory m : allHistory) {
+            boolean match = true;
+            if (unit != null && !m.getUnitName().equals(unit)) match = false;
+            if (unitNo != null && !m.getUnitNo().equals(unitNo)) match = false;
+            if (date != null && !m.getDate().equals(date)) match = false;
+            if (match) filtered.add(m);
+        }
+
+        maintenanceHistoryTableView.setItems(filtered);
     }
 
     @javafx.fxml.FXML

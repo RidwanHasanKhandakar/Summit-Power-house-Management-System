@@ -109,8 +109,7 @@ public class MaintenancePerformanceAnalyticsController
     public void filterButton(ActionEvent actionEvent) {
         String selected = statusFilterComboBox.getValue();
         if(selected == null){
-            performanceTableView.setItems(
-                    EngineeringPerformanceFileHandler.readAll());
+            performanceTableView.setItems(EngineeringPerformanceFileHandler.readAll());
             return;
         }
         ObservableList<EngineeringPerformance> filtered = FXCollections.observableArrayList();

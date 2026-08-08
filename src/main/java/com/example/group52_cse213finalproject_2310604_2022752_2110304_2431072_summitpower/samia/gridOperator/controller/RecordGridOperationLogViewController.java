@@ -206,13 +206,8 @@ public class RecordGridOperationLogViewController
         );
 
         RecordGridOperationLogFileHandler.save(log);
-
-        operationLogTableView.setItems(
-                RecordGridOperationLogFileHandler.readAll()
-        );
-
+        operationLogTableView.setItems(RecordGridOperationLogFileHandler.readAll());
         showSuccess("Operation Log saved successfully.");
-
         refreshButton(null);
     }
 }

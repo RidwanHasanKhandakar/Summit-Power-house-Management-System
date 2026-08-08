@@ -1,5 +1,5 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.controller;
-
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.GridFaultOperation;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.SamiaSceneSwitch;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.fileHandler.gridOperator.RespondToGridFaultFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.samia.gridOperator.model.RespondToGridFault;
@@ -121,6 +121,15 @@ public class RespondToGridFaultViewController
             showError("Response Action cannot exceed 300 characters.");
             return;
         }
+        GridFaultOperation operation =
+                new GridFaultOperation(
+                        faultIdTextField.getText().trim(),
+                        faultDatePicker.getValue(),
+                        gridSectionComboBox.getValue(),
+                        faultTypeComboBox.getValue()
+                );
+
+        String operationMessage = operation.executeOperation();
 
         RespondToGridFault respondToGridFault =
                 new RespondToGridFault(
@@ -133,18 +142,13 @@ public class RespondToGridFaultViewController
                 );
 
         RespondToGridFaultFileHandler.save(respondToGridFault);
-
         refreshButton(null);
-
-        showSuccess("Grid fault response saved successfully.");
+        showSuccess("Grid fault response saved successfully.\n\n" + operationMessage);
     }
 
     @javafx.fxml.FXML
     public void viewHistoryButton(ActionEvent actionEvent) throws IOException {
-        SamiaSceneSwitch.samiaSceneSwitch((Node) actionEvent.getSource(),
-                "gridOperator",
-                "respond-grid-fault-history.fxml",
-                "View Grid Fault History"
+        SamiaSceneSwitch.samiaSceneSwitch((Node) actionEvent.getSource(), "gridOperator", "respond-grid-fault-history.fxml", "View Grid Fault History"
         );
     }
 }

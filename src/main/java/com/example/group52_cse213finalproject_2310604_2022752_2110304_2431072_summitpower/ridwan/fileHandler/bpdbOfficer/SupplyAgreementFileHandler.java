@@ -15,7 +15,7 @@ public class SupplyAgreementFileHandler {
         list.add(agreement);
         try{
             ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream((FILE_PATH)));
-            oos.writeObject(list);;
+            oos.writeObject(list);
             oos.close();
         }catch (IOException e){
             e.printStackTrace();

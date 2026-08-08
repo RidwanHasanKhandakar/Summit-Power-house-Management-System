@@ -2,6 +2,7 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.bpdbOfficer.model.AdditionalPowerRequest;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.ridwan.fileHandler.bpdbOfficer.AdditionalPowerRequestFileHandler;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
@@ -84,10 +85,12 @@ public class AdditionalPowerRequestViewController
 
         AdditionalPowerRequest request = new AdditionalPowerRequest(requestIDTextField.getText(), capacity, startDate, endDate, justification,"Pending");
 
+        AdditionalPowerRequestFileHandler.save(request);
+
         showSuc("Additional Power Request Submitted Successfully!");
 
         requestCounter++;
-        requestIDTextField.setText("ASR-"+requestCounter);
+        requestIDTextField.setText("ASR- "+requestCounter);
 
         handleClearButton(null);
 
