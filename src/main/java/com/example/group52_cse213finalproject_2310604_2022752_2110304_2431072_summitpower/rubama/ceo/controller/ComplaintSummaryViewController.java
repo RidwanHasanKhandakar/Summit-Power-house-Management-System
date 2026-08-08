@@ -1,8 +1,10 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller;
+//package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.CustomerComplaint;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.fileHandler.ceo.CustomerComplaintFileHandler;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,7 +51,6 @@ public class ComplaintSummaryViewController {
     @FXML
     public void initialize() {
 
-        // Status options from the complaint records
         statusComboBox.setItems(
                 FXCollections.observableArrayList(
                         "All",
@@ -62,7 +63,6 @@ public class ComplaintSummaryViewController {
 
         statusComboBox.getSelectionModel().select("All");
 
-        // TableView column mappings
         complaintIdCol.setCellValueFactory(
                 new PropertyValueFactory<>("complaintId")
         );
@@ -79,143 +79,34 @@ public class ComplaintSummaryViewController {
                 new PropertyValueFactory<>("category")
         );
 
-        // Load all complaints initially
         loadAllComplaints();
     }
 
 
     private void loadAllComplaints() {
 
-        ObservableList<CustomerComplaint> complaints =
-                CustomerComplaintFileHandler.readAll();
-
-        complaintTableView.setItems(complaints);
-    }
-
-
-    /**
-     * Calculates the complaint summary.
-     *
-     * CRA requirements:
-     * - Total complaints for selected date
-     * - Total complaints for selected week
-     * - Pending complaints
-     */
-    @FXML
-    public void handleComplaintSummary(ActionEvent actionEvent) {
-
-        ObservableList<CustomerComplaint> complaints =
-                CustomerComplaintFileHandler.readAll();
-
-        if (complaints == null || complaints.isEmpty()) {
-
-            viewComplaintSummaryLabel.setText(
-                    "Total Complaints: 0\n" +
-                            "Today's Complaints: 0\n" +
-                            "This Week's Complaints: 0\n" +
-                            "Pending Complaints: 0"
-            );
-
-            complaintTableView.setItems(
-                    FXCollections.observableArrayList()
-            );
-
-            return;
-        }
-
-        LocalDate selectedDate = dateOfComplaintDatePicker.getValue();
-
-        // If no date is selected, use today's date.
-        if (selectedDate == null) {
-            selectedDate = LocalDate.now();
-        }
-
-        LocalDate weekStart =
-                selectedDate.with(DayOfWeek.MONDAY);
-
-        LocalDate weekEnd =
-                selectedDate.with(DayOfWeek.SUNDAY);
-
-        String selectedStatus =
-                statusComboBox.getValue();
-
-        int totalForSelectedDate = 0;
-        int totalForSelectedWeek = 0;
-        int pendingCount = 0;
-
-        ObservableList<CustomerComplaint> filteredComplaints =
-                FXCollections.observableArrayList();
-
-        for (CustomerComplaint complaint : complaints) {
-
-            if (complaint == null ||
-                    complaint.getDateOfComplaint() == null) {
-                continue;
-            }
-
-            LocalDate complaintDate =
-                    complaint.getDateOfComplaint();
-
-            String complaintStatus =
-                    complaint.getStatus();
-
-            // Pending count
-            if (complaintStatus != null &&
-                    complaintStatus.equalsIgnoreCase("Pending")) {
-
-                pendingCount++;
-            }
-
-            // Date matching
-            boolean matchesSelectedDate =
-                    complaintDate.equals(selectedDate);
-
-            boolean matchesSelectedWeek =
-                    !complaintDate.isBefore(weekStart) &&
-                            !complaintDate.isAfter(weekEnd);
-
-            // Status matching
-            boolean matchesStatus =
-                    selectedStatus == null ||
-                            selectedStatus.equals("All") ||
-                            (complaintStatus != null &&
-                                    complaintStatus.equalsIgnoreCase(selectedStatus));
-
-            /*
-             * Table displays complaints according to
-             * selected date and selected status.
-             */
-            if (matchesSelectedDate && matchesStatus) {
-                filteredComplaints.add(complaint);
-                totalForSelectedDate++;
-            }
-
-            if (matchesSelectedWeek && matchesStatus) {
-                totalForSelectedWeek++;
-            }
-        }
-
-        complaintTableView.setItems(filteredComplaints);
-
-        viewComplaintSummaryLabel.setText(
-                "Selected Date: " + selectedDate +
-                        "\nToday's Complaints: " + totalForSelectedDate +
-                        "\nThis Week's Complaints: " + totalForSelectedWeek +
-                        "\nPending Complaints: " + pendingCount
+        complaintTableView.setItems(
+                CustomerComplaintFileHandler.readAll()
         );
     }
 
 
-    /**
-     * Filters and displays complaint records.
+    /*
+     * =========================================================
+     * VIEW COMPLAINTS
+     * =========================================================
+     *
+     * This button ONLY filters the TableView.
+     *
+     * It does NOT calculate the summary.
      */
     @FXML
     public void handleViewComplaints(ActionEvent actionEvent) {
 
-        ObservableList<CustomerComplaint> complaints =
+        ObservableList<CustomerComplaint> allComplaints =
                 CustomerComplaintFileHandler.readAll();
 
-        ObservableList<CustomerComplaint> filtered =
+        ObservableList<CustomerComplaint> filteredComplaints =
                 FXCollections.observableArrayList();
 
         LocalDate selectedDate =
@@ -224,40 +115,183 @@ public class ComplaintSummaryViewController {
         String selectedStatus =
                 statusComboBox.getValue();
 
-        for (CustomerComplaint complaint : complaints) {
+
+        for (CustomerComplaint complaint : allComplaints) {
+
+            if (complaint == null) {
+                continue;
+            }
+
+            boolean dateMatches = true;
+            boolean statusMatches = true;
+
+
+            // Date filter
+            if (selectedDate != null) {
+
+                dateMatches =
+                        complaint.getDateOfComplaint() != null &&
+                                complaint.getDateOfComplaint()
+                                        .equals(selectedDate);
+            }
+
+
+            // Status filter
+            if (selectedStatus != null &&
+                    !selectedStatus.equals("All")) {
+
+                statusMatches =
+                        complaint.getStatus() != null &&
+                                complaint.getStatus()
+                                        .equalsIgnoreCase(selectedStatus);
+            }
+
+
+            if (dateMatches && statusMatches) {
+
+                filteredComplaints.add(complaint);
+            }
+        }
+
+
+        complaintTableView.setItems(filteredComplaints);
+
+
+        if (filteredComplaints.isEmpty()) {
+
+            showAlert(
+                    Alert.AlertType.INFORMATION,
+                    "View Complaints",
+                    "No complaints found for the selected criteria."
+            );
+        }
+    }
+
+
+    /*
+     * =========================================================
+     * COMPLAINT SUMMARY
+     * =========================================================
+     *
+     * This button ONLY calculates the summary.
+     *
+     * It does NOT change the TableView.
+     */
+    @FXML
+    public void handleComplaintSummary(ActionEvent actionEvent) {
+
+        ObservableList<CustomerComplaint> allComplaints =
+                CustomerComplaintFileHandler.readAll();
+
+        LocalDate selectedDate =
+                dateOfComplaintDatePicker.getValue();
+
+        /*
+         * If the CEO does not select a date,
+         * today's date is used.
+         */
+        if (selectedDate == null) {
+            selectedDate = LocalDate.now();
+        }
+
+
+        /*
+         * Determine the week containing the selected date.
+         *
+         * Monday = first day
+         * Sunday = last day
+         */
+        LocalDate weekStart =
+                selectedDate.with(DayOfWeek.MONDAY);
+
+        LocalDate weekEnd =
+                selectedDate.with(DayOfWeek.SUNDAY);
+
+
+        String selectedStatus =
+                statusComboBox.getValue();
+
+
+        int selectedDateCount = 0;
+        int selectedWeekCount = 0;
+        int pendingCount = 0;
+
+
+        for (CustomerComplaint complaint : allComplaints) {
 
             if (complaint == null ||
                     complaint.getDateOfComplaint() == null) {
                 continue;
             }
 
-            boolean dateMatches =
-                    selectedDate == null ||
-                            complaint.getDateOfComplaint()
-                                    .equals(selectedDate);
 
+            LocalDate complaintDate =
+                    complaint.getDateOfComplaint();
+
+            String complaintStatus =
+                    complaint.getStatus();
+
+
+            /*
+             * Count pending complaints.
+             *
+             * Pending count is based on all complaints,
+             * regardless of the selected date/status filter.
+             */
+            if (complaintStatus != null &&
+                    complaintStatus.equalsIgnoreCase("Pending")) {
+
+                pendingCount++;
+            }
+
+
+            /*
+             * Status condition for the date/week statistics.
+             */
             boolean statusMatches =
                     selectedStatus == null ||
                             selectedStatus.equals("All") ||
-                            (complaint.getStatus() != null &&
-                                    complaint.getStatus()
-                                            .equalsIgnoreCase(selectedStatus));
+                            (complaintStatus != null &&
+                                    complaintStatus.equalsIgnoreCase(selectedStatus));
 
-            if (dateMatches && statusMatches) {
-                filtered.add(complaint);
+
+            if (!statusMatches) {
+                continue;
+            }
+
+
+            /*
+             * Selected date count
+             */
+            if (complaintDate.equals(selectedDate)) {
+
+                selectedDateCount++;
+            }
+
+
+            /*
+             * Selected week count
+             */
+            boolean belongsToSelectedWeek =
+                    !complaintDate.isBefore(weekStart) &&
+                            !complaintDate.isAfter(weekEnd);
+
+            if (belongsToSelectedWeek) {
+
+                selectedWeekCount++;
             }
         }
 
-        complaintTableView.setItems(filtered);
 
-        if (filtered.isEmpty()) {
-
-            showAlert(
-                    Alert.AlertType.INFORMATION,
-                    "Complaint Summary",
-                    "No complaints found for the selected criteria."
-            );
-        }
+        viewComplaintSummaryLabel.setText(
+                "Summary for: " + selectedDate +
+                        "\nComplaints on Selected Date: "
+                        + selectedDateCount +
+                        "\nComplaints This Week: "
+                        + selectedWeekCount +
+                        "\nPending Complaints: "
+                        + pendingCount
+        );
     }
 
 
@@ -279,10 +313,13 @@ public class ComplaintSummaryViewController {
             String title,
             String message) {
 
-        Alert alert = new Alert(alertType);
+        Alert alert =
+                new Alert(alertType);
+
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
+
         alert.showAndWait();
     }
 }
