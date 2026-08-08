@@ -16,13 +16,19 @@
          <font>
             <Font name="System Bold" size="15.0" />
          </font></Button>
-      <Button layoutX="467.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleSetOrChangeTariffRates" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text=" Set or change tariff rates" />
+      <Button layoutX="467.0" layoutY="325.0" mnemonicParsing="false" onAction="#handleSetOrChangeTariffRates" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text=" Set or change tariff rates">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="467.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleViewPlantPerformanceSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View plant performance summary">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="467.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleApproveFuelPurchaseRequest" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Approve fuel purchase request" />
+      <Button layoutX="467.0" layoutY="394.0" mnemonicParsing="false" onAction="#handleApproveFuelPurchaseRequest" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Approve fuel purchase request">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
       <Button layoutX="467.0" layoutY="454.0" mnemonicParsing="false" onAction="#handleAddOrRemoveAnEmployee" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="Add or remove an employee" />
       <Button layoutX="467.0" layoutY="519.0" mnemonicParsing="false" onAction="#handleViewTotalRegisteredCustomers" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View total registered customers" />
       <Button layoutX="467.0" layoutY="578.0" mnemonicParsing="false" onAction="#handleViewCustomerComplaintSummary" prefHeight="31.0" prefWidth="277.0" style="-fx-background-color: #49b0ff;" text="View customer complaint summary" />
