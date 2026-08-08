@@ -91,7 +91,19 @@ public class TaxAuditViewController
 
     }
 
+    private void showSelectedRecord(TaxAudit record){
 
+        recordIDLabel.setText(String.valueOf(record.getRecordId()));
+        recordTypeLabel.setText(safeText((record.getRecordType()));
+        titleLabel.setText(safeText(record.getTitle()));
+        createdDateLabel.setText(record.getCreatedDate()==null?"":record.getCreatedDate().toString());
+        statusLabel.setText(safeText(record.getStatus()));
+
+    }
+
+    private String safeText(String text){
+        return text == null ? "":text;
+    }
 
     @javafx.fxml.FXML
     public void handleClearButton(ActionEvent actionEvent) {
@@ -107,7 +119,9 @@ public class TaxAuditViewController
         createdDateLabel.setText(" ");
         statusLabel.setText(" ");
 
-        taxAndAuditTableView.getSelectionModel().clearSelection();
+       taxAndAuditTableView.getSelectionModel().clearSelection();
+
+
 
     }
 
