@@ -123,7 +123,8 @@ public class InvoicesViewController
 
     public void loadTable(){
 
-        invoicesTableView.setItems(InvoicesFileHandler.readAll());
+        ObservableList<Invoice> invoices = FXCollections.observableArrayList(InvoicesFileHandler.readAll());
+        invoicesTableView.setItems(invoices);
 
     }
 
