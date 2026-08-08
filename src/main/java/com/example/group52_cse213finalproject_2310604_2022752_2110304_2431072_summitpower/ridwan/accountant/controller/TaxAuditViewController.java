@@ -72,7 +72,16 @@ public class TaxAuditViewController
         dateCol.setCellValueFactory(new PropertyValueFactory<>("createdDate"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        loadAllData();
+
+    }
+
+    private void loadAllData(){
+
+        ObservableList<TaxAudit> list = TaxAuditFileHandler.readAll();
+
+        taxAndAuditTableView.setItems(list);
 
     }
 
