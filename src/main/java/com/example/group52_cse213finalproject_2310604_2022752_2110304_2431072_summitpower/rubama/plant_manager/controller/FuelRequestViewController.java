@@ -3,6 +3,8 @@ package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_s
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.model.BreakdownReport;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.plant_manager.model.FuelRequest;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
@@ -32,6 +34,8 @@ public class FuelRequestViewController
     @javafx.fxml.FXML
     private TableColumn <FuelRequest,String> fuelTypeCol;
 
+    private ObservableList<FuelRequest> allRequests = FXCollections.observableArrayList();
+
     @javafx.fxml.FXML
     public void initialize() {
         unitNameComboBox.getItems().addAll("Thermal Power","Hydroelectric Power","Biomass Power","Solar Power","Nuclear Power");
@@ -41,10 +45,32 @@ public class FuelRequestViewController
         fuelTypeCol.setCellValueFactory(new PropertyValueFactory<>("fuelType"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
+
+        allRequests.add(new FuelRequest("Thermal Power", "Coal", "Pending", LocalDate.of(2026, 8, 1)));
+        allRequests.add(new FuelRequest("Nuclear Power", "Nuclear Fuel", "Approved", LocalDate.of(2026, 8, 2)));
+
+        checkFuelLevelsTableView.setItems(allRequests);
     }
 
     @javafx.fxml.FXML
     public void handleRequestFuel(ActionEvent actionEvent) {
+        String unit = unitNameComboBox.getValue();
+        String fuel = fuelTypeComboBox.getValue();
+        LocalDate date = dateDatePicker.getValue();
+
+        if (unit == null || fuel == null || date == null) {
+            System.out.println("Please fill all fields.");
+            return;
+        }
+
+        FuelRequest newRequest = new FuelRequest(unit, fuel, "Pending", date);
+        allRequests.add(newRequest);
+
+        checkFuelLevelsTableView.setItems(allRequests);
+
+        unitNameComboBox.getSelectionModel().clearSelection();
+        fuelTypeComboBox.getSelectionModel().clearSelection();
+        dateDatePicker.setValue(null);
     }
 
     @javafx.fxml.FXML
