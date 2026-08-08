@@ -7,37 +7,137 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="822.0" prefWidth="1204.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.FuelPurchaseApprovalController">
+<AnchorPane
+        prefHeight="822.0"
+        prefWidth="1204.0"
+        style="-fx-background-color: #193154;"
+        xmlns="http://javafx.com/javafx/8.0.171"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.FuelPurchaseApprovalController">
+
    <children>
-      <Label alignment="CENTER" layoutY="822.0" prefHeight="31.0" prefWidth="1253.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
-      <Label layoutX="493.0" layoutY="69.0" prefHeight="64.0" prefWidth="247.0" text="Fuel Purchase" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+
+      <Label
+              alignment="CENTER"
+              layoutY="822.0"
+              prefHeight="31.0"
+              prefWidth="1253.0"
+              style="-fx-background-color: #49b0ff;"
+              text="© Mission 9232 LTD." />
+
+      <Label
+              layoutX="493.0"
+              layoutY="69.0"
+              prefHeight="64.0"
+              prefWidth="247.0"
+              text="Fuel Purchase"
+              textFill="#f5f2f2"
+              textOverrun="WORD_ELLIPSIS"
+              underline="true">
+
          <font>
-            <Font name="Times New Roman" size="43.0" />
+            <Font
+                    name="Times New Roman"
+                    size="43.0" />
          </font>
+
       </Label>
-      <Button layoutX="371.0" layoutY="180.0" mnemonicParsing="false" onAction="#handlePendingFuelRequests" prefHeight="40.0" prefWidth="469.0" style="-fx-background-color: #49b0ff;" text="Pending Fuel Requests">
+
+      <Button
+              layoutX="371.0"
+              layoutY="180.0"
+              mnemonicParsing="false"
+              onAction="#handlePendingFuelRequests"
+              prefHeight="40.0"
+              prefWidth="469.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Pending Fuel Requests">
+
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font
+                    name="System Bold"
+                    size="15.0" />
          </font>
+
       </Button>
-      <TableView fx:id="fuelRequestsTableView" layoutX="363.0" layoutY="284.0" prefHeight="285.0" prefWidth="469.0">
-        <columns>
-          <TableColumn fx:id="requestsCol" prefWidth="237.0" text="Requests" />
-          <TableColumn fx:id="approvalStatusCol" prefWidth="231.0" text="Approval Status" />
-        </columns>
+
+      <TableView
+              fx:id="fuelRequestsTableView"
+              layoutX="363.0"
+              layoutY="284.0"
+              prefHeight="285.0"
+              prefWidth="469.0">
+
+         <columns>
+
+            <TableColumn
+                    fx:id="requestsCol"
+                    prefWidth="237.0"
+                    text="Requests" />
+
+            <TableColumn
+                    fx:id="approvalStatusCol"
+                    prefWidth="231.0"
+                    text="Approval Status" />
+
+         </columns>
+
       </TableView>
-      <Button layoutX="934.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApproveNot" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve Not">
+
+      <Button
+              layoutX="163.0"
+              layoutY="631.0"
+              mnemonicParsing="false"
+              onAction="#handleApprove"
+              prefHeight="53.0"
+              prefWidth="153.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Approve">
+
          <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button layoutX="163.0" layoutY="631.0" mnemonicParsing="false" onAction="#handleApprove" prefHeight="53.0" prefWidth="153.0" style="-fx-background-color: #49b0ff;" text="Approve">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Button>
-      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
-         <font>
-            <Font name="System Bold" size="15.0" />
+            <Font
+                    name="System Bold"
+                    size="15.0" />
          </font>
+
       </Button>
+
+      <Button
+              layoutX="934.0"
+              layoutY="631.0"
+              mnemonicParsing="false"
+              onAction="#handleApproveNot"
+              prefHeight="53.0"
+              prefWidth="153.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Approve Not">
+
+         <font>
+            <Font
+                    name="System Bold"
+                    size="15.0" />
+         </font>
+
+      </Button>
+
+      <Button
+              layoutX="1028.0"
+              layoutY="45.0"
+              mnemonicParsing="false"
+              onAction="#handleReturn"
+              prefHeight="49.0"
+              prefWidth="176.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Return">
+
+         <font>
+            <Font
+                    name="System Bold"
+                    size="15.0" />
+         </font>
+
+      </Button>
+
    </children>
+
 </AnchorPane>
