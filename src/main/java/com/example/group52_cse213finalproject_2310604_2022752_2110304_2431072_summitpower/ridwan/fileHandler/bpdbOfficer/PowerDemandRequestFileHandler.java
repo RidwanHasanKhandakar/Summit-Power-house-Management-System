@@ -32,7 +32,7 @@ public class PowerDemandRequestFileHandler {
     public static String generateNextRequestId(){
         ArrayList<PowerDemandRequest> requests = readAll();
         if (requests.isEmpty()){
-            return "REQ- 1001";
+            return "REQ-1001";
         }
         int maxId = 1000;
         for (PowerDemandRequest request : requests){
