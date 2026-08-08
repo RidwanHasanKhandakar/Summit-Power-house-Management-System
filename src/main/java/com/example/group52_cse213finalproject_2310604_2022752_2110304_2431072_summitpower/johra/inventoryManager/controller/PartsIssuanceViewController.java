@@ -1,11 +1,15 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller;
 
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.PrimarySceneSwitcher;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.OfferTenderFileHandler;
+import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.fileHandler.inventoryManager.PartsIssuanceFileHandler;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.model.PartsIssuance;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.time.LocalDate;
 
 public class PartsIssuanceViewController
 {
@@ -39,25 +43,69 @@ public class PartsIssuanceViewController
                 "104"
         );
 
+        requesterEmployeeIdCol.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
         equipmentIdCol.setCellValueFactory(new PropertyValueFactory<>("equipmentId"));
         quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        requesterEmployeeIdCol.setCellValueFactory(new PropertyValueFactory<>("requesterEmployeeId"));
         issueDateCol.setCellValueFactory(new PropertyValueFactory<>("issueDate"));
 
     }
 
     @javafx.fxml.FXML
     public void homeButtonOnAction(ActionEvent  actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboardView.fxml", "Inventory Manager Dashboard");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "johra", "inventoryManager", "dashboard-view.fxml", "Inventory Manager Dashboard");
     }
 
     @javafx.fxml.FXML
     public void savePartsIssuanceButtonOnAction(ActionEvent actionEvent) {
+
+        if(equipmentIdComboBox.getValue().isEmpty()){
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(requesterEmployeeIdTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(quantityTextField.getText().isEmpty()){
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(issueDateDatePicker.getValue() == null ){
+            showError("Field cannot be empty");
+            return;
+        }
+
+        if(issueDateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Issue date cannot be in future !");
+            return;
+        }
+
+        PartsIssuance partsIssuance = new PartsIssuance(requesterEmployeeIdTextField.getText(), quantityTextField.getText(), equipmentIdComboBox.getValue(), issueDateDatePicker.getValue());
+
+        PartsIssuanceFileHandler.save(partsIssuance);
+
+        showInformation("PartsIssuance created successfully !");
+
     }
 
     @javafx.fxml.FXML
     public void loadTableView(ActionEvent actionEvent) {
+
+        showTableView.setItems(PartsIssuanceFileHandler.readAll());
+
     }
+
+    public void showInformation(String text){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information");
+        alert.setHeaderText("Success");
+        alert.setContentText(text);
+        alert.showAndWait();
+    }
+
 
     public void showError(String text){
         Alert alert = new Alert(Alert.AlertType.ERROR);

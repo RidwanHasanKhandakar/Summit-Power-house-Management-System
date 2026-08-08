@@ -78,8 +78,8 @@
       <TextField fx:id="runningStatusTextField" layoutX="223.0" layoutY="253.0" prefHeight="26.0" prefWidth="138.0" />
       <TextField fx:id="runningHoursTextField" layoutX="223.0" layoutY="420.0" prefHeight="26.0" prefWidth="138.0" />
       <DatePicker fx:id="maintenanceDateDatePicker" layoutX="224.0" layoutY="475.0" prefHeight="26.0" prefWidth="137.0" />
-      <Button layoutX="647.0" layoutY="531.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
-      <Button layoutX="440.0" layoutY="531.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #49b0ff;" text="Back" />
+      <Button layoutX="529.0" layoutY="533.0" mnemonicParsing="false" onAction="#refreshButton" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <Button layoutX="654.0" layoutY="533.0" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #49b0ff;" text="Back" />
       <AnchorPane layoutY="595.0" prefHeight="18.0" prefWidth="786.0" style="-fx-background-color: #49b0ff;">
          <opaqueInsets>
             <Insets />
@@ -88,5 +88,6 @@
             <Text fill="WHITE" layoutX="345.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mission 9232 LTD." />
          </children>
       </AnchorPane>
+      <Button layoutX="421.0" layoutY="533.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #49b0ff;" text="Save" />
    </children>
 </AnchorPane>

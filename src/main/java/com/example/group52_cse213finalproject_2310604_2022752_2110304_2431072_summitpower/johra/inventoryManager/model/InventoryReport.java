@@ -5,15 +5,15 @@ import java.time.LocalDate;
 
 public class InventoryReport implements Serializable {
     private LocalDate reportDate;
-    private String equipmentOrFuelCategory, reportType, reportId;
-    private Boolean stockAvailable, stoxkNotAvailable;
+    private String category, reportType, reportId, item, quantity;
 
-    public InventoryReport(LocalDate reportDate, String equipmentOrFuelCategory, String reportType, Boolean stockAvailable, Boolean stoxkNotAvailable) {
+    public InventoryReport(LocalDate reportDate, String category, String reportType, String reportId, String item, String quantity) {
         this.reportDate = reportDate;
-        this.equipmentOrFuelCategory = equipmentOrFuelCategory;
+        this.category = category;
         this.reportType = reportType;
-        this.stockAvailable = stockAvailable;
-        this.stoxkNotAvailable = stoxkNotAvailable;
+        this.reportId = reportId;
+        this.item = item;
+        this.quantity = quantity;
     }
 
     public LocalDate getReportDate() {
@@ -24,12 +24,12 @@ public class InventoryReport implements Serializable {
         this.reportDate = reportDate;
     }
 
-    public String getEquipmentOrFuelCategory() {
-        return equipmentOrFuelCategory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setEquipmentOrFuelCategory(String equipmentOrFuelCategory) {
-        this.equipmentOrFuelCategory = equipmentOrFuelCategory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getReportType() {
@@ -40,30 +40,39 @@ public class InventoryReport implements Serializable {
         this.reportType = reportType;
     }
 
-    public Boolean getStockAvailable() {
-        return stockAvailable;
+    public String getReportId() {
+        return reportId;
     }
 
-    public void setStockAvailable(Boolean stockAvailable) {
-        this.stockAvailable = stockAvailable;
+    public void setReportId(String reportId) {
+        this.reportId = reportId;
     }
 
-    public Boolean getStoxkNotAvailable() {
-        return stoxkNotAvailable;
+    public String getItem() {
+        return item;
     }
 
-    public void setStoxkNotAvailable(Boolean stoxkNotAvailable) {
-        this.stoxkNotAvailable = stoxkNotAvailable;
+    public void setItem(String item) {
+        this.item = item;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
     }
 
     @Override
     public String toString() {
         return "InventoryReport{" +
                 "reportDate=" + reportDate +
-                ", equipmentOrFuelCategory='" + equipmentOrFuelCategory + '\'' +
+                ", category='" + category + '\'' +
                 ", reportType='" + reportType + '\'' +
-                ", stockAvailable=" + stockAvailable +
-                ", stoxkNotAvailable=" + stoxkNotAvailable +
+                ", reportId='" + reportId + '\'' +
+                ", item='" + item + '\'' +
+                ", quantity='" + quantity + '\'' +
                 '}';
     }
 }

@@ -133,8 +133,8 @@ public class ReportEquipmentFaultsViewController
             return;
         }
 
-        if(reportDatePicker.getValue().isBefore(LocalDate.now())){
-            showError("Report Date cannot be in the past.");
+        if(reportDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Report Date cannot be in the future.");
             return;
         }
 

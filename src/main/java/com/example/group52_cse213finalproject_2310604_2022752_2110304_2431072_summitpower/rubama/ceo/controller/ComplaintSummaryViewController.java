@@ -37,7 +37,8 @@ public class ComplaintSummaryViewController
     public void initialize() {
 
         statusComboBox.getItems().addAll("Pending", "In Progress", "Resolved","Closed");
-        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+
+        complaintIdCol.setCellValueFactory(new PropertyValueFactory<>("complaintId"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
         categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
         dateOfComplaintCol.setCellValueFactory(new PropertyValueFactory<>("dateOfComplaint"));
