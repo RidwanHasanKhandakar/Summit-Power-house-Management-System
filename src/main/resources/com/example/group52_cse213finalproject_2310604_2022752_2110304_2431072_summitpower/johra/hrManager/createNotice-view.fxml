@@ -55,5 +55,6 @@
          </font>
       </Label>
       <DatePicker fx:id="expiryDateDatePicker" layoutX="442.0" layoutY="231.0" prefHeight="26.0" prefWidth="140.0" />
+      <Button layoutX="260.0" layoutY="326.0" mnemonicParsing="false" onAction="#loadNoticeButtonOnAction" style="-fx-background-color: #49b0ff;" text="View Notice" />
    </children>
 </AnchorPane>

@@ -83,8 +83,6 @@ public class ViewEmployeeDetailsViewController
             }
         }
 
-        //showEmployeeTableView.setItems(FXCollections.observableList(AddEmployeeViewController.employeeList));
-
     }
 
     @javafx.fxml.FXML

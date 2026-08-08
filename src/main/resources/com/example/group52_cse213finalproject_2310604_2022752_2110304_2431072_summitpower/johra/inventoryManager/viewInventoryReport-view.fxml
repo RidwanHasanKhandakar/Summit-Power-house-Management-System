@@ -19,14 +19,16 @@
       <Button layoutX="574.0" layoutY="403.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Home" />
       <TableView fx:id="showTableView" layoutX="11.0" layoutY="144.0" prefHeight="200.0" prefWidth="622.0">
         <columns>
-          <TableColumn fx:id="reportTypeCol" prefWidth="152.79999387264252" text="Report Type" />
-          <TableColumn fx:id="fuelOrEquipmentCategoryCol" minWidth="3.99993896484375" prefWidth="166.4000244140625" text="Fuel/Equipment Category" />
-            <TableColumn fx:id="reportDateCol" minWidth="0.0" prefWidth="138.4000244140625" text="Date" />
-            <TableColumn fx:id="stockStatusCol" minWidth="0.0" prefWidth="186.39999389648438" text="Stock Status" />
+          <TableColumn fx:id="reportIdCol" prefWidth="78.39996147155762" text="Report ID" />
+          <TableColumn fx:id="reportTypeCol" minWidth="3.99993896484375" prefWidth="96.00006866455078" text="Report Type" />
+            <TableColumn fx:id="itemCol" minWidth="0.0" prefWidth="75.99993896484375" text="Item" />
+            <TableColumn fx:id="categoryCol" minWidth="0.0" prefWidth="112.79986572265625" text="Category" />
+            <TableColumn fx:id="quantityCol" minWidth="0.0" prefWidth="112.79986572265625" text="Quantity" />
+            <TableColumn fx:id="dateDatePicker" minWidth="0.0" prefWidth="143.99996948242188" text="Date" />
         </columns>
       </TableView>
       <Button layoutX="361.0" layoutY="81.0" mnemonicParsing="false" onAction="#loadTableViewButtonOnAction" prefHeight="26.0" prefWidth="53.0" style="-fx-background-color: #49b0ff;" text="Load" />
-      <Label layoutX="78.0" layoutY="86.0" text="Report Type:" textFill="WHITE">
+      <Label layoutX="78.0" layoutY="86.0" text="ReportType:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

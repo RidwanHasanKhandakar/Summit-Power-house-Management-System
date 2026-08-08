@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -46,8 +45,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <CheckBox fx:id="trainingStatusDoneCheckBox" layoutX="119.0" layoutY="210.0" mnemonicParsing="false" text="Training Done" textFill="WHITE" />
-      <CheckBox fx:id="trainingStatusNotDoneCheckBox" layoutX="323.0" layoutY="210.0" mnemonicParsing="false" text="Training Not Done" textFill="WHITE" />
       <Label alignment="CENTER" layoutX="-1.0" layoutY="524.0" prefHeight="18.0" prefWidth="712.0" style="-fx-background-color: #49b0ff;" text="Mission 9232 LTD." />
       <Button layoutX="649.0" layoutY="487.0" mnemonicParsing="false" onAction="#homeButtonOnAction" style="-fx-background-color: #49b0ff;" text="Home" />
       <Button layoutX="551.0" layoutY="206.0" mnemonicParsing="false" onAction="#saveTrainingButtonOnAction" style="-fx-background-color: #49b0ff;" text="Save" />
@@ -61,5 +58,6 @@
         </columns>
       </TableView>
       <Button layoutX="17.0" layoutY="487.0" mnemonicParsing="false" onAction="#refreshButtonOnAction" style="-fx-background-color: #49b0ff;" text="Refresh" />
+      <ComboBox fx:id="trainingStatusCombBox" layoutX="119.0" layoutY="205.0" prefHeight="26.0" prefWidth="208.0" />
    </children>
 </AnchorPane>

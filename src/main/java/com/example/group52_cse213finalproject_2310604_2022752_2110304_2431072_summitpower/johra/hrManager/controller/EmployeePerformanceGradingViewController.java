@@ -132,10 +132,10 @@ public class EmployeePerformanceGradingViewController
             return;
         }
 
-        int attendance = Integer.parseInt(attendanceScoreComboBox.getValue());
-        int teamwork = Integer.parseInt(teamworkScoreComboBox.getValue());
-        int efficiency = Integer.parseInt(efficiencyScoreComboBox.getValue());
-        int finalRating = (attendance + teamwork + efficiency) / 3;
+        double attendance = Integer.parseInt(attendanceScoreComboBox.getValue());
+        double teamwork = Integer.parseInt(teamworkScoreComboBox.getValue());
+        double efficiency = Integer.parseInt(efficiencyScoreComboBox.getValue());
+        double finalRating = (attendance + teamwork + efficiency) / 3;
 
         finalRatingLabel.setText(String.valueOf(finalRating));
 

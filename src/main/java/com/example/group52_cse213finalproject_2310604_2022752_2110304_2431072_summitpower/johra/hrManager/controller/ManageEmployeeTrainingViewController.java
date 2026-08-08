@@ -7,33 +7,32 @@ import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_su
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ManageEmployeeTrainingViewController
 {
     @javafx.fxml.FXML
-    private CheckBox trainingStatusDoneCheckBox;
+    private TableColumn<EmployeeTraining, String> employeeNameCol;
     @javafx.fxml.FXML
-    private TableColumn<Employee, String> employeeNameCol;
-    @javafx.fxml.FXML
-    private TableColumn<Employee, Boolean> trainingStatusCol;
+    private TableColumn<EmployeeTraining, Boolean> trainingStatusCol;
     @javafx.fxml.FXML
     private ComboBox<String> trainerNameComboBox;
     @javafx.fxml.FXML
-    private CheckBox trainingStatusNotDoneCheckBox;
-    @javafx.fxml.FXML
     private ComboBox<String> trainingIdComboBox;
     @javafx.fxml.FXML
-    private TableView<Employee> showTrainingProgramTableView;
+    private TableView<EmployeeTraining> showTrainingProgramTableView;
     @javafx.fxml.FXML
-    private TableColumn<Employee, String> employeeIdCol;
+    private TableColumn<EmployeeTraining, String> employeeIdCol;
     @javafx.fxml.FXML
-    private TableColumn<Employee, String> trainingNameCom;
+    private TableColumn<EmployeeTraining, String> trainingNameCom;
     @javafx.fxml.FXML
-    private TableColumn<Employee, String> trainerIdCol;
+    private TableColumn<EmployeeTraining, String> trainerIdCol;
     @javafx.fxml.FXML
     private TextField employeeIdTextField;
     @javafx.fxml.FXML
     private TextField employeeNameTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> trainingStatusCombBox;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -51,6 +50,17 @@ public class ManageEmployeeTrainingViewController
                 "113",
                 "114"
         );
+
+        trainingStatusCombBox.getItems().addAll(
+                "Done",
+                "Not Done"
+        );
+
+        employeeIdCol.setCellValueFactory(new PropertyValueFactory<>("employeeId"));
+        employeeNameCol.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
+        trainerIdCol.setCellValueFactory(new PropertyValueFactory<>("trainingId"));
+        trainingNameCom.setCellValueFactory(new PropertyValueFactory<>("trainerName"));
+        trainingStatusCol.setCellValueFactory(new PropertyValueFactory<>("trainingStatus"));
 
     }
 
@@ -78,22 +88,24 @@ public class ManageEmployeeTrainingViewController
             showError("Field cannot be empty");
         }
 
-        if(trainingStatusDoneCheckBox.isSelected() == trainingStatusNotDoneCheckBox.isSelected()){
-            showError("Select either done or not done for status");
+        if(trainingStatusCombBox.getValue() == null){
+            showError("Field cannot be empty");
             return;
         }
 
-        EmployeeTraining employeeTraining = new EmployeeTraining(employeeIdTextField.getText(), employeeNameTextField.getText(), trainingIdComboBox.getValue(), trainerNameComboBox.getValue(), trainingStatusDoneCheckBox.isSelected(), trainingStatusNotDoneCheckBox.isSelected());
-
+        EmployeeTraining employeeTraining = new EmployeeTraining(employeeIdTextField.getText(), employeeNameTextField.getText(), trainingIdComboBox.getValue(), trainerNameComboBox.getValue(), trainingStatusCombBox.getValue());
         EmployeeTrainingFileHandler.save(employeeTraining);
 
         showInformation("Training information recorded successfully !");
+
+        showTrainingProgramTableView.setItems(EmployeeTrainingFileHandler.readAll());
+
     }
 
     public void showError(String text){
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
-        alert.setHeaderText("null");
+        alert.setHeaderText(null);
         alert.setContentText(text);
         alert.showAndWait();
     }
@@ -113,8 +125,9 @@ public class ManageEmployeeTrainingViewController
         employeeNameTextField.clear();
         trainingIdComboBox.setValue(null);
         trainerNameComboBox.setValue(null);
-        trainingStatusNotDoneCheckBox.setSelected(false);
-        trainingStatusDoneCheckBox.setSelected(false);
+        trainingStatusCombBox.setValue(null);
+        showTrainingProgramTableView.getSelectionModel().clearSelection();
 
     }
+
 }

@@ -4,16 +4,14 @@ import java.io.Serializable;
 
 public class EmployeeTraining implements Serializable {
 
-    private String employeeId, employeeName, trainingId, trainerName;
-    private Boolean trainingStatusDone, trainingStatusNotDone;
+    private String employeeId, employeeName, trainingId, trainerName, trainingStatus;
 
-    public EmployeeTraining(String employeeId, String employeeName, String trainingId, String trainerName, Boolean trainingStatusDone, Boolean trainingStatusNotDone) {
+    public EmployeeTraining(String employeeId, String employeeName, String trainingId, String trainerName, String trainingStatus) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.trainingId = trainingId;
         this.trainerName = trainerName;
-        this.trainingStatusDone = trainingStatusDone;
-        this.trainingStatusNotDone = trainingStatusNotDone;
+        this.trainingStatus = trainingStatus;
     }
 
     public String getEmployeeId() {
@@ -48,20 +46,12 @@ public class EmployeeTraining implements Serializable {
         this.trainerName = trainerName;
     }
 
-    public Boolean getTrainingStatusDone() {
-        return trainingStatusDone;
+    public String getTrainingStatus() {
+        return trainingStatus;
     }
 
-    public void setTrainingStatusDone(Boolean trainingStatusDone) {
-        this.trainingStatusDone = trainingStatusDone;
-    }
-
-    public Boolean getTrainingStatusNotDone() {
-        return trainingStatusNotDone;
-    }
-
-    public void setTrainingStatusNotDone(Boolean trainingStatusNotDone) {
-        this.trainingStatusNotDone = trainingStatusNotDone;
+    public void setTrainingStatus(String trainingStatus) {
+        this.trainingStatus = trainingStatus;
     }
 
     @Override
@@ -71,8 +61,7 @@ public class EmployeeTraining implements Serializable {
                 ", employeeName='" + employeeName + '\'' +
                 ", trainingId='" + trainingId + '\'' +
                 ", trainerName='" + trainerName + '\'' +
-                ", trainingStatusDone=" + trainingStatusDone +
-                ", trainingStatusNotDone=" + trainingStatusNotDone +
+                ", trainingStatus='" + trainingStatus + '\'' +
                 '}';
     }
 }
