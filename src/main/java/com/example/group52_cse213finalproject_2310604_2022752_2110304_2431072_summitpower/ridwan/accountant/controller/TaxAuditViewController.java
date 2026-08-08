@@ -121,8 +121,6 @@ public class TaxAuditViewController
 
        taxAndAuditTableView.getSelectionModel().clearSelection();
 
-
-
     }
 
     @javafx.fxml.FXML
@@ -135,6 +133,10 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     public void handleLoadRecordsButton(ActionEvent actionEvent) {
 
+//        String selectedType = recordTypeComboBox.getValue();
+//        String selectedYear = yearComboBox.getValue();
+        String searchText = searchTextField.getText().trim();
+
         if (recordTypeComboBox.getValue()==null){
             showErr("Please select a record type.");
             return;
@@ -146,15 +148,30 @@ public class TaxAuditViewController
 
         ObservableList<TaxAudit> filteredList = FXCollections.observableArrayList();
 
-        for (TaxAudit rec : TaxAuditFileHandler.readAll()){
+        ObservableList<TaxAudit> allrecords = TaxAuditFileHandler.readAll();
+
+        for (TaxAudit rec : allrecords){
             boolean matchedType = recordTypeComboBox.getValue().equals("All") || rec.getRecordType().equals(recordTypeComboBox.getValue());
             boolean yearMatched = yearComboBox.getValue().equals("All") || rec.getYear().equals(yearComboBox.getValue());
-            boolean searchMatched = searchTextField.getText().isEmpty() || rec.getTitle().toLowerCase().contains(searchTextField.getText().trim().toLowerCase());
+            //boolean searchMatched = searchTextField.getText().isEmpty() || rec.getTitle().toLowerCase().contains(searchTextField.getText().trim().toLowerCase());
+
+            boolean searchMatched = true;
+
+            if (!searchText.isEmpty()){
+                boolean idMatched = String.valueOf(rec.getRecordId()).contains(searchText);
+                boolean titleMatched = rec.getTitle()!=null&&rec.getTitle().toLowerCase().contains(searchText.toLowerCase());
+                searchMatched=idMatched||titleMatched;
+            }
+
 
             if (matchedType&&yearMatched&&searchMatched){
                 filteredList.add(rec);
             }
         }
+
+        taxAndAuditTableView.setItems(filteredList);
+
+        showInfo(filteredList.size()+"records (s) found.");
 
         taxAndAuditTableView.setItems(filteredList);
         showInfo(filteredList.size()+" record(s) found.");
@@ -164,7 +181,8 @@ public class TaxAuditViewController
     @javafx.fxml.FXML
     public void handleRefreshButton(ActionEvent actionEvent) {
 
-        taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+        //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
+
         showInfo("Table refreshed.");
 
     }
