@@ -182,31 +182,26 @@ public class TaxAuditViewController
     public void handleRefreshButton(ActionEvent actionEvent) {
 
         //taxAndAuditTableView.setItems(TaxAuditFileHandler.readAll());
-
-        showInfo("Table refreshed.");
+        loadAllData();
+        showInfo("Tax & Audit records refreshed.");
 
     }
 
     @javafx.fxml.FXML
     public void handleViewDetailsButton(ActionEvent actionEvent) {
 
-        TaxAudit selected = taxAndAuditTableView.getSelectionModel().getSelectedItem();
-
-        if (selected==null){
-            showErr("Please select a record.");
-            return;
-        }
-
-        recordIDLabel.setText(String.valueOf(selected.getRecordId()));
-        recordTypeLabel.setText(selected.getRecordType());
-        titleLabel.setText(selected.getTitle());
-        createdDateLabel.setText(String.valueOf(selected.getCreatedDate()));
-        statusLabel.setText(selected.getStatus());
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        TaxAudit selected = taxAndAuditTableView .getSelectionModel() .getSelectedItem(); if (selected == null) {
+            showErr("Please select a record."); return; }
+        showSelectedRecord(selected); Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Record Details");
-        alert.setHeaderText("Details of Record ID: " + selected.getRecordId());
-        alert.setContentText(selected.getDetails());
+        alert.setHeaderText( "Record ID: " + selected.getRecordId() );
+        String details = "Record Type : " + safeText(selected.getRecordType()) + "\n\n" +
+                "Title : " + safeText(selected.getTitle()) + "\n\n" +
+                "Year : " + safeText(selected.getYear()) + "\n\n" +
+                "Created Date : " + ( selected.getCreatedDate() == null ? "" : selected.getCreatedDate() .toString() ) + "\n\n" +
+                "Status : " + safeText(selected.getStatus()) + "\n\n" +
+                "Details :\n" + safeText(selected.getDetails());
+        alert.setContentText(details);
         alert.showAndWait();
 
     }
