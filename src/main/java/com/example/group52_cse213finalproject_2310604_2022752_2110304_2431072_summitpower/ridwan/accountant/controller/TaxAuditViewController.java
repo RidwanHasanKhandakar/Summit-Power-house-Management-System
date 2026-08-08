@@ -94,7 +94,7 @@ public class TaxAuditViewController
     private void showSelectedRecord(TaxAudit record){
 
         recordIDLabel.setText(String.valueOf(record.getRecordId()));
-        recordTypeLabel.setText(safeText((record.getRecordType()));
+        recordTypeLabel.setText(safeText(record.getRecordType()));
         titleLabel.setText(safeText(record.getTitle()));
         createdDateLabel.setText(record.getCreatedDate()==null?"":record.getCreatedDate().toString());
         statusLabel.setText(safeText(record.getStatus()));
