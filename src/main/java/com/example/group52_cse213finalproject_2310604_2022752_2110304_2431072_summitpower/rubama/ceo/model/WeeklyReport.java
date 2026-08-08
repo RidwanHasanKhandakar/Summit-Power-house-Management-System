@@ -1,12 +1,24 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class WeeklyReport {
-    private String totalGeneration,totalPowerLoss,performanceStatus;
-    private LocalDate startingDate,endingDate;
+public class WeeklyReport implements Serializable {
 
-    public WeeklyReport(String totalGeneration, String totalPowerLoss, String performanceStatus, LocalDate startingDate, LocalDate endingDate) {
+    private static final long serialVersionUID = 1L;
+
+    private String totalGeneration;
+    private String totalPowerLoss;
+    private String performanceStatus;
+    private LocalDate startingDate;
+    private LocalDate endingDate;
+
+    public WeeklyReport(String totalGeneration,
+                        String totalPowerLoss,
+                        String performanceStatus,
+                        LocalDate startingDate,
+                        LocalDate endingDate) {
+
         this.totalGeneration = totalGeneration;
         this.totalPowerLoss = totalPowerLoss;
         this.performanceStatus = performanceStatus;
@@ -65,3 +77,4 @@ public class WeeklyReport {
                 '}';
     }
 }
+
