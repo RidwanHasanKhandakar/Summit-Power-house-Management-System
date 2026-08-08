@@ -1,13 +1,24 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model;
+//package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class CustomerComplaint implements Serializable {
-    private String complaintId,status,category;
+
+    private static final long serialVersionUID = 1L;
+
+    private String complaintId;
+    private String status;
+    private String category;
     private LocalDate dateOfComplaint;
 
-    public CustomerComplaint(String complaintId, String status, String category, LocalDate dateOfComplaint) {
+    public CustomerComplaint(
+            String complaintId,
+            String status,
+            String category,
+            LocalDate dateOfComplaint) {
+
         this.complaintId = complaintId;
         this.status = status;
         this.category = category;

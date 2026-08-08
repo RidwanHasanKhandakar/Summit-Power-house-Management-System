@@ -8,47 +8,154 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="846.0" prefWidth="1199.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.PlantPerformanceViewController">
+<AnchorPane prefHeight="846.0"
+            prefWidth="1199.0"
+            style="-fx-background-color: #193154;"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.controller.PlantPerformanceViewController">
+
    <children>
-      <Label alignment="CENTER" layoutX="-7.0" layoutY="820.0" prefHeight="31.0" prefWidth="1265.0" style="-fx-background-color: #49b0ff;" text="© Mission 9232 LTD." />
-      <Label layoutX="404.0" layoutY="56.0" prefHeight="64.0" prefWidth="430.0" text="Plant Performance View" textFill="#f5f2f2" textOverrun="WORD_ELLIPSIS" underline="true">
+
+      <Label alignment="CENTER"
+             layoutX="-7.0"
+             layoutY="820.0"
+             prefHeight="31.0"
+             prefWidth="1265.0"
+             style="-fx-background-color: #49b0ff;"
+             text="© Mission 9232 LTD." />
+
+      <Label layoutX="404.0"
+             layoutY="56.0"
+             prefHeight="64.0"
+             prefWidth="430.0"
+             text="Plant Performance View"
+             textFill="#f5f2f2"
+             textOverrun="WORD_ELLIPSIS"
+             underline="true">
+
          <font>
-            <Font name="Times New Roman" size="43.0" />
+            <Font name="Times New Roman" size="43.0"/>
          </font>
+
       </Label>
-      <Label layoutX="472.0" layoutY="130.0" prefHeight="64.0" prefWidth="295.0" text="Loading Today's Data..." textFill="WHITE">
+
+      <Label layoutX="472.0"
+             layoutY="130.0"
+             prefHeight="64.0"
+             prefWidth="295.0"
+             text="Historical Performance"
+             textFill="WHITE">
+
          <font>
-            <Font size="29.0" />
+            <Font size="29.0"/>
          </font>
+
       </Label>
-      <DatePicker fx:id="startingDateDatePicker" layoutX="246.0" layoutY="256.0" />
-      <Label layoutX="135.0" layoutY="261.0" prefHeight="21.0" prefWidth="97.0" text="Starting Date:" textFill="WHITE" />
-      <DatePicker fx:id="endingDateDatePicker" layoutX="849.0" layoutY="256.0" />
-      <Label layoutX="737.0" layoutY="261.0" prefHeight="21.0" prefWidth="97.0" text="Ending Date:" textFill="WHITE" />
-      <Button layoutX="458.0" layoutY="368.0" mnemonicParsing="false" onAction="#handleShowPerformance" prefHeight="31.0" prefWidth="322.0" style="-fx-background-color: #49b0ff;" text="Show Performance">
+
+      <Label layoutX="135.0"
+             layoutY="261.0"
+             prefHeight="21.0"
+             prefWidth="97.0"
+             text="Starting Date:"
+             textFill="WHITE"/>
+
+      <DatePicker fx:id="startingDateDatePicker"
+                  layoutX="246.0"
+                  layoutY="256.0"
+                  prefHeight="31.0"
+                  prefWidth="180.0"/>
+
+      <Label layoutX="737.0"
+             layoutY="261.0"
+             prefHeight="21.0"
+             prefWidth="97.0"
+             text="Ending Date:"
+             textFill="WHITE"/>
+
+      <DatePicker fx:id="endingDateDatePicker"
+                  layoutX="849.0"
+                  layoutY="256.0"
+                  prefHeight="31.0"
+                  prefWidth="180.0"/>
+
+      <Button layoutX="274.0"
+              layoutY="335.0"
+              mnemonicParsing="false"
+              onAction="#handleShowPerformance"
+              prefHeight="45.0"
+              prefWidth="300.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Show Performance">
+
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="15.0"/>
          </font>
+
       </Button>
-      <TableView fx:id="plantPerformanceTableView" layoutX="35.0" layoutY="470.0" prefHeight="195.0" prefWidth="1192.0">
-        <columns>
-          <TableColumn fx:id="startingDateCol" prefWidth="259.0" text="Starting Date" />
-          <TableColumn fx:id="endingDateCol" prefWidth="227.0" text="Ending Date" />
-            <TableColumn fx:id="totalGenerationCol" prefWidth="203.0" text="Total Generation" />
-            <TableColumn fx:id="totalPowerLossCol" prefWidth="218.0" text="Total Power Loss" />
-            <TableColumn fx:id="performanceStatusCol" prefWidth="284.0" text="Performance Status" />
-        </columns>
+
+      <Button layoutX="625.0"
+              layoutY="335.0"
+              mnemonicParsing="false"
+              onAction="#handleGenerateWeeklyReport"
+              prefHeight="45.0"
+              prefWidth="300.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Generate Weekly Report">
+
+         <font>
+            <Font name="System Bold" size="15.0"/>
+         </font>
+
+      </Button>
+
+      <TableView fx:id="plantPerformanceTableView"
+                 layoutX="35.0"
+                 layoutY="450.0"
+                 prefHeight="250.0"
+                 prefWidth="1192.0">
+
+         <columns>
+
+            <TableColumn fx:id="startingDateCol"
+                         prefWidth="230.0"
+                         text="Starting Date"/>
+
+            <TableColumn fx:id="endingDateCol"
+                         prefWidth="220.0"
+                         text="Ending Date"/>
+
+            <TableColumn fx:id="totalGenerationCol"
+                         prefWidth="230.0"
+                         text="Total Generation"/>
+
+            <TableColumn fx:id="totalPowerLossCol"
+                         prefWidth="240.0"
+                         text="Total Power Loss"/>
+
+            <TableColumn fx:id="performanceStatusCol"
+                         prefWidth="270.0"
+                         text="Performance Status"/>
+
+         </columns>
+
       </TableView>
-      <Label fx:id="effieciencyLabel" layoutX="459.0" layoutY="749.0" prefHeight="64.0" prefWidth="333.0" text="Effiency:" textFill="WHITE" />
-      <Button layoutX="465.0" layoutY="697.0" mnemonicParsing="false" onAction="#handleShowPlantEfficiency" prefHeight="31.0" prefWidth="322.0" style="-fx-background-color: #49b0ff;" text="Show Plant Efficiency">
+
+      <Button layoutX="1028.0"
+              layoutY="45.0"
+              mnemonicParsing="false"
+              onAction="#handleReturn"
+              prefHeight="49.0"
+              prefWidth="176.0"
+              style="-fx-background-color: #49b0ff;"
+              text="Return">
+
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="15.0"/>
          </font>
+
       </Button>
-      <Button layoutX="1028.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="49.0" prefWidth="176.0" style="-fx-background-color: #49b0ff;" text="Return">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
+
    </children>
+
 </AnchorPane>
