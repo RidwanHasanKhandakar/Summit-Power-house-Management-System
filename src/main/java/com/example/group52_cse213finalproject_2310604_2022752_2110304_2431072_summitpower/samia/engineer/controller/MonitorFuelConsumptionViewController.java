@@ -145,8 +145,7 @@ public class MonitorFuelConsumptionViewController
                 fuelConsumed,
                 operatingHours,
                 monitoringDatePicker.getValue(),
-                remarksTextArea.getText().trim()
-        );
+                remarksTextArea.getText().trim());
 
         MonitorFuelConsumptionFileHandler.save(fuel);
         tableView.getItems().setAll(MonitorFuelConsumptionFileHandler.readAll());

@@ -234,11 +234,9 @@ public class MonitorGeneratorStatusViewController {
                 fuelLevel,
                 engineTemperature,
                 runningHours,
-                maintenanceDateDatePicker.getValue()
-        );
+                maintenanceDateDatePicker.getValue());
 
         MonitorGeneratorStatusFileHandler.save(status);
-
         refreshButton(null);
 
         showSuccess("Generator Status saved successfully.");

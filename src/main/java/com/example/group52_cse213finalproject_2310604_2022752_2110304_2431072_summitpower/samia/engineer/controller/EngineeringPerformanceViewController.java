@@ -201,7 +201,6 @@ public class EngineeringPerformanceViewController
                         performanceStatusTextField.getText().trim());
 
         EngineeringPerformanceFileHandler.save(performance);
-
         tableView.setItems(EngineeringPerformanceFileHandler.readAll());
 
         refreshButton(null);
