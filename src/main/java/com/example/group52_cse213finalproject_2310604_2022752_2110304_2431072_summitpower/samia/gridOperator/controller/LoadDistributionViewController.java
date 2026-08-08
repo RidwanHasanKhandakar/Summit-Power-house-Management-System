@@ -134,14 +134,12 @@ public class LoadDistributionViewController
         System.out.println("Saved records: " + LoadDistributionFileHandler.readAll().size());
 
         showSuccess("Load Distribution saved successfully.");
-
         refreshButton(null);
     }
 
     @javafx.fxml.FXML
     public void viewHistoryButton(ActionEvent actionEvent) {
-        PrimarySceneSwitcher.primarySwitchScene(
-                (Node) actionEvent.getSource(), "samia", "gridOperator", "load-distribution-history.fxml", "Load Distribution History");
+        PrimarySceneSwitcher.primarySwitchScene((Node) actionEvent.getSource(), "samia", "gridOperator", "load-distribution-history.fxml", "Load Distribution History");
     }
 
     @javafx.fxml.FXML

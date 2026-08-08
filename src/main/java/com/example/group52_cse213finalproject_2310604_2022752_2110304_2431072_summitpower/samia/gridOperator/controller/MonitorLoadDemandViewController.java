@@ -83,7 +83,6 @@ public class MonitorLoadDemandViewController
                 }
 
                 monitoringDateTextField.setText(demand.getDistributionDate().toString());
-
                 showSuccess("Record Found!");
                 return;
             }

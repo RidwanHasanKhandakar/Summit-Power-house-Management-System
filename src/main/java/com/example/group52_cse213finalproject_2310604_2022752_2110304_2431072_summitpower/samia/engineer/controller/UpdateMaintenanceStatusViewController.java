@@ -145,8 +145,7 @@ public class UpdateMaintenanceStatusViewController
         );
 
         UpdateMaintenanceStatusFileHandler.save(status);
-        tableView.getItems().setAll(UpdateMaintenanceStatusFileHandler.readAll()
-        );
+        tableView.getItems().setAll(UpdateMaintenanceStatusFileHandler.readAll());
 
         refreshButton(null);
 

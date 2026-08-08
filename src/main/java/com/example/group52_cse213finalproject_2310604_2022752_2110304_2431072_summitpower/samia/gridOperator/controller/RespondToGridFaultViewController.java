@@ -142,21 +142,13 @@ public class RespondToGridFaultViewController
                 );
 
         RespondToGridFaultFileHandler.save(respondToGridFault);
-
         refreshButton(null);
-
-        showSuccess(
-                "Grid fault response saved successfully.\n\n"
-                        + operationMessage
-        );
+        showSuccess("Grid fault response saved successfully.\n\n" + operationMessage);
     }
 
     @javafx.fxml.FXML
     public void viewHistoryButton(ActionEvent actionEvent) throws IOException {
-        SamiaSceneSwitch.samiaSceneSwitch((Node) actionEvent.getSource(),
-                "gridOperator",
-                "respond-grid-fault-history.fxml",
-                "View Grid Fault History"
+        SamiaSceneSwitch.samiaSceneSwitch((Node) actionEvent.getSource(), "gridOperator", "respond-grid-fault-history.fxml", "View Grid Fault History"
         );
     }
 }
