@@ -12,8 +12,6 @@ import java.time.LocalDate;
 public class InventoryReportViewController
 {
     @javafx.fxml.FXML
-    private CheckBox stockAvailableCheckBox;
-    @javafx.fxml.FXML
     private ComboBox<String> equipmentOrFuelCategoryComboBox;
     @javafx.fxml.FXML
     private ComboBox<String> reportTypeComboBox;
@@ -22,25 +20,41 @@ public class InventoryReportViewController
     @javafx.fxml.FXML
     private TextField reportIdTextField;
     @javafx.fxml.FXML
-    private CheckBox stockNotAvailableCheckBox;
+    private ComboBox<String> itemComboBox;
+    @javafx.fxml.FXML
+    private TextField quantityTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
 
-        equipmentOrFuelCategoryComboBox.getItems().addAll(
+        itemComboBox.getItems().addAll(
                 "Turbines",
                 "Pumps",
                 "Generators",
                 "Transformers",
                 "Broilers",
-                "Chemicals"
+                "Chemicals",
+                "Cooling Fan",
+                "Air Filter",
+                "Diesel",
+                "Safety Helmet"
         );
 
         reportTypeComboBox.getItems().addAll(
-                "Maintenance",
-                "Supply Chain Performance",
-                "Audit & Safety"
+                "Inventory Summary",
+                "Stock Availability",
+                "Low Stock",
+                "Inventory Audit"
 
+        );
+
+        equipmentOrFuelCategoryComboBox.getItems().addAll(
+                "Equipment",
+                "Spare Parts",
+                "Fuel",
+                "Chemicals",
+                "Safety Equipment",
+                "Maintenance Supplies"
         );
     }
 
@@ -72,12 +86,7 @@ public class InventoryReportViewController
             return;
         }
 
-        if(stockAvailableCheckBox.isSelected() == stockNotAvailableCheckBox.isSelected()){
-            showError("Please select either Available or Not Available for stock status");
-            return;
-        }
-
-        InventoryReport inventoryReport = new InventoryReport(reportDateDatePicker.getValue(), equipmentOrFuelCategoryComboBox.getValue(), reportTypeComboBox.getValue(), reportIdTextField.getText(), stockAvailableCheckBox.isSelected(), stockNotAvailableCheckBox.isSelected());
+        InventoryReport inventoryReport = new InventoryReport(reportDateDatePicker.getValue(), equipmentOrFuelCategoryComboBox.getValue(), reportTypeComboBox.getValue(), reportIdTextField.getText(), itemComboBox.getValue(), quantityTextField.getText());
 
         InventoryReportFileHandler.save(inventoryReport);
 
@@ -112,8 +121,9 @@ public class InventoryReportViewController
         reportIdTextField.clear();
         equipmentOrFuelCategoryComboBox.setValue(null);
         reportDateDatePicker.setValue(null);
-        stockAvailableCheckBox.setSelected(false);
-        stockNotAvailableCheckBox.setSelected(false);
+        itemComboBox.setValue(null);
+        quantityTextField.clear();
+        reportTypeComboBox.setValue(null);
 
     }
 }

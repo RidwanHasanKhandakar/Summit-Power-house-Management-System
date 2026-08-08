@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #193154;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.johra.inventoryManager.controller.FuelConsumptionTrackingViewController">
    <children>
       <Label layoutX="173.0" layoutY="14.0" style="-fx-text-fill: white;" text="Fuel Consumption Tracking">
@@ -27,7 +26,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="12.0" layoutY="129.0" style="-fx-text-fill: white;" text="Quantity Used:">
+      <Label layoutX="12.0" layoutY="129.0" style="-fx-text-fill: white;" text="Quantity Used (L):">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>

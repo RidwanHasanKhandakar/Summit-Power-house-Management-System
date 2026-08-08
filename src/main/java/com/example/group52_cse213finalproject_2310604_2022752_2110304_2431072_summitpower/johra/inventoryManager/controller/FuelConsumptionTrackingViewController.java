@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 
+import java.time.LocalDate;
+
 public class FuelConsumptionTrackingViewController
 {
     @javafx.fxml.FXML
@@ -67,6 +69,11 @@ public class FuelConsumptionTrackingViewController
 
         if(consumptioDateDatePicker.getValue() == null){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(consumptioDateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Date cannot be in future !");
             return;
         }
 

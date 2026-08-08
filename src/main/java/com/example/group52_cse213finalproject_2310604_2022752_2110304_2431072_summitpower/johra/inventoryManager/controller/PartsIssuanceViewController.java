@@ -9,6 +9,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.time.LocalDate;
+
 public class PartsIssuanceViewController
 {
     @javafx.fxml.FXML
@@ -73,6 +75,11 @@ public class PartsIssuanceViewController
 
         if(issueDateDatePicker.getValue() == null ){
             showError("Field cannot be empty");
+            return;
+        }
+
+        if(issueDateDatePicker.getValue().isAfter(LocalDate.now())){
+            showError("Issue date cannot be in future !");
             return;
         }
 

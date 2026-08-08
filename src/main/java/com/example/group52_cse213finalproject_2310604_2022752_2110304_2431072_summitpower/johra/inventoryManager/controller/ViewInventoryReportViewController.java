@@ -15,31 +15,38 @@ import java.time.LocalDate;
 public class ViewInventoryReportViewController
 {
     @javafx.fxml.FXML
-    private TableColumn<InventoryReport, String> fuelOrEquipmentCategoryCol;
-    @javafx.fxml.FXML
     private TableColumn<InventoryReport, String> reportTypeCol;
     @javafx.fxml.FXML
-    private TableColumn<InventoryReport, LocalDate> reportDateCol;
+    private TableView<InventoryReport> showTableView;
     @javafx.fxml.FXML
-    private TableColumn<InventoryReport, String> stockStatusCol;
+    private TableColumn<InventoryReport, LocalDate> dateDatePicker;
+    @javafx.fxml.FXML
+    private TableColumn<InventoryReport, LocalDate> quantityCol;
+    @javafx.fxml.FXML
+    private TableColumn<InventoryReport, LocalDate> categoryCol;
+    @javafx.fxml.FXML
+    private TableColumn<InventoryReport, LocalDate> reportIdCol;
+    @javafx.fxml.FXML
+    private TableColumn<InventoryReport, LocalDate> itemCol;
     @javafx.fxml.FXML
     private ComboBox<String> filterReportTypeComboBox;
-    @javafx.fxml.FXML
-    private TableView<InventoryReport> showTableView;
 
     @javafx.fxml.FXML
     public void initialize() {
 
         filterReportTypeComboBox.getItems().addAll(
-                "Maintenance",
-                "Supply Chain Performance",
-                "Audit & Safety"
+                "Inventory Summary",
+                "Stock Availability",
+                "Low Stock",
+                "Inventory Audit"
         );
 
-        reportDateCol.setCellValueFactory(new PropertyValueFactory<>("reportDate"));
-        fuelOrEquipmentCategoryCol.setCellValueFactory(new PropertyValueFactory<>("equipmentOrFuelCategory"));
+        reportIdCol.setCellValueFactory(new PropertyValueFactory<>("reportId"));
         reportTypeCol.setCellValueFactory(new PropertyValueFactory<>("reportType"));
-        stockStatusCol.setCellValueFactory(new PropertyValueFactory<>("stockStatus"));
+        itemCol.setCellValueFactory(new PropertyValueFactory<>("item"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        dateDatePicker.setCellValueFactory(new PropertyValueFactory<>("reportDate"));
 
     }
 
@@ -51,17 +58,24 @@ public class ViewInventoryReportViewController
     @javafx.fxml.FXML
     public void loadTableViewButtonOnAction(ActionEvent actionEvent) {
 
-        String selectedReportType =  filterReportTypeComboBox.getValue();
+        String filteredReportType =  filterReportTypeComboBox.getValue();
 
-        if(selectedReportType != null){
+        showTableView.getItems().clear();
 
-            ObservableList<InventoryReport> allReports = InventoryReportFileHandler.readAll();
+        if(filteredReportType == null){
 
-            ObservableList<InventoryReport> filteredReports = allReports.filtered(report -> report.getReportType().equals(selectedReportType)
-            );
-
-        showTableView.setItems(filteredReports);
-
+            showTableView.setItems(InventoryReportFileHandler.readAll());
         }
+
+        for(InventoryReport inventoryReport : InventoryReportFileHandler.readAll()){
+
+            if(inventoryReport.getReportType().equals(filteredReportType)){
+
+                showTableView.getItems().add(inventoryReport);
+
+            }
+        }
+
     }
+
 }
