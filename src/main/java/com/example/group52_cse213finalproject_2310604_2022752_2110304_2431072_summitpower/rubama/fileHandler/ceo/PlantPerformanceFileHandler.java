@@ -1,6 +1,5 @@
 package com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.fileHandler.ceo;
 
-import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.ComplaintSummary;
 import com.example.group52_cse213finalproject_2310604_2022752_2110304_2431072_summitpower.rubama.ceo.model.PlantPerformance;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,15 +8,28 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class PlantPerformanceFileHandler {
-    private static final String FILE_PATH = "data/rubama/ceo/plantPerformance.bin";
+
+    private static final String FILE_PATH =
+            "data/rubama/ceo/plantPerformance.bin";
+
     public static void save(PlantPerformance plantPerformance) {
+
         ObservableList<PlantPerformance> list = readAll();
         list.add(plantPerformance);
-        try{
-            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_PATH));
+
+        File file = new File(FILE_PATH);
+        File parentDirectory = file.getParentFile();
+
+        if (parentDirectory != null && !parentDirectory.exists()) {
+            parentDirectory.mkdirs();
+        }
+
+        try (ObjectOutputStream oos =
+                     new ObjectOutputStream(new FileOutputStream(file))) {
+
             oos.writeObject(new ArrayList<>(list));
-            oos.close();
-        }catch (IOException e){
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -25,19 +37,22 @@ public class PlantPerformanceFileHandler {
     public static ObservableList<PlantPerformance> readAll() {
 
         File file = new File(FILE_PATH);
-        if (!file.exists()||file.length()==0) {
+
+        if (!file.exists() || file.length() == 0) {
             return FXCollections.observableArrayList();
         }
 
-        try{
-            ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_PATH));
-            ArrayList<PlantPerformance> list = (ArrayList<PlantPerformance>) ois.readObject();
-            ois.close();
+        try (ObjectInputStream ois =
+                     new ObjectInputStream(new FileInputStream(file))) {
+
+            ArrayList<PlantPerformance> list =
+                    (ArrayList<PlantPerformance>) ois.readObject();
+
             return FXCollections.observableArrayList(list);
-        }catch (Exception e){
+
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             return FXCollections.observableArrayList();
         }
-
     }
 }
