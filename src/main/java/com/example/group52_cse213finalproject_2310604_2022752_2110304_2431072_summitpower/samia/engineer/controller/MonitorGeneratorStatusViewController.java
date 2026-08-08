@@ -238,7 +238,6 @@ public class MonitorGeneratorStatusViewController {
 
         MonitorGeneratorStatusFileHandler.save(status);
         refreshButton(null);
-
         showSuccess("Generator Status saved successfully.");
     }
 }
