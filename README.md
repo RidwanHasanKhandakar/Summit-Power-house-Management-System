@@ -1529,13 +1529,6 @@ Then run the JavaFX application from the project's main application class.
 
 ---
 
-# Repository
-
-The complete project source code is available on GitHub:
-
-[Summit Power House Management System — GitHub Repository](https://github.com/RidwanHasanKhandakar/Summit-Power-house-Management-System?utm_source=chatgpt.com)
-
----
 
 # Project Documentation
 
